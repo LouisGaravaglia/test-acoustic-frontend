@@ -51,7 +51,7 @@ const Login: React.FC = () => {
       </div>
       <div className="Login-Box">
         <input 
-          type="text"
+          type="password"
           id="LoginVal"
           name="password"
           value={formData.password}
