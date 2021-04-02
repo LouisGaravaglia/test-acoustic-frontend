@@ -1,15 +1,15 @@
 import React, {useContext} from "react";
 import {MessagesContext} from "./ChatBot/MessagesProvider";
 
-interface IUser {
-  first_name: string
-  last_name: string
-  email: string
-  username: string
-  password: string
-  access_token: string,
-  refresh_token: string
-}
+// interface IUser {
+//   first_name: string
+//   last_name: string
+//   email: string
+//   username: string
+//   password: string
+//   access_token: string,
+//   refresh_token: string
+// }
 
 function Profile(): JSX.Element {
   const {user} = useContext(MessagesContext);

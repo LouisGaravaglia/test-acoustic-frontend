@@ -1,5 +1,5 @@
 import React, {useEffect, useContext} from "react";
-import {Link, useHistory} from "react-router-dom";
+import {useHistory} from "react-router-dom";
 import {MessagesContext} from "./ChatBot/MessagesProvider";
 
 const Home: React.FC = () => {
