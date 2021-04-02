@@ -1,184 +1,279 @@
-/* 
-
-
-.Chatty-Display {
-  margin: 80px 0;
+/* html, body {
+  background: linear-gradient(to right top, #160c13, #180e1a, #140e1f, #0c1122, #0a1827);
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
 }
 
-.Chatty-Message-Container {
+
+
+
+
+
+
+
+
+
+
+
+.Register-Container {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 3;
+}
+
+.Register-Form {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
-  justify-content: flex-start;
-  margin-left: 30vw; 
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
 }
 
-.Chatty-Message-Box {
+.Register-Box {
   display: flex;
-  justify-content: flex-start;
-  flex: 0 0 100vw;
+  justify-content: center;
+  flex: 1 0 85vw;
+  padding: 30px 0 30px 0;
+  z-index: 4;
 }
 
-.Chatty-Message {
+.Register-Box > label{
+  color: rgb(230, 236, 238);
+  margin-bottom: 10px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 400;
+  font-size: 1.3rem;
+}
+
+.Register-Box > input {
+  width: 20vw;
+  height: 35px;
+  border: none;
+  margin-bottom: 40px;
+}
+
+.Register-Form > button {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 900;
+  font-size: 2rem;
+  color: rgb(1, 0, 12);
+  background: linear-gradient(to right, #79e6ee 0%, #10202c 100%);
+  padding: 5px 30px;
+  margin: 0 20px;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+}
+
+#RegisterVal {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-weight: 500;
   font-size: 1rem;
-  color: white;
-  width: 30vw;
-  text-align: left;
-  margin: 10px 0;
+  padding-left: 25px;
+  outline:none;
+  padding-right: 60px;
+}
+
+.Register-Box button{
+  background-color: #10202c;
+  border: none;
+  font-size: 1rem;
+  padding: 6px 6px 2px 6px;
+  margin: 0;
+  position: absolute;
+  text-align: center;
+  right:0;
+  top:50%;
+  transform: translate(-10%, 55%);
+  border-radius: 50px;
+  cursor: pointer;
 }
 
 
 
-.Chatty-Button-Container {
+
+
+
+
+
+
+.Login-Form {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
-  justify-content: end;
+  justify-content: center;
+  align-items: flex-start;
 }
 
-.Chatty-Button-Box {
-  display: flex;
-  justify-content: end;
+.filler {
+  height: 20vh;
   flex: 0 0 100vw;
-  margin: 15px 30vw 15px 0;
 }
 
-.Chatty-Button{
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-weight: 800;
-  font-size: 1rem;
-  color: white;
-  background-color: black;
-  padding: 0 12px;
-  margin: 0 20px;
-  text-align: center;
-  border: 2px solid #602b3e;
-  border-radius: 25px;
-  cursor: pointer;
+.Login-Container {
+  flex: 0 0 100vw;
 }
 
-.Chatty-Button:hover {
-  color: black;
-  background: linear-gradient(to right, #c1718f 0%, #602b3e 100%);
-  border: 2px solid black;
+.Login-Box {
+  display: flex;
+  justify-content: center;
+  flex: 0 0 100vw;
 }
 
-.Chatty-Button-Clicked {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-weight: 800;
-  font-size: 1rem;
-  color: black;
-  background: linear-gradient(to right, #c1718f 0%, #602b3e 100%);
-  padding: 0 12px;
-  margin: 0 20px;
-  text-align: center;
-  border: 2px solid black;
-  cursor: pointer;
+.Login-Box > input {
+  width: 20vw;
+  height: 50px;
+  border: none;
+  margin-bottom: 40px;
 }
 
-.Chatty-Button-Clicked:hover {
-  cursor: auto;
-}
-
-.Chatty-Button-Not-Clicked {
-  display: none;
-}
-
-
-
-.ChattyTyping-Container{
+.Label-Box {
   display: flex;
   justify-content: flex-start;
-  width: 30vw;
+  flex: 0 0 20vw;
 }
 
-.ChattyTyping-Box {
-  background-color: #E6E7ED;
-  padding: 2px 6px;
-  border-radius: 20px;
-  margin-top: 15px;
-}
-
-.dot {
-  height: 6px;
-  width: 6px;
-  border-radius: 100%;
-  display: inline-block;
-  background-color: #B4B5B9;
-  margin: 0 2px 3px;
-  animation: 1.2s typing-dot ease-in-out infinite;
-}
-
-.dot:nth-of-type(2) {
-  animation-delay: 0.15s;
-}
-
-.dot:nth-of-type(3) {
-  animation-delay: 0.25s;
-}
-
-@keyframes typing-dot {
-  15% {
-    transform: translateY(-35%);
-    opacity: 0.5;
-  }
-  30% {
-    transform: translateY(0%);
-    opacity: 1;
-  }
-}
-
-
-
-.Navbar-Container-Left {
-  position: absolute;
-  height: 80px;
-}
-
-.Navbar-Container-Right {
-  position: absolute;
-  right: 0;
-  height: 80px;
-}
-
-a {
-  text-decoration: none;
-}
-
-.Navbar-Search-Box {
-  position: sticky;
-  z-index: 4;
-  top: 30px;
-  margin: 0;
-  padding: 0;
-  margin-left: 50px;
-}
-
-.Navbar-Search {
+#LoginVal {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-weight: 400;
-  font-size: 1.5rem;
-  color: #fff;
-  margin: 0;
-  padding: 0;
+  font-size: 1.3rem;
+  padding-left: 20px;
+  outline:none;
+  padding-right: 60px;
 }
 
-.Navbar-Browse-Box {
-  position: sticky;
-  z-index: 4;
-  top: 30px;
-  margin: 0;
-  padding: 0;
-  margin-right: 50px;
+::placeholder {
+  color: rgb(196, 196, 196);
 }
 
-.Navbar-Browse {
-  float: right;
+
+.Login-Header {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 300;
+  font-size: 3rem;
+  color: rgb(230, 236, 238);
+  margin: -50px;
+  cursor: default;
+}
+
+.Home-Upper-Box {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  width: 100vw;
+  height: 50vh;
+}
+
+
+.Home-Lower-Box {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100vw;
+  height: 50vh;
+}
+
+.login-transition-element {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  color: rgb(1, 0, 12);
+  padding: 5px 30px;
+  text-align: center;
   cursor: pointer;
-  color: #fff;
+  border: none;
+  position: absolute;
+  background: linear-gradient(to right, #79e6ee 0%, #10202c 100%);
+  transition: 0.5s;
+  opacity: 1;
+  z-index: 4;
+  margin-top: 20px;
 }
+
+.login-transition-element:hover {
+  opacity: 0.0;
+}
+
+.login-main-button {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  color: rgb(1, 0, 12);
+  padding: 5px 30px;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  background-color: #37f8ff;
+  transition: 0.5s;
+  opacity: 1;
+  margin-top: 20px;
+}
+
+@media only screen and (max-width: 745px) {
+  .Login-Header {
+    font-weight: 200;
+    font-size: 2rem;
+  }
+
+  .login-transition-element {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  color: rgb(1, 0, 12);
+  padding: 5px 30px;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  position: absolute;
+  background: linear-gradient(to right, #79e6ee 0%, #10202c 100%);
+  transition: 0.5s;
+  opacity: 1;
+  z-index: 4;;
+    margin-top: 15px;
+    font-weight: 600;
+    font-size: 1.5rem;
+    padding: 4px 20px;
+  }
+
+  .login-main-button {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  color: rgb(1, 0, 12);
+  padding: 5px 30px;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  background-color: #37f8ff;
+  transition: 0.5s;
+  opacity: 1;;
+    margin-top: 15px;
+    font-weight: 600;
+    font-size: 1.5rem;
+    padding: 4px 20px;
+  }
+
+  .Login-Box > input {
+    width: 40vw;
+  }
+
+  #LoginVal {
+    font-weight: 400;
+    font-size: 0.8rem;
+  }
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -195,7 +290,7 @@ a {
   align-items: center;
   flex-wrap: wrap;
   width: 100vw;
-  height: 60vh;
+  height: 50vh;
 }
 
 .Home-Header-Box {
@@ -212,7 +307,7 @@ a {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-weight: 600;
   font-size: 9rem;
-  color: #fff;
+  color: rgb(230, 236, 238);
   padding: 0;
   margin: -50px;
   cursor: default;
@@ -222,7 +317,6 @@ a {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  height: 10vh;
   width: 100vw;
 }
 
@@ -230,7 +324,7 @@ a {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-weight: 300;
   font-size: 1.5rem;
-  color: #fff;
+  color: rgb(230, 236, 238);
   padding: 0;
   margin: 0 40px;
   cursor: default;
@@ -241,18 +335,389 @@ a {
   justify-content: center;
   align-items: flex-start;
   width: 100vw;
-  height: 40vh;
+  height: 50vh;
 }
 
-.Home-Lower-Box button {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-weight: 900;
+.home-transition-element {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 700;
   font-size: 2rem;
-  color: black;
-  background: linear-gradient(to right, #c1718f 0%, #602b3e 100%);
+  color: rgb(1, 0, 12);
   padding: 5px 30px;
-  margin: 0 20px;
   text-align: center;
   cursor: pointer;
   border: none;
+  position: absolute;
+  background: linear-gradient(to right, #79e6ee 0%, #10202c 100%);
+  transition: 0.5s;
+  opacity: 1;
+  z-index: 4;;
+  margin-top: 80px;
+}
+
+.home-transition-element:hover {
+  opacity: 0.0;
+}
+
+.home-main-button {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  color: rgb(1, 0, 12);
+  padding: 5px 30px;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  background-color: #37f8ff;
+  transition: 0.5s;
+  opacity: 1;;
+  margin-top: 80px;
+}
+
+
+@media only screen and (max-width: 1050px) {
+  .Home-Header-Box h1 {
+    font-weight: 500;
+    font-size: 6rem;
+  }
+
+  .Home-Subheader-Box h5 {
+    font-weight: 300;
+    font-size: 1rem;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 745px) {
+  .Home-Header-Box h1 {
+    font-weight: 500;
+    font-size: 4rem;
+  }
+
+  .Home-Subheader-Box h5 {
+    font-weight: 300;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .home-transition-element {
+    margin-top: 40px;
+    font-weight: 600;
+    font-size: 1.5rem;
+    padding: 4px 20px;
+  }
+
+  .home-main-button {
+    margin-top: 40px;
+    font-weight: 600;
+    font-size: 1.5rem;
+    padding: 4px 20px;
+  }
+
+}
+
+
+@media only screen and (max-width: 450px) {
+  .Home-Header-Box h1 {
+    font-weight: 500;
+    font-size: 2rem;
+  }
+
+  .Home-Subheader-Box h5 {
+    font-weight: 300;
+    font-size: 0.7rem;
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  .home-transition-element {
+    margin-top: 70px;
+    font-weight: 400;
+    font-size: 1rem;
+    padding: 4px 20px;
+  }
+
+  .home-main-button {
+    margin-top: 70px;
+    font-weight: 400;
+    font-size: 1rem;
+    padding: 4px 20px;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+.Profile-Box {
+  margin-top: 40vh;
+  text-align: center;
+}
+
+.Profile-Header {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 800;
+  font-size: 2rem;
+  color: #79e6ee;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+.Navbar-Container-Left {
+  position: absolute;
+  height: 80px;
+}
+
+.Navbar-Container-Right {
+  position: absolute;
+  height: 80px;
+  right: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.Navbar-Search-Box {
+  position: sticky;
+  z-index: 4;
+  top: 30px;
+  margin: 0;
+  padding: 0;
+  margin-left: 50px;
+}
+
+.Navbar-Logo {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  color: rgb(230, 236, 238);
+  margin: 0;
+  padding: 0;
+}
+
+.Navbar-Logo:hover {
+  color: #79e6ee;
+}
+
+.Navbar-Login {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  color: rgb(230, 236, 238);
+  margin: 0;
+  padding: 0;
+}
+
+.Navbar-Login:hover {
+  color: #79e6ee;
+}
+
+.Navbar-Browse-Box {
+  position: sticky;
+  z-index: 4;
+  top: 30px;
+  margin: 0;
+  padding: 0;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.Navbar-Browse {
+  float: right;
+  cursor: pointer;
+  color: rgb(230, 236, 238);
+}
+
+
+
+
+
+
+
+
+
+
+.Chatty-Container {
+  position: relative;
+  width: 100vw;
+}
+
+.Chatty {
+  position: absolute;
+  top: 80px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+
+.Chatty-Left-Filler {
+  flex: 0 1 30vw;
+}
+
+.Chatty-Right-Filler {
+  flex: 0 1 30vw;
+}
+
+.Chatty-MSG-Bottom-Filler {
+  padding: 50px;
+}
+
+.Chatty-Display {
+  margin: 80px 0 100px;
+  flex: 1 0 500px;
+}
+
+.Chatty-Message-Container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.Chatty-Message-Box {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  flex: 1 0 100%;
+}
+
+.Chatty-Message {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  color: rgb(230, 236, 238);
+  text-align: left;
+  margin: 10px 180px 10px 0;
+}
+
+.Chatty-Message-Black {
+  color: rgba(0,0,0,0.0);
+}
+
+@media only screen and (max-width: 600px) {
+  .Chatty-Message {
+    margin: 10px 120px 10px 50px;
+  }
+
+  .Chatty-Display {
+    margin: 80px 0 100px;
+    flex: 1 0 100vw;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .Chatty-Message {
+    margin: 10px 60px 10px 10px;
+  }
+
+  .Chatty-Display {
+    margin: 80px 0 100px;
+    flex: 1 0 100vw;
+  }
+}
+
+
+.Chatty-Button-Main {
+  width: 100%;
+  z-index: 5;
+}
+
+.Chatty-Button-Container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.Chatty-Button-Box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  flex: 0 0 100%;
+  margin: 10px 0;
+  height: auto;
+}
+
+.Chatty-Button{
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 800;
+  font-size: 1rem;
+  line-height:0;
+  color: rgb(230, 236, 238);
+  background: rgba(0,0,0,0.0);
+  padding: 0 12px;
+  text-align: center;
+  border: 3px solid #10202c;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.Chatty-Button:hover {
+  color: rgb(1, 0, 12);
+  background: linear-gradient(to right, #79e6ee 0%, #10202c 100%);
+  border: 3px solid #10202c;
+}
+
+.Chatty-Button-Clicked {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 800;
+  font-size: 1rem;
+  line-height:0;
+  color: rgb(230, 236, 238);
+  background: rgba(0,0,0,0.0);
+  padding: 0 12px;
+  text-align: center;
+  border: 3px solid #10202c;
+  border-radius: 10px;
+  cursor: pointer;
+  color: rgb(1, 0, 12);
+  background: linear-gradient(to right, #79e6ee 0%, #10202c 100%);
+  border: 3px solid #10202c;
+  cursor: auto;
+}
+
+.Chatty-Button-Not-Clicked {
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .Chatty-Button-Container {
+    margin-right: 50px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .Chatty-Button-Container {
+    margin-right: 10px;
+  }
+
+  .Chatty-Button-Box {
+    max-width: 250px;
+    margin: 10px 10px 10px 0px;
+  };
+
+  .Chatty-Button {
+    line-height: normal;
+  }
+
 } */
