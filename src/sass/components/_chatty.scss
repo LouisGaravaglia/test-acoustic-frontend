@@ -1,0 +1,209 @@
+/* /////////////////////////////////////  CHATTY MESSAGE  ////////////////////////////////////// */
+
+.Chatty-Container {
+  position: relative;
+  width: 100vw;
+}
+
+.Chatty {
+  position: absolute;
+  top: 80px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  // border: 2px solid yellow;
+  max-height: calc();
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+
+.Chatty-Left-Filler {
+  flex: 0 1 30vw;
+  // border: solid 2px aqua
+}
+
+.Chatty-Right-Filler {
+  @extend .Chatty-Left-Filler;
+  // border: solid 2px pink
+}
+
+.Chatty-MSG-Bottom-Filler {
+  padding: 50px;
+  // border: solid 2px rgb(255, 0, 132);
+}
+
+.Chatty-Display {
+  margin: 80px 0 100px;
+  // border: solid 2px yellow;
+  flex: 1 0 500px;
+}
+
+.Chatty-Message-Container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.Chatty-Message-Box {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  flex: 1 0 100%;
+}
+
+.Chatty-Message {
+  font-family: $mainFont;
+  font-weight: 500;
+  font-size: 1rem;
+  color: $whiteFont;
+  text-align: left;
+  margin: 10px 180px 10px 0;
+}
+
+.Chatty-Message-Black {
+  color: rgba(0,0,0,0.0);
+}
+
+@media only screen and (max-width: 600px) {
+  .Chatty-Message {
+    margin: 10px 120px 10px 50px;
+  }
+
+  .Chatty-Display {
+    margin: 80px 0 100px;
+    flex: 1 0 100vw;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .Chatty-Message {
+    margin: 10px 60px 10px 10px;
+  }
+
+  .Chatty-Display {
+    margin: 80px 0 100px;
+    flex: 1 0 100vw;
+  }
+}
+
+/* /////////////////////////////////////  CHATTY BUTTON  ////////////////////////////////////// */
+
+.Chatty-Button-Main {
+  width: 100%;
+  z-index: 5;
+}
+
+.Chatty-Button-Container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.Chatty-Button-Box {
+  @extend .Chatty-Button-Container;
+  flex: 0 0 100%;
+  margin: 10px 0;
+  height: auto;
+}
+
+.Chatty-Button{
+  font-family: $mainFont;
+  font-weight: 800;
+  font-size: 1rem;
+  line-height:0;
+  color: $whiteFont;
+  background: rgba(0,0,0,0.0);
+  padding: 0 12px;
+  text-align: center;
+  border: 3px solid $mainDark;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.Chatty-Button:hover {
+  color: $black;
+  background: linear-gradient(to right, $mainLight 0%, $mainDark 100%);
+  border: 3px solid $mainDark;
+}
+
+.Chatty-Button-Clicked {
+  @extend .Chatty-Button;
+  color: $black;
+  background: linear-gradient(to right, $mainLight 0%, $mainDark 100%);
+  border: 3px solid $mainDark;
+  cursor: auto;
+}
+
+.Chatty-Button-Not-Clicked {
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .Chatty-Button-Container {
+    margin-right: 50px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .Chatty-Button-Container {
+    margin-right: 10px;
+  }
+
+  .Chatty-Button-Box {
+    max-width: 250px;
+    margin: 10px 10px 10px 0px;
+  };
+
+  .Chatty-Button {
+    line-height: normal;
+  }
+
+}
+
+/* /////////////////////////////////////  CHATTY TYPING ANIMATION  //////////////////////////////////////*/
+
+// .ChattyTyping-Container{
+//   display: flex;
+//   justify-content: flex-start;
+//   width: 30vw;
+// }
+
+// .ChattyTyping-Box {
+//   background-color: #E6E7ED;
+//   padding: 2px 6px;
+//   border-radius: 20px;
+//   margin-top: 15px;
+// }
+
+// .dot {
+//   height: 6px;
+//   width: 6px;
+//   border-radius: 100%;
+//   display: inline-block;
+//   background-color: #B4B5B9;
+//   margin: 0 2px 3px;
+//   animation: 1.2s typing-dot ease-in-out infinite;
+// }
+
+// .dot:nth-of-type(2) {
+//   animation-delay: 0.15s;
+// }
+
+// .dot:nth-of-type(3) {
+//   animation-delay: 0.25s;
+// }
+
+// @keyframes typing-dot {
+//   15% {
+//     transform: translateY(-35%);
+//     opacity: 0.5;
+//   }
+//   30% {
+//     transform: translateY(0%);
+//     opacity: 1;
+//   }
+// }

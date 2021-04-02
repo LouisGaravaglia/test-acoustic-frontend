@@ -1,0 +1,78 @@
+.Register-Container {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 3;
+}
+
+.Register-Form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+}
+
+.Register-Box {
+  display: flex;
+  justify-content: center;
+  flex: 1 0 85vw;
+  // border: 2px solid peachpuff;
+  // background-color: $black;
+  padding: 30px 0 30px 0;
+  // box-shadow: 0 0 5px 10px $black;
+  z-index: 4;
+}
+
+.Register-Box > label{
+  color: $whiteFont;
+  margin-bottom: 10px;
+  font-family: $mainFont;
+  font-weight: 400;
+  font-size: 1.3rem;
+}
+
+.Register-Box > input {
+  width: 20vw;
+  height: 35px;
+  border: none;
+  margin-bottom: 40px;
+}
+
+.Register-Form > button {
+  font-family: $mainFont;
+  font-weight: 900;
+  font-size: 2rem;
+  color: $black;
+  background: linear-gradient(to right, $mainLight 0%, $mainDark 100%);
+  padding: 5px 30px;
+  margin: 0 20px;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+}
+
+#RegisterVal {
+  font-family: $mainFont;
+  font-weight: 500;
+  font-size: 1rem;
+  padding-left: 25px;
+  outline:none;
+  padding-right: 60px;
+}
+
+.Register-Box button{
+  background-color: $mainDark;
+  border: none;
+  font-size: 1rem;
+  padding: 6px 6px 2px 6px;
+  margin: 0;
+  position: absolute;
+  text-align: center;
+  right:0;
+  top:50%;
+  transform: translate(-10%, 55%);
+  border-radius: 50px;
+  cursor: pointer;
+}

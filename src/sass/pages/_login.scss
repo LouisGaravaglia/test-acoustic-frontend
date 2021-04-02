@@ -1,0 +1,125 @@
+.Login-Form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.filler {
+  height: 20vh;
+  flex: 0 0 100vw;
+}
+
+.Login-Container {
+  flex: 0 0 100vw;
+}
+
+.Login-Box {
+  display: flex;
+  justify-content: center;
+  flex: 0 0 100vw;
+}
+
+.Login-Box > input {
+  width: 20vw;
+  height: 50px;
+  border: none;
+  margin-bottom: 40px;
+}
+
+.Label-Box {
+  display: flex;
+  justify-content: flex-start;
+  flex: 0 0 20vw;
+}
+
+#LoginVal {
+  font-family: $mainFont;
+  font-weight: 400;
+  font-size: 1.3rem;
+  padding-left: 20px;
+  outline:none;
+  padding-right: 60px;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgb(196, 196, 196);
+}
+
+
+.Login-Header {
+  font-family: $mainFont;
+  font-weight: 300;
+  font-size: 3rem;
+  color: $whiteFont;
+  margin: -50px;
+  cursor: default;
+}
+
+.Home-Upper-Box {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  width: 100vw;
+  height: 50vh;
+}
+
+
+.Home-Lower-Box {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100vw;
+  height: 50vh;
+}
+
+.login-transition-element {
+  @include landingButtonGradient;
+  margin-top: 20px;
+}
+
+.login-transition-element:hover {
+  opacity: 0.0;
+}
+
+.login-main-button {
+  @include landingButtonSolid;
+  margin-top: 20px;
+}
+
+////////////////////////////////////////////////////  MEDIA QUERIES  ////////////////////////////////////////////////////
+
+@media only screen and (max-width: 745px) {
+  .Login-Header {
+    font-weight: 200;
+    font-size: 2rem;
+  }
+
+  .login-transition-element {
+    @include landingButtonGradient;
+    margin-top: 15px;
+    font-weight: 600;
+    font-size: 1.5rem;
+    padding: 4px 20px;
+  }
+
+  .login-main-button {
+    @include landingButtonSolid;
+    margin-top: 15px;
+    font-weight: 600;
+    font-size: 1.5rem;
+    padding: 4px 20px;
+  }
+
+  .Login-Box > input {
+    width: 40vw;
+  }
+
+  #LoginVal {
+    font-weight: 400;
+    font-size: 0.8rem;
+  }
+}
+
+

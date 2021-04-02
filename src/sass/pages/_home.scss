@@ -1,0 +1,144 @@
+.Home-Container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.Home-Upper-Box {
+  @extend .Home-Container;
+  width: 100vw;
+  height: 50vh;
+}
+
+.Home-Header-Box {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100vw;
+  height: 40vh;
+  padding: 0;
+  margin: 0;
+}
+
+.Home-Header-Box h1 {
+  font-family: $mainFont;
+  font-weight: 600;
+  font-size: 9rem;
+  color: $whiteFont;
+  padding: 0;
+  margin: -50px;
+  cursor: default;
+}
+
+.Home-Subheader-Box {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100vw;
+}
+
+.Home-Subheader-Box h5 {
+  font-family: $mainFont;
+  font-weight: 300;
+  font-size: 1.5rem;
+  color: $whiteFont;
+  padding: 0;
+  margin: 0 40px;
+  cursor: default;
+}
+
+.Home-Lower-Box {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100vw;
+  height: 50vh;
+}
+
+.home-transition-element {
+  @include landingButtonGradient;
+  margin-top: 80px;
+}
+
+.home-transition-element:hover {
+  opacity: 0.0;
+}
+
+.home-main-button {
+  @include landingButtonSolid;
+  margin-top: 80px;
+}
+
+////////////////////////////////////////////////////  MEDIA QUERIES  ////////////////////////////////////////////////////
+
+@media only screen and (max-width: 1050px) {
+  .Home-Header-Box h1 {
+    font-weight: 500;
+    font-size: 6rem;
+  }
+
+  .Home-Subheader-Box h5 {
+    font-weight: 300;
+    font-size: 1rem;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 745px) {
+  .Home-Header-Box h1 {
+    font-weight: 500;
+    font-size: 4rem;
+  }
+
+  .Home-Subheader-Box h5 {
+    font-weight: 300;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .home-transition-element {
+    margin-top: 40px;
+    font-weight: 600;
+    font-size: 1.5rem;
+    padding: 4px 20px;
+  }
+
+  .home-main-button {
+    margin-top: 40px;
+    font-weight: 600;
+    font-size: 1.5rem;
+    padding: 4px 20px;
+  }
+
+}
+
+
+@media only screen and (max-width: 450px) {
+  .Home-Header-Box h1 {
+    font-weight: 500;
+    font-size: 2rem;
+  }
+
+  .Home-Subheader-Box h5 {
+    font-weight: 300;
+    font-size: 0.7rem;
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  .home-transition-element {
+    margin-top: 70px;
+    font-weight: 400;
+    font-size: 1rem;
+    padding: 4px 20px;
+  }
+
+  .home-main-button {
+    margin-top: 70px;
+    font-weight: 400;
+    font-size: 1rem;
+    padding: 4px 20px;
+  }
+
+}

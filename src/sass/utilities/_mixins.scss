@@ -1,0 +1,42 @@
+@mixin landingPageButton() {
+  font-family: $mainFont;
+  font-weight: 700;
+  font-size: 2rem;
+  color: $black;
+  background: linear-gradient(to right, $mainLight 0%, $mainDark 100%);
+  padding: 5px 30px;
+  margin: 0 20px;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+}
+
+@mixin landingButtonGradient() {
+  font-family: $mainFont;
+  font-weight: 700;
+  font-size: 2rem;
+  color: $black;
+  padding: 5px 30px;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  position: absolute;
+  background: linear-gradient(to right, $mainLight 0%, $mainDark 100%);
+  transition: 0.5s;
+  opacity: 1;
+  z-index: 4;
+}
+
+@mixin landingButtonSolid() {
+  font-family: $mainFont;
+  font-weight: 700;
+  font-size: 2rem;
+  color: $black;
+  padding: 5px 30px;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  background-color: #37f8ff;
+  transition: 0.5s;
+  opacity: 1;
+}
