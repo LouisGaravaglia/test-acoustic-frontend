@@ -17,7 +17,6 @@
   overflow-x: hidden;
 }
 
-
 .Chatty-Left-Filler {
   flex: 0 1 30vw;
   // border: solid 2px aqua
@@ -64,6 +63,14 @@
 
 .Chatty-Message-Black {
   color: rgba(0,0,0,0.0);
+}
+
+.Chatty-Loading-Spinner {
+  position: absolute;
+  z-index: 2;
+  left:50%;
+  top:50%;
+  transform: translate(-50%, -50%);
 }
 
 @media only screen and (max-width: 600px) {

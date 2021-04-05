@@ -1,6 +1,5 @@
 import React from 'react';
 import Routes from "./Components/Routes"
-// import './App.css';
 import "./sass/App.scss";
 import {MessagesProvider}from "./Components/ChatBot/MessagesProvider"
 import Navbar from "./Components/Navbar";

@@ -17,11 +17,12 @@ interface IButtonObj {
 function useButtons() {
   const SPOTIFY_AUTH_URL = 'https://acoustic-backend.herokuapp.com/authorizeSpotify?'
   // const SPOTIFY_AUTH_URL = process.env.REACT_APP_SPOTIFY_AUTH_ROUTE || 'http://127.0.0.1:8000/authorizeSpotify?';
-  const {addContentToBeDisplayed, incrementMessagingPhase, stateKey} = useContext(MessagesContext);
+  const {addContentToBeDisplayed, incrementMessagingPhase, stateKey, displayLoadingSpinner} = useContext(MessagesContext);
 
 ////////////////////////////////////////////////////  ON CLICK FUNCTIONS FOR BUTTONS ////////////////////////////////////////////////////
 
   function authenticateSpotify(param: string) {
+    displayLoadingSpinner();
     window.location.href = SPOTIFY_AUTH_URL + param;
     return null;
   }

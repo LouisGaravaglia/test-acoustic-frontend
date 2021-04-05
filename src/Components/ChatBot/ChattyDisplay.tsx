@@ -1,4 +1,4 @@
-import React, {useContext, useRef, useEffect} from "react";
+import React, {useContext, useRef} from "react";
 import {MessagesContext} from "./MessagesProvider";
 import MessageWrapper from "./MessageWrapper";
 import ButtonWrapper from "./ButtonWrapper";
@@ -7,15 +7,16 @@ import useMessages from "./helpers/useMessages";
 import useButtons from "./helpers/useButtons";
 import {useHistory} from "react-router-dom";
 import Backend from "../../Backend";
-// import useWindowDimensions from "../../Hooks/useWindowDimensions";
 import useViewport from "../../Hooks/useViewport";
+import UseAnimations from "react-useanimations";
+import loading from 'react-useanimations/lib/loading'
 
 //HOLDS ALL THE MESSAGE WRAPPER AND BUTTON WRAPPER COMPONENTS NEEDED TO BUILD THE 
 //CONVERSATION CHATTY WILL HAVE WITH OUR USER
 function ChattyDisplay(): JSX.Element {
   const scrollToBottomRef = useRef<any | null>();
   const history = useHistory();
-  const {user, chattyMessagesPhase, displayedContent} = useContext(MessagesContext);
+  const {user, chattyMessagesPhase, displayedContent, loadingSpinner} = useContext(MessagesContext);
   const {viewportHeight}  = useViewport();
   const {initialButtons, proceedWithoutSpotifyButtons, tryAgainButtons} = useButtons();
   const {
@@ -73,17 +74,25 @@ function ChattyDisplay(): JSX.Element {
 ///////////////////////////////////////////////  RETURN JSX  /////////////////////////////////////////////////
 
   return (
+    <>
+{loadingSpinner && <UseAnimations className="Chatty-Loading-Spinner" animation={loading} size={200} style={{ padding: 100 }} strokeColor="#37f8ff" />}
     <div className="Chatty-Container" >
+
       <div className="Chatty" style={{maxHeight: viewportHeight - 200}}>
+        
         <div className="Chatty-Left-Filler"></div>
+
         <div className="Chatty-Display">
+
           {displayedContent.map((item, index) => <div key={index}>{item}</div>)}
           {chattyScript[chattyMessagesPhase]}
+
           <div className="Chatty-MSG-Bottom-Filler" ref={scrollToBottomRef}></div>
         </div>
         <div className="Chatty-Right-Filler"></div>
       </div>
     </div>
+    </>
   );
 };
 

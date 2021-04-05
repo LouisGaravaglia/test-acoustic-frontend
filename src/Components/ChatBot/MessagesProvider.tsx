@@ -14,11 +14,13 @@ interface IState {
     chattyMessagesPhase: number
     displayedContent: JSX.Element[]
     stateKey: string
+    loadingSpinner: boolean
     incrementMessagingPhase: (payload: number) => void
     resetPhases: () => void
     updateUser: (key: string, value: string) => void
     addContentToBeDisplayed: (payload: JSX.Element[]) => void
     updateStakeKey: (payload: string) => void
+    displayLoadingSpinner: () => void
 };
 
 //VARIABLE TYPES FOR THE ACTION OF OUR REDUCER FUNCTION
@@ -43,11 +45,13 @@ const initialState: IState = {
   chattyMessagesPhase: 0,
   displayedContent: [],
   stateKey: "",
+  loadingSpinner: false,
   incrementMessagingPhase: () => {},
   resetPhases: () => {},
   updateUser: () => {},
   addContentToBeDisplayed: () => {},
-  updateStakeKey: () => {}
+  updateStakeKey: () => {},
+  displayLoadingSpinner: () => {}
 };
 
 //CREATE CONTEXT TO BE ABLE TO PASS THROUGH TO OUR CHATTY COMPONENT MORE EFFICIENTLY THAN PROPS
@@ -58,7 +62,8 @@ const actions = {
   UPDATE_MESSAGING_PHASE: "UPDATE_MESSAGING_PHASE",
   RESET: "RESET",
   DISPLAY_CONTENT: "DISPLAY_CONTENT",
-  UPDATE_STATEKEY: "UPDATE_STATEKEY"
+  UPDATE_STATEKEY: "UPDATE_STATEKEY",
+  DISPLAY_LOADING_SPINNER: "DISPLAY_LOADING_SPINNER"
 };
 
 //OUR REDUCER FUNCTION TO HANDLE ANY FUNCTIONS THAT EFFECT OUR STATE
@@ -72,11 +77,14 @@ const reducer = (state: IState, action: IAction): IState => {
       return {...state, displayedContent: [...state.displayedContent, ...action.payload]}
     case actions.UPDATE_STATEKEY:
       return {...state, stateKey: action.payload}
+    case actions.DISPLAY_LOADING_SPINNER:
+      return {...state, loadingSpinner: true}
     case actions.RESET:
       return {
         ...state,
         chattyMessagesPhase: 0,
         displayedContent: [],
+        loadingSpinner: false,
         user: {
           first_name: "",
           last_name: "",
@@ -102,6 +110,7 @@ export const MessagesProvider: React.FC = (props: any): JSX.Element => {
     chattyMessagesPhase: state.chattyMessagesPhase,
     displayedContent: state.displayedContent,
     stateKey: state.stateKey,
+    loadingSpinner: state.loadingSpinner,
     incrementMessagingPhase: (payload: number) => {
       dispatch({type: actions.UPDATE_MESSAGING_PHASE, payload})
     },
@@ -116,6 +125,9 @@ export const MessagesProvider: React.FC = (props: any): JSX.Element => {
     },
     updateStakeKey: (payload: string) => {
       dispatch({type: actions.UPDATE_STATEKEY, payload})
+    },
+    displayLoadingSpinner: () => {
+      dispatch({type: actions.DISPLAY_LOADING_SPINNER})
     }
   };
 
