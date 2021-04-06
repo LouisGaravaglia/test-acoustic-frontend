@@ -7,10 +7,11 @@ import UseAnimations from "react-useanimations";
 import loading from 'react-useanimations/lib/loading'
 
 function Chatty(): JSX.Element {
-  const {updateStakeKey} = useContext(MessagesContext);
+  const {updateStakeKey, displayedContent} = useContext(MessagesContext);
   const {priorToFirstButton, priorToSecondButtton, priorToFirstButtonSecondAttempt, priorToSecondButtonSecondAttempt} = usePriorContent();
   const {getAccessTokens, updateChattyToDisplayWhereUserLastLeftOff} = useSpotifyAuth();
   const [priorContentLoaded, setPriorContentLoaded] = useState(false);
+  const [firstLoad, setFirstLoad] = useState(false);
   const search = window.location.search;
   const params = new URLSearchParams(search);
   const code: string | null  = params.get('code');
@@ -27,6 +28,9 @@ function Chatty(): JSX.Element {
     const validStateKeys = ["spotify_auth_first_button", "spotify_auth_second_button", "spotify_auth_first_button_second_attempt", "spotify_auth_second_button_second_attempt"]
     if (validStateKeys.indexOf(stateKey === null ? "noStateKey" : stateKey) === -1) {
       setPriorContentLoaded(true);
+      setFirstLoad(true);
+      console.log("should of setFirstLoad to true");
+      
       //i'll probably want to add some kind of message saying ther was an error and then try again
       return;
     }
@@ -84,7 +88,7 @@ function Chatty(): JSX.Element {
   return (
     <>
       {/* {!priorContentLoaded && <UseAnimations className="Chatty-Loading-Spinner" animation={loading} size={200} style={{ padding: 100 }} strokeColor="#37f8ff" />} */}
-      {priorContentLoaded && <ChattyDisplay priorContentLoaded={priorContentLoaded}/>}
+      {(firstLoad || displayedContent.length) && <ChattyDisplay priorContentLoaded={priorContentLoaded}/>}
     </>
   );
 };
