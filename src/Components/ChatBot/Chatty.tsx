@@ -68,12 +68,11 @@ function Chatty(): JSX.Element {
 ////////////////////////////////////////////////////  RUN DISPLAYPREVIOUSMESSAGEHISTORY ON COMPONENT MOUNT  ////////////////////////////////////////////////////  
 
   useEffect(() => {
-    if (code) {
+    if (stateKey) {
       setAuthLogic(true);
       displayPreviousMessageHistory()
     } else {
       setFirstLoad(true);
-      console.log("should of setFirstLoad to true");
     }
     //THE BELOW COMMENT IS TO DISREGARD TYPESCRIPT ERROR FOR NOT INCLUDING incrementMessagingPhase AS DEPENDECNY, BECAUSE IF WE DID IT WOULD THROW AND INFINITE CALLBACK LOOP
     // eslint-disable-next-line
@@ -81,7 +80,7 @@ function Chatty(): JSX.Element {
 
   return (
     <>
-      {(authLogic && !displayedContent.length)&& <UseAnimations className="Chatty-Loading-Spinner" animation={loading} size={200} style={{ padding: 100 }} strokeColor="#37f8ff" />}
+      {(authLogic && !displayedContent.length) && <UseAnimations className="Chatty-Loading-Spinner" animation={loading} size={200} style={{ padding: 100 }} strokeColor="#37f8ff" />}
       {(firstLoad || displayedContent.length) && <ChattyDisplay/>}
     </>
   );
