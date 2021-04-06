@@ -67,7 +67,7 @@
 
 .Chatty-Loading-Spinner {
   position: absolute;
-  z-index: 2;
+  z-index: 5;
   left:50%;
   top:50%;
   transform: translate(-50%, -50%);
@@ -99,7 +99,7 @@
 
 .Chatty-Button-Main {
   width: 100%;
-  z-index: 5;
+  // z-index: 5;
 }
 
 .Chatty-Button-Container {

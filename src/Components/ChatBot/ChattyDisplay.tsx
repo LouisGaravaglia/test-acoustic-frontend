@@ -11,13 +11,9 @@ import useViewport from "../../Hooks/useViewport";
 import UseAnimations from "react-useanimations";
 import loading from 'react-useanimations/lib/loading'
 
-interface Props {
-  priorContentLoaded: boolean
-};
-
 //HOLDS ALL THE MESSAGE WRAPPER AND BUTTON WRAPPER COMPONENTS NEEDED TO BUILD THE 
 //CONVERSATION CHATTY WILL HAVE WITH OUR USER
-function ChattyDisplay({priorContentLoaded}: Props): JSX.Element {
+function ChattyDisplay(): JSX.Element {
   const scrollToBottomRef = useRef<any | null>();
   const history = useHistory();
   const {user, chattyMessagesPhase, displayedContent, loadingSpinner} = useContext(MessagesContext);
@@ -85,7 +81,7 @@ function ChattyDisplay({priorContentLoaded}: Props): JSX.Element {
         <div className="Chatty-Left-Filler"></div>
         <div className="Chatty-Display">
           {displayedContent.map((item, index) => <div key={index}>{item}</div>)}
-          {priorContentLoaded && chattyScript[chattyMessagesPhase]}
+          {chattyScript[chattyMessagesPhase]}
           <div className="Chatty-MSG-Bottom-Filler" ref={scrollToBottomRef}></div>
         </div>
         <div className="Chatty-Right-Filler"></div>
