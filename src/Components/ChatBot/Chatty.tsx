@@ -3,6 +3,8 @@ import ChattyDisplay from "./ChattyDisplay";
 import {MessagesContext} from "./MessagesProvider";
 import usePriorContent from "./helpers/usePriorContent";
 import useSpotifyAuth from "./helpers/useSpotifyAuth";
+import UseAnimations from "react-useanimations";
+import loading from 'react-useanimations/lib/loading'
 
 function Chatty(): JSX.Element {
   const {updateStakeKey} = useContext(MessagesContext);
@@ -18,7 +20,7 @@ function Chatty(): JSX.Element {
   console.log("stateKey: ", stateKey);
   console.log("error: ", authorizationError);
 
-  async function displayPreviousMessageHistory() {    
+  async function displayPreviousMessageHistory() {
 
 ////////////////////////////////////////////////////  CHECKING FOR CROSS SITE ATTACKS BY CONFIRMING STATEKEY IS VALID ////////////////////////////////////////////////////  
 
@@ -81,7 +83,8 @@ function Chatty(): JSX.Element {
 
   return (
     <>
-      <ChattyDisplay priorContentLoaded={priorContentLoaded}/>
+      {/* {!priorContentLoaded && <UseAnimations className="Chatty-Loading-Spinner" animation={loading} size={200} style={{ padding: 100 }} strokeColor="#37f8ff" />} */}
+      {priorContentLoaded && <ChattyDisplay priorContentLoaded={priorContentLoaded}/>}
     </>
   );
 };
