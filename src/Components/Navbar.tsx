@@ -12,7 +12,7 @@ const Navbar: React.FC = () => {
     <>
       <div className="Navbar-Container-Left">
         <div className="Navbar-Search-Box">
-            <NavLink  className="Navbar-Logo" exact to="/">A.IO</NavLink>
+            <NavLink  className="Navbar-Logo" exact to="/"><span className="Navbar-Logo-Circle">A.IO</span></NavLink>
         </div>
       </div>
       <div className="Navbar-Container-Right">

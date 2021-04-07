@@ -30,7 +30,19 @@
     padding: 0;
   }
 
-  .Navbar-Logo:hover {
+  .Navbar-Logo-Circle {
+    display: block;
+    height: 60px;
+    width: 60px;
+    line-height: 60px;
+    text-align: center;
+    border: 1px solid #fff;
+    -moz-border-radius: 30px;
+    border-radius: 30px; 
+  }
+
+  .Navbar-Logo-Circle:hover {
+    border: 1px solid $mainLight; 
     color: $mainLight;
   }
 
@@ -41,6 +53,15 @@
     color: $whiteFont;
     margin: 0;
     padding: 0;
+    //THE STYLES BELOW ARE TO CREATE A INVISIBLE BORDER TO MATCH ALIGNMENT WITH THE LOGO
+    display: block;
+    height: 60px;
+    width: 60px;
+    line-height: 60px;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,0.0);
+    -moz-border-radius: 30px;
+    border-radius: 30px;
   }
 
   .Navbar-Login:hover {
