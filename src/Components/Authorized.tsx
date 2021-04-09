@@ -5,8 +5,8 @@ const Login: React.FC = () => {
     let params = new URLSearchParams(search);
     let code = params.get('code');
     let state = params.get('state');
-    console.log("code: ", code);
-    console.log("state: ", state);
+    // console.log("code: ", code);
+    // console.log("state: ", state);
 
 
 ////////////////////////////////////////////////////  RETURN  ////////////////////////////////////////////////////
