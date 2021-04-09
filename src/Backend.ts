@@ -81,15 +81,12 @@ class Backend {
     };
 
     static async registerUser(data: Object) {
-        console.log("I'm in regsiterUSer");
-        console.log("this is data: ", data);
         let res = await this.request("registerUser/", {data}, "post");
-        console.log("This is res: ", res);
+        // console.log("This is res: ", res);
         return res.data.response
     };
 
     static async requestAccessTokens(code: string | null) {
-        console.log("I'm in requestAccessTokens/");
         const res = await this.request("requestAccessTokens/", {code});
         if (res.data.error !== null) {
             //HANDLE ERROR
