@@ -17,9 +17,6 @@ function Chatty(): JSX.Element {
   const code: string | null  = params.get('code');
   const stateKey: string | null = params.get('state');
   const authorizationError: string | null = params.get('error');
-  // console.log("code: ", code);
-  // console.log("stateKey: ", stateKey);
-  // console.log("error: ", authorizationError);
 
   async function displayPreviousMessageHistory() {
 
