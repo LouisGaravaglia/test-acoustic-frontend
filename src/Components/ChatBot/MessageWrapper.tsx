@@ -4,7 +4,6 @@ import {MessagesContext} from './MessagesProvider';
 import DisplayedMessage from './DisplayedMessage';
 
 import DisplayedMessagesTest from './DisplayedMessagesTest';
-import CreateMessageTest from './CreateMessageTest';
 
 //DEFINING THE CONTRACT FOR THE VARIABLE TYPES THAT WILL BE PASSED IN VIA PROPS
 interface Props {
