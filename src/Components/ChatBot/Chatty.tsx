@@ -4,7 +4,7 @@ import {MessagesContext} from "./MessagesProvider";
 import usePriorContent from "./helpers/usePriorContent";
 import useSpotifyAuth from "./helpers/useSpotifyAuth";
 import UseAnimations from "react-useanimations";
-import loading from 'react-useanimations/lib/loading'
+import loading from 'react-useanimations/lib/loading';
 
 function Chatty(): JSX.Element {
   const {updateStakeKey, displayedContent} = useContext(MessagesContext);
@@ -62,12 +62,14 @@ function Chatty(): JSX.Element {
     }
   };
 
-////////////////////////////////////////////////////  RUN DISPLAYPREVIOUSMESSAGEHISTORY ON COMPONENT MOUNT  ////////////////////////////////////////////////////  
+////////////////////////////////////////////////////  RUN DISPLAYPREVIOUSMESSAGEHISTORY ON COMPONENT MOUNT CONDITIONALY  ////////////////////////////////////////////////////
 
   useEffect(() => {
+    //IF STATEKEY IS TRUTHY THAN THE USER HAS ATTEMPTED TO AUTHENTICATE WITH SPOTIFY AND WE NEED TO DISPLAY WHERE HE/SHE LEFT OFF IN THE CHATTY CONVERSATION
     if (stateKey) {
       setAuthLogic(true);
       displayPreviousMessageHistory()
+    //IF STATEKEY IS NULL THEN THE USER HASN'T ATTEMPTED TO AUTHENTICATE WITH SPOTIFY
     } else {
       setFirstLoad(true);
     }
