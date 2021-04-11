@@ -1,7 +1,10 @@
-import React, {useState, useRef, useEffect, useContext} from 'react';
+import React, {useState, useRef, useEffect, useContext, useMemo} from 'react';
 import useInterval from '../../Hooks/useInterval';
 import {MessagesContext} from './MessagesProvider';
 import DisplayedMessage from './DisplayedMessage';
+
+import DisplayedMessagesTest from './DisplayedMessagesTest';
+import CreateMessageTest from './CreateMessageTest';
 
 //DEFINING THE CONTRACT FOR THE VARIABLE TYPES THAT WILL BE PASSED IN VIA PROPS
 interface Props {
@@ -92,7 +95,7 @@ function MessageWrapper({messages, finishedFunction, addToDisplayedContent = tru
     if (count >= messages.length && count !== 0) {
       clearInterval(useIntervalId.current);
       setCount(0);
-      setCharLength(0);  
+      setCharLength(0);
       setFinishedMessages(true);
       if (finishedFunction) finishedFunction(true);
       if (addToDisplayedContent) {
@@ -104,6 +107,7 @@ function MessageWrapper({messages, finishedFunction, addToDisplayedContent = tru
 
   //UPDATING ONLASTMESSAGE TO BE TRUE TO PREVENT TYPING CURSOR TO APPEAR AFTER THE LAST MESSAGE
   useEffect(() => {
+
     const preventTypingCursor = () => {
       setOnLastMessage(true);
     };
@@ -124,11 +128,43 @@ function MessageWrapper({messages, finishedFunction, addToDisplayedContent = tru
     )
   };
 
+  function DisplayedMessagesTest(messages: string[]) {
+    console.log("running DisplayedMessage");
+    return (
+      <>
+        {messages.map((item, index) => <div key={index} className='Chatty-Message-Box'><p className='Chatty-Message'>{item}</p></div>)}
+      </>
+    );
+  };
+
+  const memoizedDisplayedMessages = useMemo(() => DisplayedMessagesTest(displayedMessages), [displayedMessages])
+
+
+  // function CreateMessageTest(messages: string) {
+  //   console.log("createMessageTest");
+    
+  
+  //   return (
+  //     <>
+  //       <div className='Chatty-Message-Box'><p className='Chatty-Message'>{messages}</p></div>
+  //     </>
+  //   );
+  // };
+
+  // const memoizedCreateMessage = useMemo(() => CreateMessageTest(createMessage), [createMessage])
+
+  
+
   // RETURNING JSX
   return (
     <div className='Chatty-Message-Container'>
-      {displayedMessages && displayedMessages.map((item, index) => <div key={index} className='Chatty-Message-Box'><p className='Chatty-Message'>{item}</p></div>)}
+      {/* {displayedMessages && displayedMessages.map((item, index) => <div key={index} className='Chatty-Message-Box'><p className='Chatty-Message'>{item}</p></div>)} */}
+      {/* {displayedMessages && <DisplayedMessagesTest messages={displayedMessages}/>} */}
+      {displayedMessages && memoizedDisplayedMessages}
+      {/* {displayedMessages && DisplayedMessagesTest(displayedMessages)} */}
       {createMessage && <div className='Chatty-Message-Box'><p className='Chatty-Message'>{createMessage}</p></div>}
+      {/* {createMessage && <CreateMessageTest messages={createMessage} />} */}
+      {/* {createMessage && memoizedCreateMessage} */}
       {typingCursorJSX}
     </div>
   );
