@@ -32,10 +32,10 @@ function MessageWrapper({messages, finishedFunction, addToDisplayedContent = tru
 
   //SCROLL DOWN TO END OF MESSAGE TYPING TO KEEP MESSAGES IN VIEWPORT WHILE CHATTY IS TYPING
   useEffect(() => {
-    const scrollToBottom = () => {
+    function scrollingToBottom() {
       scrollToBottomRef.current.scrollIntoView({behavior: 'smooth'});
     };
-    if (count < messages.length && !finishedMessages) scrollToBottom();
+    if (count < messages.length && !finishedMessages) scrollingToBottom();
   }, [count, finishedMessages, messages]);
 
   //FUNCTION TO PASS TO OUR USEINTERVAL HOOK TO APPEND A LETTER AT A TIME TO CREATEMESSAGE
