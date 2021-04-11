@@ -12,19 +12,29 @@ function Chatty(): JSX.Element {
   const [authLogic, setAuthLogic] = useState(false);
   const search = window.location.search;
   const params = new URLSearchParams(search);
-  const code: string | null  = params.get('code');
+  // const code: string | null  = params.get('code');
   const stateKey: string | null = params.get('state');
   const authorizationError: string | null = params.get('error');
 
   function displayPreviousMessageHistory() {
-    if (isConfirmedCrossSiteAttack(stateKey)) return;
+    if (isConfirmedCrossSiteAttack()) return;
 
     if (authorizationError)  {
-      handleSpotifyAuthenticationError(stateKey)
+      handleSpotifyAuthenticationError()
     } else {
-      retrieveSpotifyAccessTokens(stateKey, code);
+      retrieveSpotifyAccessTokens();
     }
   }
+
+  // function displayPreviousMessageHistory() {
+  //   if (isConfirmedCrossSiteAttack(stateKey)) return;
+
+  //   if (authorizationError)  {
+  //     handleSpotifyAuthenticationError(stateKey)
+  //   } else {
+  //     retrieveSpotifyAccessTokens(stateKey, code);
+  //   }
+  // }
 ////////////////////////////////////////////////////  RUN DISPLAYPREVIOUSMESSAGEHISTORY ON COMPONENT MOUNT CONDITIONALY  ////////////////////////////////////////////////////
 
   useEffect(() => {
