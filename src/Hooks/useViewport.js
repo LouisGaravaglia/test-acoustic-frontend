@@ -1,4 +1,4 @@
-import {useState, useEffect} from "react";
+import {useState, useEffect} from 'react';
 
 /**
 * Hook to constantly monitor viewport dimensions so that I can change make any
@@ -15,8 +15,8 @@ const useViewport = () => {
       setViewportHeight(window.innerHeight);
     };
 
-    window.addEventListener("resize", handleWindowResize);
-    return () => window.removeEventListener("resize", handleWindowResize);
+    window.addEventListener('resize', handleWindowResize);
+    return () => window.removeEventListener('resize', handleWindowResize);
   }, []);
 
   return {viewportWidth, viewportHeight};

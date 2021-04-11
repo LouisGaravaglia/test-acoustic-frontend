@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 //DEFINING THE CONTRACT FOR OUR CODE'S VARIABLE TYPES FOR THE CREATE CONTEXT FUNCTION
 interface IState {
@@ -34,17 +34,17 @@ interface IAction {
 //VARIABLE TYPES FOR THE STATE OF OUR REDUCER FUNCTION
 const initialState: IState = {
   user: {
-    first_name: "",
-    last_name: "",
-    email: "",
-    username: "",
-    password: "",
-    access_token: "",
-    refresh_token: ""
+    first_name: '',
+    last_name: '',
+    email: '',
+    username: '',
+    password: '',
+    access_token: '',
+    refresh_token: ''
   },
   chattyMessagesPhase: 0,
   displayedContent: [],
-  stateKey: "",
+  stateKey: '',
   loadingSpinner: false,
   incrementMessagingPhase: () => {},
   resetPhases: () => {},
@@ -58,19 +58,19 @@ const initialState: IState = {
 export const MessagesContext = React.createContext<IState>(initialState);
 
 const actions = {
-  UPDATE_USER: "UPDATE_USER",
-  UPDATE_MESSAGING_PHASE: "UPDATE_MESSAGING_PHASE",
-  RESET: "RESET",
-  DISPLAY_CONTENT: "DISPLAY_CONTENT",
-  UPDATE_STATEKEY: "UPDATE_STATEKEY",
-  DISPLAY_LOADING_SPINNER: "DISPLAY_LOADING_SPINNER"
+  UPDATE_USER: 'UPDATE_USER',
+  UPDATE_MESSAGING_PHASE: 'UPDATE_MESSAGING_PHASE',
+  RESET: 'RESET',
+  DISPLAY_CONTENT: 'DISPLAY_CONTENT',
+  UPDATE_STATEKEY: 'UPDATE_STATEKEY',
+  DISPLAY_LOADING_SPINNER: 'DISPLAY_LOADING_SPINNER'
 };
 
 //OUR REDUCER FUNCTION TO HANDLE ANY FUNCTIONS THAT EFFECT OUR STATE
 const reducer = (state: IState, action: IAction): IState => {
   switch(action.type) {
     case actions.UPDATE_USER:
-      return {...state, user: {...state.user, [action.key as keyof IState["user"]]: action.value}}
+      return {...state, user: {...state.user, [action.key as keyof IState['user']]: action.value}}
     case actions.UPDATE_MESSAGING_PHASE:
       return {...state, chattyMessagesPhase: state.chattyMessagesPhase + action.payload}
     case actions.DISPLAY_CONTENT:
@@ -86,13 +86,13 @@ const reducer = (state: IState, action: IAction): IState => {
         displayedContent: [],
         loadingSpinner: false,
         user: {
-          first_name: "",
-          last_name: "",
-          email: "",
-          username: "",
-          password: "",
-          access_token: "",
-          refresh_token: ""
+          first_name: '',
+          last_name: '',
+          email: '',
+          username: '',
+          password: '',
+          access_token: '',
+          refresh_token: ''
         }
       };
     default:
