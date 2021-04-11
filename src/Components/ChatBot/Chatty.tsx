@@ -15,33 +15,32 @@ function Chatty(): JSX.Element {
   const stateKey: string | null = params.get('state');
   const authorizationError: string | null = params.get('error');
 
-////////////////////////////////////////////////////  LOGIC TO HANDLE AUTHENTICATION AND DISPLAY APPROPRIATE PREVIOUS CHATTY MESSAGES  ////////////////////////////////////////////////////
-
-  function displayPreviousMessageHistory() {
-    if (isConfirmedCrossSiteAttack()) return;
-
-    if (authorizationError) {
-      handleSpotifyAuthenticationError()
-    } else {
-      retrieveSpotifyAccessTokens();
-    }
-  }
-
 ////////////////////////////////////////////////////  RUN DISPLAYPREVIOUSMESSAGEHISTORY ON COMPONENT MOUNT CONDITIONALY  ////////////////////////////////////////////////////
 
   useEffect(() => {
+    //HANDLE AUTHENTICATION AND DISPLAY APPROPRIATE PREVIOUS CHATTY MESSAGES
+    function displayPreviousMessageHistory() {
+      if (isConfirmedCrossSiteAttack()) return;
+  
+      if (authorizationError) {
+        handleSpotifyAuthenticationError()
+      } else {
+        retrieveSpotifyAccessTokens();
+      }
+    }
     //IF STATEKEY IS TRUTHY THAN THE USER HAS ATTEMPTED TO AUTHENTICATE WITH SPOTIFY 
     //AND WE NEED TO DISPLAY WHERE HE/SHE LEFT OFF IN THE CHATTY CONVERSATION
     if (stateKey) {
       setAuthLogic(true);
       displayPreviousMessageHistory()
     //IF STATEKEY IS NULL THEN THE USER HASN'T ATTEMPTED TO AUTHENTICATE WITH SPOTIFY
+    //INITIATE CHATTY CONVERSATION AT THE BEGINNING
     } else {
       setFirstLoad(true);
     }
   }, [stateKey])
 
-////////////////////////////////////////////////////  RENDER LOADING SPINNER OR CHATTY  ////////////////////////////////////////////////////
+////////////////////////////////////////////////////  RENDER LOADING SPINNER OR CHATTY DISPLAY  ////////////////////////////////////////////////////
 
   return (
     <>
