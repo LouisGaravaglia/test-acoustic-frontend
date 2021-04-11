@@ -12,33 +12,26 @@ function Chatty(): JSX.Element {
   const [authLogic, setAuthLogic] = useState(false);
   const search = window.location.search;
   const params = new URLSearchParams(search);
-  const code: string | null  = params.get('code');
   const stateKey: string | null = params.get('state');
   const authorizationError: string | null = params.get('error');
 
-  // function displayPreviousMessageHistory() {
-  //   if (isConfirmedCrossSiteAttack()) return;
-
-  //   if (authorizationError)  {
-  //     handleSpotifyAuthenticationError()
-  //   } else {
-  //     retrieveSpotifyAccessTokens();
-  //   }
-  // }
+////////////////////////////////////////////////////  LOGIC TO HANDLE AUTHENTICATION AND DISPLAY APPROPRIATE PREVIOUS CHATTY MESSAGES  ////////////////////////////////////////////////////
 
   function displayPreviousMessageHistory() {
-    if (isConfirmedCrossSiteAttack(stateKey)) return;
+    if (isConfirmedCrossSiteAttack()) return;
 
-    if (authorizationError)  {
-      handleSpotifyAuthenticationError(stateKey)
+    if (authorizationError) {
+      handleSpotifyAuthenticationError()
     } else {
-      retrieveSpotifyAccessTokens(stateKey, code);
+      retrieveSpotifyAccessTokens();
     }
   }
+
 ////////////////////////////////////////////////////  RUN DISPLAYPREVIOUSMESSAGEHISTORY ON COMPONENT MOUNT CONDITIONALY  ////////////////////////////////////////////////////
 
   useEffect(() => {
-    //IF STATEKEY IS TRUTHY THAN THE USER HAS ATTEMPTED TO AUTHENTICATE WITH SPOTIFY AND WE NEED TO DISPLAY WHERE HE/SHE LEFT OFF IN THE CHATTY CONVERSATION
+    //IF STATEKEY IS TRUTHY THAN THE USER HAS ATTEMPTED TO AUTHENTICATE WITH SPOTIFY 
+    //AND WE NEED TO DISPLAY WHERE HE/SHE LEFT OFF IN THE CHATTY CONVERSATION
     if (stateKey) {
       setAuthLogic(true);
       displayPreviousMessageHistory()
@@ -46,9 +39,9 @@ function Chatty(): JSX.Element {
     } else {
       setFirstLoad(true);
     }
-    //THE BELOW COMMENT IS TO DISREGARD TYPESCRIPT ERROR FOR NOT INCLUDING incrementMessagingPhase AS DEPENDECNY, BECAUSE IF WE DID IT WOULD THROW AND INFINITE CALLBACK LOOP
-    // eslint-disable-next-line
-  }, [stateKey, authorizationError])
+  }, [stateKey])
+
+////////////////////////////////////////////////////  RENDER LOADING SPINNER OR CHATTY  ////////////////////////////////////////////////////
 
   return (
     <>
