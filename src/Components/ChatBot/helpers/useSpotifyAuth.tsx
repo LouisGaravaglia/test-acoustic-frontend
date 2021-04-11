@@ -23,7 +23,7 @@ interface TokenObj {
 }
 
 function useSpotifyAuth() {
-  const {updateUser, incrementMessagingPhase, addContentToBeDisplayed, updateStakeKey, displayedContent} = useContext(MessagesContext);
+  const {updateUser, incrementMessagingPhase, addContentToBeDisplayed, updateStakeKey} = useContext(MessagesContext);
   const {priorToFirstButton, priorToSecondButtton, priorToFirstButtonSecondAttempt, priorToSecondButtonSecondAttempt} = usePriorContent();
   const search = window.location.search;
   const params = new URLSearchParams(search);

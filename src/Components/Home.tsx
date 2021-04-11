@@ -1,7 +1,8 @@
 import React, {useEffect, useContext} from 'react';
 import {useHistory} from 'react-router-dom';
 import {MessagesContext} from './ChatBot/MessagesProvider';
-
+   //eslint-disable-next-line react-hooks/exhaustive-deps
+   
 const Home: React.FC = () => {
   const {resetPhases} = useContext(MessagesContext);
   const history = useHistory();
@@ -13,7 +14,7 @@ const Home: React.FC = () => {
     }
     resetRegisterPhases();
     //THE BELOW COMMENT IS TO DISREGARD TYPESCRIPT ERROR FOR NOT INCLUDING resetPhases AS DEPENDECNY, BECAUSE IF WE DID IT WOULD THROW AND INFINITE CALLBACK LOOP
-    //eslint-disable-next-line react-hooks/exhaustive-deps
+ 
   }, []);
 
   function redirectToChatty() {
