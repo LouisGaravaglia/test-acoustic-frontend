@@ -15,7 +15,7 @@ interface Props {
 
 //OUR COMPONENT THAT ACCEPTS THE APPROPRIATE MESSAGES NEEDED FOR OUR CHATTY RESPONSE AND
 //APPENDS THEM TO THE DOM ONE LETTER AT A TIME
-const MessageWrapper = React.memo(({messages, finishedFunction, addToDisplayedContent = true, incrementMessageValue = 1}: Props) => {
+function MessageWrapper({messages, finishedFunction, addToDisplayedContent = true, incrementMessageValue = 1}: Props): JSX.Element {
   const [displayedMessages, setDisplayedMessages] = useState<Array<string>>([]);
   const [createMessage, setCreateMessage] = useState<string>('');
   const [count, setCount] = useState<number>(0);
@@ -32,9 +32,6 @@ const MessageWrapper = React.memo(({messages, finishedFunction, addToDisplayedCo
   const typingCursor: string = ' \u{258C}';
   let typingCursorJSX: JSX.Element;
 
-  console.log("charLength", charLength.current);
-  
-
   //SCROLL DOWN TO END OF MESSAGE TYPING TO KEEP MESSAGES IN VIEWPORT WHILE CHATTY IS TYPING
   useEffect(() => {
     function scrollingToBottom() {
@@ -47,7 +44,6 @@ const MessageWrapper = React.memo(({messages, finishedFunction, addToDisplayedCo
   //IN ORDER TO CREATE THE LOOK AS IF OUR CHAT BOT WAS TYPING
   function appendMessages() {
     messageCharLength.current = messages[count].length;
-    console.log("MessageCharLegnth", messageCharLength.current);
     const msgWithNewLetterAdded: string = messages[count].substring(charLength.current, charLength.current + 1);
     const msgWithRemovedCursor = createMessage.slice(0, -2);
     setCreateMessage(msgWithRemovedCursor + msgWithNewLetterAdded + typingCursor);
@@ -131,8 +127,7 @@ const MessageWrapper = React.memo(({messages, finishedFunction, addToDisplayedCo
     )
   };
 
-  function DisplayedMessagesTest(messages: string[]) {
-    console.log("running DisplayedMessage");
+  function DisplayedMessagesJSX(messages: string[]) {
     return (
       <>
         {messages.map((item, index) => <div key={index} className='Chatty-Message-Box'><p className='Chatty-Message'>{item}</p></div>)}
@@ -140,37 +135,16 @@ const MessageWrapper = React.memo(({messages, finishedFunction, addToDisplayedCo
     );
   };
 
-  const memoizedDisplayedMessages = useMemo(() => DisplayedMessagesTest(displayedMessages), [displayedMessages])
-
-
-  // function CreateMessageTest(messages: string) {
-  //   console.log("createMessageTest");
-    
-  
-  //   return (
-  //     <>
-  //       <div className='Chatty-Message-Box'><p className='Chatty-Message'>{messages}</p></div>
-  //     </>
-  //   );
-  // };
-
-  // const memoizedCreateMessage = useMemo(() => CreateMessageTest(createMessage), [createMessage])
-
-  
+  const memoizedDisplayedMessages = useMemo(() => DisplayedMessagesJSX(displayedMessages), [displayedMessages])
 
   // RETURNING JSX
   return (
     <div className='Chatty-Message-Container'>
-      {/* {displayedMessages && displayedMessages.map((item, index) => <div key={index} className='Chatty-Message-Box'><p className='Chatty-Message'>{item}</p></div>)} */}
-      {/* {displayedMessages && <DisplayedMessagesTest messages={displayedMessages}/>} */}
       {displayedMessages && memoizedDisplayedMessages}
-      {/* {displayedMessages && DisplayedMessagesTest(displayedMessages)} */}
       {createMessage && <div className='Chatty-Message-Box'><p className='Chatty-Message'>{createMessage}</p></div>}
-      {/* {createMessage && <CreateMessageTest messages={createMessage} />} */}
-      {/* {createMessage && memoizedCreateMessage} */}
       {typingCursorJSX}
     </div>
   );
-});
+};
 
 export default MessageWrapper;
