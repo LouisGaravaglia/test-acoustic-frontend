@@ -2,9 +2,8 @@ import axios from "axios";
 import { AxiosResponse, AxiosRequestConfig } from "axios";
 // import cookie from "react-cookies";
 
-//NOT SURE IF THESE ARE ACTUALLY DOING ANYTHING
-axios.defaults.xsrfCookieName = 'csrftoken';
-axios.defaults.xsrfHeaderName = 'X-CSRFToken';
+// axios.defaults.xsrfCookieName = 'csrftoken';
+// axios.defaults.xsrfHeaderName = 'X-CSRFToken';
 
 // const client = axios.create({
 //     xsrfCookieName: 'csrftoken',
@@ -16,42 +15,6 @@ axios.defaults.xsrfHeaderName = 'X-CSRFToken';
 // const BASE_URL = "https://acoustic-backend.herokuapp.com";
 // const BASE_URL = process.env.REACT_APP_BASE_URL || 'http://127.0.0.1:8000';
 const BASE_URL = 'https://acoustic-backend.herokuapp.com';
-
-
-// interface TokenObj {
-//     access_token?: string
-//     error?: null | string
-//     expires_in?: number
-//     refresh_token?: string
-//     token_type?: string
-//     response?: string
-// }
-
-// interface AxiosResponseObject {
-//     data: TokenObj
-//     status?: number
-//     statusText?: string
-//     headers?: Object
-//     config?: Object
-//     request?: Object
-// }
-
-// interface AuthenticateUser extends TokenObj {
-//     response: string
-// }
-  
-// interface AxiosObj {
-//     method: string
-//     url: string|AxiosRequestConfig
-// }
-
-// interface AxiosGetRequest extends AxiosObj {
-//     params: Object
-// }
-
-// interface AxiosPostRequest extends AxiosObj {
-//     data: Object
-// }
 
 class Backend {
 
@@ -82,7 +45,6 @@ class Backend {
 
     static async registerUser(data: Object) {
         let res = await this.request("registerUser/", {data}, "post");
-        // console.log("This is res: ", res);
         return res.data.response
     };
 
@@ -94,8 +56,6 @@ class Backend {
         }
         return res.data
     };
-
-    
 
     // static async getCSRF() {
     //     console.log("I'm in getCSRF");
