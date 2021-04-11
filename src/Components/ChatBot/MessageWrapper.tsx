@@ -1,7 +1,7 @@
-import React, {useState, useRef, useEffect, useContext} from "react";
-import useInterval from "../../Hooks/useInterval";
-import {MessagesContext} from "./MessagesProvider";
-import DisplayedMessage from "./DisplayedMessage";
+import React, {useState, useRef, useEffect, useContext} from 'react';
+import useInterval from '../../Hooks/useInterval';
+import {MessagesContext} from './MessagesProvider';
+import DisplayedMessage from './DisplayedMessage';
 
 //DEFINING THE CONTRACT FOR THE VARIABLE TYPES THAT WILL BE PASSED IN VIA PROPS
 interface Props {
@@ -15,7 +15,7 @@ interface Props {
 //APPENDS THEM TO THE DOM ONE LETTER AT A TIME
 function MessageWrapper({messages, finishedFunction, addToDisplayedContent = true, incrementMessageValue = 1}: Props): JSX.Element {
   const [displayedMessages, setDisplayedMessages] = useState<Array<string>>([]);
-  const [createMessage, setCreateMessage] = useState<string>("");
+  const [createMessage, setCreateMessage] = useState<string>('');
   const [count, setCount] = useState<number>(0);
   const [messageCharLength, setMessageCharLength] = useState<number>(0);
   const [charLength, setCharLength] = useState<number>(0);
@@ -27,20 +27,20 @@ function MessageWrapper({messages, finishedFunction, addToDisplayedContent = tru
   const useIntervalId = useRef<any | null>();
   const scrollToBottomRef = useRef<any | null>();
   const timeoutId = useRef<any | null>();
-  const typingCursor: string = " \u{258C}";
+  const typingCursor: string = ' \u{258C}';
   let typingCursorJSX: JSX.Element;
 
   //SCROLL DOWN TO END OF MESSAGE TYPING TO KEEP MESSAGES IN VIEWPORT WHILE CHATTY IS TYPING
   useEffect(() => {
     const scrollToBottom = () => {
-      scrollToBottomRef.current.scrollIntoView({behavior: "smooth"});
+      scrollToBottomRef.current.scrollIntoView({behavior: 'smooth'});
     };
     if (count < messages.length && !finishedMessages) scrollToBottom();
   }, [count, finishedMessages, messages]);
 
   //FUNCTION TO PASS TO OUR USEINTERVAL HOOK TO APPEND A LETTER AT A TIME TO CREATEMESSAGE
   //IN ORDER TO CREATE THE LOOK AS IF OUR CHAT BOT WAS TYPING
-  const appendMessages = () => {
+  function appendMessages() {
     setMessageCharLength(messages[count].length);
     const msgWithNewLetterAdded: string = messages[count].substring(charLength, charLength + 1);
     const msgWithRemovedCursor = createMessage.slice(0, -2);
@@ -79,7 +79,7 @@ function MessageWrapper({messages, finishedFunction, addToDisplayedContent = tru
     if (charLength >= messageCharLength && messageCharLength !== 0) {
       const msgWithRemovedCursor = createMessage.slice(0, -2);
       setDisplayedMessages(state => [...state, msgWithRemovedCursor]);
-      setCreateMessage("");
+      setCreateMessage('');
       setCharLength(0);
       setIsRunning(false);
     };
@@ -118,17 +118,17 @@ function MessageWrapper({messages, finishedFunction, addToDisplayedContent = tru
   } else {
     typingCursorJSX = (
       <>
-      {!isRunning && <div className="Chatty-Message-Box" ref={scrollToBottomRef}><p className="Chatty-Message">{typingCursor}</p></div>}
-      {isRunning && <div className="Chatty-Message-Box" ref={scrollToBottomRef}><p className="Chatty-Message-Black">‎‎_</p></div>}
+      {!isRunning && <div className='Chatty-Message-Box' ref={scrollToBottomRef}><p className='Chatty-Message'>{typingCursor}</p></div>}
+      {isRunning && <div className='Chatty-Message-Box' ref={scrollToBottomRef}><p className='Chatty-Message-Black'>‎‎_</p></div>}
       </>
     )
   };
 
   // RETURNING JSX
   return (
-    <div className="Chatty-Message-Container">
-      {displayedMessages && displayedMessages.map((item, index) => <div key={index} className="Chatty-Message-Box"><p className="Chatty-Message">{item}</p></div>)}
-      {createMessage && <div className="Chatty-Message-Box"><p className="Chatty-Message">{createMessage}</p></div>}
+    <div className='Chatty-Message-Container'>
+      {displayedMessages && displayedMessages.map((item, index) => <div key={index} className='Chatty-Message-Box'><p className='Chatty-Message'>{item}</p></div>)}
+      {createMessage && <div className='Chatty-Message-Box'><p className='Chatty-Message'>{createMessage}</p></div>}
       {typingCursorJSX}
     </div>
   );

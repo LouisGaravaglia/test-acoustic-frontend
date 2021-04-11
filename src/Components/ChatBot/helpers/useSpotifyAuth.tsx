@@ -1,6 +1,6 @@
-import React, {useContext} from "react";
-import {MessagesContext} from "../MessagesProvider";
-import Backend from "../../../Backend";
+import React, {useContext} from 'react';
+import {MessagesContext} from '../MessagesProvider';
+import Backend from '../../../Backend';
 
 interface updateChattyProperties {
   priorChatContent: JSX.Element[]
@@ -38,8 +38,8 @@ function useSpotifyAuth() {
       } else {
         //HANDLING ACCESS TOKEN REQUEST SUCCESS
         updateChattyToDisplayWhereUserLastLeftOff({priorChatContent: makeRequestObj.priorChatContent, incrementVal: makeRequestObj.successVal})
-        updateUser("access_token", tokenObj.access_token)
-        updateUser("refresh_token", tokenObj.refresh_token)
+        updateUser('access_token', tokenObj.access_token)
+        updateUser('refresh_token', tokenObj.refresh_token)
       }
   }
 

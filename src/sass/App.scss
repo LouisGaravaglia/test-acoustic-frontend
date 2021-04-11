@@ -1,14 +1,14 @@
 //UTILITIES
-@import "utilities/variables";
-@import "utilities/mixins";
+@import 'utilities/variables';
+@import 'utilities/mixins';
 //PAGES
-@import "pages/home";
-@import "pages/login";
-@import "pages/register";
+@import 'pages/home';
+@import 'pages/login';
+@import 'pages/register';
 //COMPONENTS
-@import "components/navbar";
-@import "components/chatty";
-@import "components/profile";
+@import 'components/navbar';
+@import 'components/chatty';
+@import 'components/profile';
 
 html, body {
   background: linear-gradient(to right top, $bgColor1, $bgColor2, $bgColor3, $bgColor4, $bgColor5);

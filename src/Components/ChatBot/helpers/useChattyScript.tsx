@@ -1,12 +1,12 @@
-import React, {useContext} from "react";
-import {MessagesContext} from "../MessagesProvider";
-import MessageWrapper from "../MessageWrapper";
-import ButtonWrapper from "../ButtonWrapper";
-import Register from "../Register";
-import useMessages from "../helpers/useMessages";
-import useButtons from "../helpers/useButtons";
-import {useHistory} from "react-router-dom";
-import Backend from "../../../Backend";
+import React, {useContext} from 'react';
+import {MessagesContext} from '../MessagesProvider';
+import MessageWrapper from '../MessageWrapper';
+import ButtonWrapper from '../ButtonWrapper';
+import Register from '../Register';
+import useMessages from '../helpers/useMessages';
+import useButtons from '../helpers/useButtons';
+import {useHistory} from 'react-router-dom';
+import Backend from '../../../Backend';
 
 //BUILDING AN ARRAY OF JSX ELEMENTS THAT CHATTYDISPLAY WILL ITERATE THROUGH IN ORDER TO MIMIC A CONVERSATION BETWEEN CHATTY AND THE USER
 function useChattyScript() {
@@ -30,7 +30,7 @@ function useChattyScript() {
 
   //FINISHED FUNCTION THAT WILL WILL RUN ONCE CHATTY HAS SENT THE FINAL MESSAGE TO REDIRECT TO USER PROFILE
   const redirectToProfile = (val: boolean) => {
-    if (val === true) history.push("/profile");
+    if (val === true) history.push('/profile');
     try {
       Backend.registerUser(user);
     } catch(e) {
@@ -51,15 +51,15 @@ function useChattyScript() {
     <MessageWrapper key={secondFailedAttempt.id} messages={secondFailedAttempt.messages} incrementMessageValue={2}/>,
     <MessageWrapper key={spotifyAccountValid.id} messages={spotifyAccountValid.messages}/>,
     <MessageWrapper key={registerUserPartOne.id} messages={registerUserPartOne.messages}/>,
-    <Register key={"first name"} input="first name"/>,
+    <Register key={'first name'} input='first name'/>,
     <MessageWrapper key={registerUserPartTwo.id} messages={registerUserPartTwo.messages}/>,
-    <Register key={"last name"} input="last name"/>,
+    <Register key={'last name'} input='last name'/>,
     <MessageWrapper key={registerUserPartThree.id} messages={registerUserPartThree.messages}/>,
-    <Register key={"email"} input="email"/>,
+    <Register key={'email'} input='email'/>,
     <MessageWrapper key={registerUserPartFour.id} messages={registerUserPartFour.messages}/>,
-    <Register key={"username"} input="username"/>,
+    <Register key={'username'} input='username'/>,
     <MessageWrapper key={registerUserPartFive.id} messages={registerUserPartFive.messages}/>,
-    <Register key={"password"} input="password"/>,
+    <Register key={'password'} input='password'/>,
     <MessageWrapper key={registerUserPartSix.id} messages={registerUserPartSix.messages} finishedFunction={redirectToProfile}/>,
   ];
 
