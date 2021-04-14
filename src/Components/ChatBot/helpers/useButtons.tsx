@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
 import {MessagesContext} from '../MessagesProvider';
-import DisplayedButton from '../DisplayedButton';
+import ButtonsPast from '../Buttons/ButtonsPast';
 
 interface IButtonObj {
   id: string
@@ -23,9 +23,9 @@ function useButtons() {
 
   function authenticateSpotify(param: string) {
     // if (param === 'button_clicked=first_button' || param === 'button_clicked=second_button') {
-    //   addContentToBeDisplayed([<DisplayedButton buttonText={'Log into my Spotify'}/>])
+    //   addContentToBeDisplayed([<ButtonsPast buttonText={'Log into my Spotify'}/>])
     // } else {
-    //   addContentToBeDisplayed([<DisplayedButton buttonText={'Try again'}/>])
+    //   addContentToBeDisplayed([<ButtonsPast buttonText={'Try again'}/>])
     // }
     displayLoadingSpinner();
     window.location.href = SPOTIFY_AUTH_URL + param;
@@ -34,7 +34,7 @@ function useButtons() {
 
   function dontHaveSpotify() {
     incrementMessagingPhase(1)
-    addContentToBeDisplayed([<DisplayedButton buttonText={`What if I don't have Spotify?`}/>])
+    addContentToBeDisplayed([<ButtonsPast buttonText={`What if I don't have Spotify?`}/>])
   }
 
   function proceedWithoutSpotify(buttonClicked: string) {
@@ -43,7 +43,7 @@ function useButtons() {
     } else {
       incrementMessagingPhase(1)
     }
-    addContentToBeDisplayed([<DisplayedButton buttonText={'Proceed without Spotify'}/>])
+    addContentToBeDisplayed([<ButtonsPast buttonText={'Proceed without Spotify'}/>])
   }
 
 

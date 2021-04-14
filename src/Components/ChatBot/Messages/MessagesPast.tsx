@@ -1,5 +1,5 @@
 import React from 'react';
-import Messages from './MessagesWrapper';
+import MessagesWrapper from './MessagesWrapper';
 
 interface Props {
     messages: string[]
@@ -12,9 +12,9 @@ function MessagesPast({messages}: Props) {
   // if (activelyTypingAdditionalMessages) return <>{messages.map((item, index) => <div key={index} className='Chatty-Message-Box'><p className='Chatty-Message'>{item}</p></div>)}</>
 
   return (
-    <Messages>
+    <MessagesWrapper>
       {messages.map((item, index) => <div key={index} className='Chatty-Message-Box'><p className='Chatty-Message'>{item}</p></div>)}
-    </Messages>
+    </MessagesWrapper>
   );
 };
 

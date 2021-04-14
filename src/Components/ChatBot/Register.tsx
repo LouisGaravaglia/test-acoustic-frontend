@@ -1,7 +1,7 @@
 import React, {useState, useContext} from 'react';
 import { FaArrowRight } from 'react-icons/fa';
 import {MessagesContext} from './MessagesProvider';
-import DisplayedButton from './DisplayedButton';
+import ButtonsPast from './Buttons/ButtonsPast';
 
 interface Props {
   input: string
@@ -40,7 +40,7 @@ function Register({input}: Props) {
     user[inputName as keyof IUser] = formData[inputName]
     updateUser(inputName, formData[inputName]);
     const hiddenPassword = '\u{2022}'.repeat(user.password.length);
-    addContentToBeDisplayed([<DisplayedButton key={'r' + chattyMessagesPhase} buttonText={inputName === 'password' ? hiddenPassword : formData[inputName]}/>])
+    addContentToBeDisplayed([<ButtonsPast key={'r' + chattyMessagesPhase} buttonText={inputName === 'password' ? hiddenPassword : formData[inputName]}/>])
     incrementMessagingPhase(1);
   };
 

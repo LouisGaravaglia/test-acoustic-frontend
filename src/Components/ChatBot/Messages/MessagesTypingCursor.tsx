@@ -9,7 +9,7 @@ interface Props {
 
 //NEEDED TO SEPARATE OUT ONLASTMESSAGE FROM THE INLINE CONDITIONAL IN JSX SINCE THERE SCROLLINTOVIEW WOULD
 //SOMETIMES CAUSE AN ERROR SINCE JSX WOULDNT BE IN VIEW FOR AT TIMES
-function TypingCursor({onLastMessage, scrollToBottomRef, isRunning, typingCursor}: Props): JSX.Element {
+function MesssagesTypingCursor({onLastMessage, scrollToBottomRef, isRunning, typingCursor}: Props): JSX.Element {
 
   if (onLastMessage) return <div ref={scrollToBottomRef}></div>;
 
@@ -22,4 +22,4 @@ function TypingCursor({onLastMessage, scrollToBottomRef, isRunning, typingCursor
 
 };
 
-export default TypingCursor;
+export default MesssagesTypingCursor;

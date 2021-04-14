@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import {MessagesContext} from '../MessagesProvider';
-import MessagesContainer from '../MessagesContainer';
-import ButtonWrapper from '../ButtonWrapper';
+import MessagesContainer from '../Messages/MessagesContainer';
+import ButtonsContainer from '../Buttons/ButtonsContainer';
 import Register from '../Register';
 import useMessages from '../helpers/useMessages';
 import useButtons from '../helpers/useButtons';
@@ -42,11 +42,11 @@ function useChattyScript() {
   //THROUGH THE CHATTYMESSAGEPHASE VARIABLE WE WILL NAVIGATE TO THE NECESSARY ITEM TO DISPLAY
   const chattyScript: JSX.Element[] = [
     <MessagesContainer key={initialMessages.id} messages={initialMessages.messages}/>,
-    <ButtonWrapper key={initialButtons.id} buttons={initialButtons.buttons}/>,
+    <ButtonsContainer key={initialButtons.id} buttons={initialButtons.buttons}/>,
     <MessagesContainer key={whatIfNoSpotify.id} messages={whatIfNoSpotify.messages}/>,
-    <ButtonWrapper key={proceedWithoutSpotifyButtons.id} buttons={proceedWithoutSpotifyButtons.buttons}/>,
+    <ButtonsContainer key={proceedWithoutSpotifyButtons.id} buttons={proceedWithoutSpotifyButtons.buttons}/>,
     <MessagesContainer key={spotifyAccountError.id} messages={spotifyAccountError.messages}/>,
-    <ButtonWrapper key={tryAgainButtons.id} buttons={tryAgainButtons.buttons}/>,
+    <ButtonsContainer key={tryAgainButtons.id} buttons={tryAgainButtons.buttons}/>,
     <MessagesContainer key={proceedWithoutSpotify.id} messages={proceedWithoutSpotify.messages} incrementMessageValue={3}/>,
     <MessagesContainer key={secondFailedAttempt.id} messages={secondFailedAttempt.messages} incrementMessageValue={2}/>,
     <MessagesContainer key={spotifyAccountValid.id} messages={spotifyAccountValid.messages}/>,

@@ -5,7 +5,7 @@ interface Props {
 }
 
 //RENDER THE JSX OF A BUTTON THAT HAS BEEN SELECTED BY THE USER (OPAQUE INSTEAD OF TRANSLUCENT)
-function DisplayedButton({buttonText}: Props) {
+function ButtonsPast({buttonText}: Props) {
 
   return (
     <div className='Chatty-Button-Container'>
@@ -14,4 +14,4 @@ function DisplayedButton({buttonText}: Props) {
   );
 };
 
-export default DisplayedButton;
+export default ButtonsPast;

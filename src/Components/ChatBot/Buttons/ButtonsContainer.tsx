@@ -1,10 +1,11 @@
 import React, {useEffect, useRef} from 'react';
+import ButtonsCurrent from './ButtonsCurrent'
 
 interface Props {
   buttons: Array<JSX.Element>
 };
 
-function ButtonWrapper({buttons}: Props): JSX.Element {
+function ButtonsContainer({buttons}: Props): JSX.Element {
   const scrollToBottomRef = useRef<any | null>();
 
   //SCROLL DOWN TO END OF MESSAGE TYPING TO KEEP MESSAGES IN VIEWPORT WHILE CHATTY IS TYPING
@@ -15,11 +16,7 @@ function ButtonWrapper({buttons}: Props): JSX.Element {
     scrollToBottom();
   }, []);
 
-  return (
-    <div className='Chatty-Button-Container' ref={scrollToBottomRef}>
-      {buttons && buttons.map((item, index) => <div key={index} className='Chatty-Button-Main'>{item}</div>)}
-    </div>
-  );
+  return <ButtonsCurrent buttons={buttons} scrollToBottomRef={scrollToBottomRef}/>;
 };
 
-export default ButtonWrapper;
+export default ButtonsContainer;

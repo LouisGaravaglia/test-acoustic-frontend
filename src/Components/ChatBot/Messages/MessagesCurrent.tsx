@@ -5,7 +5,7 @@ interface Props {
   createMessage: string
 };
 
-function CurrentMessage({createMessage}: Props): JSX.Element {
+function MessagesCurrent({createMessage}: Props): JSX.Element {
 
   return (
     <>
@@ -14,4 +14,4 @@ function CurrentMessage({createMessage}: Props): JSX.Element {
   );
 };
 
-export default CurrentMessage;
+export default MessagesCurrent;

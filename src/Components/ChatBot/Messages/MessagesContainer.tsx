@@ -1,9 +1,9 @@
 import React, {useState, useRef, useEffect, useContext, useMemo} from 'react';
-import useInterval from '../../Hooks/useInterval';
-import {MessagesContext} from './MessagesProvider';
+import useInterval from '../../../Hooks/useInterval';
+import {MessagesContext} from '../MessagesProvider';
 import MessagesWrapper from './MessagesWrapper';
-import TypingCursor from './TypingCursor';
-import CurrentMessage from './CurrentMessage';
+import MesssagesTypingCursor from './MessagesTypingCursor';
+import MessagesCurrent from './MessagesCurrent';
 import MessagesPast from './MessagesPast';
 
 //DEFINING THE CONTRACT FOR THE VARIABLE TYPES THAT WILL BE PASSED IN VIA PROPS
@@ -121,8 +121,8 @@ function MessagesContainer({messages, finishedFunction, addToDisplayedContent = 
   return (
     <MessagesWrapper>
       {displayedMessages && memoizedDisplayedMessages}
-      <CurrentMessage createMessage={createMessage}/>
-      <TypingCursor onLastMessage={onLastMessage} scrollToBottomRef={scrollToBottomRef} isRunning={isRunning} typingCursor={typingCursor}/>
+      <MessagesCurrent createMessage={createMessage}/>
+      <MesssagesTypingCursor onLastMessage={onLastMessage} scrollToBottomRef={scrollToBottomRef} isRunning={isRunning} typingCursor={typingCursor}/>
     </MessagesWrapper>
   );
 };
