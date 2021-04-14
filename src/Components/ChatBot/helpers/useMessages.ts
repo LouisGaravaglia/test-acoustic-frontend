@@ -84,7 +84,7 @@ function useMessages() {
 
   const spotifyAccountValid: IMessageObj = {
     id: 'm6',
-    messages: [`Perfect, you're Spotify account is all set up!`]
+    messages: [`Perfect, your Spotify account is all set up!`]
   };
 
   //CREATING SHORTER MESSAGES FOR QUICKER TESTING

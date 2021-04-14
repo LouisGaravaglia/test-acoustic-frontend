@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
 import {MessagesContext} from '../MessagesProvider';
-import MessageWrapper from '../MessageWrapper';
+import MessagesContainer from '../MessagesContainer';
 import ButtonWrapper from '../ButtonWrapper';
 import Register from '../Register';
 import useMessages from '../helpers/useMessages';
@@ -41,26 +41,26 @@ function useChattyScript() {
   //ALL POSSIBLE MESSAGE AND BUTTON OPTIONS THAT CHATTY CAN DISPLAY TO THE USER
   //THROUGH THE CHATTYMESSAGEPHASE VARIABLE WE WILL NAVIGATE TO THE NECESSARY ITEM TO DISPLAY
   const chattyScript: JSX.Element[] = [
-    <MessageWrapper key={initialMessages.id} messages={initialMessages.messages}/>,
+    <MessagesContainer key={initialMessages.id} messages={initialMessages.messages}/>,
     <ButtonWrapper key={initialButtons.id} buttons={initialButtons.buttons}/>,
-    <MessageWrapper key={whatIfNoSpotify.id} messages={whatIfNoSpotify.messages}/>,
+    <MessagesContainer key={whatIfNoSpotify.id} messages={whatIfNoSpotify.messages}/>,
     <ButtonWrapper key={proceedWithoutSpotifyButtons.id} buttons={proceedWithoutSpotifyButtons.buttons}/>,
-    <MessageWrapper key={spotifyAccountError.id} messages={spotifyAccountError.messages}/>,
+    <MessagesContainer key={spotifyAccountError.id} messages={spotifyAccountError.messages}/>,
     <ButtonWrapper key={tryAgainButtons.id} buttons={tryAgainButtons.buttons}/>,
-    <MessageWrapper key={proceedWithoutSpotify.id} messages={proceedWithoutSpotify.messages} incrementMessageValue={3}/>,
-    <MessageWrapper key={secondFailedAttempt.id} messages={secondFailedAttempt.messages} incrementMessageValue={2}/>,
-    <MessageWrapper key={spotifyAccountValid.id} messages={spotifyAccountValid.messages}/>,
-    <MessageWrapper key={registerUserPartOne.id} messages={registerUserPartOne.messages}/>,
+    <MessagesContainer key={proceedWithoutSpotify.id} messages={proceedWithoutSpotify.messages} incrementMessageValue={3}/>,
+    <MessagesContainer key={secondFailedAttempt.id} messages={secondFailedAttempt.messages} incrementMessageValue={2}/>,
+    <MessagesContainer key={spotifyAccountValid.id} messages={spotifyAccountValid.messages}/>,
+    <MessagesContainer key={registerUserPartOne.id} messages={registerUserPartOne.messages}/>,
     <Register key={'first name'} input='first name'/>,
-    <MessageWrapper key={registerUserPartTwo.id} messages={registerUserPartTwo.messages}/>,
+    <MessagesContainer key={registerUserPartTwo.id} messages={registerUserPartTwo.messages}/>,
     <Register key={'last name'} input='last name'/>,
-    <MessageWrapper key={registerUserPartThree.id} messages={registerUserPartThree.messages}/>,
+    <MessagesContainer key={registerUserPartThree.id} messages={registerUserPartThree.messages}/>,
     <Register key={'email'} input='email'/>,
-    <MessageWrapper key={registerUserPartFour.id} messages={registerUserPartFour.messages}/>,
+    <MessagesContainer key={registerUserPartFour.id} messages={registerUserPartFour.messages}/>,
     <Register key={'username'} input='username'/>,
-    <MessageWrapper key={registerUserPartFive.id} messages={registerUserPartFive.messages}/>,
+    <MessagesContainer key={registerUserPartFive.id} messages={registerUserPartFive.messages}/>,
     <Register key={'password'} input='password'/>,
-    <MessageWrapper key={registerUserPartSix.id} messages={registerUserPartSix.messages} finishedFunction={redirectToProfile}/>,
+    <MessagesContainer key={registerUserPartSix.id} messages={registerUserPartSix.messages} finishedFunction={redirectToProfile}/>,
   ];
 
   return {

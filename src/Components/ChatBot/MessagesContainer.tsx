@@ -15,7 +15,7 @@ interface Props {
 
 //OUR COMPONENT THAT ACCEPTS THE APPROPRIATE MESSAGES NEEDED FOR OUR CHATTY RESPONSE AND
 //APPENDS THEM TO THE DOM ONE LETTER AT A TIME
-function MessageWrapper({messages, finishedFunction, addToDisplayedContent = true, incrementMessageValue = 1}: Props): JSX.Element {
+function MessagesContainer({messages, finishedFunction, addToDisplayedContent = true, incrementMessageValue = 1}: Props): JSX.Element {
   const [displayedMessages, setDisplayedMessages] = useState<Array<string>>([]);
   const [createMessage, setCreateMessage] = useState<string>('');
   const [count, setCount] = useState<number>(0);
@@ -135,7 +135,9 @@ function MessageWrapper({messages, finishedFunction, addToDisplayedContent = tru
     );
   };
 
-  const memoizedDisplayedMessages = useMemo(() => DisplayedMessagesJSX(displayedMessages), [displayedMessages])
+  // const memoizedDisplayedMessages = useMemo(() => DisplayedMessagesJSX(displayedMessages), [displayedMessages])
+  const memoizedDisplayedMessages = useMemo(() => <DisplayedMessagesTest messages={displayedMessages}/>, [displayedMessages])
+
 
   // RETURNING JSX
   return (
@@ -147,4 +149,4 @@ function MessageWrapper({messages, finishedFunction, addToDisplayedContent = tru
   );
 };
 
-export default MessageWrapper;
+export default MessagesContainer;
