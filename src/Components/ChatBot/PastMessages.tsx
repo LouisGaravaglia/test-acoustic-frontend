@@ -5,7 +5,7 @@ interface Props {
 }
 
 //RENDER THE JSX OF A MESSAGE THAT HAS ALREADY BEEN SHOWN TO THE USER
-function DisplayedMessagesTest({messages}: Props) {
+function PastMessages({messages}: Props) {
 
   return (
     <>
@@ -14,4 +14,4 @@ function DisplayedMessagesTest({messages}: Props) {
   );
 };
 
-export default DisplayedMessagesTest;
+export default PastMessages;

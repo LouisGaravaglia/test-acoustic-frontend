@@ -2,8 +2,10 @@ import React, {useState, useRef, useEffect, useContext, useMemo} from 'react';
 import useInterval from '../../Hooks/useInterval';
 import {MessagesContext} from './MessagesProvider';
 import DisplayedMessage from './DisplayedMessage';
-
-import DisplayedMessagesTest from './DisplayedMessagesTest';
+import Messages from './Messages';
+import TypingCursor from './TypingCursor';
+import CurrentMessage from './CurrentMessage';
+import PastMessages from './PastMessages';
 
 //DEFINING THE CONTRACT FOR THE VARIABLE TYPES THAT WILL BE PASSED IN VIA PROPS
 interface Props {
@@ -30,7 +32,6 @@ function MessagesContainer({messages, finishedFunction, addToDisplayedContent = 
   const scrollToBottomRef = useRef<any | null>();
   const timeoutId = useRef<any | null>();
   const typingCursor: string = ' \u{258C}';
-  let typingCursorJSX: JSX.Element;
 
   //SCROLL DOWN TO END OF MESSAGE TYPING TO KEEP MESSAGES IN VIEWPORT WHILE CHATTY IS TYPING
   useEffect(() => {
@@ -114,38 +115,16 @@ function MessagesContainer({messages, finishedFunction, addToDisplayedContent = 
     if (count === messages.length - 1) preventTypingCursor();
   }, [count, setOnLastMessage, messages]);
 
-  //NEEDED TO SEPARATE OUT ONLASTMESSAGE FROM THE INLINE CONDITIONAL IN JSX SINCE THERE SCROLLINTOVIEW WOULD
-  //SOMETIMES CAUSE AN ERROR SINCE JSX WOULDNT BE IN VIEW FOR AT TIMES
-  if (onLastMessage) {
-    typingCursorJSX = <div ref={scrollToBottomRef}></div>;
-  } else {
-    typingCursorJSX = (
-      <>
-      {!isRunning && <div className='Chatty-Message-Box' ref={scrollToBottomRef}><p className='Chatty-Message'>{typingCursor}</p></div>}
-      {isRunning && <div className='Chatty-Message-Box' ref={scrollToBottomRef}><p className='Chatty-Message-Black'>‎‎_</p></div>}
-      </>
-    )
-  };
-
-  function DisplayedMessagesJSX(messages: string[]) {
-    return (
-      <>
-        {messages.map((item, index) => <div key={index} className='Chatty-Message-Box'><p className='Chatty-Message'>{item}</p></div>)}
-      </>
-    );
-  };
-
-  // const memoizedDisplayedMessages = useMemo(() => DisplayedMessagesJSX(displayedMessages), [displayedMessages])
-  const memoizedDisplayedMessages = useMemo(() => <DisplayedMessagesTest messages={displayedMessages}/>, [displayedMessages])
+  const memoizedDisplayedMessages = useMemo(() => <PastMessages messages={displayedMessages}/>, [displayedMessages])
 
 
   // RETURNING JSX
   return (
-    <div className='Chatty-Message-Container'>
+    <Messages>
       {displayedMessages && memoizedDisplayedMessages}
-      {createMessage && <div className='Chatty-Message-Box'><p className='Chatty-Message'>{createMessage}</p></div>}
-      {typingCursorJSX}
-    </div>
+      <CurrentMessage createMessage={createMessage}/>
+      <TypingCursor onLastMessage={onLastMessage} scrollToBottomRef={scrollToBottomRef} isRunning={isRunning} typingCursor={typingCursor}/>
+    </Messages>
   );
 };
 
