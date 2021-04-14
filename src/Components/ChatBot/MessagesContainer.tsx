@@ -1,11 +1,10 @@
 import React, {useState, useRef, useEffect, useContext, useMemo} from 'react';
 import useInterval from '../../Hooks/useInterval';
 import {MessagesContext} from './MessagesProvider';
-import DisplayedMessage from './DisplayedMessage';
-import Messages from './Messages';
+import MessagesWrapper from './MessagesWrapper';
 import TypingCursor from './TypingCursor';
 import CurrentMessage from './CurrentMessage';
-import PastMessages from './PastMessages';
+import MessagesPast from './MessagesPast';
 
 //DEFINING THE CONTRACT FOR THE VARIABLE TYPES THAT WILL BE PASSED IN VIA PROPS
 interface Props {
@@ -99,7 +98,7 @@ function MessagesContainer({messages, finishedFunction, addToDisplayedContent = 
       setFinishedMessages(true);
       if (finishedFunction) finishedFunction(true);
       if (addToDisplayedContent) {
-        addContentToBeDisplayed([<DisplayedMessage messages={messages}/>])
+        addContentToBeDisplayed([<MessagesPast messages={messages}/>])
         incrementMessagingPhase(incrementMessageValue);
       }
     };
@@ -115,16 +114,16 @@ function MessagesContainer({messages, finishedFunction, addToDisplayedContent = 
     if (count === messages.length - 1) preventTypingCursor();
   }, [count, setOnLastMessage, messages]);
 
-  const memoizedDisplayedMessages = useMemo(() => <PastMessages messages={displayedMessages}/>, [displayedMessages])
+  const memoizedDisplayedMessages = useMemo(() => <MessagesPast messages={displayedMessages}/>, [displayedMessages])
 
 
   // RETURNING JSX
   return (
-    <Messages>
+    <MessagesWrapper>
       {displayedMessages && memoizedDisplayedMessages}
       <CurrentMessage createMessage={createMessage}/>
       <TypingCursor onLastMessage={onLastMessage} scrollToBottomRef={scrollToBottomRef} isRunning={isRunning} typingCursor={typingCursor}/>
-    </Messages>
+    </MessagesWrapper>
   );
 };
 

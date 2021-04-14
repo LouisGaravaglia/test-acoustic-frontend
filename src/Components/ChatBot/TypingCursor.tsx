@@ -11,16 +11,15 @@ interface Props {
 //SOMETIMES CAUSE AN ERROR SINCE JSX WOULDNT BE IN VIEW FOR AT TIMES
 function TypingCursor({onLastMessage, scrollToBottomRef, isRunning, typingCursor}: Props): JSX.Element {
 
-  if (onLastMessage) {
-    return <div ref={scrollToBottomRef}></div>;
-  } else {
-    return (
+  if (onLastMessage) return <div ref={scrollToBottomRef}></div>;
+
+  return (
       <>
       {!isRunning && <div className='Chatty-Message-Box' ref={scrollToBottomRef}><p className='Chatty-Message'>{typingCursor}</p></div>}
       {isRunning && <div className='Chatty-Message-Box' ref={scrollToBottomRef}><p className='Chatty-Message-Black'>‎‎_</p></div>}
       </>
     )
-  };
+
 };
 
 export default TypingCursor;

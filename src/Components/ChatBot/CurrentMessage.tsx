@@ -1,9 +1,4 @@
-import React, {useState, useRef, useEffect, useContext, useMemo} from 'react';
-import useInterval from '../../Hooks/useInterval';
-import {MessagesContext} from './MessagesProvider';
-import DisplayedMessage from './DisplayedMessage';
-
-import DisplayedMessagesTest from './PastMessages';
+import React from 'react';
 
 //DEFINING THE CONTRACT FOR THE VARIABLE TYPES THAT WILL BE PASSED IN VIA PROPS
 interface Props {

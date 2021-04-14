@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Messages(props: any): JSX.Element {
+function MessagesWrapper(props: any): JSX.Element {
 
   return (
     <div className='Chatty-Message-Container'>
@@ -9,4 +9,4 @@ function Messages(props: any): JSX.Element {
   );
 };
 
-export default Messages;
+export default MessagesWrapper;
