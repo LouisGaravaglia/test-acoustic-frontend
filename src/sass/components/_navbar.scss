@@ -49,6 +49,34 @@ a {
   color: $mainLight;
 }
 
+// .Navbar-Link {
+//   font-family: $mainFont;
+//   font-weight: 400;
+//   font-size: 1.5rem;
+//   color: $whiteFont;
+//   margin-left: 20px;
+//   padding: 0;
+//   //EXTENDING THE NAVBAR LOGO STYLES TO MATCH ALIGNMENT WITH THE LOGO
+//   display: block;
+//   height: 60px;
+//   width: 60px;
+//   line-height: 60px;
+//   text-align: center;
+//   -moz-border-radius: 30px;
+//   border-radius: 30px; 
+//   border: 1px solid rgba(0,0,0,0.0);
+//   width:fit-content;
+// }
+
+// .Navbar-Link:hover {
+//   color: $mainLight;
+// }
+
+.Navbar-Link-Box {
+  @extend .Navbar-Logo-Box;
+  margin-right: 50px;
+}
+
 .Navbar-Link {
   font-family: $mainFont;
   font-weight: 400;
@@ -57,7 +85,6 @@ a {
   margin-left: 20px;
   padding: 0;
   //EXTENDING THE NAVBAR LOGO STYLES TO MATCH ALIGNMENT WITH THE LOGO
-  display: block;
   height: 60px;
   width: 60px;
   line-height: 60px;
@@ -66,13 +93,33 @@ a {
   border-radius: 30px; 
   border: 1px solid rgba(0,0,0,0.0);
   width:fit-content;
-}
+  position: relative;
+  text-decoration: none;
+  transition: all .35s ease;
 
-.Navbar-Link:hover {
-  color: $mainLight;
-}
+  &::before {
+      content: "";
+      position: absolute;
+      text-align: center;
+      width: 100%;
+      height: 5px;
+      bottom: 5px;
+      left: 0;
+      background: linear-gradient(to right, $mainLight 0%, $mainDark 100%);
+      visibility: hidden;
+      -webkit-transform: scaleX(0);
+      transform: scaleX(0);
+      -webkit-transition: all 0.2s ease-in-out 0s; 
+      transition: all 0.2s ease-in-out 0s; 
+  }   
 
-.Navbar-Link-Box {
-  @extend .Navbar-Logo-Box;
-  margin-right: 50px;
+  &:hover {
+    color: $mainLight;
+
+      &::before {
+          visibility: visible;
+          -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+      }   
+  }   
 }
