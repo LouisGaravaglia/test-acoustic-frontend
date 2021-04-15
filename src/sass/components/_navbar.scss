@@ -4,7 +4,8 @@
 }
 
 .Navbar-Container-Right {
-  @extend .Navbar-Container-Left;
+  position: absolute;
+  height: 80px;
   right: 0;
 }
 
@@ -14,6 +15,8 @@ a {
 
 .Navbar-Logo-Box {
   position: sticky;
+  display: flex;
+  flex-direction: row;
   z-index: 4;
   top: 30px;
   margin: 0;
@@ -51,7 +54,7 @@ a {
   font-weight: 400;
   font-size: 1.5rem;
   color: $whiteFont;
-  margin: 0;
+  margin-left: 20px;
   padding: 0;
   //EXTENDING THE NAVBAR LOGO STYLES TO MATCH ALIGNMENT WITH THE LOGO
   display: block;
@@ -62,6 +65,7 @@ a {
   -moz-border-radius: 30px;
   border-radius: 30px; 
   border: 1px solid rgba(0,0,0,0.0);
+  width:fit-content;
 }
 
 .Navbar-Link:hover {
@@ -72,9 +76,3 @@ a {
   @extend .Navbar-Logo-Box;
   margin-right: 50px;
 }
-
-// .Navbar-Links {
-//   float: right;
-//   cursor: pointer;
-//   color: $whiteFont;
-// }

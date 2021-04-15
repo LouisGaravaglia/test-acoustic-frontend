@@ -16,9 +16,19 @@ const Navbar: React.FC = () => {
         </div>
       </div>
       <div className='Navbar-Container-Right'>
-        <div className='Navbar-Link-Box'>
-            <NavLink  className='Navbar-Link' exact to='/login'>LOGIN</NavLink>
-        </div>
+
+          {/* <div className='Navbar-Link-Box'>
+              <NavLink  className='Navbar-Link' exact to='/login'>HOME</NavLink>
+          </div>
+          <div className='Navbar-Link-Box'>
+              <NavLink  className='Navbar-Link' exact to='/login'>PROFILE</NavLink>
+          </div> */}
+          <div className='Navbar-Link-Box'>
+              <NavLink  className='Navbar-Link' exact to='/login'>HOME</NavLink>
+              <NavLink  className='Navbar-Link' exact to='/login'>PROFILE</NavLink>
+              <NavLink  className='Navbar-Link' exact to='/login'>LOGIN</NavLink>
+          </div>
+
       </div>
     </>
   );
