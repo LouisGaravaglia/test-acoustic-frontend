@@ -1,80 +1,78 @@
 .Navbar-Container-Left {
-    position: absolute;
-    height: 80px;
-  }
+  position: absolute;
+  height: 80px;
+}
 
-  .Navbar-Container-Right {
-    @extend .Navbar-Container-Left;
-    right: 0;
-  }
+.Navbar-Container-Right {
+  position: absolute;
+  height: 80px;
+  right: 0;
+}
 
-  a {
-    text-decoration: none;
-  }
+a {
+  text-decoration: none;
+}
 
-  .Navbar-Search-Box {
-    position: sticky;
-    z-index: 4;
-    top: 30px;
-    margin: 0;
-    padding: 0;
-    margin-left: 50px;
-  }
+.Navbar-Logo-Box {
+  position: sticky;
+  display: flex;
+  flex-direction: row;
+  z-index: 4;
+  top: 30px;
+  margin: 0;
+  padding: 0;
+  margin-left: 50px;
+}
 
-  .Navbar-Logo {
-    font-family: $mainFont;
-    font-weight: 400;
-    font-size: 1.5rem;
-    color: $whiteFont;
-    margin: 0;
-    padding: 0;
-  }
+.Navbar-Logo {
+  font-family: $mainFont;
+  font-weight: 400;
+  font-size: 1.5rem;
+  color: $whiteFont;
+  margin: 0;
+  padding: 0;
+}
 
-  .Navbar-Logo-Circle {
-    display: block;
-    height: 60px;
-    width: 60px;
-    line-height: 60px;
-    text-align: center;
-    border: 1px solid #fff;
-    -moz-border-radius: 30px;
-    border-radius: 30px; 
-  }
+.Navbar-Logo-Circle {
+  display: block;
+  height: 60px;
+  width: 60px;
+  line-height: 60px;
+  text-align: center;
+  border: 1px solid #fff;
+  -moz-border-radius: 30px;
+  border-radius: 30px; 
+}
 
-  .Navbar-Logo-Circle:hover {
-    border: 1px solid $mainLight; 
-    color: $mainLight;
-  }
+.Navbar-Logo-Circle:hover {
+  border: 1px solid $mainLight; 
+  color: $mainLight;
+}
 
-  .Navbar-Login {
-    font-family: $mainFont;
-    font-weight: 400;
-    font-size: 1.5rem;
-    color: $whiteFont;
-    margin: 0;
-    padding: 0;
-    //THE STYLES BELOW ARE TO CREATE A INVISIBLE BORDER TO MATCH ALIGNMENT WITH THE LOGO
-    display: block;
-    height: 60px;
-    width: 60px;
-    line-height: 60px;
-    text-align: center;
-    border: 1px solid rgba(0,0,0,0.0);
-    -moz-border-radius: 30px;
-    border-radius: 30px;
-  }
+.Navbar-Link {
+  font-family: $mainFont;
+  font-weight: 400;
+  font-size: 1.5rem;
+  color: $whiteFont;
+  margin-left: 20px;
+  padding: 0;
+  //EXTENDING THE NAVBAR LOGO STYLES TO MATCH ALIGNMENT WITH THE LOGO
+  display: block;
+  height: 60px;
+  width: 60px;
+  line-height: 60px;
+  text-align: center;
+  -moz-border-radius: 30px;
+  border-radius: 30px; 
+  border: 1px solid rgba(0,0,0,0.0);
+  width:fit-content;
+}
 
-  .Navbar-Login:hover {
-    color: $mainLight;
-  }
+.Navbar-Link:hover {
+  color: $mainLight;
+}
 
-  .Navbar-Browse-Box {
-    @extend .Navbar-Search-Box;
-    margin-right: 50px;
-  }
-
-  .Navbar-Browse {
-    float: right;
-    cursor: pointer;
-    color: $whiteFont;
-  }
+.Navbar-Link-Box {
+  @extend .Navbar-Logo-Box;
+  margin-right: 50px;
+}

@@ -11,14 +11,24 @@ const Navbar: React.FC = () => {
   return (
     <>
       <div className='Navbar-Container-Left'>
-        <div className='Navbar-Search-Box'>
+        <div className='Navbar-Logo-Box'>
             <NavLink  className='Navbar-Logo' exact to='/'><span className='Navbar-Logo-Circle'>A.IO</span></NavLink>
         </div>
       </div>
       <div className='Navbar-Container-Right'>
-        <div className='Navbar-Browse-Box'>
-            <NavLink  className='Navbar-Login' exact to='/login'>LOGIN</NavLink>
-        </div>
+
+          {/* <div className='Navbar-Link-Box'>
+              <NavLink  className='Navbar-Link' exact to='/login'>HOME</NavLink>
+          </div>
+          <div className='Navbar-Link-Box'>
+              <NavLink  className='Navbar-Link' exact to='/login'>PROFILE</NavLink>
+          </div> */}
+          <div className='Navbar-Link-Box'>
+              <NavLink  className='Navbar-Link' exact to='/'>HOME</NavLink>
+              <NavLink  className='Navbar-Link' exact to='/profile'>PROFILE</NavLink>
+              <NavLink  className='Navbar-Link' exact to='/login'>LOGIN</NavLink>
+          </div>
+
       </div>
     </>
   );
