@@ -14,16 +14,25 @@ import {MessagesContext} from './ChatBot/MessagesProvider';
 function Profile(): JSX.Element {
   const {user} = useContext(MessagesContext);
 
+  let welcomeMessage;
+
+  if (user.first_name === '') {
+    welcomeMessage = <p className='Profile-Header'>Welcome to your profile!</p>
+  } else {
+    welcomeMessage = <p className='Profile-Header'>Welcome to your profile, {user.first_name}!</p>
+  }
+
   return (
-    <div className='Profile-Container'>
-      <p className='Profile-Placeholder'>.</p>
-      <div className='Profile-Box'>
-        <p className='Profile-Header'>Welcome to your profile, {user.first_name}!</p>
-        {/* <ul className='Profile-List'>
-          {Object.keys(user).map((value, index) => <p key={index} className='Profile-Header'>{value + ': ' + user[value as keyof IUser]}</p>)}
-        </ul> */}
+
+    //     {/* <ul className='Profile-List'>
+    //       {Object.keys(user).map((value, index) => <p key={index} className='Profile-Header'>{value + ': ' + user[value as keyof IUser]}</p>)}
+    //     </ul> */}
+
+    <>
+      <div className='Home-Upper-Box'>
+        {welcomeMessage}
       </div>
-    </div>
+    </>
   );
 };
 

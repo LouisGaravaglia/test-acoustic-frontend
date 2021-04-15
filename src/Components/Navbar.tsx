@@ -24,8 +24,8 @@ const Navbar: React.FC = () => {
               <NavLink  className='Navbar-Link' exact to='/login'>PROFILE</NavLink>
           </div> */}
           <div className='Navbar-Link-Box'>
-              <NavLink  className='Navbar-Link' exact to='/login'>HOME</NavLink>
-              <NavLink  className='Navbar-Link' exact to='/login'>PROFILE</NavLink>
+              <NavLink  className='Navbar-Link' exact to='/'>HOME</NavLink>
+              <NavLink  className='Navbar-Link' exact to='/profile'>PROFILE</NavLink>
               <NavLink  className='Navbar-Link' exact to='/login'>LOGIN</NavLink>
           </div>
 
