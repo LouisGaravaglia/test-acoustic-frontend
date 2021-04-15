@@ -12,7 +12,7 @@
     text-decoration: none;
   }
 
-  .Navbar-Search-Box {
+  .Navbar-Logo-Box {
     position: sticky;
     z-index: 4;
     top: 30px;
@@ -53,27 +53,21 @@
     color: $whiteFont;
     margin: 0;
     padding: 0;
-    //THE STYLES BELOW ARE TO CREATE A INVISIBLE BORDER TO MATCH ALIGNMENT WITH THE LOGO
-    display: block;
-    height: 60px;
-    width: 60px;
-    line-height: 60px;
-    text-align: center;
+    //EXTENDING THE NAVBAR LOGO STYLES TO MATCH ALIGNMENT WITH THE LOGO
+    @extend .Navbar-Logo-Circle;
     border: 1px solid rgba(0,0,0,0.0);
-    -moz-border-radius: 30px;
-    border-radius: 30px;
   }
 
   .Navbar-Login:hover {
     color: $mainLight;
   }
 
-  .Navbar-Browse-Box {
-    @extend .Navbar-Search-Box;
+  .Navbar-Links-Box {
+    @extend .Navbar-Logo-Box;
     margin-right: 50px;
   }
 
-  .Navbar-Browse {
+  .Navbar-Links {
     float: right;
     cursor: pointer;
     color: $whiteFont;
