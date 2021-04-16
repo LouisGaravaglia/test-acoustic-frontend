@@ -15,7 +15,7 @@ interface IButtonObj {
 
 //A FUNCTION THAT RETURNS VARIABLES OF JSX ELEMENTS TO BE USED AS BUTTONS A USER CAN CLICK
 function useButtons() {
-  const SPOTIFY_AUTH_URL = 'https://acoustic-backend.herokuapp.com/authorizeSpotify?'
+  const SPOTIFY_AUTH_URL = 'https://acoustigram-backend.herokuapp.com/authorizeSpotify?'
   // const SPOTIFY_AUTH_URL = process.env.REACT_APP_SPOTIFY_AUTH_ROUTE || 'http://127.0.0.1:8000/authorizeSpotify?';
   const {addContentToBeDisplayed, incrementMessagingPhase, stateKey, displayLoadingSpinner} = useContext(MessagesContext);
 
