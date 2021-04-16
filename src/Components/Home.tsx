@@ -18,7 +18,7 @@ const Home: React.FC = () => {
   }, []);
 
   function redirectToChatty() {
-    history.push('/get-started')
+    history.push('/register')
   }
 
   return (

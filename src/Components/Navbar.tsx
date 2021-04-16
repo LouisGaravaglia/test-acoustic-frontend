@@ -1,10 +1,10 @@
 import React from 'react';
-import {NavLink} from 'react-router-dom';
+import {NavLink, useLocation} from 'react-router-dom';
 
 
 const Navbar: React.FC = () => {
-
-
+  const location = useLocation();
+  const urlSlug = location.pathname;
 
 ////////////////////////////////////////////////////  RETURN  ////////////////////////////////////////////////////
 
@@ -16,19 +16,12 @@ const Navbar: React.FC = () => {
         </div>
       </div>
       <div className='Navbar-Container-Right'>
-
-          {/* <div className='Navbar-Link-Box'>
-              <NavLink  className='Navbar-Link' exact to='/login'>HOME</NavLink>
-          </div>
           <div className='Navbar-Link-Box'>
-              <NavLink  className='Navbar-Link' exact to='/login'>PROFILE</NavLink>
-          </div> */}
-          <div className='Navbar-Link-Box'>
-              <NavLink  className='Navbar-Link' exact to='/'>HOME</NavLink>
-              <NavLink  className='Navbar-Link' exact to='/profile'>PROFILE</NavLink>
-              <NavLink  className='Navbar-Link' exact to='/login'>LOGIN</NavLink>
+              <NavLink  className={urlSlug === "/" ? 'Navbar-Link-Active' : 'Navbar-Link'} exact to='/'>HOME</NavLink>
+              <NavLink  className={urlSlug === "/profile" ? 'Navbar-Link-Active' : 'Navbar-Link'} exact to='/profile'>PROFILE</NavLink>
+              <NavLink  className={urlSlug === "/register" ? 'Navbar-Link-Active' : 'Navbar-Link'} exact to='/register'>REGISTER</NavLink>
+              <NavLink  className={urlSlug === "/login" ? 'Navbar-Link-Active' : 'Navbar-Link'} exact to='/login'>LOGIN</NavLink>
           </div>
-
       </div>
     </>
   );
