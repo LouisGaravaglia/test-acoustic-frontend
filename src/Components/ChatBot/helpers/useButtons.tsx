@@ -22,11 +22,6 @@ function useButtons() {
 ////////////////////////////////////////////////////  ON CLICK FUNCTIONS FOR BUTTONS ////////////////////////////////////////////////////
 
   function authenticateSpotify(param: string) {
-    // if (param === 'button_clicked=first_button' || param === 'button_clicked=second_button') {
-    //   addContentToBeDisplayed([<ButtonsPast buttonText={'Log into my Spotify'}/>])
-    // } else {
-    //   addContentToBeDisplayed([<ButtonsPast buttonText={'Try again'}/>])
-    // }
     displayLoadingSpinner();
     window.location.href = SPOTIFY_AUTH_URL + param;
     return null;

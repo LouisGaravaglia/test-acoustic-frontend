@@ -1,0 +1,82 @@
+{
+  "id": "playlist_1",
+  "images": [
+      {
+          "url": "https://i.scdn.co/image/68b6a65573a55095e9c0c0c33a274b18e0422736"
+      }
+  ],
+  "name": "Dinner with Friends",
+  "tracks": {
+      "items": [
+          {
+              "track": {
+                  "album": {
+                      "images": [
+                          {
+                              "height": 640,
+                              "url": "https://i.scdn.co/image/47421900e7534789603de84c03a40a826c058e45",
+                              "width": 640
+                          }
+                      ],
+                      "name": "I''m Not The Only One",
+                      "type": "album"
+                  },
+                  "artists": [
+                      {
+                          "name": "Sam Smith",
+                          "type": "artist"
+                      }
+                  ],
+                  "name": "I''m Not The Only One - Radio Edit",
+                  "id": "track_1"
+              }
+          },
+          {
+            "track": {
+                "album": {
+                    "images": [
+                        {
+                            "height": 640,
+                            "url": "https://i.scdn.co/image/47421900e7534789603de84c03a40a826c058e45",
+                            "width": 640
+                        }
+                    ],
+                    "name": "Trilogy",
+                    "type": "album"
+                },
+                "artists": [
+                    {
+                        "name": "The Weeknd",
+                        "type": "artist"
+                    }
+                ],
+                "name": "The morning",
+                "id": "track_2"
+            }
+        },
+        {
+          "track": {
+              "album": {
+                  "images": [
+                      {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/47421900e7534789603de84c03a40a826c058e45",
+                          "width": 640
+                      }
+                  ],
+                  "name": "Trilogy",
+                  "type": "album"
+              },
+              "artists": [
+                  {
+                      "name": "The Weeknd",
+                      "type": "artist"
+                  }
+              ],
+              "name": "The morning",
+              "id": "track_2"
+          }
+      }
+      ]
+  }
+}
