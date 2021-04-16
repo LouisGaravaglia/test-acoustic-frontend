@@ -4,6 +4,7 @@ import {NavLink, useLocation} from 'react-router-dom';
 
 const Navbar: React.FC = () => {
   const location = useLocation();
+  const urlSlug = location.pathname;
 
 ////////////////////////////////////////////////////  RETURN  ////////////////////////////////////////////////////
 
@@ -16,9 +17,9 @@ const Navbar: React.FC = () => {
       </div>
       <div className='Navbar-Container-Right'>
           <div className='Navbar-Link-Box'>
-              <NavLink  className={location.pathname === "/" ? 'Navbar-Link-Active' : 'Navbar-Link'} exact to='/'>HOME</NavLink>
-              <NavLink  className={location.pathname === "/profile" ? 'Navbar-Link-Active' : 'Navbar-Link'} exact to='/profile'>PROFILE</NavLink>
-              <NavLink  className={location.pathname === "/login" ? 'Navbar-Link-Active' : 'Navbar-Link'} exact to='/login'>LOGIN</NavLink>
+              <NavLink  className={urlSlug === "/" ? 'Navbar-Link-Active' : 'Navbar-Link'} exact to='/'>HOME</NavLink>
+              <NavLink  className={urlSlug === "/profile" ? 'Navbar-Link-Active' : 'Navbar-Link'} exact to='/profile'>PROFILE</NavLink>
+              <NavLink  className={urlSlug === "/login" ? 'Navbar-Link-Active' : 'Navbar-Link'} exact to='/login'>LOGIN</NavLink>
           </div>
       </div>
     </>
