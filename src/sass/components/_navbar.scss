@@ -49,29 +49,6 @@ a {
   color: $mainLight;
 }
 
-// .Navbar-Link {
-//   font-family: $mainFont;
-//   font-weight: 400;
-//   font-size: 1.5rem;
-//   color: $whiteFont;
-//   margin-left: 20px;
-//   padding: 0;
-//   //EXTENDING THE NAVBAR LOGO STYLES TO MATCH ALIGNMENT WITH THE LOGO
-//   display: block;
-//   height: 60px;
-//   width: 60px;
-//   line-height: 60px;
-//   text-align: center;
-//   -moz-border-radius: 30px;
-//   border-radius: 30px; 
-//   border: 1px solid rgba(0,0,0,0.0);
-//   width:fit-content;
-// }
-
-// .Navbar-Link:hover {
-//   color: $mainLight;
-// }
-
 .Navbar-Link-Box {
   @extend .Navbar-Logo-Box;
   margin-right: 50px;
@@ -122,4 +99,38 @@ a {
           transform: scaleX(1);
       }   
   }   
+}
+
+.Navbar-Link-Active {
+  font-family: $mainFont;
+  font-weight: 400;
+  font-size: 1.5rem;
+  color: $mainLight;
+  margin-left: 20px;
+  padding: 0;
+  //EXTENDING THE NAVBAR LOGO STYLES TO MATCH ALIGNMENT WITH THE LOGO
+  height: 60px;
+  width: 60px;
+  line-height: 60px;
+  text-align: center;
+  -moz-border-radius: 30px;
+  border-radius: 30px; 
+  border: 1px solid rgba(0,0,0,0.0);
+  width:fit-content;
+  position: relative;
+  text-decoration: none;
+  transition: all .35s ease;
+  // border: 2px solid violet;
+
+  &::before {
+      content: "";
+      position: absolute;
+      text-align: center;
+      width: 100%;
+      height: 5px;
+      bottom: 5px;
+      left: 0;
+      background: linear-gradient(to right, $mainLight 0%, $mainDark 100%);
+      visibility: visible;
+  }
 }
