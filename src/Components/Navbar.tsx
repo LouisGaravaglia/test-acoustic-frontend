@@ -19,6 +19,7 @@ const Navbar: React.FC = () => {
           <div className='Navbar-Link-Box'>
               <NavLink  className={urlSlug === "/" ? 'Navbar-Link-Active' : 'Navbar-Link'} exact to='/'>HOME</NavLink>
               <NavLink  className={urlSlug === "/profile" ? 'Navbar-Link-Active' : 'Navbar-Link'} exact to='/profile'>PROFILE</NavLink>
+              <NavLink  className={urlSlug === "/register" ? 'Navbar-Link-Active' : 'Navbar-Link'} exact to='/register'>REGISTER</NavLink>
               <NavLink  className={urlSlug === "/login" ? 'Navbar-Link-Active' : 'Navbar-Link'} exact to='/login'>LOGIN</NavLink>
           </div>
       </div>
