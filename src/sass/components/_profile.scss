@@ -11,3 +11,67 @@
   color: $mainLight;
   text-align: center;
 }
+
+.Playlists-Container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  border: 2px solid teal;
+}
+
+.Playlists-Selected-Content {
+  flex: 0 0 100vw;
+  // height: 300px;
+  // width: 300px;
+  border: 2px solid pink;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+
+.Playlists-Left-Box {
+  flex: 0 0 50vw;
+  // height: 300px;
+  // width: 300px;
+  border: 2px solid red;
+}
+
+.Playlists-Right-Box {
+  flex: 0 0 50vw;
+  border: 2px solid yellow;
+}
+
+
+.Playlists-Header-Box {
+  flex: 1 0 100vw;
+  margin-top: 200px;
+}
+
+.Playlists-Selected-Title {
+  font-family: #fff;
+  font-weight: 800;
+  font-size: 2rem;
+  color: #fff;
+  text-align: center;
+}
+
+
+
+.Playlists-Track-Name {
+  font-family: #fff;
+  font-weight: 800;
+  font-size: 2rem;
+  color: #fff;
+  text-align: center;
+}
+
+.Playlists-Artist-Name {
+  font-family: #fff;
+  font-weight: 800;
+  font-size: 2rem;
+  color: #fff;
+  text-align: center;
+}

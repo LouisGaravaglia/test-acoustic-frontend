@@ -23,20 +23,30 @@ function PlaylistsContainer(): JSX.Element {
 
 
 
-    <>
-      <div className='Home-Upper-Box'>
-         <ul className='PlaylistsContainer-List'>
-           {tracks.map((value: any, index: any) => 
-            <div key={value.track.id}>
-              <p className='Profile-Header'>{value.track.name}</p>
-              <p className='Profile-Header'>{value.track.artists[0].name}</p>
-           </div>
-           
-           )}
-          {/* {Object.keys(user).map((value, index) => <p key={index} className='PlaylistsContainer-Header'>{value + ': ' + user[value as keyof IUser]}</p>)} */}
-        </ul>
+    <div className='Playlists-Container'>
+
+      <div className="Playlists-Header-Box">
+        <h1 className="Playlists-Selected-Title">{fakePlaylist.name}</h1>
       </div>
-    </>
+
+      <div className="Playlists-Selected-Content">
+        <div className='Playlists-Left-Box'>
+        </div>
+
+        <div className='Playlists-Right-Box'>
+            {tracks.map((value: any, index: any) => 
+              <div key={value.track.id}>
+                <p className='Playlists-Track-Name'>{value.track.name}</p>
+                <p className='Playlists-Artist-Name'>{value.track.artists[0].name}</p>
+            </div>
+            )}
+        </div>
+      </div>
+      
+  
+
+  
+    </div>
   );
 };
 
