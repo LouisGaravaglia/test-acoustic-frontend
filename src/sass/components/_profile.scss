@@ -32,14 +32,14 @@
 }
 
 
-.Playlists-Left-Box {
+.Playlists-Artwork-Box {
   flex: 0 0 50vw;
   // height: 300px;
   // width: 300px;
   border: 2px solid red;
 }
 
-.Playlists-Right-Box {
+.Playlists-Tracks-Container {
   flex: 0 0 50vw;
   border: 2px solid yellow;
 }
@@ -47,31 +47,67 @@
 
 .Playlists-Header-Box {
   flex: 1 0 100vw;
-  margin-top: 200px;
+  margin: 200px 0 40px;
 }
 
 .Playlists-Selected-Title {
   font-family: #fff;
-  font-weight: 800;
-  font-size: 2rem;
+  font-weight: 900;
+  font-size: 4rem;
   color: #fff;
   text-align: center;
+  margin: 0;
 }
 
+
+.Playlists-Tracks-Box {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 0 0 20px 20px;
+  // justify-content: flex-start;
+  // align-items: flex-start;
+  border: 2px solid pink;
+  // text-align: start;
+}
+
+// .Playlists-Track {
+//   flex: 0 0 100%;
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: flex-start;
+//   align-items: flex-start;
+//   border: 2px solid teal;
+//   text-align: start;
+// }
+
+// .Playlists-Artist {
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: flex-start;
+//   align-items: flex-start;
+//   border: 2px solid white;
+//   text-align: start;
+// }
 
 
 .Playlists-Track-Name {
+  // flex: 0 0 100%;
+  // text-align: start;
   font-family: #fff;
-  font-weight: 800;
-  font-size: 2rem;
+  font-weight: 500;
+  font-size: 1.4rem;
   color: #fff;
-  text-align: center;
+  margin: 0 0 5px 0;
+  // text-align: center;
 }
 
 .Playlists-Artist-Name {
+  // flex: 0 0 100%;
   font-family: #fff;
-  font-weight: 800;
-  font-size: 2rem;
+  font-weight: 900;
+  font-size: 1.4rem;
   color: #fff;
-  text-align: center;
+  margin: 0;
+  // text-align: center;
 }
