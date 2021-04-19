@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
 import {MessagesContext} from './ChatBot/MessagesProvider';
-let fakePlaylist =  require('../fakeData/playlist.json');
+let playlists =  require('../fakeData/playlist.json');
 
 // interface IUser {
 //   first_name: string
@@ -13,9 +13,12 @@ let fakePlaylist =  require('../fakeData/playlist.json');
 // }
 
 function PlaylistsContainer(): JSX.Element {
-  console.log("fakePlaylist: ", fakePlaylist);
-  let tracks = fakePlaylist.tracks.items;
+  console.log("playlists: ", playlists);
+  let tracks = playlists[0].tracks.items;
   console.log("tracks: ", tracks);
+  console.log("2nd playlist name: ", playlists[1].name );
+  
+
   
   
 
@@ -26,7 +29,7 @@ function PlaylistsContainer(): JSX.Element {
     <div className='Playlists-Container'>
 
       <div className="Playlists-Header-Box">
-        <h1 className="Playlists-Selected-Title">{fakePlaylist.name.toUpperCase()}</h1>
+        <h1 className="Playlists-Selected-Title">{playlists[0].name.toUpperCase()}</h1>
       </div>
 
       <div className="Playlists-Selected-Content">
@@ -48,7 +51,16 @@ function PlaylistsContainer(): JSX.Element {
         </div>
       </div>
       
-  
+      <div className='Playlists-All-Container'>
+            {playlists.map((playlist: any, index: any) => 
+              <div key={playlist.id} className='Playlists-All-Box'>
+          
+                  <p className='Playlists-Name'>{playlist.name.toUpperCase()}</p>
+              
+            </div>
+            )}
+        </div>
+ 
 
   
     </div>
