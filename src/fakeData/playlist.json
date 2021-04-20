@@ -1,4 +1,5 @@
-[{
+[
+{
   "id": "playlist_1",
   "images": [
       {
@@ -76,10 +77,34 @@
               "name": "Wicked Games",
               "id": "track_3"
           }
-      }
+      },
+      {
+        "track": {
+            "album": {
+                "images": [
+                    {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/47421900e7534789603de84c03a40a826c058e45",
+                        "width": 640
+                    }
+                ],
+                "name": "Illmatic",
+                "type": "album"
+            },
+            "artists": [
+                {
+                    "name": "Nas",
+                    "type": "artist"
+                }
+            ],
+            "name": "The World is Yours",
+            "id": "track_4"
+        }
+    }
       ]
   }
 },
+
 {
   "id": "playlist_2",
   "images": [
@@ -88,6 +113,340 @@
       }
   ],
   "name": "Hype Music",
+  "tracks": {
+      "items": [
+          {
+              "track": {
+                  "album": {
+                      "images": [
+                          {
+                              "height": 640,
+                              "url": "https://i.scdn.co/image/47421900e7534789603de84c03a40a826c058e45",
+                              "width": 640
+                          }
+                      ],
+                      "name": "Main album",
+                      "type": "album"
+                  },
+                  "artists": [
+                      {
+                          "name": "Iann Dior",
+                          "type": "artist"
+                      }
+                  ],
+                  "name": "Shots in the darkt",
+                  "id": "track_1"
+              }
+          },
+          {
+            "track": {
+                "album": {
+                    "images": [
+                        {
+                            "height": 640,
+                            "url": "https://i.scdn.co/image/47421900e7534789603de84c03a40a826c058e45",
+                            "width": 640
+                        }
+                    ],
+                    "name": "Singles",
+                    "type": "album"
+                },
+                "artists": [
+                    {
+                        "name": "Offset",
+                        "type": "artist"
+                    }
+                ],
+                "name": "SHOOT MY SHOT",
+                "id": "track_2"
+            }
+        },
+        {
+          "track": {
+              "album": {
+                  "images": [
+                      {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/47421900e7534789603de84c03a40a826c058e45",
+                          "width": 640
+                      }
+                  ],
+                  "name": "My Parade",
+                  "type": "album"
+              },
+              "artists": [
+                  {
+                      "name": "ILOVEMAKONNEN",
+                      "type": "artist"
+                  }
+              ],
+              "name": "All I wanna see",
+              "id": "track_3"
+          }
+      }
+      ]
+  }
+}
+
+,
+
+{
+  "id": "playlist_3",
+  "images": [
+      {
+          "url": "https://i.scdn.co/image/68b6a65573a55095e9c0c0c33a274b18e0422736"
+      }
+  ],
+  "name": "Pigeons and Planes 4/19/21",
+  "tracks": {
+      "items": [
+          {
+              "track": {
+                  "album": {
+                      "images": [
+                          {
+                              "height": 640,
+                              "url": "https://i.scdn.co/image/47421900e7534789603de84c03a40a826c058e45",
+                              "width": 640
+                          }
+                      ],
+                      "name": "Main album",
+                      "type": "album"
+                  },
+                  "artists": [
+                      {
+                          "name": "Iann Dior",
+                          "type": "artist"
+                      }
+                  ],
+                  "name": "Shots in the darkt",
+                  "id": "track_1"
+              }
+          },
+          {
+            "track": {
+                "album": {
+                    "images": [
+                        {
+                            "height": 640,
+                            "url": "https://i.scdn.co/image/47421900e7534789603de84c03a40a826c058e45",
+                            "width": 640
+                        }
+                    ],
+                    "name": "Singles",
+                    "type": "album"
+                },
+                "artists": [
+                    {
+                        "name": "Offset",
+                        "type": "artist"
+                    }
+                ],
+                "name": "SHOOT MY SHOT",
+                "id": "track_2"
+            }
+        },
+        {
+          "track": {
+              "album": {
+                  "images": [
+                      {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/47421900e7534789603de84c03a40a826c058e45",
+                          "width": 640
+                      }
+                  ],
+                  "name": "My Parade",
+                  "type": "album"
+              },
+              "artists": [
+                  {
+                      "name": "ILOVEMAKONNEN",
+                      "type": "artist"
+                  }
+              ],
+              "name": "All I wanna see",
+              "id": "track_3"
+          }
+      }
+      ]
+  }
+},
+
+{
+  "id": "playlist_4",
+  "images": [
+      {
+          "url": "https://i.scdn.co/image/68b6a65573a55095e9c0c0c33a274b18e0422736"
+      }
+  ],
+  "name": "Fader",
+  "tracks": {
+      "items": [
+          {
+              "track": {
+                  "album": {
+                      "images": [
+                          {
+                              "height": 640,
+                              "url": "https://i.scdn.co/image/47421900e7534789603de84c03a40a826c058e45",
+                              "width": 640
+                          }
+                      ],
+                      "name": "Main album",
+                      "type": "album"
+                  },
+                  "artists": [
+                      {
+                          "name": "Iann Dior",
+                          "type": "artist"
+                      }
+                  ],
+                  "name": "Shots in the darkt",
+                  "id": "track_1"
+              }
+          },
+          {
+            "track": {
+                "album": {
+                    "images": [
+                        {
+                            "height": 640,
+                            "url": "https://i.scdn.co/image/47421900e7534789603de84c03a40a826c058e45",
+                            "width": 640
+                        }
+                    ],
+                    "name": "Singles",
+                    "type": "album"
+                },
+                "artists": [
+                    {
+                        "name": "Offset",
+                        "type": "artist"
+                    }
+                ],
+                "name": "SHOOT MY SHOT",
+                "id": "track_2"
+            }
+        },
+        {
+          "track": {
+              "album": {
+                  "images": [
+                      {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/47421900e7534789603de84c03a40a826c058e45",
+                          "width": 640
+                      }
+                  ],
+                  "name": "My Parade",
+                  "type": "album"
+              },
+              "artists": [
+                  {
+                      "name": "ILOVEMAKONNEN",
+                      "type": "artist"
+                  }
+              ],
+              "name": "All I wanna see",
+              "id": "track_3"
+          }
+      }
+      ]
+  }
+},
+
+{
+  "id": "playlist_5",
+  "images": [
+      {
+          "url": "https://i.scdn.co/image/68b6a65573a55095e9c0c0c33a274b18e0422736"
+      }
+  ],
+  "name": "Pitchfork",
+  "tracks": {
+      "items": [
+          {
+              "track": {
+                  "album": {
+                      "images": [
+                          {
+                              "height": 640,
+                              "url": "https://i.scdn.co/image/47421900e7534789603de84c03a40a826c058e45",
+                              "width": 640
+                          }
+                      ],
+                      "name": "Main album",
+                      "type": "album"
+                  },
+                  "artists": [
+                      {
+                          "name": "Iann Dior",
+                          "type": "artist"
+                      }
+                  ],
+                  "name": "Shots in the darkt",
+                  "id": "track_1"
+              }
+          },
+          {
+            "track": {
+                "album": {
+                    "images": [
+                        {
+                            "height": 640,
+                            "url": "https://i.scdn.co/image/47421900e7534789603de84c03a40a826c058e45",
+                            "width": 640
+                        }
+                    ],
+                    "name": "Singles",
+                    "type": "album"
+                },
+                "artists": [
+                    {
+                        "name": "Offset",
+                        "type": "artist"
+                    }
+                ],
+                "name": "SHOOT MY SHOT",
+                "id": "track_2"
+            }
+        },
+        {
+          "track": {
+              "album": {
+                  "images": [
+                      {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/47421900e7534789603de84c03a40a826c058e45",
+                          "width": 640
+                      }
+                  ],
+                  "name": "My Parade",
+                  "type": "album"
+              },
+              "artists": [
+                  {
+                      "name": "ILOVEMAKONNEN",
+                      "type": "artist"
+                  }
+              ],
+              "name": "All I wanna see",
+              "id": "track_3"
+          }
+      }
+      ]
+  }
+},
+
+{
+  "id": "playlist_6",
+  "images": [
+      {
+          "url": "https://i.scdn.co/image/68b6a65573a55095e9c0c0c33a274b18e0422736"
+      }
+  ],
+  "name": "STEREOGUM_43",
   "tracks": {
       "items": [
           {

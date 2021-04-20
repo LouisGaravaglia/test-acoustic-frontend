@@ -54,11 +54,20 @@ function PlaylistsContainer(): JSX.Element {
       <div className='Playlists-All-Container'>
             {playlists.map((playlist: any, index: any) => 
               <div key={playlist.id} className='Playlists-All-Box'>
-          
-                  <p className='Playlists-Name'>{playlist.name.toUpperCase()}</p>
-              
-            </div>
+                <p className='Playlists-Name'>{playlist.name.toUpperCase()}</p>
+              </div>
             )}
+
+              <div className='Playlists-Placeholder-Box'>
+              </div>
+
+              <div className='Playlists-Placeholder-Box'>
+              </div>
+
+              <div className='Playlists-Placeholder-Box'>
+              </div>
+              <div className='Playlists-Placeholder-Box'>
+              </div>
         </div>
  
 
