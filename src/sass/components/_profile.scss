@@ -17,7 +17,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  border: 2px solid teal;
+  // border: 2px solid teal;
   // height: 100vh;
   background: linear-gradient(to right top, $bgColor1, $bgColor2, $bgColor3, $bgColor4, $bgColor5);
 
@@ -27,7 +27,7 @@
   flex: 0 0 100vw;
   // height: 300px;
   // width: 300px;
-  border: 2px solid pink;
+  // border: 2px solid pink;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -37,14 +37,24 @@
 
 .Playlists-Artwork-Box {
   flex: 0 0 50vw;
+  display: flex;
+  justify-content: flex-end;
   // height: 300px;
   // width: 300px;
-  border: 2px solid red;
+  // border: 2px solid red;
+}
+
+.Playlists-Artwork{
+  margin-right: 20px;
+  max-width: 640px;
+  width: 100%;
+  height: auto;
+
 }
 
 .Playlists-Tracks-Container {
   flex: 0 0 50vw;
-  border: 2px solid yellow;
+  // border: 2px solid yellow;
 }
 
 
@@ -70,7 +80,7 @@
   margin: 0 0 20px 20px;
   // justify-content: flex-start;
   // align-items: flex-start;
-  border: 2px solid pink;
+  // border: 2px solid pink;
   // text-align: start;
 }
 

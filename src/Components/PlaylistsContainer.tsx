@@ -35,12 +35,13 @@ function PlaylistsContainer(): JSX.Element {
     <div className='Playlists-Container'>
 
       <div className="Playlists-Header-Box">
-        <h1 className="Playlists-Selected-Title">{playlists[0].name.toUpperCase()}</h1>
+        <h1 className="Playlists-Selected-Title">{playlists[0].name}</h1>
       </div>
 
       <div className="Playlists-Selected-Content">
 
         <div className='Playlists-Artwork-Box'>
+          <img className='Playlists-Artwork' src={playlists[0].images[0].url} alt=""/>
         </div>
 
         <div className='Playlists-Tracks-Container'>
@@ -50,7 +51,7 @@ function PlaylistsContainer(): JSX.Element {
                   <p className='Playlists-Track-Name'>{value.track.name}</p>
                 {/* </div> */}
                 {/* <div className="Playlists-Artist"> */}
-                  <p className='Playlists-Artist-Name'>{value.track.artists[0].name.toUpperCase()}</p>
+                  <p className='Playlists-Artist-Name'>{value.track.artists[0].name}</p>
                 {/* </div> */}
             </div>
             )}
