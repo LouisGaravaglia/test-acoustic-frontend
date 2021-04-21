@@ -50,7 +50,7 @@ function PlaylistsThumbnail({playlist}: Props): JSX.Element {
   return (
     <div ref={boxRef} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} key={playlist.id}  className='Playlists-All-Invisible-Box'>
       <div className='Playlists-All-Circle' style={cursorInsideDiv ? styles : {}}>
-        <p className='Playlists-Name'>{playlist.name.toUpperCase()}</p>
+          <p className='Playlists-Name'>{playlist.name.toUpperCase()}</p>
       </div>
     </div>
   );

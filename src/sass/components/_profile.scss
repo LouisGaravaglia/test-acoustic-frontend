@@ -18,6 +18,9 @@
   flex-wrap: wrap;
   justify-content: center;
   border: 2px solid teal;
+  // height: 100vh;
+  background: linear-gradient(to right top, $bgColor1, $bgColor2, $bgColor3, $bgColor4, $bgColor5);
+
 }
 
 .Playlists-Selected-Content {
@@ -163,16 +166,21 @@
   text-align: center;
   border: 1px solid #fff;
   border-radius: 500px;
-  // background: linear-gradient(to right, $mainLight 0%, $mainDark 100%);
+  // background: linear-gradient(to right, rgb(248, 168, 76) 0%, rgb(255, 155, 205) 100%);
   overflow: hidden;
-  transition: 0.4s ease-out;
+  transition: 0.6s ease-out;
   // transition: 0.4;
   // transform: translate(20px, 80px);
 }
 
+.Playlists-All-Circle:hover{
+  background: linear-gradient(to right, rgb(248, 168, 76) 0%, rgb(255, 155, 205) 100%);
+  border: none;
+}
+
 .Playlists-Name {
   font-family: $mainFont;
-  font-weight: 900;
+  font-weight: 100;
   font-size: 1.5rem;
   color: #fff;
   // -ms-word-break: break-all;
