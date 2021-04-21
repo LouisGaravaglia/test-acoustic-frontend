@@ -41,6 +41,7 @@ function PlaylistsContainer(): JSX.Element {
       <div className="Playlists-Selected-Content">
 
         <div className='Playlists-Artwork-Box'>
+          <div className='Playlists-Artwork-Filler'></div>
           <img className='Playlists-Artwork' src={playlists[0].images[0].url} alt=""/>
         </div>
 
@@ -66,16 +67,11 @@ function PlaylistsContainer(): JSX.Element {
               // </div>
             )}
 
-              <div className='Playlists-Placeholder-Box'>
-              </div>
+              {/* <div className='Playlists-Placeholder-Box'></div>
+              <div className='Playlists-Placeholder-Box'></div>
+              <div className='Playlists-Placeholder-Box'></div>
+              <div className='Playlists-Placeholder-Box'></div> */}
 
-              <div className='Playlists-Placeholder-Box'>
-              </div>
-
-              <div className='Playlists-Placeholder-Box'>
-              </div>
-              <div className='Playlists-Placeholder-Box'>
-              </div>
         </div>
  
 
