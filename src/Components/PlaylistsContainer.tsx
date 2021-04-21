@@ -2,6 +2,7 @@ import React, {useContext} from 'react';
 import {MessagesContext} from './ChatBot/MessagesProvider';
 import useMousePosition from '../Hooks/useMousePosition';
 import PlaylistsThumbnail from './PlaylistsThumbnail';
+import PlaylistsTrack from './PlaylistsTrack';
 let playlists =  require('../fakeData/playlist.json');
 
 // interface IUser {
@@ -41,20 +42,12 @@ function PlaylistsContainer(): JSX.Element {
       <div className="Playlists-Selected-Content">
 
         <div className='Playlists-Artwork-Box'>
-          <div className='Playlists-Artwork-Filler'></div>
           <img className='Playlists-Artwork' src={playlists[0].images[0].url} alt=""/>
         </div>
 
         <div className='Playlists-Tracks-Container'>
-            {tracks.map((value: any, index: any) => 
-              <div key={value.track.id} className='Playlists-Tracks-Box'>
-                {/* <div className="Playlists-Track"> */}
-                  <p className='Playlists-Track-Name'>{value.track.name}</p>
-                {/* </div> */}
-                {/* <div className="Playlists-Artist"> */}
-                  <p className='Playlists-Artist-Name'>{value.track.artists[0].name}</p>
-                {/* </div> */}
-            </div>
+            {tracks.map((track: any, index: number) => 
+              <PlaylistsTrack track={track} index={index}/>
             )}
         </div>
       </div>
