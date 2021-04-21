@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useState} from 'react';
 import {MessagesContext} from './ChatBot/MessagesProvider';
 import useMousePosition from '../Hooks/useMousePosition';
 import PlaylistsThumbnail from './PlaylistsThumbnail';
@@ -16,6 +16,7 @@ let playlists =  require('../fakeData/playlist.json');
 // }
 
 function PlaylistsContainer(): JSX.Element {
+  const [selectedTrack, setSelectedTrack] = useState<number>(0);
   // console.log("playlists: ", playlists);
   let tracks = playlists[0].tracks.items;
   const {x, y} = useMousePosition();
@@ -24,10 +25,7 @@ function PlaylistsContainer(): JSX.Element {
   // console.log("mousePosition - x: ", x);
   // console.log("mousePosition - y: ", y);
   
-  
 
-  
-  
 
   return (
 
@@ -47,7 +45,7 @@ function PlaylistsContainer(): JSX.Element {
 
         <div className='Playlists-Tracks-Container'>
             {tracks.map((track: any, index: number) => 
-              <PlaylistsTrack track={track} index={index}/>
+              <PlaylistsTrack track={track} index={index} selectedTrack={selectedTrack} setSelectedTrack={setSelectedTrack}/>
             )}
         </div>
       </div>
