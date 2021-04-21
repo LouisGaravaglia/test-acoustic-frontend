@@ -139,10 +139,41 @@
   // transform: translate(20px, 80px);
 }
 
+.Playlists-All-Invisible-Box {
+  width: 200px;
+  height: 200px;
+  // margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  // border: 2px solid pink;
+  // background: linear-gradient(to right, $mainLight 0%, $mainDark 100%);
+  // overflow: hidden;
+  // transform: translate(20px, 80px);
+}
+
+.Playlists-All-Circle{
+  width: 150px;
+  height: 150px;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 1px solid #fff;
+  border-radius: 500px;
+  // background: linear-gradient(to right, $mainLight 0%, $mainDark 100%);
+  overflow: hidden;
+  transition: 0.4s ease-out;
+  // transition: 0.4;
+  // transform: translate(20px, 80px);
+}
+
 .Playlists-Name {
   font-family: $mainFont;
   font-weight: 900;
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: #fff;
   // -ms-word-break: break-all;
   // word-break: break-all;
@@ -153,5 +184,5 @@
 .Playlists-Placeholder-Box {
   width: 200px;
   height: 200px;
-  margin: 10px;
+  // margin: 10px;
 }

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import useMousePosition from '../Hooks/useMousePosition';
 
 interface Props {
@@ -9,49 +9,49 @@ interface Props {
 }
 
 function PlaylistsThumbnail({playlist}: Props): JSX.Element {
-  const {x, y} = useMousePosition();
+  const {x: cursorHorizontalPosition, y: cursorVerticalPosition} = useMousePosition();
   const [cursorInsideDiv, setCursorInsideDiv] = useState<boolean>(false);
-  const [initialXValue, setInitialXValue] = useState<number>(0);
-  const [initialYValue, setInitialYValue] = useState<number>(0);
-  // const [cursorXPosition, setCursorXPosition] = useState<number>(0);
-  // const [cursorYPosition, setCursorYPosition] = useState<number>(0);
+  const [bottom, setBottom] = useState<number>(0);
+  const [right, setRight] = useState<number>(0);
+  const boxRef = useRef<any | null>();
+
+  const horizontalMidPointOfDiv = right - 100;
+  const verticalMidPointOfDiv = bottom - 100;
+  const translateXPosition = (cursorHorizontalPosition - horizontalMidPointOfDiv) / 4.5;
+  const translateYPosition = (cursorVerticalPosition - verticalMidPointOfDiv) / 4.5;
 
   // useEffect(() => {
-  //   function makeSureCoordinatesNotNull() {
-  //     setCursorXPosition(x === null ? 0 : x);
-  //     setCursorYPosition(y === null ? 0 : y);
+  //   function followCursor() {
+  //     console.log("mousePosition - x: ", x);
+  //     console.log("mousePosition - y: ", y);
+  //     console.log("translateXPosition: ", translateXPosition);
+  //     console.log("translateYPosition", translateYPosition);
   //   }
 
   //   if (cursorInsideDiv) followCursor()
-  // }, [])
-
-  useEffect(() => {
-    function followCursor() {
-      console.log("mousePosition - x: ", x);
-      console.log("mousePosition - y: ", y);
-    }
-
-    if (cursorInsideDiv) followCursor()
-  }, [x, y])
+  // }, [x, y])
 
   function handleMouseEnter() {
     setCursorInsideDiv(true);
-    setInitialXValue(x);
-    setInitialYValue(y);
+    const {bottom, right} = boxRef.current.getBoundingClientRect();
+    setBottom(bottom);
+    setRight(right);
+    
   }
 
   function handleMouseLeave() {
     setCursorInsideDiv(false);
   }
 
-
   const styles: React.CSSProperties = {
-    transform: `translate(${x - initialXValue}px, ${y - initialYValue}px)`
+    transform: `translate(${translateXPosition}px, ${translateYPosition}px)`
   }
 
   return (
-    <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} key={playlist.id} style={cursorInsideDiv ? styles : {}} className='Playlists-All-Box'>
-      <p className='Playlists-Name'>{playlist.name.toUpperCase()}</p>
+    <div ref={boxRef} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} key={playlist.id}  className='Playlists-All-Invisible-Box'>
+      <div className='Playlists-All-Circle' style={cursorInsideDiv ? styles : {}}>
+        <p className='Playlists-Name'>{playlist.name.toUpperCase()}</p>
+      </div>
     </div>
   );
 };
