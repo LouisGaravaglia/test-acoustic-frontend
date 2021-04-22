@@ -51,6 +51,7 @@
     // height: auto;
     // border: 3px solid $mainDark;
     padding: 5px;
+    // filter: grayscale(100%);
     // overflow: hidden;
     // border-radius: 50%;
   }
@@ -62,72 +63,96 @@
 .Playlists-Tracks-Container {
   position: relative;
   flex: 1 0 50vw;
+  margin-right: 40px;
   // border: 2px solid yellow;
 
-  .Playlists-Tracks-Box {
+  .Playlists-Track-Container {
     position: absolute;
     top: 80px;
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+    flex-direction: row;
+    flex-wrap: nowrap;
     margin: 0 40px 20px 40px;
     cursor: pointer;
+    width: calc(100% - 80px);
+    // width: 100%;
     // justify-content: flex-start;
     // align-items: flex-start;
     // border: 2px solid pink;
 
-    .Playlists-Track-Name {
-      // flex: 0 0 100%;
-      // text-align: start;
-      font-family: $mainFont;
-      font-weight: 500;
-      font-size: 1rem;
-      color: #fff;
-      margin: 0 0 5px 0;
-      transition: 0.2s ease-out;
-      z-index: 1;
-      // text-align: center;
-    }
-    
-    .Playlists-Artist-Name {
-      // flex: 0 0 100%;
-      font-family: $mainFont;
-      font-weight: 900;
-      font-size: 1rem;
-      color: #fff;
-      margin: 0;
-      transition: 0.2s ease-out;
-      z-index: 1;
-      // text-align: center;
-    }
-  }
+    .Playlists-Track-Box {
+      // border: 2px solid black;
 
-  .Playlists-Tracks-Box:hover {
+      .Playlists-Track-Name {
+        // flex: 0 0 100%;
+        // text-align: start;
+        font-family: $mainFont;
+        font-weight: 300;
+        font-size: 1rem;
+        color: #fff;
+        margin: 0 0 5px 0;
+        transition: 0.2s ease-out;
+        z-index: 1;
+        // text-align: center;
+      }
+      
+      .Playlists-Artist-Name {
+        // flex: 0 0 100%;
+        font-family: $mainFont;
+        font-weight: 700;
+        font-size: 1rem;
+        color: #fff;
+        margin: 0;
+        transition: 0.2s ease-out;
+        z-index: 1;
+        // text-align: center;
+      }
 
-    &::before {
-      content: "";
-      position: absolute;
-      text-align: center;
-      width: calc(100% + 40px);;
-      height: 60px;
-      bottom: -10px;
-      left: -20px;
-      background-color: $mainLight;
-      visibility: hidden;
-      -webkit-transform: scaleX(0);
-      transform: scaleX(0);
-      -webkit-transition: all 0.2s ease-in-out 0s; 
-      transition: all 0.2s ease-in-out 0s; 
+
     }
 
-    &:hover {
+    .Playlists-Play-Box {
+      display: flex;
+      flex-grow: 1;
+      justify-content: flex-end;
+      align-items: center;
+      // border: 2px solid pink;
 
-      &::before {
-          visibility: visible;
-          -webkit-transform: scaleX(1);
-          transform: scaleX(1);
+      .Playlists-Play-Icon {
+        cursor: pointer;
+        font-size: 40px;
+        color: #fff;
       }
     }
+
+  }
+
+  .Playlists-Track-Container:hover {
+
+    // &::before {
+    //   content: "";
+    //   position: absolute;
+    //   text-align: center;
+    //   width: calc(100% + 40px);
+    //   height: 60px;
+    //   bottom: -10px;
+    //   left: -20px;
+    //   background-color: $mainLight;
+    //   visibility: hidden;
+    //   -webkit-transform: scaleX(0);
+    //   transform: scaleX(0);
+    //   -webkit-transition: all 0.2s ease-in-out 0s; 
+    //   transition: all 0.2s ease-in-out 0s; 
+    // }
+
+    // &:hover {
+
+    //   &::before {
+    //       visibility: visible;
+    //       -webkit-transform: scaleX(1);
+    //       transform: scaleX(1);
+    //   }
+    // }
   }
 }
 
