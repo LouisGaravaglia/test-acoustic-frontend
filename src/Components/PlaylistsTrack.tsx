@@ -15,15 +15,15 @@ interface Props {
 function PlaylistsTrack({track, index, selectedTrack, setSelectedTrack}: Props): JSX.Element {
 
   let styles: React.CSSProperties;
-  
+
   if (selectedTrack === index){
     styles = { 
       top: `${(index * 60)}px`,
-      backgroundImage: "linear-gradient(to right, #4880EC, #019CAD)",
       padding: '40px',
       left: '-40px',
       width: 'calc(100% - 120px)',
-      cursor: 'default'
+      cursor: 'default',
+      backgroundImage: "linear-gradient(to right, rgb(0, 72, 90), rgb(0, 38, 110))",
     };
   } else if (index > selectedTrack) {
     styles = { top: `${(index * 60) + 80}px`};

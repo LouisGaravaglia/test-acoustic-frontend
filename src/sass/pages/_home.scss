@@ -3,10 +3,20 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  background:
+  linear-gradient(to bottom, white, transparent),
+  linear-gradient(to top left, rgb(146, 255, 146), transparent),
+  linear-gradient(to top right, rgb(69, 69, 255), transparent);
+background-blend-mode:screen;
+
 }
 
 .Home-Upper-Box {
-  @extend .Home-Container;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  // @extend .Home-Container;
   width: 100vw;
   height: 50vh;
 }
