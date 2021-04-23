@@ -23,7 +23,7 @@ function PlaylistsTrack({track, index, selectedTrack, setSelectedTrack}: Props):
       left: '-40px',
       width: 'calc(100% - 120px)',
       cursor: 'default',
-      backgroundImage: "linear-gradient(to right, rgb(0, 72, 90), rgb(0, 38, 110))",
+      backgroundImage: "linear-gradient(to right, rgba(250, 118, 66, 0.753), rgba(255, 7, 201, 0.651))",
     };
   } else if (index > selectedTrack) {
     styles = { top: `${(index * 60) + 80}px`};

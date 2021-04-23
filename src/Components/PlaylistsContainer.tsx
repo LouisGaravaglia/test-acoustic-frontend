@@ -40,9 +40,8 @@ function PlaylistsContainer(): JSX.Element {
       <div className="Playlists-Selected-Content">
 
         <div className='Playlists-Artwork-Box'>
-          <div className='Playlists-Artwork-Circle'>
-            <h1 className="Playlists-Artwork-Title">{playlists[0].name}</h1>
-          </div>
+          <h1 className="Playlists-Artwork-Title">{playlists[0].name}</h1>
+          <div className='Playlists-Artwork-Square'></div>
           <div className="Playlists-Artwork-Overlay"></div>
           <img className='Playlists-Artwork' src={playlists[0].images[0].url} alt=""/>
         </div>
@@ -55,6 +54,7 @@ function PlaylistsContainer(): JSX.Element {
       </div>
       {/* <div className="Test-Container"> */}
       <div className='Playlists-All-Container'>
+      {/* <div className="Playlists-All-Overlay"></div> */}
             {playlists.map((playlist: any, index: any) => 
               <PlaylistsThumbnail playlist={playlist}/>
               // <div key={playlist.id} className='Playlists-All-Box'>
