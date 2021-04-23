@@ -28,7 +28,9 @@
 //   linear-gradient(to top left, rgb(70, 31, 75), transparent),
 //   linear-gradient(to top right, rgb(90, 32, 5), transparent);
 // background-blend-mode:screen;
-  background: linear-gradient(to right top, $bgColor1, $bgColor2, $bgColor3, $bgColor4, $bgColor5);
+background-color: $mainOffWhite;
+  // background: linear-gradient(to right top, #000014, rgb(6, 0, 34), rgb(11, 0, 26), rgb(25, 0, 32), rgb(28, 0, 32));
+  // background: linear-gradient(to right top, $bgColor1, $bgColor2, $bgColor3, $bgColor4, $bgColor5);
 
 }
 
@@ -99,10 +101,15 @@
     // justify-content: center;
     // align-items: center;
     // text-align: center;
-    border-style: solid;
-    border-width: 3px;
-    border-image: linear-gradient(45deg, rgba(255, 7, 201, 0.651), rgba(250, 118, 66, 0.753)) 1;
-
+    // border-style: solid;
+    // border-width: 3px;
+    // border-image: linear-gradient(45deg, rgba(255, 7, 201, 0.651), rgba(250, 118, 66, 0.753)) 1;
+  //   background:
+  //   linear-gradient(rgba(255, 123, 0, 0.0000), transparent),
+  //   linear-gradient(to top left, rgba(250, 118, 66, 0.013), transparent),
+  //   linear-gradient(to top right, rgba(255, 7, 201, 0.101), transparent);
+  // background-blend-mode:screen;
+    background-color: $mainPink;
     // border-radius: 500px;
     // background: linear-gradient(to right, rgb(248, 168, 76) 0%, rgb(255, 155, 205) 100%);
     // overflow: hidden;
@@ -117,24 +124,25 @@
   
 
 
-  .Playlists-Artwork-Overlay {
-    position: absolute;
-    // margin-right: 80px;
-    // max-width: 640px;
-    // min-width: 350px;
-    right: 60px;
-    width: 70%;
-    height: 100%;
-    top: -20px;
-    // margin-left: 40%;
-    // height: 640px;
-    background:
-    linear-gradient(rgba(100, 0, 45, 0.596), transparent),
-    linear-gradient(to top left, rgba(240, 108, 0, 0.555), transparent),
-    linear-gradient(to top right, rgba(70, 150, 255, 0.322), transparent);
-    background-blend-mode:screen;
-    z-index: 3;
-  }
+  // .Playlists-Artwork-Overlay {
+  //   position: absolute;
+  //   // margin-right: 80px;
+  //   // max-width: 640px;
+  //   // min-width: 350px;
+  //   right: 60px;
+  //   width: 70%;
+  //   height: 100%;
+  //   top: -20px;
+  //   // margin-left: 40%;
+  //   // height: 640px;
+  //   background-color: $mainPink;
+  //   // background:
+  //   // linear-gradient(rgba(100, 0, 45, 0.596), transparent),
+  //   // linear-gradient(to top left, rgba(240, 108, 0, 0.555), transparent),
+  //   // linear-gradient(to top right, rgba(70, 150, 255, 0.322), transparent);
+  //   // background-blend-mode:screen;
+  //   z-index: 3;
+  // }
 
   .Playlists-Artwork {
     // flex: 0 0 640px;
@@ -184,7 +192,7 @@
         font-family: $mainFont;
         font-weight: 300;
         font-size: 1rem;
-        color: white;
+        color: $mainBlack;
         margin: 0 0 5px 0;
         transition: 0.2s ease-out;
         z-index: 1;
@@ -196,7 +204,7 @@
         font-family: $mainFont;
         font-weight: 700;
         font-size: 1rem;
-        color: white;
+        color: $mainBlack;
         margin: 0;
         transition: 0.2s ease-out;
         z-index: 1;
@@ -274,7 +282,7 @@
 
 .Playlists-All-Container {
   position: relative;
-  // flex: 0 0 100vw;
+  flex: 0 0 100vw;
   // display: grid;
   // width: 100vw;
   margin-top: 300px;
@@ -283,6 +291,7 @@
   padding: 50px 0;
   // border: 10px solid black;
   // grid-template-columns: repeat(auto-fill, 1fr);
+  background-color: $mainBlack;
   // gap: 20px;
   // justify-content: center;
   // background-image:
@@ -384,7 +393,7 @@
   align-items: center;
   text-align: center;
   // background-color: green;
-  border: 2px solid rgb(250, 118, 66);
+  border: 4px solid $mainOffWhite;
   border-radius: 500px;
   // background-color: rgb(9, 0, 24);
   // background: linear-gradient(to right, rgb(248, 168, 76) 0%, rgb(255, 155, 205) 100%);
@@ -395,9 +404,9 @@
 
 .Playlists-Name {
   font-family: $mainFont;
-  font-weight: 400;
+  font-weight: 900;
   font-size: 1.2rem;
-  color: white;
+  color: $mainOffWhite;
   // background: linear-gradient(to right, rgba(250, 118, 66, 0.753), rgba(255, 7, 201, 0.651));
   // -webkit-background-clip: text;
   // -webkit-text-fill-color: transparent;
@@ -418,17 +427,23 @@
   margin: 10px;
   border-radius: 500px;
   // background-color: blue;
+  // background:
+  //   linear-gradient(rgba(255, 123, 0, 0.0000), transparent),
+  //   linear-gradient(to top left, rgba(250, 118, 66, 0.013), transparent),
+  //   linear-gradient(to top right, rgba(255, 7, 201, 0.101), transparent);
+  // background-blend-mode:screen;
   background:
-    linear-gradient(rgba(255, 123, 0, 0.0001), transparent),
-    linear-gradient(to top left, rgba(250, 118, 66, 0.013), transparent),
-    linear-gradient(to top right, rgba(255, 7, 201, 0.101), transparent);
-  background-blend-mode:screen;
+  linear-gradient(rgba(255, 204, 181, 0), transparent),
+  linear-gradient(to top left, rgba(184, 184, 184, 0.013), transparent),
+  linear-gradient(to top right, rgba(255, 220, 191, 0.137), transparent);
+background-blend-mode:screen;
 
   transition: 0.6s ease-out;
   // transition: 0.4;
   // transform: translate(20px, 80px);
   cursor: pointer;
   z-index: -1;
+  pointer-events: none;
 }
 
 
@@ -439,16 +454,17 @@
   height: 170px;
 
   .Playlists-All-Circle-Overlay {
-    top: -9.9px;
+    top: -10.9px;
     left: -10.2px;
     // background-color: red;
     width: 171px;
-    height: 170px;
-    background:
-      linear-gradient(rgba(255, 123, 0, 0.842), transparent),
-      linear-gradient(to top left, rgba(250, 118, 66, 0.753), transparent),
-      linear-gradient(to top right, rgba(255, 7, 201, 0.651), transparent);
-    background-blend-mode:screen;
+    height: 171px;
+    // background:
+    //   linear-gradient($mainPink, transparent),
+    //   linear-gradient(to top left, rgba(255, 7, 201, 0.101), transparent),
+    //   linear-gradient(to top right, rgba(255, 7, 201, 0.101), transparent);
+    // background-blend-mode:screen;
+    background: linear-gradient(to top right, rgb(255, 198, 171), rgba(255, 160, 234, 0.658));
   
   
     z-index: -1;
