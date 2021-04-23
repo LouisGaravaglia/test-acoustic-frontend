@@ -371,6 +371,7 @@
   text-align: center;
   z-index: 10;
   transition: 0.6s ease-out;
+  // border: 2px solid pink;
 }
 
 .Playlists-All-Circle {
@@ -405,6 +406,7 @@
   // white-space: pre-wrap;
   transition: 0.6s ease-out;
   z-index: 1;
+  pointer-events: none;
 }
 
 .Playlists-All-Circle-Overlay {
@@ -437,9 +439,11 @@
   height: 170px;
 
   .Playlists-All-Circle-Overlay {
-    // top: 0px;
-    // left: 0px;
+    top: -9.9px;
+    left: -10.2px;
     // background-color: red;
+    width: 171px;
+    height: 170px;
     background:
       linear-gradient(rgba(255, 123, 0, 0.842), transparent),
       linear-gradient(to top left, rgba(250, 118, 66, 0.753), transparent),

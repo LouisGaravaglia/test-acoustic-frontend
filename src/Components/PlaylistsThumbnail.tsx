@@ -44,7 +44,7 @@ function PlaylistsThumbnail({playlist}: Props): JSX.Element {
     setCursorInsideDiv(false);
   }
 
-  const overlayStyles: React.CSSProperties = {
+  const boxStyles: React.CSSProperties = {
     transform: `translate(${translateXPosition}px, ${translateYPosition}px)`,
   }
 
@@ -52,9 +52,11 @@ function PlaylistsThumbnail({playlist}: Props): JSX.Element {
     fontSize: `1.5rem`
   }
 
+
+
   return (
     <div ref={boxRef} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} key={playlist.id}  className='Playlists-All-Invisible-Box'>
-     <div className='Playlists-All-Box'  style={cursorInsideDiv ? overlayStyles : {}}>
+     <div className='Playlists-All-Box'  style={cursorInsideDiv ? boxStyles : {}}>
         <div className='Playlists-All-Circle' onMouseEnter={() => setCursorInsideCircle(true)} onMouseLeave={() => setCursorInsideCircle(false)}>
         <div className='Playlists-All-Circle-Overlay'></div>
         </div>
