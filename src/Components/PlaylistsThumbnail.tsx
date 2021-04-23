@@ -11,7 +11,6 @@ interface Props {
 function PlaylistsThumbnail({playlist}: Props): JSX.Element {
   const {x: cursorHorizontalPosition, y: cursorVerticalPosition} = useMousePosition();
   const [cursorInsideDiv, setCursorInsideDiv] = useState<boolean>(false);
-  const [cursorInsideCircle, setCursorInsideCircle] = useState<boolean>(false);
   const [bottom, setBottom] = useState<number>(0);
   const [right, setRight] = useState<number>(0);
   const boxRef = useRef<any | null>();
@@ -48,24 +47,14 @@ function PlaylistsThumbnail({playlist}: Props): JSX.Element {
     transform: `translate(${translateXPosition}px, ${translateYPosition}px)`,
   }
 
-  const nameStyles: React.CSSProperties = {
-    fontSize: `1.5rem`
-  }
-
-
-
   return (
     <div ref={boxRef} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} key={playlist.id}  className='Playlists-All-Invisible-Box'>
-     <div className='Playlists-All-Box'  style={cursorInsideDiv ? boxStyles : {}}>
-        <div className='Playlists-All-Circle' onMouseEnter={() => setCursorInsideCircle(true)} onMouseLeave={() => setCursorInsideCircle(false)}>
-        <div className='Playlists-All-Circle-Overlay'></div>
+      <div className='Playlists-All-Box'  style={cursorInsideDiv ? boxStyles : {}}>
+        <div className='Playlists-All-Circle'>
+          <div className='Playlists-All-Circle-Overlay'></div>
+          <p className='Playlists-Name'>{playlist.name.toUpperCase()} </p>
         </div>
-        <p className='Playlists-Name' style={cursorInsideCircle ? nameStyles : {}}>{playlist.name.toUpperCase()} </p>
-
-     </div>
-
-
-
+      </div>
     </div>
   );
 };
