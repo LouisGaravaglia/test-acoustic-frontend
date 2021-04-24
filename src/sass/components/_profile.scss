@@ -260,7 +260,7 @@ background-color: $mainOffWhite;
       .Playlists-Play-Icon {
         cursor: pointer;
         font-size: 40px;
-        color: #fff;
+        color: $mainBlack;
       }
     }
 
@@ -450,6 +450,7 @@ background-color: $mainOffWhite;
     height: 56px;
     z-index: -1;
     transition: 0.3s ease-out;
+    pointer-events: none;
   }
   
   .Playlists-All-Sort-Container {
