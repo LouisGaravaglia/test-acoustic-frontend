@@ -69,7 +69,7 @@ function PlaylistsContainer(): JSX.Element {
 
         </div>
   
-
+        <div className="Playlists-Circles-Container">
       {/* <div className="Playlists-All-Overlay"></div> */}
             {playlists.map((playlist: any, index: any) => 
               <PlaylistsThumbnail playlist={playlist}/>
@@ -82,7 +82,7 @@ function PlaylistsContainer(): JSX.Element {
               <div className='Playlists-Placeholder-Box'></div>
               <div className='Playlists-Placeholder-Box'></div>
               <div className='Playlists-Placeholder-Box'></div> */}
-
+          </div>
         </div>
  {/* <div className="Test-Gradient"></div> */}
 

@@ -284,6 +284,17 @@ background-color: $mainOffWhite;
 //   flex: 0 0 50vw;
 // }
 
+.Playlists-Circles-Container {
+  position: relative;
+  // flex: 0 0 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:flex-start;
+  padding-left: 15px;
+  z-index: 1;
+  // border: 2px solid rgb(255, 239, 146)
+}
+
 .Playlists-All-Container {
   position: relative;
   flex: 0 0 100vw;
@@ -437,6 +448,7 @@ background-color: $mainOffWhite;
     // z-index: 2;
     // margin-bottom: 2px;
     align-self: flex-end;
+    cursor: pointer;
 
 
     .Playlists-All-Sort {
