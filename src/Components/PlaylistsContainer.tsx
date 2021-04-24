@@ -34,14 +34,19 @@ function PlaylistsContainer(): JSX.Element {
 
     <div className='Playlists-Container'>
 
-      {/* <div className="Playlists-Header-Box">
+      <div className="Playlists-Selected-Header-Box">
+        <div className="Playlists-Selected-Header-Filler"></div>
         <h1 className="Playlists-Selected-Title">{playlists[0].name}</h1>
-      </div> */}
-
+      </div>
+        {/* <div className="Playlists-Selected-Header-Box">
+          <h1 className="Playlists-Artwork-Title">{playlists[0].name}</h1>
+        </div> */}
       <div className="Playlists-Selected-Content">
 
+
+
         <div className='Playlists-Artwork-Box'>
-          <h1 className="Playlists-Artwork-Title">{playlists[0].name}</h1>
+
           <div className='Playlists-Artwork-Square'></div>
           {/* <div className="Playlists-Artwork-Overlay"></div> */}
           <img className='Playlists-Artwork' src={playlists[0].images[0].url} alt=""/>
