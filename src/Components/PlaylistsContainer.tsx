@@ -1,4 +1,5 @@
 import React, {useContext, useState} from 'react';
+import { IoArrowDown } from 'react-icons/io5';
 import {MessagesContext} from './ChatBot/MessagesProvider';
 import useMousePosition from '../Hooks/useMousePosition';
 import PlaylistsThumbnail from './PlaylistsThumbnail';
@@ -54,6 +55,21 @@ function PlaylistsContainer(): JSX.Element {
       </div>
       {/* <div className="Test-Container"> */}
       <div className='Playlists-All-Container'>
+        <div className="Playlists-All-Headers">
+
+          <div className="Playlists-All-Title-Box">
+            <span className="Playlists-All-Title">Playlists</span>
+          </div>
+          <div className="Playlists-All-Sort-Container">
+            <div className="Playlists-All-Sort-Box">
+              <div className="Playlists-All-Sort-Overlay"></div>
+              <h1 className="Playlists-All-Sort">Sort <IoArrowDown className='Playlists-Play-Icon'/></h1>
+            </div>
+          </div>
+
+        </div>
+  
+
       {/* <div className="Playlists-All-Overlay"></div> */}
             {playlists.map((playlist: any, index: any) => 
               <PlaylistsThumbnail playlist={playlist}/>

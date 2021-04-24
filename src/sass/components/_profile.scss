@@ -52,7 +52,7 @@ background-color: $mainOffWhite;
 
 .Playlists-Selected-Content {
   flex: 0 0 100vw;
-  margin: 200px 0 40px;
+  padding: 200px 0 0;
   // height: 300px;
   // width: 300px;
   // border: 2px solid orangered;
@@ -60,8 +60,12 @@ background-color: $mainOffWhite;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: center;
-
-
+  padding-bottom: 400px;
+//     background:
+//   linear-gradient(to bottom, rgb(255, 255, 255), transparent),
+//   linear-gradient(to top left, rgb(255, 227, 195), transparent),
+//   linear-gradient(to top right, rgb(255, 217, 244), transparent);
+// background-blend-mode:screen;
 }
 
 
@@ -285,11 +289,11 @@ background-color: $mainOffWhite;
   flex: 0 0 100vw;
   // display: grid;
   // width: 100vw;
-  margin-top: 300px;
-  margin-left: 180px;
-  margin-right: 180px;
-  padding: 50px 0;
-  // border: 10px solid black;
+  // margin-top: 300px;
+  // padding-left: 180px;
+  // margin-right: 180px;
+  // padding: 0 0;
+  // border: 2px solid yellow;
   // grid-template-columns: repeat(auto-fill, 1fr);
   background-color: $mainBlack;
   // gap: 20px;
@@ -338,6 +342,120 @@ background-color: $mainOffWhite;
   //   // background-blend-mode:screen;
   //   z-index: -1;
   // }
+
+  .Playlists-All-Headers {
+    display: flex;
+    // justify-content: flex-start;
+    flex: 0 0 100vw;
+    // border: 2px solid yellow;
+    margin-bottom: 80px;
+    margin-top: 10px;
+  }
+
+  .Playlists-All-Title-Box {
+    flex: 0 0 calc(50% - 40px);
+    // padding-top: 50px;
+    margin-left: 40px;
+    // border: 2px solid rgb(0, 255, 200);
+  }
+
+  .Playlists-All-Title-Box::before {
+    display: inline-block;
+    height: 100%;
+    content: '';
+    // border: 2px solid rgb(255, 187, 0);
+  }
+
+  .Playlists-All-Headers::before {
+    content: "";
+    position: absolute;
+    text-align: center;
+    // width: calc(50% - 40px);
+    // height: 2px;
+    top: 90px;
+    left: 40px;
+    // left: 0;
+    background-image: url(../../images/Squiggly_white_v2.svg);
+  background-repeat: no-repeat;
+  width: calc(50% - 40px);
+  height: 100px;
+  color: $mainOffWhite;
+    // background: linear-gradient(to right, $mainOffWhite 0%, $mainOffWhite 100%);
+}
+  
+  // span {
+  //   font-size: 30px;
+  //   vertical-align: baseline;
+  // }
+
+  .Playlists-All-Title {
+    font-family: $mainFont;
+    font-weight: 900;
+    font-size: 4rem;
+    color: $mainOffWhite;
+    vertical-align: baseline;
+    // align-self: flex-end;
+  }
+
+  .Playlists-All-Sort-Overlay {
+    position: absolute;
+    top: 6px;
+    right: -6px;
+    background-color: rgba(255, 191, 255, 0.753);
+    border-radius: 100% 0% 100% 2% / 1% 99% 1% 97%   ;
+    width: 120px;
+    height: 56px;
+    z-index: -1;
+    transition: 0.3s ease-out;
+  }
+  
+  .Playlists-All-Sort-Container {
+    flex: 0 0 calc(50% - 40px);
+    display: flex;
+    margin-left: 40px;
+    // align-items: flex-end;
+
+    // border: 2px solid pink;
+  }
+
+  
+  // span {
+  //   font-size: 30px;
+  //   vertical-align: baseline;
+  // }
+  .Playlists-All-Sort-Box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // background-color: $mainOffWhite;
+    border-radius: 98% 2% 99% 3% / 3% 94% 6% 97%   ;
+    border: 2px solid $mainOffWhite;
+    height: 45px;
+    width: 100px;
+    padding: 5px 10px;
+    // z-index: 2;
+    // margin-bottom: 2px;
+    align-self: flex-end;
+
+
+    .Playlists-All-Sort {
+      font-family: $mainFont;
+      font-weight: 400;
+      font-size: 2rem;
+      color: $mainOffWhite;
+      margin: 0;
+    }
+  }
+
+  .Playlists-All-Sort-Box:hover {
+    .Playlists-All-Sort-Overlay {
+      top: 0;
+      right: 0;
+    }
+  }
+
+
 }
 
 // .Playlists-All-Box {
@@ -393,8 +511,9 @@ background-color: $mainOffWhite;
   align-items: center;
   text-align: center;
   // background-color: green;
-  border: 4px solid $mainOffWhite;
-  border-radius: 500px;
+  border: 2px solid $mainOffWhite;
+  // border-radius: 500px;
+  border-radius: 51% 49% 55% 45% / 44% 58% 42% 56% ;
   // background-color: rgb(9, 0, 24);
   // background: linear-gradient(to right, rgb(248, 168, 76) 0%, rgb(255, 155, 205) 100%);
   transition: 0.6s ease-out;
@@ -404,8 +523,8 @@ background-color: $mainOffWhite;
 
 .Playlists-Name {
   font-family: $mainFont;
-  font-weight: 900;
-  font-size: 1.2rem;
+  font-weight: 400;
+  font-size: 1.3rem;
   color: $mainOffWhite;
   // background: linear-gradient(to right, rgba(250, 118, 66, 0.753), rgba(255, 7, 201, 0.651));
   // -webkit-background-clip: text;
@@ -425,18 +544,19 @@ background-color: $mainOffWhite;
   width: 150px;
   height: 150px;
   margin: 10px;
-  border-radius: 500px;
-  // background-color: blue;
+  // border-radius: 500px;
+  border-radius: 51% 49% 55% 45% / 44% 58% 42% 56% ;
+  background-color: rgba(255, 230, 209, 0.034);
   // background:
   //   linear-gradient(rgba(255, 123, 0, 0.0000), transparent),
   //   linear-gradient(to top left, rgba(250, 118, 66, 0.013), transparent),
   //   linear-gradient(to top right, rgba(255, 7, 201, 0.101), transparent);
   // background-blend-mode:screen;
-  background:
-  linear-gradient(rgba(255, 204, 181, 0), transparent),
-  linear-gradient(to top left, rgba(184, 184, 184, 0.013), transparent),
-  linear-gradient(to top right, rgba(255, 220, 191, 0.137), transparent);
-background-blend-mode:screen;
+//   background:
+//   linear-gradient(rgba(255, 204, 181, 0), transparent),
+//   linear-gradient(to top left, rgba(184, 184, 184, 0.013), transparent),
+//   linear-gradient(to top right, rgba(255, 220, 191, 0.137), transparent);
+// background-blend-mode:screen;
 
   transition: 0.6s ease-out;
   // transition: 0.4;
@@ -458,13 +578,14 @@ background-blend-mode:screen;
     left: -10.2px;
     // background-color: red;
     width: 171px;
-    height: 171px;
+    height: 172px;
     // background:
     //   linear-gradient($mainPink, transparent),
     //   linear-gradient(to top left, rgba(255, 7, 201, 0.101), transparent),
     //   linear-gradient(to top right, rgba(255, 7, 201, 0.101), transparent);
     // background-blend-mode:screen;
-    background: linear-gradient(to top right, rgb(255, 198, 171), rgba(255, 160, 234, 0.658));
+    background-color: rgba(255, 191, 255, 0.753);
+    // background: linear-gradient(to top right, rgba(255, 204, 180, 0.938), rgba(255, 195, 242, 0.836));
   
   
     z-index: -1;
