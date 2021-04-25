@@ -34,8 +34,8 @@ function Register({input}: Props) {
     }));
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const handleSubmit = async () => {
+    // e.preventDefault();
     if (formData[inputName] === '') return;
     user[inputName as keyof IUser] = formData[inputName]
     updateUser(inputName, formData[inputName]);
@@ -68,12 +68,12 @@ function Register({input}: Props) {
       </form>
 
       <div className="Register-Button-Container">
-        <button className="Register-Button-Box">
+        <button className="Register-Button-Box" onClick={handleSubmit}>
           <div className="Register-Button-Overlay"></div>
           <h1 className="Register-Button">Submit</h1>
         </button>
       </div>
-      
+
     </div>
   );
 };

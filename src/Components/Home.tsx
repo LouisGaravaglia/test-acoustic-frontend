@@ -25,7 +25,7 @@ const Home: React.FC = () => {
     <div className='Home-Container'>
       <div className='Home-Upper-Box'>
         <div className='Home-Header-Box'>
-          <h1>ACOUSTIC.IO</h1>
+          <h1>ACOUSTIGRAM.IO</h1>
         </div>
         <div className='Home-Subheader-Box'>
           <h5>A DIGITAL COMPANION TO KEEP YOU UP TO DATE WITH THE LATEST MUSIC RELEASES</h5>

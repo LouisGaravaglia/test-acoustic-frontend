@@ -181,10 +181,10 @@
 .Chatty-Button-Overlay-Clicked {
   position: absolute;
   top: 0;
-  right: 0;
+  right: -1px;
   background-color: $mainPink;
   border-radius: 100% 0% 100% 2% / 1% 99% 1% 97%;
-  width:100%;
+  width: 101%;
   height: 102%;
   z-index: -1;
   transition: 0.3s ease-out;
