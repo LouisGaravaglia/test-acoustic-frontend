@@ -59,9 +59,9 @@ function Register({input}: Props) {
             onChange={handleChange}
             className='Register-Form-Input'
           />
-          <button type='submit'>
+          {/* <button type='submit'>
             <FaArrowRight color='#fff' />
-          </button>
+          </button> */}
         </div>
       </form>
     </div>

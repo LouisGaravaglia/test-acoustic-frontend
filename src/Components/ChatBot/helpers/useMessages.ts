@@ -93,21 +93,19 @@ function useMessages() {
     messages: [`Perfect, your Spotify account is all set up!`]
   };
 
-  //CREATING SHORTER MESSAGES FOR QUICKER TESTING
   // const registerUserPartOne: IMessageObj = {
   //   id: 'm7',
   //   messages: [
-  //     `Let's start with your first name.`
+  //     `Ok, now we'll set up a profile for you.`, 
+  //     'This will give us a place to continually add you new music as it comes out.',
+  //     `Let's start with your first name. You can use the input field below to enter it.`
   //   ]
   // };
 
+  //CREATING SHORTER MESSAGES FOR QUICKER TESTING
   const registerUserPartOne: IMessageObj = {
-    id: 'm7',
-    messages: [
-      `Ok, now we'll set up a profile for you.`, 
-      'This will give us a place to continually add you new music as it comes out.',
-      `Let's start with your first name. You can use the input field below to enter it.`
-    ]
+    id: 'm1',
+    messages: ['hi']
   };
 
   const registerUserPartTwo: IMessageObj = {
