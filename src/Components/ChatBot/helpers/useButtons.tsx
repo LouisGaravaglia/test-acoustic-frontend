@@ -47,8 +47,8 @@ function useButtons() {
   const initialButtons: IButtonObj = {
     id: 'b1',
     buttons: [
-      <div className={'Chatty-Button-Box'}><button className={'Chatty-Button'} onClick={() => authenticateSpotify('button_clicked=first_button')}><p>Log into my Spotify</p></button></div>,
-      <div className={'Chatty-Button-Box'}><button className={'Chatty-Button'} onClick={dontHaveSpotify}><p>What if I don't have Spotify?</p></button></div>
+      <div className={'Chatty-Button-Box'}><p className={'Chatty-Button'} onClick={() => authenticateSpotify('button_clicked=first_button')}><p>Log into my Spotify</p></p><div className="Chatty-Button-Overlay"></div></div>,
+      <div className={'Chatty-Button-Box'}><p className={'Chatty-Button'} onClick={dontHaveSpotify}><p>Do I have to?</p></p><div className="Chatty-Button-Overlay"></div></div>
     ]
   };
 

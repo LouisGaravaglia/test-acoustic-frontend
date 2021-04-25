@@ -28,21 +28,21 @@ function useMessages() {
 
 ////////////////////////////////////////////////////  PRE BAKED MESSAGES FOR CHATTY  ////////////////////////////////////////////////////
 
-  const initialMessages: IMessageObj = {
-    id: 'm1',
-    messages: [
-      `Hi, I'm Acoustic.io, your digital companion. I'm here to share new music with you.`, 
-      `If you're already a registered user you can login by clicking the link above.`,
-      `If you're new I'll walk you through setting up your Spotify Account.`,
-      `This will allow me to scan it for trends in your listening history to better assist me in suggesting the most relevant music for you.`
-    ]
-  };
-
-  //CREATING SHORTER MESSAGES FOR QUICKER TESTING
   // const initialMessages: IMessageObj = {
   //   id: 'm1',
-  //   messages: ['hi']
+  //   messages: [
+  //     `Hi, I'm Acoustic.io, your digital companion. I'm here to share new music with you.`, 
+  //     `If you're already a registered user you can login by clicking the link above.`,
+  //     `If you're new I'll walk you through setting up your Spotify Account.`,
+  //     `This will allow me to scan it for trends in your listening history to better assist me in suggesting the most relevant music for you.`
+  //   ]
   // };
+
+  //CREATING SHORTER MESSAGES FOR QUICKER TESTING
+  const initialMessages: IMessageObj = {
+    id: 'm1',
+    messages: ['hi']
+  };
 
   const whatIfNoSpotify: IMessageObj = {
     id: 'm2',
