@@ -8,9 +8,9 @@ interface Props {
 function ButtonsPast({buttonText}: Props) {
 
   return (
-    <>
-      <div className='Chatty-Button-Box'><button className='Chatty-Button Chatty-Button-Clicked'><p>{buttonText}</p></button></div>
-    </>
+    <div className='Chatty-Button-Main'>
+      <div className='Chatty-Button-Box'><p className='Chatty-Button'><p>{buttonText}</p></p><div className="Chatty-Button-Overlay-Clicked"></div></div>
+    </div>
   );
 };
 

@@ -44,16 +44,22 @@ function useMessages() {
     messages: ['hi']
   };
 
-  const whatIfNoSpotify: IMessageObj = {
-    id: 'm2',
-    messages: [
-      'Being able to access your Spotify will help me create playlists that have a higher chance of being ones that you will enjoy.',
-      `Also, you'll be able to save playlists directly to your Spotify account without leaving our site.`,
-      `But don't worry if you don't have a Spotify account.`,
-      'I can still set up a profile for you and share playlists.',
-      `And I promise I won't share your information with anyone or alter your Spotify data other than saving playlists to your account.`
-    ]
-  };
+  // const whatIfNoSpotify: IMessageObj = {
+  //   id: 'm2',
+  //   messages: [
+  //     'Being able to access your Spotify will help me create playlists that have a higher chance of being ones that you will enjoy.',
+  //     `Also, you'll be able to save playlists directly to your Spotify account without leaving our site.`,
+  //     `But don't worry if you don't have a Spotify account.`,
+  //     'I can still set up a profile for you and share playlists.',
+  //     `And I promise I won't share your information with anyone or alter your Spotify data other than saving playlists to your account.`
+  //   ]
+  // };
+
+    //CREATING SHORTER MESSAGES FOR QUICKER TESTING
+    const whatIfNoSpotify: IMessageObj = {
+      id: 'm1',
+      messages: ['hi']
+    };
 
   const spotifyAccountError: IMessageObj = {
     id: 'm3',
