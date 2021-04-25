@@ -34,9 +34,11 @@ function PlaylistsTrack({track, index, selectedTrack, setSelectedTrack}: Props):
   let playTrackControls: JSX.Element;
 
   playTrackControls = (
-    <div className="Playlists-Play-Box">
-      <IoPlayCircleOutline className='Playlists-Play-Icon'/>
-    </div>
+    <>
+      {/* <div className="Playlists-Play-Box">
+        <IoPlayCircleOutline className='Playlists-Play-Icon'/>
+      </div> */}
+    </>
   )
 
   return (

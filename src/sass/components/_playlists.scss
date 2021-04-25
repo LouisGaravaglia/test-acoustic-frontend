@@ -248,19 +248,19 @@ background-color: $mainOffWhite;
 
     }
 
-    .Playlists-Play-Box {
-      display: flex;
-      flex-grow: 1;
-      justify-content: flex-end;
-      align-items: center;
-      // border: 2px solid pink;
+    // .Playlists-Play-Box {
+    //   display: flex;
+    //   flex-grow: 1;
+    //   justify-content: flex-end;
+    //   align-items: center;
+    //   // border: 2px solid pink;
 
-      .Playlists-Play-Icon {
-        cursor: pointer;
-        font-size: 40px;
-        color: $mainBlack;
-      }
-    }
+    //   .Playlists-Play-Icon {
+    //     cursor: pointer;
+    //     font-size: 40px;
+    //     color: $mainBlack;
+    //   }
+    // }
 
   }
 
@@ -295,29 +295,266 @@ background-color: $mainOffWhite;
 
 }
 
-.Playlists-Controls-Box {
+///////////////////////////////////  TRACK CONTROLS  //////////////////////////////////
+
+.Playlists-Controls-Container {
+  display: flex;
+  flex-wrap: nowrap;
   flex: 0 0 100vw;
-  border: 2px solid blue;
+  position: relative;
+  z-index: 9;
 }
 
+.Playlists-Controls-Box {
+  flex: 0 0 calc(50vw - 40px);
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: center;
+  // border: 2px solid blue;
+  margin-top: 40px;
+  // margin-right: 40px;
+}
+
+.Playlists-Controls-Right-Filler {
+  flex: 0 0 calc(50vw + 40px);
+  // border: 2px solid yellow;
+}
+
+.Playlists-Controls-Box-Left-Filler {
+  flex: 0 0 60px;
+  // border: 2px solid yellow;
+}
+
+///////////////////////////////////  PREVIOUS BUTTON  //////////////////////////////////
+
+.Playlists-Prev-Container {
+  display: flex;
+  margin-right: 20px;
+  // border: 2px solid pink;
+}
+
+.Playlists-Prev-Overlay {
+  position: absolute;
+  top: 4px;
+  right: -5px;
+  background-color: $lightBlack;
+  border-radius: 100% 0% 100% 2% / 1% 99% 1% 97%;
+  width: 102%;
+  height: 100%;
+  z-index: -1;
+  transition: 0.3s ease-out;
+  pointer-events: none;
+}
+
+.Playlists-Prev-Box {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // background-color: $mainBlack;
+  border-radius: 98% 2% 99% 3% / 3% 94% 6% 97%;
+  border: 2px solid $mainBlack;
+  padding: 5px 10px;
+  // z-index: 2;
+  align-self: flex-end;
+  cursor: pointer;
 
 
-// .Test-Container {
-//   display: flex;
-//   flex-direction: row;
-// }
+  .Playlists-Prev {
+    font-family: $mainFont;
+    font-weight: 400;
+    font-size: 1rem;
+    color: $mainBlack;
+    margin: 0;
+  }
 
-// .Test-Gradient {
-//   // width: 150px;
-//   // height: 100px;
-//   // transform: skew(20deg);
-//   background: linear-gradient(
-//     to top left, 
-//     #faea5d60 0%, 
-//     rgba(#c2b1ff, 0) 100%
-//     );
-//   flex: 0 0 50vw;
-// }
+  .Playlists-Prev-Icon {
+    font-size: 1rem;
+    color: $mainBlack;
+  }
+}
+
+.Playlists-Prev-Box:hover {
+  .Playlists-Prev-Overlay {
+    top: 0;
+    right: -1px;
+  }
+}
+
+///////////////////////////////////  NEXT BUTTON  //////////////////////////////////
+
+
+.Playlists-Next-Container {
+  display: flex;
+  margin-right: 20px;
+  // border: 2px solid pink;
+}
+
+.Playlists-Next-Overlay {
+  position: absolute;
+  top: 4px;
+  right: -5px;
+  background-color: $lightBlack;
+  border-radius: 100% 0% 100% 2% / 1% 99% 1% 97%;
+  width: 102%;
+  height: 100%;
+  z-index: -1;
+  transition: 0.3s ease-out;
+  pointer-events: none;
+}
+
+.Playlists-Next-Box {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // background-color: $mainBlack;
+  border-radius: 98% 2% 99% 3% / 3% 94% 6% 97%;
+  border: 2px solid $mainBlack;
+  padding: 5px 10px;
+  // z-index: 2;
+  align-self: flex-end;
+  cursor: pointer;
+
+
+  .Playlists-Next {
+    font-family: $mainFont;
+    font-weight: 400;
+    font-size: 1rem;
+    color: $mainBlack;
+    margin: 0;
+  }
+
+  .Playlists-Next-Icon {
+    font-size: 1rem;
+    color: $mainBlack;
+  }
+}
+
+.Playlists-Next-Box:hover {
+  .Playlists-Next-Overlay {
+    top: 0;
+    right: -1px;
+  }
+}
+
+///////////////////////////////////  PLAY BUTTON  //////////////////////////////////
+
+
+.Playlists-Play-Container {
+  display: flex;
+  margin-right: 20px;
+  // border: 2px solid pink;
+}
+
+.Playlists-Play-Overlay {
+  position: absolute;
+  top: 4px;
+  right: -5px;
+  background-color: $lightBlack;
+  border-radius: 100% 0% 100% 2% / 1% 99% 1% 97%;
+  width: 102%;
+  height: 100%;
+  z-index: -1;
+  transition: 0.3s ease-out;
+  pointer-events: none;
+}
+
+.Playlists-Play-Box {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // background-color: $mainBlack;
+  border-radius: 98% 2% 99% 3% / 3% 94% 6% 97%;
+  border: 2px solid $mainBlack;
+  padding: 5px 10px;
+  // z-index: 2;
+  align-self: flex-end;
+  cursor: pointer;
+
+
+  .Playlists-Play {
+    font-family: $mainFont;
+    font-weight: 400;
+    font-size: 1rem;
+    color: $mainBlack;
+    margin: 0;
+  }
+
+  .Playlists-Play-Icon {
+    font-size: 1rem;
+    color: $mainBlack;
+  }
+}
+
+.Playlists-Play-Box:hover {
+  .Playlists-Play-Overlay {
+    top: 0;
+    right: -1px;
+  }
+}
+
+///////////////////////////////////  PAUSE BUTTON  //////////////////////////////////
+
+
+.Playlists-Pause-Container {
+  margin-right: 20px;
+  display: flex;
+  // border: 2px solid pink;
+}
+
+.Playlists-Pause-Overlay {
+  position: absolute;
+  top: 4px;
+  right: -5px;
+  background-color: $lightBlack;
+  border-radius: 100% 0% 100% 2% / 1% 99% 1% 97%;
+  width: 102%;
+  height: 100%;
+  z-index: -1;
+  transition: 0.3s ease-out;
+  pointer-events: none;
+}
+
+.Playlists-Pause-Box {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // background-color: $mainBlack;
+  border-radius: 98% 2% 99% 3% / 3% 94% 6% 97%;
+  border: 2px solid $mainBlack;
+  padding: 5px 10px;
+  // z-index: 2;
+  align-self: flex-end;
+  cursor: pointer;
+
+
+  .Playlists-Pause {
+    font-family: $mainFont;
+    font-weight: 400;
+    font-size: 1rem;
+    color: $mainBlack;
+    margin: 0;
+  }
+
+  .Playlists-Pause-Icon {
+    font-size: 1rem;
+    color: $mainBlack;
+  }
+}
+
+.Playlists-Pause-Box:hover {
+  .Playlists-Pause-Overlay {
+    top: 0;
+    right: -1px;
+  }
+}
+
+///////////////////////////////////  PLAYLISTS SECTION  //////////////////////////////////
+
 
 .Playlists-Circles-Container {
   position: relative;
@@ -443,6 +680,15 @@ background-color: $mainOffWhite;
     // align-self: flex-end;
   }
 
+///////////////////////////////////  SORT BUTTON  //////////////////////////////////
+
+  .Playlists-All-Sort-Container {
+    flex: 0 0 calc(50% - 40px);
+    display: flex;
+    margin-left: 40px;
+    // border: 2px solid pink;
+  }
+
   .Playlists-All-Sort-Overlay {
     position: absolute;
     top: 4px;
@@ -455,21 +701,7 @@ background-color: $mainOffWhite;
     transition: 0.3s ease-out;
     pointer-events: none;
   }
-  
-  .Playlists-All-Sort-Container {
-    flex: 0 0 calc(50% - 40px);
-    display: flex;
-    margin-left: 40px;
-    // align-items: flex-end;
 
-    // border: 2px solid pink;
-  }
-
-  
-  // span {
-  //   font-size: 30px;
-  //   vertical-align: baseline;
-  // }
   .Playlists-All-Sort-Box {
     position: relative;
     display: flex;
