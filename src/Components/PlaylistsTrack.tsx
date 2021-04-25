@@ -24,8 +24,6 @@ function PlaylistsTrack({track, index, selectedTrack, setSelectedTrack}: Props):
       width: 'calc(100% - 120px)',
       cursor: 'default',
       backgroundImage: "linear-gradient(to right, rgba(255, 191, 255, 0.753), rgba(255, 191, 255, 0.753))",
-      borderRadius: '99% 1% 99% 1% / 1% 97% 3% 99%',
-      border: '2px solid #181718'
     };
   } else if (index > selectedTrack) {
     styles = { top: `${(index * 60) + 80}px`};

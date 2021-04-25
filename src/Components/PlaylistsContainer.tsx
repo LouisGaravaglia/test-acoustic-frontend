@@ -47,7 +47,7 @@ function PlaylistsContainer(): JSX.Element {
 
         <div className='Playlists-Artwork-Box'>
 
-          <div className='Playlists-Artwork-Square'></div>
+          {/* <div className='Playlists-Artwork-Square'></div> */}
           {/* <div className="Playlists-Artwork-Overlay"></div> */}
           <img className='Playlists-Artwork' src={playlists[0].images[0].url} alt=""/>
         </div>
