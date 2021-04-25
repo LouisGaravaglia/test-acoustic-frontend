@@ -615,27 +615,20 @@ background-color: $mainOffWhite;
   // background:linear-gradient(to right, $mainLight 0%, $mainDark 100%);
   width: 170px;
   height: 170px;
+  border: 2px solid $mainBlack;
 
   .Playlists-All-Circle-Overlay {
     top: -10.9px;
     left: -10.2px;
-    // background-color: red;
     width: 171px;
     height: 172px;
-    // background:
-    //   linear-gradient($mainPink, transparent),
-    //   linear-gradient(to top left, rgba(255, 7, 201, 0.101), transparent),
-    //   linear-gradient(to top right, rgba(255, 7, 201, 0.101), transparent);
-    // background-blend-mode:screen;
-    background-color: rgba(255, 191, 255, 0.753);
-    // background: linear-gradient(to top right, rgba(255, 204, 180, 0.938), rgba(255, 195, 242, 0.836));
-  
-  
+    background-color: $mainPink;
     z-index: -1;
   }
 
   .Playlists-Name {
     font-size: 1.5rem;
+    color: $mainBlack;
   }
   
 
