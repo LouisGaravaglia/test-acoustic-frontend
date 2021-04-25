@@ -14,7 +14,7 @@ const Routes: React.FC = () => {
       <Switch>
         <Route exact path='/'><Home/></Route>
         <Route exact path='/register'><Chatty/></Route>
-        <Route exact path='/login'><Login /></Route>
+        {/* <Route exact path='/login'><Login /></Route> */}
         <Route exact path='/playlists'><PlaylistsContainer /></Route>
         <Route exact path='/authorized'><Authorized /></Route>
         <Redirect to='/'/>
