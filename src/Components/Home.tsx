@@ -32,8 +32,14 @@ const Home: React.FC = () => {
         </div>
       </div>
       <div className='Home-Lower-Box'>
-        <button className='home-main-button'>GET STARTED</button>
-        <button className='home-transition-element' onClick={redirectToChatty}>GET STARTED</button>
+      <div className="Playlists-All-Sort-Container">
+            <div className="Playlists-All-Sort-Box">
+              <div className="Playlists-All-Sort-Overlay"></div>
+              <h1 className="Playlists-All-Sort">Get Started</h1>
+            </div>
+          </div>
+        {/* <button className='home-main-button'>GET STARTED</button> */}
+        {/* <button className='home-transition-element' onClick={redirectToChatty}>GET STARTED</button> */}
       </div>
     </div>
   );

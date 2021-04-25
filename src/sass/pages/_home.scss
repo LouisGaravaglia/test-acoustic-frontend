@@ -3,11 +3,12 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  background:
-  linear-gradient(to bottom, white, transparent),
-  linear-gradient(to top left, rgb(146, 255, 146), transparent),
-  linear-gradient(to top right, rgb(69, 69, 255), transparent);
-background-blend-mode:screen;
+  background-color: $mainPink;
+//   background:
+//   linear-gradient(to bottom, white, transparent),
+//   linear-gradient(to top left, rgb(146, 255, 146), transparent),
+//   linear-gradient(to top right, rgb(69, 69, 255), transparent);
+// background-blend-mode:screen;
 
 }
 
@@ -35,7 +36,7 @@ background-blend-mode:screen;
   font-family: $mainFont;
   font-weight: 600;
   font-size: 9rem;
-  color: $whiteFont;
+  color: $mainBlack;
   padding: 0;
   margin: -50px;
   cursor: default;
@@ -52,7 +53,7 @@ background-blend-mode:screen;
   font-family: $mainFont;
   font-weight: 300;
   font-size: 1.5rem;
-  color: $whiteFont;
+  color: $mainBlack;
   padding: 0;
   margin: 0 40px;
   cursor: default;
@@ -62,23 +63,87 @@ background-blend-mode:screen;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  width: 100vw;
+  flex: 0 0 100vw;
   height: 50vh;
+  position: relative;
+  z-index: 9;
 }
 
-.home-transition-element {
-  @include landingButtonGradient;
+// .home-transition-element {
+//   @include landingButtonGradient;
+//   margin-top: 80px;
+// }
+
+// .home-transition-element:hover {
+//   opacity: 0.0;
+// }
+
+// .home-main-button {
+//   @include landingButtonSolid;
+//   margin-top: 80px;
+// }
+
+.Playlists-All-Sort-Overlay {
+  position: absolute;
+  top: 6px;
+  right: -6px;
+  background-color: rgba(255, 191, 255, 0.753);
+  border-radius: 100% 0% 100% 2% / 1% 99% 1% 97%;
+  height: 61px;
+  width: 260px;
+  z-index: -1;
+  transition: 0.3s ease-out;
+  pointer-events: none;
+}
+
+.Playlists-All-Sort-Container {
+  flex: 0 0 calc(50% - 40px);
+  display: flex;
+  justify-content: center;
   margin-top: 80px;
+  // align-items: flex-end;
+
+  // border: 2px solid pink;
 }
 
-.home-transition-element:hover {
-  opacity: 0.0;
+
+// span {
+//   font-size: 30px;
+//   vertical-align: baseline;
+// }
+.Playlists-All-Sort-Box {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // background-color: $mainBlack;
+  border-radius: 98% 2% 99% 3% / 3% 94% 6% 97%;
+  border: 2px solid $mainBlack;
+  height: 61px;
+  width: 260px;
+
+  // z-index: 2;
+  // margin-bottom: 2px;
+  align-self: flex-end;
+  cursor: pointer;
+
+
+  .Playlists-All-Sort {
+    font-family: $mainFont;
+    font-weight: 400;
+    font-size: 2rem;
+    color: $mainBlack;
+    margin: 0;
+  }
 }
 
-.home-main-button {
-  @include landingButtonSolid;
-  margin-top: 80px;
+.Playlists-All-Sort-Box:hover {
+  .Playlists-All-Sort-Overlay {
+    top: 0;
+    right: 0;
+  }
 }
+
 
 ////////////////////////////////////////////////////  MEDIA QUERIES  ////////////////////////////////////////////////////
 
