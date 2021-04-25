@@ -417,10 +417,10 @@ background-color: $mainOffWhite;
     left: 40px;
     // left: 0;
     background-image: url(../../images/Squiggly_white_v2.svg);
-  background-repeat: no-repeat;
-  width: calc(50% - 40px);
-  height: 100px;
-  color: $mainOffWhite;
+    background-repeat: no-repeat;
+    width: calc(50% - 40px);
+    height: 100px;
+    color: $mainOffWhite;
     // background: linear-gradient(to right, $mainOffWhite 0%, $mainOffWhite 100%);
 }
   
@@ -471,7 +471,7 @@ background-color: $mainOffWhite;
     justify-content: center;
     align-items: center;
     // background-color: $mainOffWhite;
-    border-radius: 98% 2% 99% 3% / 3% 94% 6% 97%   ;
+    border-radius: 98% 2% 99% 3% / 3% 94% 6% 97%;
     border: 2px solid $mainOffWhite;
     height: 45px;
     width: 100px;
