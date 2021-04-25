@@ -59,11 +59,19 @@ function Register({input}: Props) {
             onChange={handleChange}
             className='Register-Form-Input'
           />
+        <div className="Register-Button-Container">
+        <button className="Register-Button-Box">
+          <div className="Register-Button-Overlay"></div>
+          <h1 className="Register-Button">Submit</h1>
+        </button>
+      </div>
           {/* <button type='submit'>
             <FaArrowRight color='#fff' />
           </button> */}
         </div>
+
       </form>
+
     </div>
   );
 };

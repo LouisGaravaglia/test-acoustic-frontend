@@ -440,9 +440,9 @@ background-color: $mainOffWhite;
 
   .Playlists-All-Sort-Overlay {
     position: absolute;
-    top: 6px;
-    right: -6px;
-    background-color: rgba(255, 191, 255, 0.753);
+    top: 4px;
+    right: -4px;
+    background-color: $mainGreen;
     border-radius: 100% 0% 100% 2% / 1% 99% 1% 97%;
     width: 120px;
     height: 56px;

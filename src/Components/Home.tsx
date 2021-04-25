@@ -33,11 +33,11 @@ const Home: React.FC = () => {
       </div>
       <div className='Home-Lower-Box'>
       <div className="Home-Button-Container">
-            <div onClick={redirectToChatty} className="Home-Button-Box">
-              <div className="Home-Button-Overlay"></div>
-              <h1 className="Home-Button">Get Started</h1>
-            </div>
-          </div>
+        <div onClick={redirectToChatty} className="Home-Button-Box">
+          <div className="Home-Button-Overlay"></div>
+          <h1 className="Home-Button">Get Started</h1>
+        </div>
+      </div>
         {/* <button className='home-main-button'>GET STARTED</button> */}
         {/* <button className='home-transition-element' onClick={redirectToChatty}>GET STARTED</button> */}
       </div>
