@@ -33,7 +33,7 @@ const Home: React.FC = () => {
       </div>
       <div className='Home-Lower-Box'>
       <div className="Playlists-All-Sort-Container">
-            <div className="Playlists-All-Sort-Box">
+            <div onClick={redirectToChatty} className="Playlists-All-Sort-Box">
               <div className="Playlists-All-Sort-Overlay"></div>
               <h1 className="Playlists-All-Sort">Get Started</h1>
             </div>
