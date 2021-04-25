@@ -83,20 +83,9 @@
 //   margin-top: 80px;
 // }
 
-.Playlists-All-Sort-Overlay {
-  position: absolute;
-  top: 6px;
-  right: -6px;
-  background-color: rgb(241, 241, 241);
-  border-radius: 100% 0% 100% 2% / 1% 99% 1% 97%;
-  height: 61px;
-  width: 260px;
-  z-index: -1;
-  transition: 0.3s ease-out;
-  pointer-events: none;
-}
 
-.Playlists-All-Sort-Container {
+
+.Home-Button-Container {
   flex: 0 0 calc(50% - 40px);
   display: flex;
   justify-content: center;
@@ -106,18 +95,30 @@
   // border: 2px solid pink;
 }
 
+.Home-Button-Overlay {
+  position: absolute;
+  top: 6px;
+  right: -6px;
+  background-color: $mainOffWhite;
+  border-radius: 95% 1% 95% 2% / 1% 94% 1% 97%;
+  height: 63px;
+  width: 260px;
+  z-index: -1;
+  transition: 0.3s ease-out;
+  pointer-events: none;
+}
 
 // span {
 //   font-size: 30px;
 //   vertical-align: baseline;
 // }
-.Playlists-All-Sort-Box {
+.Home-Button-Box {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   // background-color: $mainBlack;
-  border-radius: 98% 2% 99% 3% / 3% 94% 6% 97%;
+  border-radius: 95% 2% 95% 3% / 3% 94% 2% 97%;
   border: 2px solid $mainBlack;
   height: 61px;
   width: 260px;
@@ -128,7 +129,7 @@
   cursor: pointer;
 
 
-  .Playlists-All-Sort {
+  .Home-Button {
     font-family: $mainFont;
     font-weight: 400;
     font-size: 2rem;
@@ -137,9 +138,9 @@
   }
 }
 
-.Playlists-All-Sort-Box:hover {
-  .Playlists-All-Sort-Overlay {
-    top: 0;
+.Home-Button-Box:hover {
+  .Home-Button-Overlay {
+    top: -1px;
     right: 0;
   }
 }
@@ -179,12 +180,12 @@
     padding: 4px 20px;
   }
 
-  .home-main-button {
-    margin-top: 40px;
-    font-weight: 600;
-    font-size: 1.5rem;
-    padding: 4px 20px;
-  }
+  // .home-main-button {
+  //   margin-top: 40px;
+  //   font-weight: 600;
+  //   font-size: 1.5rem;
+  //   padding: 4px 20px;
+  // }
 
 }
 

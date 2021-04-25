@@ -32,10 +32,10 @@ const Home: React.FC = () => {
         </div>
       </div>
       <div className='Home-Lower-Box'>
-      <div className="Playlists-All-Sort-Container">
-            <div onClick={redirectToChatty} className="Playlists-All-Sort-Box">
-              <div className="Playlists-All-Sort-Overlay"></div>
-              <h1 className="Playlists-All-Sort">Get Started</h1>
+      <div className="Home-Button-Container">
+            <div onClick={redirectToChatty} className="Home-Button-Box">
+              <div className="Home-Button-Overlay"></div>
+              <h1 className="Home-Button">Get Started</h1>
             </div>
           </div>
         {/* <button className='home-main-button'>GET STARTED</button> */}
