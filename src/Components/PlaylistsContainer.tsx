@@ -4,6 +4,7 @@ import {MessagesContext} from './ChatBot/MessagesProvider';
 import useMousePosition from '../Hooks/useMousePosition';
 import PlaylistsThumbnail from './PlaylistsThumbnail';
 import PlaylistsTrack from './PlaylistsTrack';
+import { FiPause, FiPlay, FiSkipBack, FiSkipForward } from 'react-icons/fi';
 let playlists =  require('../fakeData/playlist.json');
 
 // interface IUser {
@@ -26,6 +27,8 @@ function PlaylistsContainer(): JSX.Element {
   // console.log("mousePosition - x: ", x);
   // console.log("mousePosition - y: ", y);
   
+  let playOrPauseIcon;
+
 
 
   return (
@@ -50,6 +53,7 @@ function PlaylistsContainer(): JSX.Element {
           {/* <div className='Playlists-Artwork-Square'></div> */}
           {/* <div className="Playlists-Artwork-Overlay"></div> */}
           <img className='Playlists-Artwork' src={playlists[0].images[0].url} alt=""/>
+
         </div>
 
         <div className='Playlists-Tracks-Container'>
@@ -57,6 +61,19 @@ function PlaylistsContainer(): JSX.Element {
               <PlaylistsTrack track={track} index={index} selectedTrack={selectedTrack} setSelectedTrack={setSelectedTrack}/>
             )}
         </div>
+
+        <div className="Playlists-Controls-Box">
+            <div className="Playlists-Prev-Box">
+              <FiSkipBack className='Playlists-Play-Icon'/>
+            </div>
+            <div className="Playlists-Play-Box">
+              {playOrPauseIcon}
+            </div>
+            <div className="Playlists-Prev-Box">
+              <FiSkipForward className='Playlists-Play-Icon'/>
+            </div>
+          </div>
+
       </div>
       {/* <div className="Test-Container"> */}
       <div className='Playlists-All-Container'>

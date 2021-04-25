@@ -94,16 +94,16 @@
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: $mainBlack;
+  color: rgba(0, 0, 0, 0.479);
   opacity: 1; /* Firefox */
 }
 
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
-  color: $mainBlack;
+  color: rgba(0, 0, 0, 0.479);
 }
 
 ::-ms-input-placeholder { /* Microsoft Edge */
-  color: $mainBlack;
+  color: rgba(0, 0, 0, 0.479);
 }
 
 // .Register-Box button{

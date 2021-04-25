@@ -142,17 +142,17 @@
 .Chatty-Button-Overlay {
   position: absolute;
   top: 4px;
-  right: -4px;
+  right: -6px;
   background-color: $mainPink;
   border-radius: 100% 0% 100% 2% / 1% 99% 1% 97%;
-  width:100%;
+  width:101%;
   height: 102%;
   z-index: -1;
   transition: 0.3s ease-out;
   pointer-events: none;
 }
 
-.Chatty-Button{
+.Chatty-Button {
   // font-family: $mainFont;
   // font-weight: 800;
   // font-size: 1rem;
@@ -163,7 +163,7 @@
   // text-align: center;
   // border: 3px solid $mainDark;
   // border-radius: 10px;
-  cursor: pointer;
+  // cursor: pointer;
   font-family: $mainFont;
   font-weight: 800;
   font-size: 1rem;
@@ -179,17 +179,17 @@
 }
 
 .Chatty-Button-Overlay-Clicked {
-  position: absolute;
+  @extend .Chatty-Button-Overlay;
   top: 0;
   right: -1px;
-  background-color: $mainPink;
-  border-radius: 100% 0% 100% 2% / 1% 99% 1% 97%;
-  width: 101%;
-  height: 102%;
-  z-index: -1;
-  transition: 0.3s ease-out;
-  pointer-events: none;
 }
+
+.Chatty-Button-Box-Clicked {
+  @extend .Chatty-Button-Box;
+  cursor: default;
+}
+
+
 
 // .Chatty-Button:hover {
 //   color: $black;
@@ -197,17 +197,17 @@
 //   border: 3px solid $mainDark;
 // }
 
-.Chatty-Button-Clicked {
-  @extend .Chatty-Button;
-  color: $black;
-  background: linear-gradient(to right, $mainLight 0%, $mainDark 100%);
-  border: 3px solid $mainDark;
-  cursor: auto;
-}
+// .Chatty-Button-Clicked {
+//   @extend .Chatty-Button;
+//   color: $black;
+//   background: linear-gradient(to right, $mainLight 0%, $mainDark 100%);
+//   border: 3px solid $mainDark;
+//   cursor: auto;
+// }
 
-.Chatty-Button-Not-Clicked {
-  display: none;
-}
+// .Chatty-Button-Not-Clicked {
+//   display: none;
+// }
 
 @media only screen and (max-width: 600px) {
   .Chatty-Button-Container {

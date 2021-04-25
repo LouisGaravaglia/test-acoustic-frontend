@@ -103,7 +103,7 @@ background-color: $mainOffWhite;
   // border: 2px solid orangered;
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: center;
   padding-bottom: 200px;
 //     background:
@@ -291,9 +291,14 @@ background-color: $mainOffWhite;
     //   }
     // }
   }
+
+
 }
 
-
+.Playlists-Controls-Box {
+  flex: 0 0 100vw;
+  border: 2px solid blue;
+}
 
 
 
