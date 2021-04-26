@@ -67,7 +67,7 @@ function PlaylistsContainer(): JSX.Element {
           <div className='Playlists-Controls-Box'>
             <div className="Playlists-Controls-Box-Left-Filler"></div>
 
-            <div className='Playlists-Prev-Container'>
+            {/* <div className='Playlists-Prev-Container'>
               <div className='Playlists-Prev-Box'>
                 <div className='Playlists-Prev-Overlay'></div>
                 <h1 className='Playlists-Prev'>Prev <FiSkipBack className='Playlists-Prev-Icon'/></h1>
@@ -86,19 +86,10 @@ function PlaylistsContainer(): JSX.Element {
                 <div className='Playlists-Next-Overlay'></div>
                 <h1 className='Playlists-Next'>Next <FiSkipForward className='Playlists-Next-Icon'/></h1>
               </div>
-            </div>
-
-            {/* <div className='Playlists-Prev-Box'>
-              <FiSkipBack className='Playlists-Play-Icon'/>
-            </div>
-            <div className='Playlists-Play-Box'>
-              {playOrPauseIcon}
-            </div>
-            <div className='Playlists-Prev-Box'>
-              <FiSkipForward className='Playlists-Play-Icon'/>
             </div> */}
-          </div>
 
+        
+          </div>
           <div className='Playlists-Controls-Right-Filler'></div>
         </div>
 

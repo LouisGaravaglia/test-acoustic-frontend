@@ -1,5 +1,5 @@
-import React, {useContext} from 'react';
-import { IoPlayCircleOutline } from 'react-icons/io5';
+import React, {useState} from 'react';
+import { IoPlayCircleOutline, IoPauseCircleOutline, IoPlaySkipForward, IoPlaySkipBack } from 'react-icons/io5';
 import {MessagesContext} from './ChatBot/MessagesProvider';
 import useMousePosition from '../Hooks/useMousePosition';
 import PlaylistsThumbnail from './PlaylistsThumbnail';
@@ -13,6 +13,11 @@ interface Props {
 }
 
 function PlaylistsTrack({track, index, selectedTrack, setSelectedTrack}: Props): JSX.Element {
+  const [playingTrack, setPlayingTrack] = useState(false);
+
+  function togglePlayingTrack() {
+    setPlayingTrack(state => !state)
+  }
 
   let styles: React.CSSProperties;
 
@@ -35,9 +40,17 @@ function PlaylistsTrack({track, index, selectedTrack, setSelectedTrack}: Props):
 
   playTrackControls = (
     <>
-      {/* <div className="Playlists-Play-Box">
-        <IoPlayCircleOutline className='Playlists-Play-Icon'/>
-      </div> */}
+    <div className="Playlists-ControlBtns-Container">
+      <div className="Playlists-PlayBtn-Box">
+        <IoPlaySkipBack className='Playlists-PrevBtn-Icon'/>
+      </div>
+      <div className="Playlists-PlayBtn-Box" onClick={togglePlayingTrack}>
+        {playingTrack ? <IoPauseCircleOutline className='Playlists-PlayBtn-Icon'/> : <IoPlayCircleOutline className='Playlists-PlayBtn-Icon'/>}
+      </div>
+      <div className="Playlists-PlayBtn-Box">
+        <IoPlaySkipForward className='Playlists-NextBtn-Icon'/>
+      </div>
+    </div>
     </>
   )
 

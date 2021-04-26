@@ -248,19 +248,40 @@ background-color: $mainOffWhite;
 
     }
 
-    // .Playlists-Play-Box {
-    //   display: flex;
-    //   flex-grow: 1;
-    //   justify-content: flex-end;
-    //   align-items: center;
-    //   // border: 2px solid pink;
+    .Playlists-ControlBtns-Container {
+      display: flex;
+      flex: 3 0 60px;
+      justify-content: flex-end;
+      // border: 2px solid red;
+    }
 
-    //   .Playlists-Play-Icon {
-    //     cursor: pointer;
-    //     font-size: 40px;
-    //     color: $mainBlack;
-    //   }
-    // }
+    .Playlists-PlayBtn-Box {
+      display: flex;
+      // flex-grow: 1;
+      // flex: 0 0 40px;
+      justify-content: flex-end;
+      align-items: center;
+      // border: 2px solid pink;
+
+      .Playlists-PlayBtn-Icon {
+        cursor: pointer;
+        font-size: 40px;
+        color: $mainBlack;
+        margin: 0 5px;
+      }
+    }
+
+    .Playlists-PrevBtn-Icon {
+      cursor: pointer;
+      font-size: 20px;
+      color: $mainBlack;
+    }
+
+    .Playlists-NextBtn-Icon {
+      cursor: pointer;
+      font-size: 20px;
+      color: $mainBlack;
+    }
 
   }
 
