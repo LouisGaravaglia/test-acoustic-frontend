@@ -39,7 +39,7 @@ background-color: $mainOffWhite;
   display: flex;
   flex-wrap: nowrap;
   width: 100vw;
-  margin: 200px 0 40px;
+  margin: 100px 0 60px;
   // border: 2px solid orange;
 
   .Playlists-Selected-Header-Filler {
@@ -52,8 +52,8 @@ background-color: $mainOffWhite;
   .Playlists-Selected-Title {
     font-family: $mainFont;
     font-weight: 900;
-    font-size: 4rem;
-    color: $mainBlack;
+    font-size: 3rem;
+    color: rgba(37, 37, 37, 0.205);
     text-align: center;
     margin: 0;
 
@@ -64,10 +64,11 @@ background-color: $mainOffWhite;
     position: absolute;
     // width: calc(50% - 40px);
     // height: 2px;
-    top: 60px;
+    top: 40px;
     // left: 40px;
     // left: 0;
     background-image: url(../../images/Squiggly_black_v1.svg);
+    opacity: 0.2;
     background-repeat: no-repeat;
     width: calc(50% - 40px);
     height: 100px;
@@ -225,7 +226,7 @@ background-color: $mainOffWhite;
         // text-align: start;
         font-family: $mainFont;
         font-weight: 300;
-        font-size: 1rem;
+        font-size: 0.8rem;
         color: $mainBlack;
         margin: 0 0 5px 0;
         transition: 0.2s ease-out;
@@ -237,7 +238,7 @@ background-color: $mainOffWhite;
         // flex: 0 0 100%;
         font-family: $mainFont;
         font-weight: 700;
-        font-size: 1rem;
+        font-size: 0.8rem;
         color: $mainBlack;
         margin: 0;
         transition: 0.2s ease-out;
@@ -273,13 +274,13 @@ background-color: $mainOffWhite;
 
     .Playlists-PrevBtn-Icon {
       cursor: pointer;
-      font-size: 20px;
+      font-size: 15px;
       color: $mainBlack;
     }
 
     .Playlists-NextBtn-Icon {
       cursor: pointer;
-      font-size: 20px;
+      font-size: 15px;
       color: $mainBlack;
     }
 
