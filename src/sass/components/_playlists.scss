@@ -140,12 +140,12 @@ background-color: $mainOffWhite;
   // align-self: center;
   scroll-snap-align: start;
   font-family: $mainFont;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 100;
-  color: red;
-  // background: linear-gradient(to right, $mainGreen, $mainPink);
-  // -webkit-background-clip: text;
-  // -webkit-text-fill-color: transparent;
+  // color: red;
+  background: linear-gradient(to right, $mainGreen, $mainPink);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   margin: 0;
   // transition: 0.5s ease-out;
 }

@@ -32,8 +32,8 @@ function PlaylistsTitleScroll({playlist}: Props): JSX.Element {
   // const isVisible = !!entry?.isIntersecting;
   const entry = useElementOnScreen(boxRef, {
     root: document.querySelector('.scrolling-wrapper'),
-    rootMargin: "0px -200px",
-    threshold: 0.5
+    rootMargin: "0px -100px",
+    threshold: 0.9
   });
     const isVisible = !!entry?.isIntersecting;
 
@@ -43,7 +43,7 @@ console.log("isVisible: ", isVisible);
 
 
   return (
-      <div className={isVisible ? 'Playlists-Featured-Title' : 'card'}><h2 ref={boxRef}>{playlist.name}</h2></div>
+      <div className={isVisible ? 'Playlists-Featured-Title' : 'card'} ref={boxRef}><h2 >{playlist.name}</h2></div>
   );
 };
 

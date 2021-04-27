@@ -5,9 +5,6 @@ let playlists =  require('../fakeData/playlist.json');
 function PlaylistsTitleScrollContainer(): JSX.Element {
 
 
-console.log("hi");
-
-
   return (
     // <div className="scrollingContainer">
 
