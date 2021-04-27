@@ -128,6 +128,7 @@ background-color: $mainOffWhite;
     color: rgba(0, 0, 0, 0.089);
     margin: 0;
     // transition: 0.5s ease-out;
+    scroll-snap-stop: always;
   }
 }
 
@@ -149,6 +150,7 @@ background-color: $mainOffWhite;
   -webkit-text-fill-color: transparent;
   margin: 0;
   // transition: 0.5s ease-out;
+  scroll-snap-stop: always;
 }
 
 // .Playlists-Selected-Header-Box {
