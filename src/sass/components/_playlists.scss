@@ -153,6 +153,41 @@ background-color: $mainOffWhite;
   scroll-snap-stop: always;
 }
 
+.Playlists-Carousel-Content {
+    // position: relative;
+    flex: 0 0 100vw;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  
+    -webkit-overflow-scrolling: touch;
+    // border: 2px solid green;
+    z-index: 10;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    /* the two items below, scroll-snaps, are for getting the slides to snap to the edges */
+    scroll-snap-type: x mandatory;
+    /* scroll-snap-align: start; */
+  
+    &::-webkit-scrollbar {
+      display: none;
+    }
+}
+
+.Playlists-Selected-Carousel-Content {
+  flex: 0 0 100vw;
+  // border: 2px solid blue;
+  scroll-snap-align: start;
+  margin: 0;
+  // transition: 0.5s ease-out;
+  scroll-snap-stop: always;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-bottom: 200px;
+}
+
 // .Playlists-Selected-Header-Box {
 //   flex: 0 0 100%;
 //   border: 2px solid blue;

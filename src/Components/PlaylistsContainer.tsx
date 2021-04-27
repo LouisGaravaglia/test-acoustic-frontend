@@ -4,6 +4,7 @@ import {MessagesContext} from './ChatBot/MessagesProvider';
 // import useMousePosition from '../Hooks/useMousePosition';
 import PlaylistsThumbnail from './PlaylistsThumbnail';
 import PlaylistsTrack from './PlaylistsTrack';
+import PlaylistsCarousel from './PlaylistsCarousel';
 import PlaylistsTitleScrollContainer from './PlaylistsTitleScrollContainer';
 import { FiPause, FiPlay, FiSkipBack, FiSkipForward } from 'react-icons/fi';
 let playlists =  require('../fakeData/playlist.json');
@@ -38,19 +39,13 @@ function PlaylistsContainer(): JSX.Element {
       <div className='Playlists-Selected-Header-Box'>
         <PlaylistsTitleScrollContainer updatePlaylistSelectedTitle={updatePlaylistSelectedTitle} updatePlaylistQueue={updatePlaylistQueue}/>
       </div>
-      <div className='Playlists-Selected-Content'>
+      <div className='Playlists-Carousel-Content'>
+
+      {playlists.map((playlist: any, index: any) => 
+        <PlaylistsCarousel key={index} playlist={playlist}/>
+      )}
 
 
-
-        <div className='Playlists-Artwork-Box'>
-          <img className='Playlists-Artwork' src={playlists[selectedTitle].images[0].url} alt=''/>
-        </div>
-
-        <div className='Playlists-Tracks-Container'>
-            {tracks.map((track: any, index: number) => 
-              <PlaylistsTrack track={track} key={index} index={index} selectedTrack={selectedTrack} setSelectedTrack={setSelectedTrack}/>
-            )}
-        </div>
 
         <div className='Playlists-Controls-Container'>
 
