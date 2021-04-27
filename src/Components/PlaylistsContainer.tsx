@@ -1,9 +1,10 @@
 import React, {useContext, useState} from 'react';
 import { IoArrowDown } from 'react-icons/io5';
 import {MessagesContext} from './ChatBot/MessagesProvider';
-import useMousePosition from '../Hooks/useMousePosition';
+// import useMousePosition from '../Hooks/useMousePosition';
 import PlaylistsThumbnail from './PlaylistsThumbnail';
 import PlaylistsTrack from './PlaylistsTrack';
+import PlaylistsTitleScrollContainer from './PlaylistsTitleScrollContainer';
 import { FiPause, FiPlay, FiSkipBack, FiSkipForward } from 'react-icons/fi';
 let playlists =  require('../fakeData/playlist.json');
 
@@ -21,7 +22,7 @@ function PlaylistsContainer(): JSX.Element {
   const [selectedTrack, setSelectedTrack] = useState<number>(0);
   // console.log("playlists: ", playlists);
   let tracks = playlists[0].tracks.items;
-  const {x, y} = useMousePosition();
+  // const {x, y} = useMousePosition();
   // console.log("tracks: ", tracks);
   // console.log("2nd playlist name: ", playlists[1].name );
   // console.log("mousePosition - x: ", x);
@@ -38,8 +39,9 @@ function PlaylistsContainer(): JSX.Element {
     <div className='Playlists-Container'>
 
       <div className='Playlists-Selected-Header-Box'>
-        <div className='Playlists-Selected-Header-Filler'></div>
-        <h1 className='Playlists-Selected-Title'>{playlists[0].name}</h1>
+        <PlaylistsTitleScrollContainer />
+        {/* <div className='Playlists-Selected-Header-Filler'></div>
+        <h1 className='Playlists-Selected-Title'>{playlists[0].name}</h1> */}
       </div>
         {/* <div className='Playlists-Selected-Header-Box'>
           <h1 className='Playlists-Artwork-Title'>{playlists[0].name}</h1>
@@ -58,7 +60,7 @@ function PlaylistsContainer(): JSX.Element {
 
         <div className='Playlists-Tracks-Container'>
             {tracks.map((track: any, index: number) => 
-              <PlaylistsTrack track={track} index={index} selectedTrack={selectedTrack} setSelectedTrack={setSelectedTrack}/>
+              <PlaylistsTrack track={track} key={index} index={index} selectedTrack={selectedTrack} setSelectedTrack={setSelectedTrack}/>
             )}
         </div>
 
@@ -113,7 +115,7 @@ function PlaylistsContainer(): JSX.Element {
         <div className='Playlists-Circles-Container'>
       {/* <div className='Playlists-All-Overlay'></div> */}
             {playlists.map((playlist: any, index: any) => 
-              <PlaylistsThumbnail playlist={playlist}/>
+              <PlaylistsThumbnail key={index} playlist={playlist}/>
               // <div key={playlist.id} className='Playlists-All-Box'>
               //   <p className='Playlists-Name'>{playlist.name.toUpperCase()}</p>
               // </div>

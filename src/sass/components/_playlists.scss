@@ -34,12 +34,15 @@ background-color: $mainOffWhite;
 
 }
 
+///////////////////////////////////  TITLE / HEADER  //////////////////////////////////
+
 .Playlists-Selected-Header-Box {
   position: relative;
   display: flex;
   flex-wrap: nowrap;
+  justify-content: center;
   width: 100vw;
-  margin: 100px 0 60px;
+  margin: 100px 0 20px;
   // border: 2px solid orange;
 
   .Playlists-Selected-Header-Filler {
@@ -74,6 +77,77 @@ background-color: $mainOffWhite;
     height: 100px;
     // background: linear-gradient(to right, $mainOffWhite 0%, $mainOffWhite 100%);
 }
+}
+
+// .scrollingContainer {
+//   flex: 0 0 90vw;
+//   position: relative;
+//   display: flex;
+//   flex-wrap: nowrap;
+//   justify-content: center;
+//   overflow-x: auto;
+//   // -webkit-overflow-scrolling: touch;
+//   // border: 2px solid red;
+//   // scrollbar-width: none;
+//   -ms-overflow-style: none;
+//   /* the two items below, scroll-snaps, are for getting the slides to snap to the edges */
+//   // scroll-snap-type: x mandatory;
+// }
+
+.scrolling-wrapper {
+  // position: relative;
+  flex: 0 0 calc(720px);
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  // border: 2px solid green;
+  z-index: 10;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  /* the two items below, scroll-snaps, are for getting the slides to snap to the edges */
+  scroll-snap-type: x mandatory;
+  /* scroll-snap-align: start; */
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .card {
+    flex: 0 0 200px;
+    padding: 0 20px;
+    // border: 2px solid blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start;
+    font-family: $mainFont;
+    font-weight: 100;
+    font-size: 1.2rem;
+    color: rgba(0, 0, 0, 0.089);
+    margin: 0;
+    // transition: 0.5s ease-out;
+  }
+}
+
+.Playlists-Featured-Title {
+  flex: 0 0 200px;
+  padding: 0 20px;
+  // border: 2px solid blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // align-self: center;
+  scroll-snap-align: start;
+  font-family: $mainFont;
+  font-size: 1.2rem;
+  font-weight: 100;
+  color: red;
+  // background: linear-gradient(to right, $mainGreen, $mainPink);
+  // -webkit-background-clip: text;
+  // -webkit-text-fill-color: transparent;
+  margin: 0;
+  // transition: 0.5s ease-out;
 }
 
 // .Playlists-Selected-Header-Box {
