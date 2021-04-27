@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { IoPlayCircleOutline, IoPauseCircleOutline, IoPlaySkipForward, IoPlaySkipBack } from 'react-icons/io5';
 import {MessagesContext} from './ChatBot/MessagesProvider';
 import useMousePosition from '../Hooks/useMousePosition';
@@ -13,7 +13,16 @@ interface Props {
 }
 
 function PlaylistsTrack({track, index, selectedTrack, setSelectedTrack}: Props): JSX.Element {
-  const [playingTrack, setPlayingTrack] = useState(false);
+  const [playingTrack, setPlayingTrack] = useState(true);
+
+  useEffect(() => {
+    function resetTrackVariables() {
+      setPlayingTrack(true);
+      setSelectedTrack(0);
+    }
+
+    resetTrackVariables();
+  }, [track, setPlayingTrack, setPlayingTrack])
 
   function togglePlayingTrack() {
     setPlayingTrack(state => !state)
