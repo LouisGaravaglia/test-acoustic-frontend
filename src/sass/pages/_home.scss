@@ -97,12 +97,12 @@
 
 .Home-Button-Overlay {
   position: absolute;
-  top: 6px;
-  right: -6px;
-  background-color: $mainOffWhite;
+  top: 8px;
+  right: -8px;
+  background-color: rgba(0, 0, 0, 0.644);
   border-radius: 95% 1% 95% 2% / 1% 94% 1% 97%;
   height: 63px;
-  width: 260px;
+  width: 262px;
   z-index: -1;
   transition: 0.3s ease-out;
   pointer-events: none;
@@ -131,9 +131,9 @@
 
   .Home-Button {
     font-family: $mainFont;
-    font-weight: 400;
+    font-weight: 800;
     font-size: 2rem;
-    color: $mainBlack;
+    color: $mainPink;
     margin: 0;
   }
 }
