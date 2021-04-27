@@ -9,12 +9,10 @@ interface Props {
     "name": string
   }
   index: number
-  handleInViewport: (titleRef: any | null, index: number) => void
-  // // boxRef: React.Ref<HTMLInputElement>
-  // titleInsideBoundary: boolean
-  // titleContainerRef: {
-  //   current: React.Ref<HTMLInputElement>
-  // }
+
+  parentFinishedMounting: boolean
+  updatePlaylistQueue: (titleIndex: number) => void
+  updatePlaylistSelectedTitle: (titleIndex: number) => void
 }
 
 // interface IUseElementOnScreen {
@@ -22,7 +20,7 @@ interface Props {
 //   isVisible: boolean
 // }
 
-function PlaylistsTitleScroll({playlist, handleInViewport, index}: Props): JSX.Element {
+function PlaylistsTitleScroll({playlist, index, parentFinishedMounting, updatePlaylistQueue, updatePlaylistSelectedTitle}: Props): JSX.Element {
   // const [isVisible, setIsVisible] = useState<boolean>(false);
   const titleRef = useRef<any | null>(null);
   let leftSideOfTitleDiv: number = 0;
@@ -58,26 +56,23 @@ function PlaylistsTitleScroll({playlist, handleInViewport, index}: Props): JSX.E
     // const enteredFrame = !!entry?.isIntersecting && (top > 143 && top < 144);
   // titleRef.current = index;
 
-    // useEffect(() => {
-    //   function isInViewport() {
-    //     // if (!titleRef) return false;
+    useEffect(() => {
+      function selectedTitleViaScroll() {
+        if (!parentFinishedMounting) return;
         
-    //     // const enteredFrame = !!entry?.isIntersecting && (leftSideOfTitleDiv < viewportMidPoint && rightSideOfTitleDiv > viewportMidPoint);
-    //     const touchingMidPoint = (leftSideOfTitleDiv < viewportMidPoint && rightSideOfTitleDiv > viewportMidPoint);
+        if (isVisible) {
+          updatePlaylistQueue(index);
+          console.log(`selected ${index}`);
+        } else {
+          updatePlaylistSelectedTitle(index);
+          console.log(`unselected ${index}`);
+          
+        }
 
-    //     setIsVisible(touchingMidPoint)
-    //     // console.log(`touchingMidPoint ${index}`, enteredFrame);
-        
-    //     console.log(`leftSideOfTitleDiv ${index}`, leftSideOfTitleDiv);
-    
-    //     console.log('midpoint', viewportMidPoint);
-    //     console.log(`rightSideOfTitleDiv ${index}`, rightSideOfTitleDiv);
-        
+      }
 
-    //   }
-
-    //   isInViewport();
-    // }, [titleRef, setIsVisible, leftSideOfTitleDiv, rightSideOfTitleDiv])
+      selectedTitleViaScroll();
+    }, [isVisible, index])
 
 
       // function isInViewport(offset = 0) {

@@ -1,10 +1,15 @@
-import React, {useState, useRef} from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 import PlaylistsTitleScroll from './PlaylistsTitleScroll';
 import useViewport from '../Hooks/useViewport';
 let playlists =  require('../fakeData/playlist.json');
 
-function PlaylistsTitleScrollContainer(): JSX.Element {
+interface Props {
+  updatePlaylistQueue: (titleIndex: number) => void
+  updatePlaylistSelectedTitle: (titleIndex: number) => void
+}
+function PlaylistsTitleScrollContainer({updatePlaylistQueue, updatePlaylistSelectedTitle}: Props): JSX.Element {
   const [isVisible, setIsVisible] = useState<boolean>(false);
+  const [parentFinishedMounting, setParentFinishedMounting] = useState<boolean>(false);
   const {viewportWidth}  = useViewport();
 
   function observeTitlesInView(index: number) {
@@ -34,12 +39,20 @@ function PlaylistsTitleScrollContainer(): JSX.Element {
     // return (top + offset) >= 0 && (top - offset) <= window.innerHeight;
   }
 
+  useEffect(() => {
+    function parentDidMount() {
+      setParentFinishedMounting(true)
+    }
+
+    parentDidMount();
+  }, [])
+
   return (
     // <div className="scrollingContainer">
 
     <div className="scrolling-wrapper" >
       <div className='card' ><h2 ></h2></div>
-      {playlists.map((playlist: any, index: any) => <PlaylistsTitleScroll key={index} index={index} playlist={playlist} handleInViewport={handleInViewport}/>)}
+      {playlists.map((playlist: any, index: any) => <PlaylistsTitleScroll key={index} index={index} playlist={playlist} parentFinishedMounting={parentFinishedMounting} updatePlaylistSelectedTitle={updatePlaylistSelectedTitle} updatePlaylistQueue={updatePlaylistQueue}/>)}
       <div className='card' ><h2 ></h2></div>
 
     </div>

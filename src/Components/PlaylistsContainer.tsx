@@ -8,28 +8,25 @@ import PlaylistsTitleScrollContainer from './PlaylistsTitleScrollContainer';
 import { FiPause, FiPlay, FiSkipBack, FiSkipForward } from 'react-icons/fi';
 let playlists =  require('../fakeData/playlist.json');
 
-// interface IUser {
-//   first_name: string
-//   last_name: string
-//   email: string
-//   username: string
-//   password: string
-//   access_token: string,
-//   refresh_token: string
-// }
+
 
 function PlaylistsContainer(): JSX.Element {
   const [selectedTrack, setSelectedTrack] = useState<number>(0);
-  // console.log("playlists: ", playlists);
-  let tracks = playlists[0].tracks.items;
-  // const {x, y} = useMousePosition();
-  // console.log("tracks: ", tracks);
-  // console.log("2nd playlist name: ", playlists[1].name );
-  // console.log("mousePosition - x: ", x);
-  // console.log("mousePosition - y: ", y);
-  
-  let playOrPauseIcon;
+  const [selectedTitle, setSelectedTitle] = useState<number>(0);
+  const [titleInQueue, setTitleInQueue] = useState<number>(0);
+  // const selectedPlaylist = {
+  //   selectedTitle: 0,
+  //   titleInQueue: 0
+  // }
+  let tracks = playlists[selectedTitle].tracks.items;
 
+  function updatePlaylistQueue(titleIndex: number) {
+    setTitleInQueue(titleIndex);
+  } 
+  
+  function updatePlaylistSelectedTitle(titleIndex: number) {
+    if (selectedTitle === titleIndex) setSelectedTitle(titleInQueue);
+  }
 
 
   return (
@@ -39,23 +36,14 @@ function PlaylistsContainer(): JSX.Element {
     <div className='Playlists-Container'>
 
       <div className='Playlists-Selected-Header-Box'>
-        <PlaylistsTitleScrollContainer />
-        {/* <div className='Playlists-Selected-Header-Filler'></div>
-        <h1 className='Playlists-Selected-Title'>{playlists[0].name}</h1> */}
+        <PlaylistsTitleScrollContainer updatePlaylistSelectedTitle={updatePlaylistSelectedTitle} updatePlaylistQueue={updatePlaylistQueue}/>
       </div>
-        {/* <div className='Playlists-Selected-Header-Box'>
-          <h1 className='Playlists-Artwork-Title'>{playlists[0].name}</h1>
-        </div> */}
       <div className='Playlists-Selected-Content'>
 
 
 
         <div className='Playlists-Artwork-Box'>
-
-          {/* <div className='Playlists-Artwork-Square'></div> */}
-          {/* <div className='Playlists-Artwork-Overlay'></div> */}
-          <img className='Playlists-Artwork' src={playlists[0].images[0].url} alt=''/>
-
+          <img className='Playlists-Artwork' src={playlists[selectedTitle].images[0].url} alt=''/>
         </div>
 
         <div className='Playlists-Tracks-Container'>

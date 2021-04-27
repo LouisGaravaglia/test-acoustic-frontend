@@ -109,7 +109,7 @@
   "id": "playlist_2",
   "images": [
       {
-          "url": "https://i.scdn.co/image/68b6a65573a55095e9c0c0c33a274b18e0422736"
+          "url": "https://i.scdn.co/image/47421900e7534789603de84c03a40a826c058e45"
       }
   ],
   "name": "04/07/2021",
@@ -134,7 +134,7 @@
                           "type": "artist"
                       }
                   ],
-                  "name": "Shots in the darkt",
+                  "name": "Shots in the dark",
                   "id": "track_1"
               }
           },
@@ -194,7 +194,7 @@
   "id": "playlist_3",
   "images": [
       {
-          "url": "https://i.scdn.co/image/68b6a65573a55095e9c0c0c33a274b18e0422736"
+          "url": "https://i.scdn.co/image/47421900e7534789603de84c03a40a826c058e45"
       }
   ],
   "name": "03/28/2021",
@@ -210,16 +210,16 @@
                               "width": 640
                           }
                       ],
-                      "name": "Main album",
+                      "name": "The Neon Skyline",
                       "type": "album"
                   },
                   "artists": [
                       {
-                          "name": "Iann Dior",
+                          "name": "Andy Shauf",
                           "type": "artist"
                       }
                   ],
-                  "name": "Shots in the darkt",
+                  "name": "Neon Skyline",
                   "id": "track_1"
               }
           },
@@ -238,11 +238,11 @@
                 },
                 "artists": [
                     {
-                        "name": "Offset",
+                        "name": "Andrew Applepie",
                         "type": "artist"
                     }
                 ],
-                "name": "SHOOT MY SHOT",
+                "name": "Nice Setup",
                 "id": "track_2"
             }
         },
@@ -261,11 +261,11 @@
               },
               "artists": [
                   {
-                      "name": "ILOVEMAKONNEN",
+                      "name": "Scoobert Doobert",
                       "type": "artist"
                   }
               ],
-              "name": "All I wanna see",
+              "name": "Can't Imagine Feeling Better",
               "id": "track_3"
           }
       }
@@ -277,7 +277,7 @@
   "id": "playlist_4",
   "images": [
       {
-          "url": "https://i.scdn.co/image/68b6a65573a55095e9c0c0c33a274b18e0422736"
+          "url": "https://i.scdn.co/image/47421900e7534789603de84c03a40a826c058e45"
       }
   ],
   "name": "03/21/2021",
@@ -298,11 +298,11 @@
                   },
                   "artists": [
                       {
-                          "name": "Iann Dior",
+                          "name": "London Grammar",
                           "type": "artist"
                       }
                   ],
-                  "name": "Shots in the darkt",
+                  "name": "Lose your head",
                   "id": "track_1"
               }
           },
@@ -321,11 +321,11 @@
                 },
                 "artists": [
                     {
-                        "name": "Offset",
+                        "name": "Dekker",
                         "type": "artist"
                     }
                 ],
-                "name": "SHOOT MY SHOT",
+                "name": "The Love",
                 "id": "track_2"
             }
         },
@@ -344,11 +344,11 @@
               },
               "artists": [
                   {
-                      "name": "ILOVEMAKONNEN",
+                      "name": "James Blake",
                       "type": "artist"
                   }
               ],
-              "name": "All I wanna see",
+              "name": "The First Time Ever I Saw Your Face",
               "id": "track_3"
           }
       }
@@ -360,7 +360,7 @@
   "id": "playlist_5",
   "images": [
       {
-          "url": "https://i.scdn.co/image/68b6a65573a55095e9c0c0c33a274b18e0422736"
+          "url": "https://i.scdn.co/image/47421900e7534789603de84c03a40a826c058e45"
       }
   ],
   "name": "03/13/2021",
@@ -381,11 +381,11 @@
                   },
                   "artists": [
                       {
-                          "name": "Iann Dior",
+                          "name": "Babe Rainbow",
                           "type": "artist"
                       }
                   ],
-                  "name": "Shots in the darkt",
+                  "name": "The Wind",
                   "id": "track_1"
               }
           },
@@ -404,11 +404,11 @@
                 },
                 "artists": [
                     {
-                        "name": "Offset",
+                        "name": "Pokey LaFarge",
                         "type": "artist"
                     }
                 ],
-                "name": "SHOOT MY SHOT",
+                "name": "Lucky Sometimes",
                 "id": "track_2"
             }
         },
@@ -427,11 +427,11 @@
               },
               "artists": [
                   {
-                      "name": "ILOVEMAKONNEN",
+                      "name": "Angel Olsen",
                       "type": "artist"
                   }
               ],
-              "name": "All I wanna see",
+              "name": "Wiving, Smiling",
               "id": "track_3"
           }
       }
@@ -443,7 +443,7 @@
   "id": "playlist_6",
   "images": [
       {
-          "url": "https://i.scdn.co/image/68b6a65573a55095e9c0c0c33a274b18e0422736"
+          "url": "https://i.scdn.co/image/47421900e7534789603de84c03a40a826c058e45"
       }
   ],
   "name": "03/07/2021",
@@ -464,11 +464,11 @@
                   },
                   "artists": [
                       {
-                          "name": "Iann Dior",
+                          "name": "Michael Marshall",
                           "type": "artist"
                       }
                   ],
-                  "name": "Shots in the darkt",
+                  "name": "San Francisco",
                   "id": "track_1"
               }
           },
@@ -487,11 +487,11 @@
                 },
                 "artists": [
                     {
-                        "name": "Offset",
+                        "name": "DARKSIDE",
                         "type": "artist"
                     }
                 ],
-                "name": "SHOOT MY SHOT",
+                "name": "Liberty Bell",
                 "id": "track_2"
             }
         },
@@ -510,11 +510,11 @@
               },
               "artists": [
                   {
-                      "name": "ILOVEMAKONNEN",
+                      "name": "Dijon",
                       "type": "artist"
                   }
               ],
-              "name": "All I wanna see",
+              "name": "The Stranger",
               "id": "track_3"
           }
       }
