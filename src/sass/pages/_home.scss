@@ -40,6 +40,7 @@
   padding: 0;
   margin: -50px;
   cursor: default;
+  user-select: none;
 }
 
 .Home-Subheader-Box {
@@ -57,6 +58,7 @@
   padding: 0;
   margin: 0 40px;
   cursor: default;
+  user-select: none;
 }
 
 .Home-Lower-Box {
@@ -135,6 +137,7 @@
     font-size: 2rem;
     color: $mainBlack;
     margin: 0;
+    user-select: none;
   }
 }
 

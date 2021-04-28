@@ -63,6 +63,7 @@
   text-align: left;
   margin: 10px 180px 10px 0;
   cursor: default;
+  user-select: none;
 }
 
 .Chatty-Message-Black {
@@ -169,6 +170,7 @@
   font-size: 1rem;
   color: $mainBlack;
   margin: 0;
+  user-select: none;
 }
 
 .Chatty-Button-Box:hover {
