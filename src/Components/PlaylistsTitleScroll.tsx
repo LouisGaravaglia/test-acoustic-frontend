@@ -11,8 +11,8 @@ interface Props {
   index: number
 
   parentFinishedMounting: boolean
-  updatePlaylistQueue: (titleIndex: number) => void
-  updatePlaylistSelectedTitle: (titleIndex: number) => void
+  selectedPlaylistTitle: number
+  handleScrollToSelectedTitle: (titleRef: any | null) => void
 }
 
 // interface IUseElementOnScreen {
@@ -20,7 +20,7 @@ interface Props {
 //   isVisible: boolean
 // }
 
-function PlaylistsTitleScroll({playlist, index, parentFinishedMounting, updatePlaylistQueue, updatePlaylistSelectedTitle}: Props): JSX.Element {
+function PlaylistsTitleScroll({playlist, index, parentFinishedMounting, selectedPlaylistTitle, handleScrollToSelectedTitle}: Props): JSX.Element {
   // const [isVisible, setIsVisible] = useState<boolean>(false);
   const titleRef = useRef<any | null>(null);
   let leftSideOfTitleDiv: number = 0;
@@ -45,34 +45,35 @@ function PlaylistsTitleScroll({playlist, index, parentFinishedMounting, updatePl
   });
   const isVisible = !!entry?.isIntersecting;
 
-    // useEffect(() => {
+    useEffect(() => {
+      const leftVal = titleRef.current.getBoundingClientRect().left;
 
-    //   handleInViewport(titleRef, index);
-    // }, [titleRef, enteredFrame])
+      if(selectedPlaylistTitle === index) handleScrollToSelectedTitle(titleRef);
+    }, [titleRef, selectedPlaylistTitle])
 
     // handleInViewport(titleRef);
 
-    // const top = titleRef.current.getBoundingClientRect().top;
+
     // const enteredFrame = !!entry?.isIntersecting && (top > 143 && top < 144);
   // titleRef.current = index;
 
-    useEffect(() => {
-      function selectedTitleViaScroll() {
-        if (!parentFinishedMounting) return;
+    // useEffect(() => {
+    //   function selectedTitleViaScroll() {
+    //     if (!parentFinishedMounting) return;
         
-        if (isVisible) {
-          updatePlaylistQueue(index);
-          console.log(`selected ${index}`);
-        } else {
-          updatePlaylistSelectedTitle(index);
-          console.log(`unselected ${index}`);
+    //     if (isVisible) {
+    //       updatePlaylistQueue(index);
+    //       console.log(`selected ${index}`);
+    //     } else {
+    //       updatePlaylistSelectedTitle(index);
+    //       console.log(`unselected ${index}`);
           
-        }
+    //     }
 
-      }
+    //   }
 
-      selectedTitleViaScroll();
-    }, [isVisible, index])
+    //   selectedTitleViaScroll();
+    // }, [isVisible, index])
 
 
       // function isInViewport(offset = 0) {

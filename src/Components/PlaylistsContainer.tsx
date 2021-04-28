@@ -6,6 +6,7 @@ import PlaylistsThumbnail from './PlaylistsThumbnail';
 import PlaylistsTrack from './PlaylistsTrack';
 import PlaylistsCarousel from './PlaylistsCarousel';
 import PlaylistsTitleScrollContainer from './PlaylistsTitleScrollContainer';
+import PlaylistsCarouselContainer from './PlaylistsCarouselContainer'
 import { FiPause, FiPlay, FiSkipBack, FiSkipForward } from 'react-icons/fi';
 let playlists =  require('../fakeData/playlist.json');
 
@@ -36,16 +37,8 @@ function PlaylistsContainer(): JSX.Element {
 
     <div className='Playlists-Container'>
 
-      <div className='Playlists-Selected-Header-Box'>
-        <PlaylistsTitleScrollContainer updatePlaylistSelectedTitle={updatePlaylistSelectedTitle} updatePlaylistQueue={updatePlaylistQueue}/>
-      </div>
-      <div className='Playlists-Carousel-Content'>
 
-      {playlists.map((playlist: any, index: any) => 
-        <PlaylistsCarousel key={index} playlist={playlist}/>
-      )}
-
-
+      <PlaylistsCarouselContainer />
 
         <div className='Playlists-Controls-Container'>
 
@@ -78,7 +71,7 @@ function PlaylistsContainer(): JSX.Element {
           <div className='Playlists-Controls-Right-Filler'></div>
         </div>
 
-      </div>
+     
       {/* <div className='Test-Container'> */}
       <div className='Playlists-All-Container'>
         <div className='Playlists-All-Headers'>

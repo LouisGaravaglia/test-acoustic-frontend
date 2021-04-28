@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useState, useRef, useEffect} from 'react';
 import { IoArrowDown } from 'react-icons/io5';
 import {MessagesContext} from './ChatBot/MessagesProvider';
 // import useMousePosition from '../Hooks/useMousePosition';
@@ -6,6 +6,7 @@ import PlaylistsThumbnail from './PlaylistsThumbnail';
 import PlaylistsTrack from './PlaylistsTrack';
 import PlaylistsTitleScrollContainer from './PlaylistsTitleScrollContainer';
 import { FiPause, FiPlay, FiSkipBack, FiSkipForward } from 'react-icons/fi';
+import useElementOnScreen from '../Hooks/useElementOnScreen.tsx';
 
 
 interface Props {
@@ -45,25 +46,40 @@ interface Props {
         ]
     }
   }
+  index: number
+  updateSelectedPlaylistTitle: (selectedPlaylist: number) => void
 }
 
-function PlaylistsCarousel({playlist}): JSX.Element {
+function PlaylistsCarousel({playlist, index, updateSelectedPlaylistTitle}: Props): JSX.Element {
   const [selectedTrack, setSelectedTrack] = useState<number>(0);
   const [selectedTitle, setSelectedTitle] = useState<number>(0);
   const [titleInQueue, setTitleInQueue] = useState<number>(0);
+  const playlistRef = useRef<any | null>(null);
+  const entry = useElementOnScreen(playlistRef, {
+    // root: document.querySelector('.scrolling-wrapper'),
+    // rootMargin: "0px -300px",
+    threshold: 0.9
+  });
+  const isVisible = !!entry?.isIntersecting;
+  console.log(`index ${index} - ${isVisible}`);
+  
   // const selectedPlaylist = {
   //   selectedTitle: 0,
   //   titleInQueue: 0
   // }
   let tracks = playlist.tracks.items;
 
-  function updatePlaylistQueue(titleIndex: number) {
-    setTitleInQueue(titleIndex);
-  } 
+  useEffect(() => {
+    updateSelectedPlaylistTitle(index)
+  }, [isVisible]);
+
+  // function updatePlaylistQueue(titleIndex: number) {
+  //   setTitleInQueue(titleIndex);
+  // } 
   
-  function updatePlaylistSelectedTitle(titleIndex: number) {
-    if (selectedTitle === titleIndex) setSelectedTitle(titleInQueue);
-  }
+  // function updatePlaylistSelectedTitle(titleIndex: number) {
+  //   if (selectedTitle === titleIndex) setSelectedTitle(titleInQueue);
+  // }
 
 
   return (
@@ -71,7 +87,7 @@ function PlaylistsCarousel({playlist}): JSX.Element {
 
 
 
-      <div className='Playlists-Selected-Carousel-Content'>
+      <div className='Playlists-Selected-Carousel-Content' ref={playlistRef}>
 
 
 
