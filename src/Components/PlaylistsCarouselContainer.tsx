@@ -7,7 +7,7 @@ import PlaylistsTrack from './PlaylistsTrack';
 import PlaylistsTitleScrollContainer from './PlaylistsTitleScrollContainer';
 import PlaylistsCarousel from './PlaylistsCarousel';
 import { FiPause, FiPlay, FiSkipBack, FiSkipForward } from 'react-icons/fi';
-import useElementOnScreen from '../Hooks/useElementOnScreen.tsx';
+import useElementOnScreen from '../Hooks/useElementOnScreen';
 let playlists =  require('../fakeData/playlist.json');
 
 

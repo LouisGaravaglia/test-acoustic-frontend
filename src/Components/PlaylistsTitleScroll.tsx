@@ -1,6 +1,6 @@
 import React, {useState, useRef, useEffect, useMemo, useCallback} from 'react';
 import useViewport from '../Hooks/useViewport';
-import useElementOnScreen from '../Hooks/useElementOnScreen.tsx';
+import useElementOnScreen from '../Hooks/useElementOnScreen';
 let playlists =  require('../fakeData/playlist.json');
 
 interface Props {

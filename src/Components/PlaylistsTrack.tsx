@@ -11,9 +11,10 @@ interface Props {
   selectedTrack: number
   setSelectedTrack: (index: number) => void
   selectedPlaylistIndex: number
+  playlistLength: number
 }
 
-function PlaylistsTrack({track, index, selectedTrack, setSelectedTrack, selectedPlaylistIndex}: Props): JSX.Element {
+function PlaylistsTrack({track, index, selectedTrack, setSelectedTrack, selectedPlaylistIndex, playlistLength}: Props): JSX.Element {
   const [playingTrack, setPlayingTrack] = useState(true);
 
   useEffect(() => {
@@ -24,6 +25,11 @@ function PlaylistsTrack({track, index, selectedTrack, setSelectedTrack, selected
 
     resetTrackVariables();
   }, [track, setPlayingTrack, selectedPlaylistIndex])
+
+  // useEffect(() => {
+  //   console.log('useEffect selectedTrack: ', selectedTrack);
+    
+  // }, [selectedTrack])
 
   function togglePlayingTrack() {
     setPlayingTrack(state => !state)
@@ -46,19 +52,20 @@ function PlaylistsTrack({track, index, selectedTrack, setSelectedTrack, selected
     styles = { top: `${(index * 60)}px`};
   }
 
+
   let playTrackControls: JSX.Element;
 
   playTrackControls = (
     <>
     <div className="Playlists-ControlBtns-Container">
-      <div className="Playlists-PlayBtn-Box">
+      <div className="Playlists-PlayBtn-Box" onClick={() => setSelectedTrack(selectedTrack === 0 ? selectedTrack : selectedTrack - 1)}>
         <IoPlaySkipBack className='Playlists-PrevBtn-Icon'/>
       </div>
       <div className="Playlists-PlayBtn-Box" onClick={togglePlayingTrack}>
         {playingTrack ? <IoPauseCircleOutline className='Playlists-PlayBtn-Icon'/> : <IoPlayCircleOutline className='Playlists-PlayBtn-Icon'/>}
       </div>
       <div className="Playlists-PlayBtn-Box">
-        <IoPlaySkipForward className='Playlists-NextBtn-Icon'/>
+        <IoPlaySkipForward className='Playlists-NextBtn-Icon' onClick={() => setSelectedTrack(selectedTrack === playlistLength - 1 ? selectedTrack : selectedTrack + 1)}/>
       </div>
     </div>
     </>
@@ -66,12 +73,23 @@ function PlaylistsTrack({track, index, selectedTrack, setSelectedTrack, selected
 
   return (
     <>
-      <div key={track.track.id} className='Playlists-Track-Container' style={styles} onClick={() => setSelectedTrack(index)}>
-        <div className="Playlists-Track-Box">
+      <div key={track.track.id} className='Playlists-Track-Container' style={styles} >
+        <div className="Playlists-Track-Box" onClick={() => setSelectedTrack(index)}>
           <p className='Playlists-Track-Name'>{track.track.name}</p>
           <p className='Playlists-Artist-Name'>{track.track.artists[0].name}</p>
         </div>
         {selectedTrack === index && playTrackControls}
+         {/* { <div className="Playlists-ControlBtns-Container">
+            <div className="Playlists-PlayBtn-Box" onClick={skipToPrevTrack}>
+              <IoPlaySkipBack className='Playlists-PrevBtn-Icon'/>
+            </div>
+            <div className="Playlists-PlayBtn-Box" onClick={togglePlayingTrack}>
+              {playingTrack ? <IoPauseCircleOutline className='Playlists-PlayBtn-Icon'/> : <IoPlayCircleOutline className='Playlists-PlayBtn-Icon'/>}
+            </div>
+            <div className="Playlists-PlayBtn-Box">
+              <IoPlaySkipForward className='Playlists-NextBtn-Icon' onClick={() => setSelectedTrack(selectedTrack + 1)}/>
+            </div>
+          </div>} */}
       </div>
     </>
   );

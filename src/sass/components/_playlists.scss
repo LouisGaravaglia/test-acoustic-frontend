@@ -323,7 +323,7 @@ background-color: $mainOffWhite;
     flex-direction: row;
     flex-wrap: nowrap;
     margin: 0 40px 20px 40px;
-    cursor: pointer;
+    // cursor: pointer;
     width: calc(100% - 80px);
     // width: 100%;
     // justify-content: flex-start;
@@ -331,6 +331,7 @@ background-color: $mainOffWhite;
     // border: 2px solid pink;
 
     .Playlists-Track-Box {
+      cursor: pointer;
       // border: 2px solid black;
 
       .Playlists-Track-Name {
@@ -436,7 +437,7 @@ background-color: $mainOffWhite;
   flex-wrap: nowrap;
   flex: 0 0 100vw;
   position: relative;
-  z-index: 9;
+  // z-index: 99;
 }
 
 .Playlists-Controls-Box {

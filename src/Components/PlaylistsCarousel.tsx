@@ -6,7 +6,7 @@ import PlaylistsThumbnail from './PlaylistsThumbnail';
 import PlaylistsTrack from './PlaylistsTrack';
 import PlaylistsTitleScrollContainer from './PlaylistsTitleScrollContainer';
 import { FiPause, FiPlay, FiSkipBack, FiSkipForward } from 'react-icons/fi';
-import useElementOnScreen from '../Hooks/useElementOnScreen.tsx';
+import useElementOnScreen from '../Hooks/useElementOnScreen';
 
 
 interface Props {
@@ -62,7 +62,8 @@ function PlaylistsCarousel({playlist, index, updateSelectedPlaylistIndex, select
     threshold: 0.8
   });
   const isVisible = !!entry?.isIntersecting;
-  console.log(`index ${index} - ${isVisible}`);
+
+  
   
   // const selectedPlaylist = {
   //   selectedTitle: 0,
@@ -73,6 +74,12 @@ function PlaylistsCarousel({playlist, index, updateSelectedPlaylistIndex, select
   useEffect(() => {
     updateSelectedPlaylistIndex(index)
   }, [isVisible]);
+
+  function updateSelectedTrack(trackIndex: number) {
+    console.log("trackIndex ", trackIndex);
+    
+    setSelectedTrack(trackIndex);
+  }
 
   // function updatePlaylistQueue(titleIndex: number) {
   //   setTitleInQueue(titleIndex);
@@ -98,7 +105,7 @@ function PlaylistsCarousel({playlist, index, updateSelectedPlaylistIndex, select
 
         <div className='Playlists-Tracks-Container'>
             {tracks.map((track: any, index: number) => 
-              <PlaylistsTrack track={track} key={index} index={index} selectedTrack={selectedTrack} setSelectedTrack={setSelectedTrack} selectedPlaylistIndex={selectedPlaylistIndex}/>
+              <PlaylistsTrack track={track} key={index} index={index} playlistLength={tracks.length} selectedTrack={selectedTrack} setSelectedTrack={setSelectedTrack} selectedPlaylistIndex={selectedPlaylistIndex}/>
             )}
         </div>
 

@@ -63,7 +63,7 @@ function PlaylistsTitleScrollContainer({selectedPlaylistIndex}: Props): JSX.Elem
     if (titleRef.current !== null) {
       console.log('offsetLeft', titleRef.current.offsetLeft);
       //TODO: MAKE MEDIA QUERY THAT LOWER'S THE AMOUNT SUBTRACTING FROM TITLEREF OFFSET VALUE
-      wrapperRef.current.scroll({left: titleRef.current.offsetLeft - 600, behavior: 'smooth'});
+      wrapperRef.current.scroll({left: titleRef.current.offsetLeft - 300, behavior: 'smooth'});
     }
   }
 
