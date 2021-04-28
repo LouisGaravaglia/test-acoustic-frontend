@@ -57,16 +57,16 @@ function PlaylistsTitleScrollContainer({selectedPlaylistTitle}: Props): JSX.Elem
   //   parentDidMount();
   // }, [])
 
+  
   function handleScrollToSelectedTitle(titleRef: any | null) {
     console.log('handleScroll', titleRef);
-    // setSelectedPlaylistRef(titleRef);
     if (titleRef.current !== null) {
       console.log('offsetLeft', titleRef.current.offsetLeft);
-      
+      //TODO: MAKE MEDIA QUERY THAT LOWER'S THE AMOUNT SUBTRACTING FROM TITLEREF OFFSET VALUE
       wrapperRef.current.scroll({left: titleRef.current.offsetLeft - 600, behavior: 'smooth'});
     }
-    // titleRef.current.scrollIntoView({behavior: "smooth"});
   }
+
 
   //   useEffect(() => {
   //     console.log("trying to scroll");

@@ -58,7 +58,7 @@ function PlaylistsCarousel({playlist, index, updateSelectedPlaylistTitle}: Props
   const entry = useElementOnScreen(playlistRef, {
     // root: document.querySelector('.scrolling-wrapper'),
     // rootMargin: "0px -300px",
-    threshold: 0.9
+    threshold: 0.8
   });
   const isVisible = !!entry?.isIntersecting;
   console.log(`index ${index} - ${isVisible}`);

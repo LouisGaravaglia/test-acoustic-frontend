@@ -13,7 +13,6 @@ let playlists =  require('../fakeData/playlist.json');
 
 
 function PlaylistsContainer(): JSX.Element {
-  const [selectedTrack, setSelectedTrack] = useState<number>(0);
   const [selectedTitle, setSelectedTitle] = useState<number>(0);
   const [titleInQueue, setTitleInQueue] = useState<number>(0);
   // const selectedPlaylist = {

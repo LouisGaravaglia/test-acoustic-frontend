@@ -22,7 +22,7 @@ function PlaylistsTrack({track, index, selectedTrack, setSelectedTrack}: Props):
     }
 
     resetTrackVariables();
-  }, [track, setPlayingTrack, setPlayingTrack])
+  }, [track, setPlayingTrack])
 
   function togglePlayingTrack() {
     setPlayingTrack(state => !state)
