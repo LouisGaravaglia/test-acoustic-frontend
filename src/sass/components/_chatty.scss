@@ -144,7 +144,7 @@
   position: absolute;
   top: 4px;
   right: -6px;
-  background-color: $mainPink;
+  background-color: rgba(0, 0, 0, 0.212);
   border-radius: 100% 0% 100% 2% / 1% 99% 1% 97%;
   width:101%;
   height: 102%;
@@ -177,6 +177,7 @@
   .Chatty-Button-Overlay {
     top: 0;
     right: 0;
+    width: 100%;
   }
 }
 
