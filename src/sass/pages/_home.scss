@@ -99,7 +99,7 @@
   position: absolute;
   top: 8px;
   right: -8px;
-  background-color: rgba(0, 0, 0, 0.644);
+  background-color: rgba(0, 0, 0, 0.212);
   border-radius: 95% 1% 95% 2% / 1% 94% 1% 97%;
   height: 63px;
   width: 262px;
@@ -131,9 +131,9 @@
 
   .Home-Button {
     font-family: $mainFont;
-    font-weight: 800;
+    font-weight: 500;
     font-size: 2rem;
-    color: $mainPink;
+    color: $mainBlack;
     margin: 0;
   }
 }
