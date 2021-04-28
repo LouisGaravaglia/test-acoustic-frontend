@@ -10,9 +10,10 @@ interface Props {
   index: number
   selectedTrack: number
   setSelectedTrack: (index: number) => void
+  selectedPlaylistIndex: number
 }
 
-function PlaylistsTrack({track, index, selectedTrack, setSelectedTrack}: Props): JSX.Element {
+function PlaylistsTrack({track, index, selectedTrack, setSelectedTrack, selectedPlaylistIndex}: Props): JSX.Element {
   const [playingTrack, setPlayingTrack] = useState(true);
 
   useEffect(() => {
@@ -22,7 +23,7 @@ function PlaylistsTrack({track, index, selectedTrack, setSelectedTrack}: Props):
     }
 
     resetTrackVariables();
-  }, [track, setPlayingTrack])
+  }, [track, setPlayingTrack, selectedPlaylistIndex])
 
   function togglePlayingTrack() {
     setPlayingTrack(state => !state)

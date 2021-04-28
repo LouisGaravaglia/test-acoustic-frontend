@@ -11,7 +11,7 @@ interface Props {
   index: number
 
   parentFinishedMounting: boolean
-  selectedPlaylistTitle: number
+  selectedPlaylistIndex: number
   handleScrollToSelectedTitle: (titleRef: any | null) => void
 }
 
@@ -20,7 +20,7 @@ interface Props {
 //   isVisible: boolean
 // }
 
-function PlaylistsTitleScroll({playlist, index, parentFinishedMounting, selectedPlaylistTitle, handleScrollToSelectedTitle}: Props): JSX.Element {
+function PlaylistsTitleScroll({playlist, index, parentFinishedMounting, selectedPlaylistIndex, handleScrollToSelectedTitle}: Props): JSX.Element {
   // const [isVisible, setIsVisible] = useState<boolean>(false);
   const titleRef = useRef<any | null>(null);
   let leftSideOfTitleDiv: number = 0;
@@ -48,8 +48,8 @@ function PlaylistsTitleScroll({playlist, index, parentFinishedMounting, selected
     useEffect(() => {
       const leftVal = titleRef.current.getBoundingClientRect().left;
 
-      if(selectedPlaylistTitle === index) handleScrollToSelectedTitle(titleRef);
-    }, [titleRef, selectedPlaylistTitle])
+      if(selectedPlaylistIndex === index) handleScrollToSelectedTitle(titleRef);
+    }, [titleRef, selectedPlaylistIndex])
 
     // handleInViewport(titleRef);
 

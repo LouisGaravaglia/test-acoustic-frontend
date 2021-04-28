@@ -47,10 +47,11 @@ interface Props {
     }
   }
   index: number
-  updateSelectedPlaylistTitle: (selectedPlaylist: number) => void
+  updateSelectedPlaylistIndex: (selectedPlaylist: number) => void
+  selectedPlaylistIndex: number
 }
 
-function PlaylistsCarousel({playlist, index, updateSelectedPlaylistTitle}: Props): JSX.Element {
+function PlaylistsCarousel({playlist, index, updateSelectedPlaylistIndex, selectedPlaylistIndex}: Props): JSX.Element {
   const [selectedTrack, setSelectedTrack] = useState<number>(0);
   const [selectedTitle, setSelectedTitle] = useState<number>(0);
   const [titleInQueue, setTitleInQueue] = useState<number>(0);
@@ -70,7 +71,7 @@ function PlaylistsCarousel({playlist, index, updateSelectedPlaylistTitle}: Props
   let tracks = playlist.tracks.items;
 
   useEffect(() => {
-    updateSelectedPlaylistTitle(index)
+    updateSelectedPlaylistIndex(index)
   }, [isVisible]);
 
   // function updatePlaylistQueue(titleIndex: number) {
@@ -97,7 +98,7 @@ function PlaylistsCarousel({playlist, index, updateSelectedPlaylistTitle}: Props
 
         <div className='Playlists-Tracks-Container'>
             {tracks.map((track: any, index: number) => 
-              <PlaylistsTrack track={track} key={index} index={index} selectedTrack={selectedTrack} setSelectedTrack={setSelectedTrack}/>
+              <PlaylistsTrack track={track} key={index} index={index} selectedTrack={selectedTrack} setSelectedTrack={setSelectedTrack} selectedPlaylistIndex={selectedPlaylistIndex}/>
             )}
         </div>
 

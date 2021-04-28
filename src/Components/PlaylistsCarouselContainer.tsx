@@ -12,8 +12,8 @@ let playlists =  require('../fakeData/playlist.json');
 
 
 function PlaylistsCarouselContainer(): JSX.Element {
-  // const [selectedTrack, setSelectedTrack] = useState<number>(0);
-  const [selectedPlaylistTitle, setSelectedPlaylistTitle] = useState<number>(0);
+  const [selectedPlaylistIndex, setSelectedPlaylistIndex] = useState<number>(0);
+  const [selectedPlaylistTitle, setSelectedPlaylistTitle] = useState<string>('');
   // const [titleInQueue, setTitleInQueue] = useState<number>(0);
   // const playlistRef = useRef<any | null>(null);
   // const entry = useElementOnScreen(playlistRef, {
@@ -38,23 +38,21 @@ function PlaylistsCarouselContainer(): JSX.Element {
   //   if (selectedTitle === titleIndex) setSelectedTitle(titleInQueue);
   // }
 
-  function updateSelectedPlaylistTitle(titleIndex: number) {
-    setSelectedPlaylistTitle(titleIndex);
-
-
-
+  function updateSelectedPlaylistIndex(titleIndex: number) {
+    setSelectedPlaylistIndex(titleIndex);
+    // setSelectedPlaylistTitle()
   }
 
 
   return (
     <>
     <div className='Playlists-Selected-Header-Box'>
-    <PlaylistsTitleScrollContainer selectedPlaylistTitle={selectedPlaylistTitle}/>
+    <PlaylistsTitleScrollContainer selectedPlaylistIndex={selectedPlaylistIndex}/>
   </div>
   
 <div className='Playlists-Carousel-Content'>
 {playlists.map((playlist: any, index: any) => 
-        <PlaylistsCarousel key={index} playlist={playlist} index={index} updateSelectedPlaylistTitle={updateSelectedPlaylistTitle}/>
+        <PlaylistsCarousel key={index} playlist={playlist} index={index} updateSelectedPlaylistIndex={updateSelectedPlaylistIndex} selectedPlaylistIndex={selectedPlaylistIndex}/>
       )}
 </div>
 </>
