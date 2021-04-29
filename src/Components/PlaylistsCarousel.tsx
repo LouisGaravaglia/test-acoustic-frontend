@@ -7,6 +7,12 @@ import PlaylistsTrack from './PlaylistsTrack';
 import PlaylistsTitleScrollContainer from './PlaylistsTitleScrollContainer';
 import { FiPause, FiPlay, FiSkipBack, FiSkipForward } from 'react-icons/fi';
 import useElementOnScreen from '../Hooks/useElementOnScreen';
+import PLACEHOLDER_IMG_0 from '../images/placeholder_1.jpg';
+import PLACEHOLDER_IMG_1 from '../images/placeholder_2.jpg';
+import PLACEHOLDER_IMG_2 from '../images/placeholder_3.jpg';
+import PLACEHOLDER_IMG_3 from '../images/placeholder_4.jpg';
+import PLACEHOLDER_IMG_4 from '../images/placeholder_5.jpg';
+import PLACEHOLDER_IMG_5 from '../images/placeholder_6.jpg';
 
 
 interface Props {
@@ -55,6 +61,7 @@ function PlaylistsCarousel({playlist, index, updateSelectedPlaylistIndex, select
   const [selectedTrack, setSelectedTrack] = useState<number>(0);
   const [selectedTitle, setSelectedTitle] = useState<number>(0);
   const [titleInQueue, setTitleInQueue] = useState<number>(0);
+  const playlistImgPlaceholders = [PLACEHOLDER_IMG_0, PLACEHOLDER_IMG_1, PLACEHOLDER_IMG_2, PLACEHOLDER_IMG_3, PLACEHOLDER_IMG_4, PLACEHOLDER_IMG_5];
   const playlistRef = useRef<any | null>(null);
   const entry = useElementOnScreen(playlistRef, {
     // root: document.querySelector('.scrolling-wrapper'),
@@ -100,7 +107,8 @@ function PlaylistsCarousel({playlist, index, updateSelectedPlaylistIndex, select
 
 
         <div className='Playlists-Artwork-Box'>
-          <img className='Playlists-Artwork' src={playlist.images[0].url} alt=''/>
+          {/* <img className='Playlists-Artwork' src={playlist.images[0].url} alt=''/> */}
+          <img className='Playlists-Artwork' src={playlistImgPlaceholders[index]} alt=''/>
         </div>
 
         <div className='Playlists-Tracks-Container'>
