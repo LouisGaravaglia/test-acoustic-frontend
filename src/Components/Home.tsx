@@ -7,15 +7,15 @@ const Home: React.FC = () => {
   const {resetPhases} = useContext(MessagesContext);
   const history = useHistory();
 
-  useEffect(() => {
-    const resetRegisterPhases = () => {
-      resetPhases();
-      // Backend.getCSRF();
-    }
-    resetRegisterPhases();
-    //THE BELOW COMMENT IS TO DISREGARD TYPESCRIPT ERROR FOR NOT INCLUDING resetPhases AS DEPENDECNY, BECAUSE IF WE DID IT WOULD THROW AND INFINITE CALLBACK LOOP
+  // useEffect(() => {
+  //   const resetRegisterPhases = () => {
+  //     resetPhases();
+  //     // Backend.getCSRF();
+  //   }
+  //   resetRegisterPhases();
+  //   //THE BELOW COMMENT IS TO DISREGARD TYPESCRIPT ERROR FOR NOT INCLUDING resetPhases AS DEPENDECNY, BECAUSE IF WE DID IT WOULD THROW AND INFINITE CALLBACK LOOP
  
-  }, []);
+  // }, []);
 
   function redirectToChatty() {
     history.push('/register')

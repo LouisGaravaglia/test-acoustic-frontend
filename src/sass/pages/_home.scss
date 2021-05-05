@@ -125,7 +125,8 @@
   // background-color: $mainBlack;
   // border-radius: 95% 2% 95% 3% / 3% 94% 2% 97%;
   // border: 3px solid $mainBlack;
-  background-image: linear-gradient(to right, $mainGreen, $mainPink);
+  background-color: $mainBlack;
+  // background-image: linear-gradient(to right, $mainGreen, $mainPink);
   height: 61px;
   width: 260px;
 
@@ -137,9 +138,12 @@
 
   .Home-Button {
     font-family: $mainFont;
-    font-weight: 400;
+    font-weight: 800;
     font-size: 2rem;
-    color: $mainBlack;
+    // color: $mainBlack;
+    background: linear-gradient(to right, $mainGreen, $mainPink);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     margin: 0;
     user-select: none;
   }
