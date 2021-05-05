@@ -57,7 +57,7 @@
 
 .Chatty-Message {
   font-family: $mainFont;
-  font-weight: 500;
+  font-weight: 300;
   font-size: 1rem;
   color: $mainBlack;
   text-align: left;
@@ -131,27 +131,40 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  border-radius: 95% 2% 95% 3% / 3% 94% 2% 97%;
-  border: 2px solid $mainBlack;
-  padding: 0 10px;
+  // border-radius: 95% 2% 95% 3% / 3% 94% 2% 97%;
+  // border: 2px solid transparent;
+  padding: 0 20px;
   cursor: pointer;
   margin: 10px 0;
+  background: $mainOffWhite;
+  background-clip: padding-box;
+  border-radius: 3px;
   // height: auto;
   // width: auto;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    z-index: -1;
+    margin: -3px; 
+    border-radius: 5px;
+    background: linear-gradient(to right, $mainGreen, $mainPink);
+  }
 }
 
-.Chatty-Button-Overlay {
-  position: absolute;
-  top: 4px;
-  right: -6px;
-  background-color: $mainPink;
-  border-radius: 100% 0% 100% 2% / 1% 99% 1% 97%;
-  width:101%;
-  height: 102%;
-  z-index: -1;
-  transition: 0.3s ease-out;
-  pointer-events: none;
-}
+// .Chatty-Button-Overlay {
+//   position: absolute;
+//   top: 4px;
+//   right: -6px;
+//   background-color: $mainPink;
+//   border-radius: 100% 0% 100% 2% / 1% 99% 1% 97%;
+//   width:101%;
+//   height: 102%;
+//   z-index: -1;
+//   transition: 0.3s ease-out;
+//   pointer-events: none;
+// }
 
 .Chatty-Button {
   // font-family: $mainFont;
@@ -166,7 +179,7 @@
   // border-radius: 10px;
   // cursor: pointer;
   font-family: $mainFont;
-  font-weight: 800;
+  font-weight: 500;
   font-size: 1rem;
   color: $mainBlack;
   margin: 0;
@@ -174,21 +187,26 @@
 }
 
 .Chatty-Button-Box:hover {
-  .Chatty-Button-Overlay {
-    top: 0;
-    right: 0;
-    width: 100%;
-  }
+
+  background: linear-gradient(to right, $mainGreen, $mainPink);
+
+
+  // .Chatty-Button-Overlay {
+  //   top: 0;
+  //   right: 0;
+  //   width: 100%;
+  // }
 }
 
-.Chatty-Button-Overlay-Clicked {
-  @extend .Chatty-Button-Overlay;
-  top: 0;
-  right: -1px;
-}
+// .Chatty-Button-Overlay-Clicked {
+//   @extend .Chatty-Button-Overlay;
+//   top: 0;
+//   right: -1px;
+// }
 
 .Chatty-Button-Box-Clicked {
   @extend .Chatty-Button-Box;
+  background: linear-gradient(to right, $mainGreen, $mainPink);
   cursor: default;
 }
 
@@ -213,27 +231,57 @@
 // }
 
 @media only screen and (max-width: 600px) {
-  .Chatty-Button-Container {
-    margin-right: 50px;
+  // .Chatty-Button-Container {
+  //   margin-right: 50px;
+  // }
+
+  .Chatty-Button-Box {
+    margin: 10px 50px 10px 0px;
   }
+
 }
 
 @media only screen and (max-width: 400px) {
-  .Chatty-Button-Container {
-    margin-right: 10px;
-  }
+  // .Chatty-Button-Container {
+  //   margin-right: 10px;
+  // }
+
+  // .Chatty-Button-Box {
+  //   max-width: 250px;
+  //   margin: 10px 10px 10px 0px;
+  // };
+
+  // .Chatty-Button {
+  //   line-height: normal;
+  // }
 
   .Chatty-Button-Box {
-    max-width: 250px;
     margin: 10px 10px 10px 0px;
-  };
-
-  .Chatty-Button {
-    line-height: normal;
   }
 
 }
 
+// @media only screen and (max-width: 600px) {
+//   .Chatty-Message {
+//     margin: 10px 120px 10px 50px;
+//   }
+
+//   .Chatty-Display {
+//     margin: 80px 0 100px;
+//     flex: 1 0 100vw;
+//   }
+// }
+
+// @media only screen and (max-width: 400px) {
+//   .Chatty-Message {
+//     margin: 10px 60px 10px 10px;
+//   }
+
+//   .Chatty-Display {
+//     margin: 80px 0 100px;
+//     flex: 1 0 100vw;
+//   }
+// }
 /* /////////////////////////////////////  CHATTY TYPING ANIMATION  //////////////////////////////////////*/
 
 // .ChattyTyping-Container{

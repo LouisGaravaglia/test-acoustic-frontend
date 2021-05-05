@@ -60,19 +60,19 @@ function Register({input}: Props) {
             className='Register-Form-Input'
           />
   
-          {/* <button type='submit'>
-            <FaArrowRight color='#fff' />
-          </button> */}
+          <button type='submit'>
+            <FaArrowRight color='#ffe0d7' />
+          </button>
         </div>
 
       </form>
 
-      <div className="Register-Button-Container">
+      {/* <div className="Register-Button-Container">
         <button className="Register-Button-Box" onClick={handleSubmit}>
           <div className="Register-Button-Overlay"></div>
           <h1 className="Register-Button">Submit</h1>
         </button>
-      </div>
+      </div> */}
 
     </div>
   );

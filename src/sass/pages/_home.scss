@@ -3,7 +3,7 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  background-color: $mainPink;
+  background-color: $mainOffWhite;
 //   background:
 //   linear-gradient(to bottom, white, transparent),
 //   linear-gradient(to top left, rgb(146, 255, 146), transparent),
@@ -36,7 +36,10 @@
   font-family: $mainFont;
   font-weight: 600;
   font-size: 9rem;
-  color: $mainBlack;
+  // color: $mainBlack;
+  background: linear-gradient(to right, $mainGreen, $mainPink);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   padding: 0;
   margin: -50px;
   cursor: default;
@@ -97,18 +100,18 @@
   // border: 2px solid pink;
 }
 
-.Home-Button-Overlay {
-  position: absolute;
-  top: 8px;
-  right: -8px;
-  background-color: rgba(0, 0, 0, 0.212);
-  border-radius: 95% 1% 95% 2% / 1% 94% 1% 97%;
-  height: 63px;
-  width: 262px;
-  z-index: -1;
-  transition: 0.3s ease-out;
-  pointer-events: none;
-}
+// .Home-Button-Overlay {
+//   position: absolute;
+//   top: 8px;
+//   right: -8px;
+//   background-color: rgba(0, 0, 0, 0.212);
+//   border-radius: 95% 1% 95% 2% / 1% 94% 1% 97%;
+//   height: 63px;
+//   width: 262px;
+//   z-index: -1;
+//   transition: 0.3s ease-out;
+//   pointer-events: none;
+// }
 
 // span {
 //   font-size: 30px;
@@ -120,8 +123,9 @@
   justify-content: center;
   align-items: center;
   // background-color: $mainBlack;
-  border-radius: 95% 2% 95% 3% / 3% 94% 2% 97%;
-  border: 3px solid $mainBlack;
+  // border-radius: 95% 2% 95% 3% / 3% 94% 2% 97%;
+  // border: 3px solid $mainBlack;
+  background-image: linear-gradient(to right, $mainGreen, $mainPink);
   height: 61px;
   width: 260px;
 
@@ -133,7 +137,7 @@
 
   .Home-Button {
     font-family: $mainFont;
-    font-weight: 500;
+    font-weight: 400;
     font-size: 2rem;
     color: $mainBlack;
     margin: 0;

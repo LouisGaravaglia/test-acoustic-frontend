@@ -28,38 +28,38 @@ function useMessages() {
 
 ////////////////////////////////////////////////////  PRE BAKED MESSAGES FOR CHATTY  ////////////////////////////////////////////////////
 
-  // const initialMessages: IMessageObj = {
-  //   id: 'm1',
-  //   messages: [
-  //     `Hi, I'm Acoustigram.io, your digital companion. I'm here to share new music with you.`, 
-  //     `If you're already a registered user you can login by clicking the link above.`,
-  //     `If you're new I'll walk you through setting up your Spotify Account.`,
-  //     `This will allow me to scan it for trends in your listening history to better assist me in suggesting the most relevant music for you.`
-  //   ]
-  // };
-
-  // CREATING SHORTER MESSAGES FOR QUICKER TESTING
   const initialMessages: IMessageObj = {
     id: 'm1',
-    messages: ['hi']
+    messages: [
+      `Hi, I'm Acoustigram.io, your digital companion. I'm here to share new music with you.`, 
+      `If you're already a registered user you can login by clicking the link above.`,
+      `If you're new I'll walk you through setting up your Spotify Account.`,
+      `This will allow me to scan it for trends in your listening history to better assist me in suggesting the most relevant music for you.`
+    ]
   };
 
-  // const whatIfNoSpotify: IMessageObj = {
-  //   id: 'm2',
-  //   messages: [
-  //     'Being able to access your Spotify will help me create playlists that have a higher chance of being ones that you will enjoy.',
-  //     `Also, you'll be able to save playlists directly to your Spotify account without leaving our site.`,
-  //     `But don't worry if you don't have a Spotify account.`,
-  //     'I can still set up a profile for you and share playlists.',
-  //     `And I promise I won't share your information with anyone or alter your Spotify data other than saving playlists to your account.`
-  //   ]
+  // CREATING SHORTER MESSAGES FOR QUICKER TESTING
+  // const initialMessages: IMessageObj = {
+  //   id: 'm1',
+  //   messages: ['hi']
   // };
 
+  const whatIfNoSpotify: IMessageObj = {
+    id: 'm2',
+    messages: [
+      'Being able to access your Spotify will help me create playlists that have a higher chance of being ones that you will enjoy.',
+      `Also, you'll be able to save playlists directly to your Spotify account without leaving our site.`,
+      `But don't worry if you don't have a Spotify account.`,
+      'I can still set up a profile for you and share playlists.',
+      `And I promise I won't share your information with anyone or alter your Spotify data other than saving playlists to your account.`
+    ]
+  };
+
     //CREATING SHORTER MESSAGES FOR QUICKER TESTING
-    const whatIfNoSpotify: IMessageObj = {
-      id: 'm1',
-      messages: ['hi']
-    };
+    // const whatIfNoSpotify: IMessageObj = {
+    //   id: 'm1',
+    //   messages: ['hi']
+    // };
 
   const spotifyAccountError: IMessageObj = {
     id: 'm3',
