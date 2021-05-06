@@ -1,6 +1,6 @@
 import React from 'react';
 import {NavLink, useLocation} from 'react-router-dom';
-
+import { FaBars } from 'react-icons/fa';
 
 const Navbar: React.FC = () => {
   const location = useLocation();
@@ -18,6 +18,7 @@ const Navbar: React.FC = () => {
       </div>
       <div className='Navbar-Container-Right'>
           <div className='Navbar-Link-Box'>
+            {/* <FaBars color='#181718' className='Navbar-Hamburger'/> */}
               <NavLink  className={urlSlug === "/" ? 'Navbar-Link-Active' : 'Navbar-Link'} exact to='/'>HOME</NavLink>
               <NavLink  className={urlSlug === "/register" ? 'Navbar-Link-Active' : 'Navbar-Link'} exact to='/register'>REGISTER</NavLink>
               <NavLink  className={urlSlug === "/playlists" ? 'Navbar-Link-Active' : 'Navbar-Link'} exact to='/playlists'>PLAYLISTS</NavLink>

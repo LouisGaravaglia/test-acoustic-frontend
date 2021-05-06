@@ -17,18 +17,20 @@
   // linear-gradient(to top left, $mainPink, transparent),
   // linear-gradient(to top right, $mainGreen, transparent);
 // background-blend-mode:screen;
-
 }
 
-.Home-Upper-Box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  // @extend .Home-Container;
-  width: 100vw;
-  height: 50vh;
-}
+// .Home-Upper-Box {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   flex-wrap: wrap;
+//   // @extend .Home-Container;
+//   width: 100vw;
+//   height: 200px;
+//   margin-top: 80px;
+//   // margin-bottom: -80px;
+//   border: 2px solid green;
+// }
 
 .Home-Header-Box {
   display: flex;
@@ -36,16 +38,16 @@
   justify-content: center;
   align-items: center;
   width: 100vw;
-  height: 40vh;
+  height: calc(50vh - 80px);
   padding: 0;
-  margin: 0;
+  margin-top: 80px;
   // border: 2px solid blue;
 }
 
 .Home-Header-Box h1 {
   font-family: $mainFont;
   font-weight: 600;
-  font-size: 8rem;
+  font-size: 7rem;
   color: $mainBlack;
   // background: linear-gradient(to right, $mainGreen, $mainPink);
   // -webkit-background-clip: text;
@@ -69,7 +71,7 @@
   text-align: center;
   font-family: $serifFont;
   font-weight: 400;
-  font-size: 3rem;
+  font-size: 2rem;
   color: $mainBlack;
   padding: 0;
   width: 900px;
@@ -81,13 +83,16 @@
 }
 
 .Home-Lower-Box {
+  width: calc(100% - 100px);
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  flex: 0 0 100vw;
-  height: 50vh;
+  height: calc(50vh - 80px);
   position: relative;
   z-index: 9;
+  // border: 2px solid red;
+  border-top: 1px solid $mainBlack;
+  margin: 0 50px;
 }
 
 // .home-transition-element {
@@ -107,13 +112,21 @@
 
 
 .Home-Button-Container {
-  flex: 0 0 calc(50% - 40px);
+  // width: calc(50% - 50px);
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // margin-top: 80px;
+  // align-items: flex-end;
+  // height: calc(100% - 80px);
+  // border: 2px solid red;
+  border-right: 1px solid $mainBlack;
+  width: calc(50%);
+  position: relative;
   display: flex;
   justify-content: center;
-  margin-top: 80px;
-  // align-items: flex-end;
-
-  // border: 2px solid pink;
+  align-items: center;
+  height: calc(100%)
 }
 
 // .Home-Button-Overlay {
@@ -140,23 +153,24 @@
   align-items: center;
   // background-color: $mainBlack;
   // border-radius: 95% 2% 95% 3% / 3% 94% 2% 97%;
-  // border: 3px solid $mainBlack;
-  background-color: $mainBlack;
+  border: 1px solid $mainBlack;
+  // background-color: $mainBlack;
   // background-image: linear-gradient(to right, $mainGreen, $mainPink);
-  height: 61px;
-  width: 260px;
-
+  // height: 61px;
+  // width: 260px;
+  padding: 10px 60px;
+  // margin: 200px 100px 200px 0;
+  // border: 2px solid yellow;
   // z-index: 2;
   // margin-bottom: 2px;
-  align-self: flex-end;
   cursor: pointer;
 
 
   .Home-Button {
     font-family: $mainFont;
-    font-weight: 800;
-    font-size: 2rem;
-    color: $mainPink;
+    font-weight: 200;
+    font-size: 1.5rem;
+    color: $mainBlack;
     // background: linear-gradient(to right, $mainGreen, $mainPink);
     // -webkit-background-clip: text;
     // -webkit-text-fill-color: transparent;
@@ -172,6 +186,58 @@
   }
 }
 
+.Home-Arrow {
+  font-size: 1.5rem;
+  font-weight: 100;
+  position: absolute;
+  top: 28%;
+  right: 10%;
+  // transform: translate(-50%, 75%);
+}
+
+.Home-Login-Container {
+  width: calc(50%);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  // border: 2px solid red;
+}
+
+.Home-Login-Box {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // background-color: $mainBlack;
+  // border-radius: 95% 2% 95% 3% / 3% 94% 2% 97%;
+  border: 1px solid $mainBlack;
+  // background-color: $mainBlack;
+  // background-image: linear-gradient(to right, $mainGreen, $mainPink);
+  // height: 61px;
+  // width: 260px;
+  padding: 10px 60px;
+  // margin: 200px 0 200px 100px;
+
+  // z-index: 2;
+  // margin-bottom: 2px;
+  // align-self: flex-end;
+  cursor: pointer;
+
+
+  .Home-Login {
+    font-family: $mainFont;
+    font-weight: 200;
+    font-size: 1.5rem;
+    color: $mainBlack;
+    // background: linear-gradient(to right, $mainGreen, $mainPink);
+    // -webkit-background-clip: text;
+    // -webkit-text-fill-color: transparent;
+    margin: 0;
+    user-select: none;
+  }
+}
 
 ////////////////////////////////////////////////////  MEDIA QUERIES  ////////////////////////////////////////////////////
 
