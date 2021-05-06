@@ -1,5 +1,6 @@
 import React, {useState, useContext} from 'react';
 import { FaArrowRight } from 'react-icons/fa';
+import { IoIosArrowRoundForward } from 'react-icons/io';
 import {MessagesContext} from './MessagesProvider';
 import ButtonsPast from './Buttons/ButtonsPast';
 
@@ -61,7 +62,7 @@ function Register({input}: Props) {
           />
   
           <button type='submit'>
-            <FaArrowRight color='#ffe0d7' />
+            <IoIosArrowRoundForward color='#181718' />
           </button>
         </div>
 

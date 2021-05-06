@@ -9,6 +9,7 @@
   width: 100%;
   // border: 2px solid blue;
   margin-bottom: 40px;
+  
 }
 
 .Register-Form {
@@ -98,14 +99,16 @@
 
 #RegisterVal {
   font-family: $mainFont;
-  font-weight: 500;
+  font-weight: 200;
   font-size: 1rem;
   color: $mainBlack;
   padding-left: 10px;
   outline:none;
   padding-right: 60px;
   // background-color: $mainOffWhite;
-  background: linear-gradient(to right, $mainGreen, $mainPink)
+  // background: linear-gradient(to right, $mainGreen, $mainPink)
+  background-color: rgba(0, 0, 0, 0);
+  border-bottom: 1px solid $mainBlack;
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -122,22 +125,24 @@
 }
 
 .Register-Box button{
-  background-color: $mainGrey;
+  background-color: rgba(0, 0, 0, 0);
   border: none;
-  font-size: 1rem;
-  padding: 6px 6px 2px 6px;
+  font-size: 2rem;
+  // padding: 6px 6px 2px 6px;
+  // border: 1px solid $mainBlack;
   margin: 0;
   position: absolute;
   text-align: center;
-  right: 2px;
-  top: 19px;
-  transform: translate(-10%, 55%);
-  border-radius: 50px;
+  right: 8px;
+  top: 30px;
+  // transform: translate(-10%, 55%);
+  // border-radius: 50px;
+  transition: 0.2s ease-out;
   cursor: pointer;
 }
 
 .Register-Box button:hover{
-  background-color: $mainBlack;
+  right: 0;
 }
 
 // .Register-Button-Container {

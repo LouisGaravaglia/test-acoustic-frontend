@@ -4,8 +4,13 @@
   position: relative;
   width: 100vw;
   height: 100vh;
-  background-color: $mainOffWhite;
+  // background-color: $mainOffWhite;
   // border: 2px solid yellow;
+  background: url(../../images/my_Gradient.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .Chatty {
@@ -57,7 +62,7 @@
 
 .Chatty-Message {
   font-family: $mainFont;
-  font-weight: 300;
+  font-weight: 200;
   font-size: 1rem;
   color: $mainBlack;
   text-align: left;
@@ -125,6 +130,26 @@
   // border: 2px solid yellow;
 }
 
+// .Home-Button-Box {
+//   position: relative;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   border: 1px solid $mainBlack;
+//   padding: 10px 60px;
+//   cursor: pointer;
+
+//   .Home-Button {
+//     font-family: $mainFont;
+//     font-weight: 200;
+//     font-size: 1.5rem;
+//     color: $mainBlack;
+//     margin: 0;
+//     user-select: none;
+//   }
+// }
+
+
 .Chatty-Button-Box {
   position: relative;
   display: inline-flex;
@@ -132,25 +157,25 @@
   flex-wrap: wrap;
   justify-content: center;
   // border-radius: 95% 2% 95% 3% / 3% 94% 2% 97%;
-  // border: 2px solid transparent;
+  border: 1px solid $mainBlack;
   padding: 0 20px;
   cursor: pointer;
   margin: 10px 0;
-  background: $mainOffWhite;
-  background-clip: padding-box;
+  // background: $mainOffWhite;
+  // background-clip: padding-box;
   border-radius: 3px;
   // height: auto;
   // width: auto;
 
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0; right: 0; bottom: 0; left: 0;
-    z-index: -1;
-    margin: -3px; 
-    border-radius: 5px;
-    background: linear-gradient(to right, $mainGreen, $mainPink);
-  }
+  // &:before {
+  //   content: '';
+  //   position: absolute;
+  //   top: 0; right: 0; bottom: 0; left: 0;
+  //   z-index: -1;
+  //   margin: -3px; 
+  //   border-radius: 5px;
+  //   background: linear-gradient(to right, $mainGreen, $mainPink);
+  // }
 }
 
 // .Chatty-Button-Overlay {
@@ -179,7 +204,7 @@
   // border-radius: 10px;
   // cursor: pointer;
   font-family: $mainFont;
-  font-weight: 500;
+  font-weight: 200;
   font-size: 1rem;
   color: $mainBlack;
   margin: 0;
@@ -188,14 +213,10 @@
 
 .Chatty-Button-Box:hover {
 
-  background: linear-gradient(to right, $mainGreen, $mainPink);
+  // background: linear-gradient(to right, $mainGreen, $mainPink);
+  background: rgba(0, 247, 227, 0.082);
 
 
-  // .Chatty-Button-Overlay {
-  //   top: 0;
-  //   right: 0;
-  //   width: 100%;
-  // }
 }
 
 // .Chatty-Button-Overlay-Clicked {
@@ -206,7 +227,9 @@
 
 .Chatty-Button-Box-Clicked {
   @extend .Chatty-Button-Box;
-  background: linear-gradient(to right, $mainGreen, $mainPink);
+  // background: linear-gradient(to right, $mainGreen, $mainPink);
+  background: rgba(0, 247, 227, 0.082);
+  // background-color: $mainBlack;
   cursor: default;
 }
 
