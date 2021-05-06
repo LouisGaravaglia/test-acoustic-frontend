@@ -47,7 +47,6 @@
   padding: 0;
   width: 900px;
   margin: 0;
-  // margin: 0 200px;
   cursor: default;
   user-select: none;
   // border: 2px solid red;
@@ -102,20 +101,31 @@
 }
 
 .Home-Button-Box:hover {
-  .Home-Button-Overlay {
-    top: -1px;
-    right: 0;
+  .Home-Register-Arrow {
+    right: 10px;
   }
 }
 
-.Home-Arrow {
+.Home-Register-Arrow {
   font-size: 1.5rem;
   font-weight: 100;
   position: absolute;
   top: 28%;
-  right: 10%;
+  right: 20px;
+  transition: 0.2s ease-out;
   // transform: translate(-50%, 75%);
 }
+
+.Home-Login-Arrow {
+  font-size: 1.5rem;
+  font-weight: 100;
+  position: absolute;
+  top: 28%;
+  right: 20px;
+  transition: 0.2s ease-out;
+  // transform: translate(-50%, 75%);
+}
+
 
 .Home-Login-Container {
   height: calc(100% - 1px);
@@ -144,6 +154,12 @@
     color: $mainBlack;
     margin: 0;
     user-select: none;
+  }
+}
+
+.Home-Login-Box:hover {
+  .Home-Login-Arrow {
+    right: 10px;
   }
 }
 

@@ -35,13 +35,13 @@ const Home: React.FC = () => {
         <div className="Home-Button-Container">
           <div onClick={redirectToChatty} className="Home-Button-Box">
             <h1 className="Home-Button">Get Started</h1>
-            <IoIosArrowRoundForward color='#181718' className='Home-Arrow'/>
+            <IoIosArrowRoundForward color='#181718' className='Home-Register-Arrow'/>
           </div>
         </div>
         <div className="Home-Login-Container">
         <div onClick={redirectToChatty} className="Home-Login-Box">
             <h1 className="Home-Login">Login</h1>
-            <IoIosArrowRoundForward color='#181718' className='Home-Arrow'/>
+            <IoIosArrowRoundForward color='#181718' className='Home-Login-Arrow'/>
           </div>
         </div>
       </div>
