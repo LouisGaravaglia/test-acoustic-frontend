@@ -10,6 +10,7 @@ const Navbar: React.FC = () => {
 
   return (
     <>
+    <div className='Navbar-Container'>    </div>
       <div className='Navbar-Container-Left'>
         <div className='Navbar-Logo-Box'>
             <NavLink  className='Navbar-Logo' exact to='/'><span className='Navbar-Logo-Circle'>A.IO</span></NavLink>

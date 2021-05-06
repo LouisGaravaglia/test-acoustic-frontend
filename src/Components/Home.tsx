@@ -26,9 +26,11 @@ const Home: React.FC = () => {
       <div className='Home-Upper-Box'>
         <div className='Home-Header-Box'>
           <h1>ACOUSTIGRAM.IO</h1>
+          <h5>A Digital Companion to keep you up to date with the latest music releases.</h5>
+
         </div>
         <div className='Home-Subheader-Box'>
-          <h5>A Digital Companion to keep you up to date with the latest music releases.</h5>
+          {/* <h5>A Digital Companion to keep you up to date with the latest music releases.</h5> */}
         </div>
       </div>
       <div className='Home-Lower-Box'>

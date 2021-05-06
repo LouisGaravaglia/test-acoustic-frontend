@@ -3,8 +3,15 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  background-color: $mainOffWhite;
-  // background-image: url(../../images/download.svg);
+  height: 100%;
+  width: 100%;
+  // background-color: $mainOffWhite;
+  background: url(../../images/my_Gradient.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  // background-image: url(../../images/my_Gradient.png);
   // background:
   // linear-gradient(to bottom, white, transparent),
   // linear-gradient(to top left, $mainPink, transparent),
@@ -25,44 +32,52 @@
 
 .Home-Header-Box {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
   width: 100vw;
   height: 40vh;
   padding: 0;
   margin: 0;
+  // border: 2px solid blue;
 }
 
 .Home-Header-Box h1 {
   font-family: $mainFont;
   font-weight: 600;
-  font-size: 9rem;
-  // color: $mainBlack;
-  background: linear-gradient(to right, $mainGreen, $mainPink);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-size: 8rem;
+  color: $mainBlack;
+  // background: linear-gradient(to right, $mainGreen, $mainPink);
+  // -webkit-background-clip: text;
+  // -webkit-text-fill-color: transparent;
   padding: 0;
-  margin: -50px;
+  margin: 0;
   cursor: default;
   user-select: none;
+  // border: 2px solid green;
 }
 
-.Home-Subheader-Box {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  width: 100vw;
-}
+// .Home-Subheader-Box {
+//   display: flex;
+//   justify-content: center;
+//   align-items: flex-start;
+//   width: 100vw;
+//   border: 2px solid red;
+// }
 
-.Home-Subheader-Box h5 {
-  font-family: $mainFont;
-  font-weight: 300;
-  font-size: 1.5rem;
+.Home-Header-Box h5 {
+  text-align: center;
+  font-family: $serifFont;
+  font-weight: 400;
+  font-size: 3rem;
   color: $mainBlack;
   padding: 0;
-  margin: 0 40px;
+  width: 900px;
+  margin: 0;
+  // margin: 0 200px;
   cursor: default;
   user-select: none;
+  // border: 2px solid red;
 }
 
 .Home-Lower-Box {
@@ -141,10 +156,10 @@
     font-family: $mainFont;
     font-weight: 800;
     font-size: 2rem;
-    // color: $mainBlack;
-    background: linear-gradient(to right, $mainGreen, $mainPink);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: $mainPink;
+    // background: linear-gradient(to right, $mainGreen, $mainPink);
+    // -webkit-background-clip: text;
+    // -webkit-text-fill-color: transparent;
     margin: 0;
     user-select: none;
   }
