@@ -11,26 +11,7 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  // background-image: url(../../images/my_Gradient.png);
-  // background:
-  // linear-gradient(to bottom, white, transparent),
-  // linear-gradient(to top left, $mainPink, transparent),
-  // linear-gradient(to top right, $mainGreen, transparent);
-// background-blend-mode:screen;
 }
-
-// .Home-Upper-Box {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   flex-wrap: wrap;
-//   // @extend .Home-Container;
-//   width: 100vw;
-//   height: 200px;
-//   margin-top: 80px;
-//   // margin-bottom: -80px;
-//   border: 2px solid green;
-// }
 
 .Home-Header-Box {
   display: flex;
@@ -49,9 +30,6 @@
   font-weight: 600;
   font-size: 7rem;
   color: $mainBlack;
-  // background: linear-gradient(to right, $mainGreen, $mainPink);
-  // -webkit-background-clip: text;
-  // -webkit-text-fill-color: transparent;
   padding: 0;
   margin: 0;
   cursor: default;
@@ -59,13 +37,6 @@
   // border: 2px solid green;
 }
 
-// .Home-Subheader-Box {
-//   display: flex;
-//   justify-content: center;
-//   align-items: flex-start;
-//   width: 100vw;
-//   border: 2px solid red;
-// }
 
 .Home-Header-Box h5 {
   text-align: center;
@@ -89,53 +60,17 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-
-  // position: relative;
-  // z-index: 9;
-  // border: 2px solid green;
   border-top: 1px solid $mainBlack;
   margin: 0 50px;
 }
 
-// .Home-Lower-Box {
-//   // height: 10vh;
-//   // width: calc(100% - 101px);
-//   // width: 20vw;
-//   display: flex;
-//   justify-content: center;
-//   align-items: flex-start;
-
-//   // position: relative;
-//   // z-index: 9;
-//   // border: 2px solid green;
-//   border-top: 1px solid $mainBlack;
-//   // margin: 0 50px;
-// }
-
-// .home-transition-element {
-//   @include landingButtonGradient;
-//   margin-top: 80px;
-// }
-
-// .home-transition-element:hover {
-//   opacity: 0.0;
-// }
-
-// .home-main-button {
-//   @include landingButtonSolid;
-//   margin-top: 80px;
-// }
 
 
 
 .Home-Button-Container {
-  // width: calc(50% - 50px);
   display: flex;
   justify-content: center;
   align-items: center;
-  // margin-top: 80px;
-  // align-items: flex-end;
-  // height: calc(100% - 80px);
   // border: 2px solid red;
   border-right: 1px solid $mainBlack;
   width: calc(50%);
@@ -147,40 +82,13 @@
   margin-bottom: 40px;
 }
 
-// .Home-Button-Overlay {
-//   position: absolute;
-//   top: 8px;
-//   right: -8px;
-//   background-color: rgba(0, 0, 0, 0.212);
-//   border-radius: 95% 1% 95% 2% / 1% 94% 1% 97%;
-//   height: 63px;
-//   width: 262px;
-//   z-index: -1;
-//   transition: 0.3s ease-out;
-//   pointer-events: none;
-// }
-
-// span {
-//   font-size: 30px;
-//   vertical-align: baseline;
-// }
 .Home-Button-Box {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  // background-color: $mainBlack;
-  // border-radius: 95% 2% 95% 3% / 3% 94% 2% 97%;
   border: 1px solid $mainBlack;
-  // background-color: $mainBlack;
-  // background-image: linear-gradient(to right, $mainGreen, $mainPink);
-  // height: 61px;
-  // width: 260px;
   padding: 10px 60px;
-  // margin: 200px 100px 200px 0;
-  // border: 2px solid yellow;
-  // z-index: 2;
-  // margin-bottom: 2px;
   cursor: pointer;
 
   .Home-Button {
@@ -188,9 +96,6 @@
     font-weight: 200;
     font-size: 1.5rem;
     color: $mainBlack;
-    // background: linear-gradient(to right, $mainGreen, $mainPink);
-    // -webkit-background-clip: text;
-    // -webkit-text-fill-color: transparent;
     margin: 0;
     user-select: none;
   }
@@ -228,30 +133,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  // background-color: $mainBlack;
-  // border-radius: 95% 2% 95% 3% / 3% 94% 2% 97%;
   border: 1px solid $mainBlack;
-  // background-color: $mainBlack;
-  // background-image: linear-gradient(to right, $mainGreen, $mainPink);
-  // height: 61px;
-  // width: 260px;
   padding: 10px 60px;
-  // margin: 200px 0 200px 100px;
-
-  // z-index: 2;
-  // margin-bottom: 2px;
-  // align-self: flex-end;
   cursor: pointer;
-
 
   .Home-Login {
     font-family: $mainFont;
     font-weight: 200;
     font-size: 1.5rem;
     color: $mainBlack;
-    // background: linear-gradient(to right, $mainGreen, $mainPink);
-    // -webkit-background-clip: text;
-    // -webkit-text-fill-color: transparent;
     margin: 0;
     user-select: none;
   }
@@ -284,20 +174,6 @@
     text-align: center;
   }
 
-  .home-transition-element {
-    margin-top: 40px;
-    font-weight: 600;
-    font-size: 1.5rem;
-    padding: 4px 20px;
-  }
-
-  // .home-main-button {
-  //   margin-top: 40px;
-  //   font-weight: 600;
-  //   font-size: 1.5rem;
-  //   padding: 4px 20px;
-  // }
-
 }
 
 
@@ -314,12 +190,6 @@
     margin-top: 50px;
   }
 
-  .home-transition-element {
-    margin-top: 70px;
-    font-weight: 400;
-    font-size: 1rem;
-    padding: 4px 20px;
-  }
 
   .home-main-button {
     margin-top: 70px;

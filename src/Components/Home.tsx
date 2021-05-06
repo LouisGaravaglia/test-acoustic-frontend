@@ -25,36 +25,27 @@ const Home: React.FC = () => {
 
   return (
     <div className='Home-Container'>
-      {/* <div className='Home-Upper-Box'> */}
+  
         <div className='Home-Header-Box'>
           <h1>ACOUSTIGRAM.IO</h1>
           <h5>A Digital Companion to keep you up to date with the latest music releases.</h5>
-
         </div>
-        {/* <div className='Home-Subheader-Box'> */}
-          {/* <h5>A Digital Companion to keep you up to date with the latest music releases.</h5> */}
-        {/* </div> */}
-      {/* </div> */}
+
       <div className="Home-Lower-Container">
+        <div className="Home-Button-Container">
+          <div onClick={redirectToChatty} className="Home-Button-Box">
+            <h1 className="Home-Button">Get Started</h1>
+            <IoIosArrowRoundForward color='#181718' className='Home-Arrow'/>
+          </div>
+        </div>
+        <div className="Home-Login-Container">
+        <div onClick={redirectToChatty} className="Home-Login-Box">
+            <h1 className="Home-Login">Login</h1>
+            <IoIosArrowRoundForward color='#181718' className='Home-Arrow'/>
+          </div>
+        </div>
+      </div>
 
-     
-      {/* <div className='Home-Lower-Box'> */}
-      <div className="Home-Button-Container">
-        <div onClick={redirectToChatty} className="Home-Button-Box">
-          <h1 className="Home-Button">Get Started</h1>
-          <IoIosArrowRoundForward color='#181718' className='Home-Arrow'/>
-        </div>
-      </div>
-      <div className="Home-Login-Container">
-      <div onClick={redirectToChatty} className="Home-Login-Box">
-          <h1 className="Home-Login">Login</h1>
-          <IoIosArrowRoundForward color='#181718' className='Home-Arrow'/>
-        </div>
-      </div>
-      </div>
-        {/* <button className='home-main-button'>GET STARTED</button> */}
-        {/* <button className='home-transition-element' onClick={redirectToChatty}>GET STARTED</button> */}
-      {/* </div> */}
     </div>
   );
 };
