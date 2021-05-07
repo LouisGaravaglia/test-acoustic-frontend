@@ -66,6 +66,7 @@ function PlaylistsTitleScrollContainer({selectedPlaylistIndex, reversePlaylists}
     if (titleRef.current !== null) {
       console.log('offsetLeft', titleRef.current.offsetLeft);
       //TODO: MAKE MEDIA QUERY THAT LOWER'S THE AMOUNT SUBTRACTING FROM TITLEREF OFFSET VALUE
+      // titleRef.current.scrollIntoView();
       wrapperRef.current.scroll({left: titleRef.current.offsetLeft - 300, behavior: 'smooth'});
     }
   }
@@ -78,19 +79,17 @@ function PlaylistsTitleScrollContainer({selectedPlaylistIndex, reversePlaylists}
 
   // }, [selectedPlaylistRef])
 
-  let playlistTitles;
+  // let playlistTitles;
 
-  if (reversePlaylists) {
-    // wrapperRef.current.scroll({left: titleRefArray[playlists.length - 1].current.offsetLeft - 300, behavior: 'smooth'});
-    playlistTitles = (
-      playlists.map((playlist: any, index: any) => <PlaylistsTitleScroll key={index} index={index} titleRef={titleRefArray[index]} playlist={playlist} parentFinishedMounting={parentFinishedMounting} selectedPlaylistIndex={selectedPlaylistIndex} handleScrollToSelectedTitle={handleScrollToSelectedTitle} reversePlaylists={reversePlaylists} wrapperRef={wrapperRef}/>).reverse()
-    )
-  } else {
-    // wrapperRef.current.scroll({left: titleRefArray[0].current.offsetLeft - 300, behavior: 'smooth'});
-    playlistTitles = (
-      playlists.map((playlist: any, index: any) => <PlaylistsTitleScroll key={index} index={index} titleRef={titleRefArray[index]} playlist={playlist} parentFinishedMounting={parentFinishedMounting} selectedPlaylistIndex={selectedPlaylistIndex} handleScrollToSelectedTitle={handleScrollToSelectedTitle} reversePlaylists={reversePlaylists} wrapperRef={wrapperRef}/>)
-    )
-  }
+  // if (reversePlaylists) {
+  //   playlistTitles = (
+  //     playlists.map((playlist: any, index: any) => <PlaylistsTitleScroll key={index} index={index} titleRef={titleRefArray[index]} playlist={playlist} parentFinishedMounting={parentFinishedMounting} selectedPlaylistIndex={selectedPlaylistIndex} handleScrollToSelectedTitle={handleScrollToSelectedTitle} reversePlaylists={reversePlaylists} wrapperRef={wrapperRef}/>).reverse()
+  //   )
+  // } else {
+  //   playlistTitles = (
+  //     playlists.map((playlist: any, index: any) => <PlaylistsTitleScroll key={index} index={index} titleRef={titleRefArray[index]} playlist={playlist} parentFinishedMounting={parentFinishedMounting} selectedPlaylistIndex={selectedPlaylistIndex} handleScrollToSelectedTitle={handleScrollToSelectedTitle} reversePlaylists={reversePlaylists} wrapperRef={wrapperRef}/>)
+  //   )
+  // }
   
 
   return (
@@ -99,7 +98,8 @@ function PlaylistsTitleScrollContainer({selectedPlaylistIndex, reversePlaylists}
     <div className="scrolling-wrapper" ref={wrapperRef}>
       <div className='card' ><h2 ></h2></div>
       {/* {playlists.map((playlist: any, index: any) => <PlaylistsTitleScroll key={index} index={index} playlist={playlist} parentFinishedMounting={parentFinishedMounting} selectedPlaylistIndex={selectedPlaylistIndex} handleScrollToSelectedTitle={handleScrollToSelectedTitle}/>)} */}
-      {playlistTitles}
+      {/* {playlistTitles} */}
+      {playlists.map((playlist: any, index: any) => <PlaylistsTitleScroll key={index} index={index} titleRef={titleRefArray[index]} playlist={playlist} parentFinishedMounting={parentFinishedMounting} selectedPlaylistIndex={selectedPlaylistIndex} handleScrollToSelectedTitle={handleScrollToSelectedTitle} reversePlaylists={reversePlaylists} wrapperRef={wrapperRef}/>)}
       <div className='card' ><h2 ></h2></div>
 
     </div>

@@ -53,17 +53,33 @@ function PlaylistsTitleScroll({playlist, index, parentFinishedMounting, selected
       if(selectedPlaylistIndex === index) handleScrollToSelectedTitle(titleRef);
     }, [titleRef, selectedPlaylistIndex])
 
+
+    // useEffect(() => {
+    //   console.log('title selectedIndex: ', selectedPlaylistIndex);
+      
+    // }, [])
+
     // handleInViewport(titleRef);
 
-    useEffect(() => {
-      if (reversePlaylists && index === playlists.length - 1) {
-            wrapperRef.current.scroll({left: titleRef.current.offsetLeft - 300, behavior: 'smooth'});
+    // useEffect(() => {
+      
+    //   if (reversePlaylists && index === playlists.length - 1) {
+    //     console.log('index = ', index);
+    //     console.log('reversePlaylists = ', reversePlaylists);
+    //     wrapperRef.current.scroll({left: titleRef.current.offsetLeft - 300, behavior: 'smooth'});
 
-      } else if (!reversePlaylists && index === 0) {
-            wrapperRef.current.scroll({left: titleRef.current.offsetLeft - 300, behavior: 'smooth'});
+    //         // titleRef.current.scrollIntoView();
 
-      }
-    }, [reversePlaylists]);
+    //   } else if (!reversePlaylists && index === 0) {
+    //     console.log('index = ', index);
+    //     console.log('reversePlaylists = ', reversePlaylists);
+    //     wrapperRef.current.scroll({left: titleRef.current.offsetLeft - 300, behavior: 'smooth'});
+
+    //         // titleRef.current.scrollIntoView();
+
+    //   }
+    // }, [reversePlaylists]);
+
 
     // const enteredFrame = !!entry?.isIntersecting && (top > 143 && top < 144);
   // titleRef.current = index;

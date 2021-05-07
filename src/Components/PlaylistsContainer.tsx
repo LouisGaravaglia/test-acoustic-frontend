@@ -25,22 +25,24 @@ function PlaylistsContainer(): JSX.Element {
   //   titleInQueue: 0
   // }
 
-  useEffect(() => {
-    if (reversePlaylists) {
-      PlaylistsContainerRef.current.scroll({left: refArray[playlists.length - 1].current.offsetLeft - 300});
-    } else {
-      PlaylistsContainerRef.current.scroll({left: refArray[0].current.offsetLeft - 300});
-    }
-  }, [reversePlaylists]);
+  // useEffect(() => {
+  //   if (reversePlaylists) {
+  //     PlaylistsContainerRef.current.scroll({left: refArray[playlists.length - 1].current.offsetLeft - 300});
+  //   } else {
+  //     PlaylistsContainerRef.current.scroll({left: refArray[0].current.offsetLeft - 300});
+  //   }
+  // }, [reversePlaylists]);
 
   const refArray = playlists.map((playlist:any) => createRef());
   console.log('refArray', refArray);
 
   function selectWhichPlaylistToNavigateTo(refIndex:number) {
     console.log('in ref select', refIndex);
-    
-        // refArray[refIndex].current.scrollIntoView({behavior: "smooth"});
-    PlaylistsContainerRef.current.scroll({left: refArray[refIndex].current.offsetLeft - 300});
+    // window.scrollTo(600, 600);
+        // containerRef.current.scrollIntoView({behavior: "smooth"});
+
+        refArray[refIndex].current.scrollIntoView();
+    // PlaylistsContainerRef.current.scroll({left: refArray[refIndex].current.offsetLeft - 300});
     // containerRef.current.scrollIntoView({behavior: "smooth"});
 
     // setPlaylistRefToScrollTo(refArray[refIndex]);

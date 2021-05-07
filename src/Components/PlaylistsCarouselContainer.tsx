@@ -47,8 +47,12 @@ function PlaylistsCarouselContainer({refArray, playlistRefToScrollTo, PlaylistsC
   
 
   // useEffect(() => {
-  //   updateSelectedPlaylistIndex(index)
-  // }, [isVisible]);
+  //   if (reversePlaylists) {
+  //     PlaylistsContainerRef.current.scroll({left: refArray[playlists.length - 1].current.offsetLeft - 300});
+  //   } else {
+  //     PlaylistsContainerRef.current.scroll({left: refArray[0].current.offsetLeft - 300});
+  //   }
+  // }, [reversePlaylists]);
 
 
   function updateSelectedPlaylistIndex(titleIndex: number) {
@@ -56,21 +60,21 @@ function PlaylistsCarouselContainer({refArray, playlistRefToScrollTo, PlaylistsC
     // setSelectedPlaylistTitle()
   }
 
-  let displayedPlaylists;
+  // let displayedPlaylists;
 
-  if (reversePlaylists) {
-    displayedPlaylists = (
-      playlists.map((playlist: any, index: any) => 
-        <PlaylistsCarousel key={index} playlistRef={refArray[index]} playlist={playlist} index={index} updateSelectedPlaylistIndex={updateSelectedPlaylistIndex} selectedPlaylistIndex={selectedPlaylistIndex}/>
-      ).reverse()
-    )
-  } else {
-    displayedPlaylists = (
-      playlists.map((playlist: any, index: any) => 
-        <PlaylistsCarousel key={index} playlistRef={refArray[index]} playlist={playlist} index={index} updateSelectedPlaylistIndex={updateSelectedPlaylistIndex} selectedPlaylistIndex={selectedPlaylistIndex}/>
-      )
-    )
-  }
+  // if (reversePlaylists) {
+  //   displayedPlaylists = (
+  //     playlists.map((playlist: any, index: any) => 
+  //       <PlaylistsCarousel key={index} playlistRef={refArray[index]} playlist={playlist} index={index} updateSelectedPlaylistIndex={updateSelectedPlaylistIndex} selectedPlaylistIndex={selectedPlaylistIndex}/>
+  //     ).reverse()
+  //   )
+  // } else {
+  //   displayedPlaylists = (
+  //     playlists.map((playlist: any, index: any) => 
+  //       <PlaylistsCarousel key={index} playlistRef={refArray[index]} playlist={playlist} index={index} updateSelectedPlaylistIndex={updateSelectedPlaylistIndex} selectedPlaylistIndex={selectedPlaylistIndex}/>
+  //     )
+  //   )
+  // }
 
 
   return (
@@ -83,7 +87,10 @@ function PlaylistsCarouselContainer({refArray, playlistRefToScrollTo, PlaylistsC
 {/* {playlists.map((playlist: any, index: any) => 
         <PlaylistsCarousel key={index} playlistRef={refArray[index]} playlist={playlist} index={index} updateSelectedPlaylistIndex={updateSelectedPlaylistIndex} selectedPlaylistIndex={selectedPlaylistIndex}/>
       )} */}
-      {displayedPlaylists}
+      {/* {displayedPlaylists} */}
+      {playlists.map((playlist: any, index: any) => 
+        <PlaylistsCarousel key={index} playlistRef={refArray[index]} playlist={playlist} index={index} updateSelectedPlaylistIndex={updateSelectedPlaylistIndex} selectedPlaylistIndex={selectedPlaylistIndex}/>
+      )}
 </div>
 </>
   );
