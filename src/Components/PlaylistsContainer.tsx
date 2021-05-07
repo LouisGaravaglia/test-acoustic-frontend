@@ -1,5 +1,6 @@
 import React, {useContext, useState} from 'react';
-import { IoArrowDown } from 'react-icons/io5';
+import { IoIosArrowRoundUp } from 'react-icons/io';
+import { IoIosArrowRoundDown } from 'react-icons/io';
 import {MessagesContext} from './ChatBot/MessagesProvider';
 // import useMousePosition from '../Hooks/useMousePosition';
 import PlaylistsThumbnail from './PlaylistsThumbnail';
@@ -71,8 +72,27 @@ function PlaylistsContainer(): JSX.Element {
         </div>
 
      
-      {/* <div className='Test-Container'> */}
-      <div className='Playlists-All-Container'>
+        <div className="Playlists-Bottom-Container">
+
+          <div className="Playlists-Sort-Container">
+            <p className="Playlists-Sort-Header">Sort all of your playlists by date.</p>
+            <div className="Playlists-Sort-Box">
+              <p>Sort
+              <IoIosArrowRoundUp color='#181718' className='Playlists-Sort-Arrow'/>
+              </p>
+            </div>
+          </div>
+
+          <div className="Playlists-Playlists-All-Container">
+          {playlists.map((playlist: any, index: any) => 
+              <PlaylistsThumbnail key={index} playlist={playlist}/>
+            )}
+          </div>
+
+        </div>
+
+      {/* <div className='Playlists-All-Container'>
+
         <div className='Playlists-All-Headers'>
 
           <div className='Playlists-All-Title-Box'>
@@ -88,24 +108,12 @@ function PlaylistsContainer(): JSX.Element {
         </div>
   
         <div className='Playlists-Circles-Container'>
-      {/* <div className='Playlists-All-Overlay'></div> */}
             {playlists.map((playlist: any, index: any) => 
               <PlaylistsThumbnail key={index} playlist={playlist}/>
-              // <div key={playlist.id} className='Playlists-All-Box'>
-              //   <p className='Playlists-Name'>{playlist.name.toUpperCase()}</p>
-              // </div>
             )}
-
-              {/* <div className='Playlists-Placeholder-Box'></div>
-              <div className='Playlists-Placeholder-Box'></div>
-              <div className='Playlists-Placeholder-Box'></div>
-              <div className='Playlists-Placeholder-Box'></div> */}
-          </div>
         </div>
- {/* <div className='Test-Gradient'></div> */}
-
- {/* </div> */}
-
+        
+      </div> */}
 
     </div>
   );

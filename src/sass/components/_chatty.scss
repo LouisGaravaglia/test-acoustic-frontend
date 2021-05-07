@@ -182,7 +182,7 @@
 //   position: absolute;
 //   top: 4px;
 //   right: -6px;
-//   background-color: $mainPink;
+//   background: rgba(0, 247, 227, 0.322);
 //   border-radius: 100% 0% 100% 2% / 1% 99% 1% 97%;
 //   width:101%;
 //   height: 102%;
@@ -213,7 +213,11 @@
 
 .Chatty-Button-Box:hover {
 
-  // background: linear-gradient(to right, $mainGreen, $mainPink);
+  // .Chatty-Button-Overlay {
+  //   top: 0;
+  //   right: 0;
+  // }
+
   background: rgba(0, 247, 227, 0.082);
 
 
@@ -229,7 +233,7 @@
   @extend .Chatty-Button-Box;
   // background: linear-gradient(to right, $mainGreen, $mainPink);
   background: rgba(0, 247, 227, 0.082);
-  // background-color: $mainBlack;
+  // background-color: $mainOffWhite;
   cursor: default;
 }
 

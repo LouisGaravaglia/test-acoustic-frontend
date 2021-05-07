@@ -31,31 +31,36 @@ function PlaylistsThumbnail({playlist}: Props): JSX.Element {
   //   if (cursorInsideDiv) followCursor()
   // }, [x, y])
 
-  function handleMouseEnter() {
-    setCursorInsideDiv(true);
-    const {bottom, right} = boxRef.current.getBoundingClientRect();
-    setBottom(bottom);
-    setRight(right);
+  // function handleMouseEnter() {
+  //   setCursorInsideDiv(true);
+  //   const {bottom, right} = boxRef.current.getBoundingClientRect();
+  //   setBottom(bottom);
+  //   setRight(right);
     
-  }
+  // }
 
-  function handleMouseLeave() {
-    setCursorInsideDiv(false);
-  }
+  // function handleMouseLeave() {
+  //   setCursorInsideDiv(false);
+  // }
 
-  const boxStyles: React.CSSProperties = {
-    transform: `translate(${translateXPosition}px, ${translateYPosition}px)`,
-  }
+  // const boxStyles: React.CSSProperties = {
+  //   transform: `translate(${translateXPosition}px, ${translateYPosition}px)`,
+  // }
 
   return (
-    <div ref={boxRef} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} key={playlist.id}  className='Playlists-All-Invisible-Box'>
-      <div className='Playlists-All-Box'  style={cursorInsideDiv ? boxStyles : {}}>
-        <div className='Playlists-All-Circle'>
-          <div className='Playlists-All-Circle-Overlay'></div>
-          <p className='Playlists-Name'>{playlist.name.toUpperCase()} </p>
-        </div>
+    // <div ref={boxRef} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} key={playlist.id}  className='Playlists-All-Invisible-Box'>
+    //   <div className='Playlists-All-Box'  style={cursorInsideDiv ? boxStyles : {}}>
+    //     <div className='Playlists-All-Circle'>
+    //       <div className='Playlists-All-Circle-Overlay'></div>
+    //       <p className='Playlists-Name'>{playlist.name.toUpperCase()} </p>
+    //     </div>
+    //   </div>
+    // </div>
+
+        <div className='Playlists-Playlist-Container'>
+        <p className='Playlists-Playlist-Name'>{playlist.name.toUpperCase()} </p>
       </div>
-    </div>
+
   );
 };
 

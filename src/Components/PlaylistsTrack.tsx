@@ -44,7 +44,7 @@ function PlaylistsTrack({track, index, selectedTrack, setSelectedTrack, selected
       left: '-40px',
       width: 'calc(100% - 120px)',
       cursor: 'default',
-      backgroundImage: "linear-gradient(to right, rgba(154, 255, 233, 0.842), #ffe0d7)",
+      border: '1px solid #181718',
     };
   } else if (index > selectedTrack) {
     styles = { top: `${(index * 60) + 80}px`};
