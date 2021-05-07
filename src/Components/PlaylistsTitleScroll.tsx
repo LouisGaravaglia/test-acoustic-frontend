@@ -9,10 +9,12 @@ interface Props {
     "name": string
   }
   index: number
-
+  reversePlaylists: boolean
   parentFinishedMounting: boolean
   selectedPlaylistIndex: number
   handleScrollToSelectedTitle: (titleRef: any | null) => void
+  titleRef: any | null
+  wrapperRef: any | null
 }
 
 // interface IUseElementOnScreen {
@@ -20,7 +22,7 @@ interface Props {
 //   isVisible: boolean
 // }
 
-function PlaylistsTitleScroll({playlist, index, parentFinishedMounting, selectedPlaylistIndex, handleScrollToSelectedTitle}: Props): JSX.Element {
+function PlaylistsTitleScroll({playlist, index, parentFinishedMounting, selectedPlaylistIndex, handleScrollToSelectedTitle, reversePlaylists, wrapperRef}: Props): JSX.Element {
   // const [isVisible, setIsVisible] = useState<boolean>(false);
   const titleRef = useRef<any | null>(null);
   let leftSideOfTitleDiv: number = 0;
@@ -53,6 +55,15 @@ function PlaylistsTitleScroll({playlist, index, parentFinishedMounting, selected
 
     // handleInViewport(titleRef);
 
+    useEffect(() => {
+      if (reversePlaylists && index === playlists.length - 1) {
+            wrapperRef.current.scroll({left: titleRef.current.offsetLeft - 300, behavior: 'smooth'});
+
+      } else if (!reversePlaylists && index === 0) {
+            wrapperRef.current.scroll({left: titleRef.current.offsetLeft - 300, behavior: 'smooth'});
+
+      }
+    }, [reversePlaylists]);
 
     // const enteredFrame = !!entry?.isIntersecting && (top > 143 && top < 144);
   // titleRef.current = index;

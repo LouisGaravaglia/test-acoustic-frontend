@@ -1,4 +1,4 @@
-import React, {useState, useRef, useEffect} from 'react';
+import React, {useState, useRef, useEffect, createRef} from 'react';
 import PlaylistsTitleScroll from './PlaylistsTitleScroll';
 import useViewport from '../Hooks/useViewport';
 let playlists =  require('../fakeData/playlist.json');
@@ -58,6 +58,8 @@ function PlaylistsTitleScrollContainer({selectedPlaylistIndex, reversePlaylists}
   //   parentDidMount();
   // }, [])
 
+  const titleRefArray = playlists.map((playlist:any) => createRef());
+
   
   function handleScrollToSelectedTitle(titleRef: any | null) {
     console.log('handleScroll', titleRef);
@@ -79,12 +81,14 @@ function PlaylistsTitleScrollContainer({selectedPlaylistIndex, reversePlaylists}
   let playlistTitles;
 
   if (reversePlaylists) {
+    // wrapperRef.current.scroll({left: titleRefArray[playlists.length - 1].current.offsetLeft - 300, behavior: 'smooth'});
     playlistTitles = (
-      playlists.map((playlist: any, index: any) => <PlaylistsTitleScroll key={index} index={index} playlist={playlist} parentFinishedMounting={parentFinishedMounting} selectedPlaylistIndex={selectedPlaylistIndex} handleScrollToSelectedTitle={handleScrollToSelectedTitle}/>).reverse()
+      playlists.map((playlist: any, index: any) => <PlaylistsTitleScroll key={index} index={index} titleRef={titleRefArray[index]} playlist={playlist} parentFinishedMounting={parentFinishedMounting} selectedPlaylistIndex={selectedPlaylistIndex} handleScrollToSelectedTitle={handleScrollToSelectedTitle} reversePlaylists={reversePlaylists} wrapperRef={wrapperRef}/>).reverse()
     )
   } else {
+    // wrapperRef.current.scroll({left: titleRefArray[0].current.offsetLeft - 300, behavior: 'smooth'});
     playlistTitles = (
-      playlists.map((playlist: any, index: any) => <PlaylistsTitleScroll key={index} index={index} playlist={playlist} parentFinishedMounting={parentFinishedMounting} selectedPlaylistIndex={selectedPlaylistIndex} handleScrollToSelectedTitle={handleScrollToSelectedTitle}/>)
+      playlists.map((playlist: any, index: any) => <PlaylistsTitleScroll key={index} index={index} titleRef={titleRefArray[index]} playlist={playlist} parentFinishedMounting={parentFinishedMounting} selectedPlaylistIndex={selectedPlaylistIndex} handleScrollToSelectedTitle={handleScrollToSelectedTitle} reversePlaylists={reversePlaylists} wrapperRef={wrapperRef}/>)
     )
   }
   
