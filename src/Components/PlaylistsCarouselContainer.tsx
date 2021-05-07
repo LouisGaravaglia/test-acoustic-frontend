@@ -14,9 +14,10 @@ interface Props {
   refArray: any | null[]
   playlistRefToScrollTo: any | null
   PlaylistsContainerRef: any | null
+  reversePlaylists: boolean
 }
 
-function PlaylistsCarouselContainer({refArray, playlistRefToScrollTo, PlaylistsContainerRef}: Props): JSX.Element {
+function PlaylistsCarouselContainer({refArray, playlistRefToScrollTo, PlaylistsContainerRef, reversePlaylists}: Props): JSX.Element {
   const [selectedPlaylistIndex, setSelectedPlaylistIndex] = useState<number>(0);
   const [selectedPlaylistTitle, setSelectedPlaylistTitle] = useState<string>('');
   // const [titleInQueue, setTitleInQueue] = useState<number>(0);
@@ -55,17 +56,34 @@ function PlaylistsCarouselContainer({refArray, playlistRefToScrollTo, PlaylistsC
     // setSelectedPlaylistTitle()
   }
 
+  let displayedPlaylists;
+
+  if (reversePlaylists) {
+    displayedPlaylists = (
+      playlists.map((playlist: any, index: any) => 
+        <PlaylistsCarousel key={index} playlistRef={refArray[index]} playlist={playlist} index={index} updateSelectedPlaylistIndex={updateSelectedPlaylistIndex} selectedPlaylistIndex={selectedPlaylistIndex}/>
+      ).reverse()
+    )
+  } else {
+    displayedPlaylists = (
+      playlists.map((playlist: any, index: any) => 
+        <PlaylistsCarousel key={index} playlistRef={refArray[index]} playlist={playlist} index={index} updateSelectedPlaylistIndex={updateSelectedPlaylistIndex} selectedPlaylistIndex={selectedPlaylistIndex}/>
+      )
+    )
+  }
+
 
   return (
     <>
     <div className='Playlists-Selected-Header-Box'>
-    <PlaylistsTitleScrollContainer selectedPlaylistIndex={selectedPlaylistIndex}/>
+    <PlaylistsTitleScrollContainer selectedPlaylistIndex={selectedPlaylistIndex} reversePlaylists={reversePlaylists}/>
   </div>
   
 <div className='Playlists-Carousel-Content' ref={PlaylistsContainerRef}>
-{playlists.map((playlist: any, index: any) => 
+{/* {playlists.map((playlist: any, index: any) => 
         <PlaylistsCarousel key={index} playlistRef={refArray[index]} playlist={playlist} index={index} updateSelectedPlaylistIndex={updateSelectedPlaylistIndex} selectedPlaylistIndex={selectedPlaylistIndex}/>
-      )}
+      )} */}
+      {displayedPlaylists}
 </div>
 </>
   );

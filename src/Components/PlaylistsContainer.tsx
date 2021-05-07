@@ -1,4 +1,4 @@
-import React, {useContext, useState, createRef, useRef} from 'react';
+import React, {useContext, useState, createRef, useRef, useEffect} from 'react';
 import { IoIosArrowRoundUp } from 'react-icons/io';
 import { IoIosArrowRoundDown } from 'react-icons/io';
 import {MessagesContext} from './ChatBot/MessagesProvider';
@@ -17,11 +17,21 @@ function PlaylistsContainer(): JSX.Element {
   const [selectedTitle, setSelectedTitle] = useState<number>(0);
   const [titleInQueue, setTitleInQueue] = useState<number>(0);
   const [playlistRefToScrollTo, setPlaylistRefToScrollTo] = useState<any | null>(null);
+  const [reversePlaylists, setReversePlaylists] = useState<boolean>(false);
   const PlaylistsContainerRef = useRef<any | null>(null);
+  const containerRef = useRef<any | null>(null);
   // const selectedPlaylist = {
   //   selectedTitle: 0,
   //   titleInQueue: 0
   // }
+
+  useEffect(() => {
+    if (reversePlaylists) {
+      PlaylistsContainerRef.current.scroll({left: refArray[playlists.length - 1].current.offsetLeft - 300, behavior: 'smooth'});
+    } else {
+      PlaylistsContainerRef.current.scroll({left: refArray[0].current.offsetLeft - 300, behavior: 'smooth'});
+    }
+  }, [reversePlaylists]);
 
   const refArray = playlists.map((playlist:any) => createRef());
   console.log('refArray', refArray);
@@ -31,6 +41,7 @@ function PlaylistsContainer(): JSX.Element {
     
         // refArray[refIndex].current.scrollIntoView({behavior: "smooth"});
     PlaylistsContainerRef.current.scroll({left: refArray[refIndex].current.offsetLeft - 300, behavior: 'smooth'});
+    // containerRef.current.scrollIntoView({behavior: "smooth"});
 
     // setPlaylistRefToScrollTo(refArray[refIndex]);
     // PlaylistsContainerRef.current.scroll({left: titleRef.current.offsetLeft - 300, behavior: 'smooth'});
@@ -46,15 +57,32 @@ function PlaylistsContainer(): JSX.Element {
     if (selectedTitle === titleIndex) setSelectedTitle(titleInQueue);
   }
 
+  let playlistsJSX;
+
+  if (reversePlaylists) {
+    playlistsJSX = (
+      playlists.map((playlist: any, index: any) => 
+        <PlaylistsThumbnail key={index} playlist={playlist} index={index} selectWhichPlaylistToNavigateTo={selectWhichPlaylistToNavigateTo}/>
+      ).reverse()
+    );
+  } else {
+    playlistsJSX = (
+      playlists.map((playlist: any, index: any) => 
+        <PlaylistsThumbnail key={index} playlist={playlist} index={index} selectWhichPlaylistToNavigateTo={selectWhichPlaylistToNavigateTo}/>
+      )
+    );
+  }
+
+
 
   return (
 
 
 
-    <div className='Playlists-Container'>
+    <div className='Playlists-Container' ref={containerRef}>
 
 
-      <PlaylistsCarouselContainer refArray={refArray} playlistRefToScrollTo={playlistRefToScrollTo} PlaylistsContainerRef={PlaylistsContainerRef}/>
+      <PlaylistsCarouselContainer refArray={refArray} playlistRefToScrollTo={playlistRefToScrollTo} PlaylistsContainerRef={PlaylistsContainerRef} reversePlaylists={reversePlaylists}/>
 
         <div className='Playlists-Controls-Container'>
 
@@ -92,17 +120,19 @@ function PlaylistsContainer(): JSX.Element {
 
           <div className="Playlists-Sort-Container">
             <p className="Playlists-Sort-Header">Sort all of your playlists by date.</p>
-            <div className="Playlists-Sort-Box">
+            <div className="Playlists-Sort-Box" onClick={() => setReversePlaylists(state => !state)}>
               <p>Sort
-              <IoIosArrowRoundUp color='#181718' className='Playlists-Sort-Arrow'/>
+              {reversePlaylists ? <IoIosArrowRoundDown color='#181718' className='Playlists-Sort-Arrow-Down'/> : <IoIosArrowRoundUp color='#181718' className='Playlists-Sort-Arrow-Up'/>}
+              
               </p>
             </div>
           </div>
 
           <div className="Playlists-Playlists-All-Container">
-          {playlists.map((playlist: any, index: any) => 
+          {/* {playlists.map((playlist: any, index: any) => 
               <PlaylistsThumbnail key={index} playlist={playlist} index={index} selectWhichPlaylistToNavigateTo={selectWhichPlaylistToNavigateTo}/>
-            )}
+            )} */}
+            {playlistsJSX}
           </div>
 
         </div>

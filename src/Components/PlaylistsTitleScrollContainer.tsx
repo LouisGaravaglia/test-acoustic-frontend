@@ -5,8 +5,9 @@ let playlists =  require('../fakeData/playlist.json');
 
 interface Props {
   selectedPlaylistIndex: number
+  reversePlaylists: boolean
 }
-function PlaylistsTitleScrollContainer({selectedPlaylistIndex}: Props): JSX.Element {
+function PlaylistsTitleScrollContainer({selectedPlaylistIndex, reversePlaylists}: Props): JSX.Element {
   const [isVisible, setIsVisible] = useState<boolean>(false);
   const [parentFinishedMounting, setParentFinishedMounting] = useState<boolean>(false);
   const [selectedPlaylistRef, setSelectedPlaylistRef] = useState<any | null>(null);
@@ -75,6 +76,17 @@ function PlaylistsTitleScrollContainer({selectedPlaylistIndex}: Props): JSX.Elem
 
   // }, [selectedPlaylistRef])
 
+  let playlistTitles;
+
+  if (reversePlaylists) {
+    playlistTitles = (
+      playlists.map((playlist: any, index: any) => <PlaylistsTitleScroll key={index} index={index} playlist={playlist} parentFinishedMounting={parentFinishedMounting} selectedPlaylistIndex={selectedPlaylistIndex} handleScrollToSelectedTitle={handleScrollToSelectedTitle}/>).reverse()
+    )
+  } else {
+    playlistTitles = (
+      playlists.map((playlist: any, index: any) => <PlaylistsTitleScroll key={index} index={index} playlist={playlist} parentFinishedMounting={parentFinishedMounting} selectedPlaylistIndex={selectedPlaylistIndex} handleScrollToSelectedTitle={handleScrollToSelectedTitle}/>)
+    )
+  }
   
 
   return (
@@ -82,7 +94,8 @@ function PlaylistsTitleScrollContainer({selectedPlaylistIndex}: Props): JSX.Elem
 
     <div className="scrolling-wrapper" ref={wrapperRef}>
       <div className='card' ><h2 ></h2></div>
-      {playlists.map((playlist: any, index: any) => <PlaylistsTitleScroll key={index} index={index} playlist={playlist} parentFinishedMounting={parentFinishedMounting} selectedPlaylistIndex={selectedPlaylistIndex} handleScrollToSelectedTitle={handleScrollToSelectedTitle}/>)}
+      {/* {playlists.map((playlist: any, index: any) => <PlaylistsTitleScroll key={index} index={index} playlist={playlist} parentFinishedMounting={parentFinishedMounting} selectedPlaylistIndex={selectedPlaylistIndex} handleScrollToSelectedTitle={handleScrollToSelectedTitle}/>)} */}
+      {playlistTitles}
       <div className='card' ><h2 ></h2></div>
 
     </div>
