@@ -6,9 +6,11 @@ interface Props {
     "id": "playlist_3",
     "name": "Pigeons and Planes 4.19.21"
   }
+  selectWhichPlaylistToNavigateTo: (refIndex:number) => void
+  index: number
 }
 
-function PlaylistsThumbnail({playlist}: Props): JSX.Element {
+function PlaylistsThumbnail({playlist, selectWhichPlaylistToNavigateTo, index}: Props): JSX.Element {
   const {x: cursorHorizontalPosition, y: cursorVerticalPosition} = useMousePosition();
   const [cursorInsideDiv, setCursorInsideDiv] = useState<boolean>(false);
   const [bottom, setBottom] = useState<number>(0);
@@ -57,7 +59,7 @@ function PlaylistsThumbnail({playlist}: Props): JSX.Element {
     //   </div>
     // </div>
 
-        <div className='Playlists-Playlist-Container'>
+        <div className='Playlists-Playlist-Container' onClick={() => selectWhichPlaylistToNavigateTo(index)}>
         <p className='Playlists-Playlist-Name'>{playlist.name.toUpperCase()} </p>
       </div>
 

@@ -55,14 +55,15 @@ interface Props {
   index: number
   updateSelectedPlaylistIndex: (selectedPlaylist: number) => void
   selectedPlaylistIndex: number
+  playlistRef: any | null
 }
 
-function PlaylistsCarousel({playlist, index, updateSelectedPlaylistIndex, selectedPlaylistIndex}: Props): JSX.Element {
+function PlaylistsCarousel({playlist, index, updateSelectedPlaylistIndex, selectedPlaylistIndex, playlistRef}: Props): JSX.Element {
   const [selectedTrack, setSelectedTrack] = useState<number>(0);
   const [selectedTitle, setSelectedTitle] = useState<number>(0);
   const [titleInQueue, setTitleInQueue] = useState<number>(0);
   const playlistImgPlaceholders = [PLACEHOLDER_IMG_0, PLACEHOLDER_IMG_1, PLACEHOLDER_IMG_2, PLACEHOLDER_IMG_3, PLACEHOLDER_IMG_4, PLACEHOLDER_IMG_5];
-  const playlistRef = useRef<any | null>(null);
+  // const playlistRef = useRef<any | null>(null);
   const entry = useElementOnScreen(playlistRef, {
     // root: document.querySelector('.scrolling-wrapper'),
     // rootMargin: "0px -300px",

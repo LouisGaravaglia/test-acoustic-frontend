@@ -1,4 +1,4 @@
-import React, {useContext, useState, useRef, useEffect} from 'react';
+import React, {useContext, useState, useRef, useEffect, createRef} from 'react';
 import { IoArrowDown } from 'react-icons/io5';
 import {MessagesContext} from './ChatBot/MessagesProvider';
 // import useMousePosition from '../Hooks/useMousePosition';
@@ -10,8 +10,13 @@ import { FiPause, FiPlay, FiSkipBack, FiSkipForward } from 'react-icons/fi';
 import useElementOnScreen from '../Hooks/useElementOnScreen';
 let playlists =  require('../fakeData/playlist.json');
 
+interface Props {
+  refArray: any | null[]
+  playlistRefToScrollTo: any | null
+  PlaylistsContainerRef: any | null
+}
 
-function PlaylistsCarouselContainer(): JSX.Element {
+function PlaylistsCarouselContainer({refArray, playlistRefToScrollTo, PlaylistsContainerRef}: Props): JSX.Element {
   const [selectedPlaylistIndex, setSelectedPlaylistIndex] = useState<number>(0);
   const [selectedPlaylistTitle, setSelectedPlaylistTitle] = useState<string>('');
   // const [titleInQueue, setTitleInQueue] = useState<number>(0);
@@ -38,6 +43,13 @@ function PlaylistsCarouselContainer(): JSX.Element {
   //   if (selectedTitle === titleIndex) setSelectedTitle(titleInQueue);
   // }
 
+  
+
+  // useEffect(() => {
+  //   updateSelectedPlaylistIndex(index)
+  // }, [isVisible]);
+
+
   function updateSelectedPlaylistIndex(titleIndex: number) {
     setSelectedPlaylistIndex(titleIndex);
     // setSelectedPlaylistTitle()
@@ -50,9 +62,9 @@ function PlaylistsCarouselContainer(): JSX.Element {
     <PlaylistsTitleScrollContainer selectedPlaylistIndex={selectedPlaylistIndex}/>
   </div>
   
-<div className='Playlists-Carousel-Content'>
+<div className='Playlists-Carousel-Content' ref={PlaylistsContainerRef}>
 {playlists.map((playlist: any, index: any) => 
-        <PlaylistsCarousel key={index} playlist={playlist} index={index} updateSelectedPlaylistIndex={updateSelectedPlaylistIndex} selectedPlaylistIndex={selectedPlaylistIndex}/>
+        <PlaylistsCarousel key={index} playlistRef={refArray[index]} playlist={playlist} index={index} updateSelectedPlaylistIndex={updateSelectedPlaylistIndex} selectedPlaylistIndex={selectedPlaylistIndex}/>
       )}
 </div>
 </>

@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useState, createRef, useRef} from 'react';
 import { IoIosArrowRoundUp } from 'react-icons/io';
 import { IoIosArrowRoundDown } from 'react-icons/io';
 import {MessagesContext} from './ChatBot/MessagesProvider';
@@ -16,10 +16,26 @@ let playlists =  require('../fakeData/playlist.json');
 function PlaylistsContainer(): JSX.Element {
   const [selectedTitle, setSelectedTitle] = useState<number>(0);
   const [titleInQueue, setTitleInQueue] = useState<number>(0);
+  const [playlistRefToScrollTo, setPlaylistRefToScrollTo] = useState<any | null>(null);
+  const PlaylistsContainerRef = useRef<any | null>(null);
   // const selectedPlaylist = {
   //   selectedTitle: 0,
   //   titleInQueue: 0
   // }
+
+  const refArray = playlists.map((playlist:any) => createRef());
+  console.log('refArray', refArray);
+
+  function selectWhichPlaylistToNavigateTo(refIndex:number) {
+    console.log('in ref select', refIndex);
+    
+        // refArray[refIndex].current.scrollIntoView({behavior: "smooth"});
+    PlaylistsContainerRef.current.scroll({left: refArray[refIndex].current.offsetLeft - 300, behavior: 'smooth'});
+
+    // setPlaylistRefToScrollTo(refArray[refIndex]);
+    // PlaylistsContainerRef.current.scroll({left: titleRef.current.offsetLeft - 300, behavior: 'smooth'});
+  }
+
   let tracks = playlists[selectedTitle].tracks.items;
 
   function updatePlaylistQueue(titleIndex: number) {
@@ -38,7 +54,7 @@ function PlaylistsContainer(): JSX.Element {
     <div className='Playlists-Container'>
 
 
-      <PlaylistsCarouselContainer />
+      <PlaylistsCarouselContainer refArray={refArray} playlistRefToScrollTo={playlistRefToScrollTo} PlaylistsContainerRef={PlaylistsContainerRef}/>
 
         <div className='Playlists-Controls-Container'>
 
@@ -85,7 +101,7 @@ function PlaylistsContainer(): JSX.Element {
 
           <div className="Playlists-Playlists-All-Container">
           {playlists.map((playlist: any, index: any) => 
-              <PlaylistsThumbnail key={index} playlist={playlist}/>
+              <PlaylistsThumbnail key={index} playlist={playlist} index={index} selectWhichPlaylistToNavigateTo={selectWhichPlaylistToNavigateTo}/>
             )}
           </div>
 
