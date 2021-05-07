@@ -27,9 +27,9 @@ function PlaylistsContainer(): JSX.Element {
 
   useEffect(() => {
     if (reversePlaylists) {
-      PlaylistsContainerRef.current.scroll({left: refArray[playlists.length - 1].current.offsetLeft - 300, behavior: 'smooth'});
+      PlaylistsContainerRef.current.scroll({left: refArray[playlists.length - 1].current.offsetLeft - 300});
     } else {
-      PlaylistsContainerRef.current.scroll({left: refArray[0].current.offsetLeft - 300, behavior: 'smooth'});
+      PlaylistsContainerRef.current.scroll({left: refArray[0].current.offsetLeft - 300});
     }
   }, [reversePlaylists]);
 
@@ -40,7 +40,7 @@ function PlaylistsContainer(): JSX.Element {
     console.log('in ref select', refIndex);
     
         // refArray[refIndex].current.scrollIntoView({behavior: "smooth"});
-    PlaylistsContainerRef.current.scroll({left: refArray[refIndex].current.offsetLeft - 300, behavior: 'smooth'});
+    PlaylistsContainerRef.current.scroll({left: refArray[refIndex].current.offsetLeft - 300});
     // containerRef.current.scrollIntoView({behavior: "smooth"});
 
     // setPlaylistRefToScrollTo(refArray[refIndex]);
