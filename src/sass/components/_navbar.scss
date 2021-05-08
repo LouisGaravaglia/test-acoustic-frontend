@@ -4,14 +4,16 @@
   height: 80px;
   border-bottom: 1px solid $mainBlack;
   margin-left: 50px;
+  background: url(../../images/Logo_4.svg) no-repeat; 
   // margin: 0 40px;
 }
 
 
-.Navbar-Container-Left {
-  position: absolute;
-  height: 70px;
-}
+// .Navbar-Container-Left {
+//   position: absolute;
+//   height: 70px;
+//   // border: 2px solid blue;
+// }
 
 .Navbar-Container-Right {
   position: absolute;
@@ -23,7 +25,51 @@ a {
   text-decoration: none;
 }
 
-.Navbar-Logo-Box {
+// .Navbar-Logo-Box {
+//   position: sticky;
+//   display: flex;
+//   flex-direction: row;
+//   z-index: 4;
+//   top: 30px;
+//   margin: 0;
+//   padding: 0;
+//   margin-left: 50px;
+//   left: 0;
+//   // border: 2px solid red;
+//   // background: url(../../images/logo_1.svg) no-repeat; 
+// }
+
+// .Navbar-Logo {
+//   // font-family: $mainFont;
+//   // font-weight: 400;
+//   // font-size: 1rem;
+//   // color: $mainBlack;
+//   // background-image: url(../../images/logo_1.svg) no-repeat; 
+//   // -webkit-background-size: cover;
+//   // -moz-background-size: cover;
+//   // -o-background-size: cover;
+//   // background-size: cover;
+//   width: 100px;
+//   height: 100px;
+// }
+
+// .Navbar-Logo-Circle {
+//   display: block;
+//   height: 50px;
+//   width: 50px;
+//   line-height: 50px;
+//   text-align: center;
+//   border: 1px solid $mainBlack;
+//   -moz-border-radius: 30px;
+//   border-radius: 30px; 
+// }
+
+// .Navbar-Logo-Circle:hover {
+//   border: 1px solid $darkPink; 
+//   color: $mainBlack;
+// }
+
+.Navbar-Link-Box {
   position: sticky;
   display: flex;
   flex-direction: row;
@@ -32,35 +78,7 @@ a {
   margin: 0;
   padding: 0;
   margin-left: 50px;
-}
-
-.Navbar-Logo {
-  font-family: $mainFont;
-  font-weight: 400;
-  font-size: 1rem;
-  color: $mainBlack;
-  margin: 0;
-  padding: 0;
-}
-
-.Navbar-Logo-Circle {
-  display: block;
-  height: 50px;
-  width: 50px;
-  line-height: 50px;
-  text-align: center;
-  border: 1px solid $mainBlack;
-  -moz-border-radius: 30px;
-  border-radius: 30px; 
-}
-
-// .Navbar-Logo-Circle:hover {
-//   border: 1px solid $darkPink; 
-//   color: $mainBlack;
-// }
-
-.Navbar-Link-Box {
-  @extend .Navbar-Logo-Box;
+  left: 0;
   margin-right: 50px;
   // border: 2px solid green;
 }
