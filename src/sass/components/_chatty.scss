@@ -203,7 +203,7 @@
   // border: 3px solid $mainDark;
   // border-radius: 10px;
   // cursor: pointer;
-  font-family: $mainFont;
+  font-family: $serifFont;
   font-weight: 200;
   font-size: 1rem;
   color: $mainBlack;
@@ -218,7 +218,7 @@
   //   right: 0;
   // }
 
-  background: rgba(0, 247, 227, 0.082);
+  // background: rgba(0, 247, 227, 0.082);
 
 
 }
@@ -232,7 +232,7 @@
 .Chatty-Button-Box-Clicked {
   @extend .Chatty-Button-Box;
   // background: linear-gradient(to right, $mainGreen, $mainPink);
-  background: rgba(0, 247, 227, 0.082);
+  // background: rgba(0, 247, 227, 0.082);
   // background-color: $mainOffWhite;
   cursor: default;
 }
