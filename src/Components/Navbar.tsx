@@ -1,20 +1,25 @@
 import React, {useState} from 'react';
-import {NavLink, useLocation, Link} from 'react-router-dom';
+import {NavLink, useLocation, Link, useHistory} from 'react-router-dom';
 import { FaBars } from 'react-icons/fa';
 import { IoClose } from 'react-icons/io5';
 
 const Navbar: React.FC = () => {
   const [navbarActive, setNavbarActive] = useState<boolean>(false);
-  const location = useLocation();
-  const urlSlug = location.pathname;
+  const history = useHistory();
+  // const location = useLocation();
+  // const urlSlug = location.pathname;
 
   function handleNavbarClick() {
     setNavbarActive(state => !state);
   }
 
-  const nabarSlideinJSX = (
+  function handleLogoClick() {
+    history.push('/');
+  }
+
+  const navbarSlideinJSX = (
     <>
-      <IoClose color='#ffe0d7' className='Navbar-Slidein-Close' onClick={handleNavbarClick}/>
+      <IoClose color='#ffd3be' className='Navbar-Slidein-Close' onClick={handleNavbarClick}/>
       <Link className='Navbar-Slidein-Link' to='/' onClick={handleNavbarClick}>Home</Link>
       <Link className='Navbar-Slidein-Link' to='/register' onClick={handleNavbarClick}>Register</Link>
       <Link className='Navbar-Slidein-Link' to='/login' onClick={handleNavbarClick}>Login</Link>
@@ -34,19 +39,20 @@ const Navbar: React.FC = () => {
     {navbarActive
       ?
         <div className="Navbar-Slidein">
-          {nabarSlideinJSX}
+          {navbarSlideinJSX}
         </div>
       : 
         <div className="Navbar-Slideout">
-          {nabarSlideinJSX}
+          {navbarSlideinJSX}
         </div>
     }
 
-    <div className='Navbar-Box'>
-      
+    <div className='Navbar-Logo-Box'>
+      <div className='Navbar-Logo' onClick={handleLogoClick}></div>
+    </div>
       {/* <div className="Navbar-Slideout" style={{marginLeft: navbarActive ? '-50px' : 'calc(-100vw - 50px)'}}></div> */}
 
-      <div className='Navbar-Container-Right'>
+      {/* <div className='Navbar-Container-Right'> */}
           <div className='Navbar-Link-Box'>
             <FaBars color='#181718' className='Navbar-Hamburger' onClick={handleNavbarClick}/>
               {/* <NavLink  className={urlSlug === "/" ? 'Navbar-Link-Active' : 'Navbar-Link'} exact to='/'>HOME</NavLink>
@@ -54,8 +60,8 @@ const Navbar: React.FC = () => {
               <NavLink  className={urlSlug === "/playlists" ? 'Navbar-Link-Active' : 'Navbar-Link'} exact to='/playlists'>PLAYLISTS</NavLink> */}
               {/* <NavLink  className={urlSlug === "/login" ? 'Navbar-Link-Active' : 'Navbar-Link'} exact to='/login'>LOGIN</NavLink> */}
           </div>
-      </div>
-      </div>
+      {/* </div> */}
+
     </div>
   );
 };

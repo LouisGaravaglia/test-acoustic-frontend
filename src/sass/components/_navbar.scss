@@ -1,14 +1,27 @@
 .Navbar-Container {
   position: relative;
+  // border: 2px solid blue;
 }
 
-.Navbar-Box {
+.Navbar-Logo-Box {
   position: absolute;
   width: calc(100% - 100px);
   height: 80px;
   border-bottom: 1px solid $mainBlack;
   margin-left: 50px;
+  cursor: pointer;
+  // background: url(../../images/Logo_4.svg) no-repeat; 
+  // margin: 0 40px;
+}
+
+.Navbar-Logo {
+  position: absolute;
   background: url(../../images/Logo_4.svg) no-repeat; 
+  // z-index: 99;
+  height: 80px;
+  width: 80px;
+  // border: 2px solid red;
+  left: -15px;
   // margin: 0 40px;
 }
 
@@ -25,9 +38,9 @@
   right: 0;
 }
 
-a {
-  text-decoration: none;
-}
+// a {
+//   text-decoration: none;
+// }
 
 // .Navbar-Logo-Box {
 //   position: sticky;
@@ -74,15 +87,16 @@ a {
 // }
 
 .Navbar-Link-Box {
-  position: sticky;
+  position: absolute;
+  height: 80px;
   display: flex;
-  flex-direction: row;
+  align-items: center;
   z-index: 4;
-  top: 30px;
+  top: 0;
   margin: 0;
   padding: 0;
-  margin-left: 50px;
-  left: 0;
+  // margin-left: 50px;
+  right: 0;
   margin-right: 50px;
   // border: 2px solid green;
 }
@@ -141,7 +155,7 @@ a {
   font-size: 4rem;
   margin: 20px 0 20px 80px;
   padding: 0;
-  background: linear-gradient(to right, rgb(255, 192, 190), rgb(255, 211, 190));
+  background: linear-gradient(to right, rgb(255, 192, 190), #ffd3be);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   cursor: pointer;
