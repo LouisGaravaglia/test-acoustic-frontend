@@ -20,6 +20,8 @@ const Navbar: React.FC = () => {
   const navbarSlideinJSX = (
     <>
       <IoClose color='#ffd3be' className='Navbar-Slidein-Close' onClick={handleNavbarClick}/>
+
+
       <Link className='Navbar-Slidein-Link' to='/' onClick={handleNavbarClick}>Home</Link>
       <Link className='Navbar-Slidein-Link' to='/register' onClick={handleNavbarClick}>Register</Link>
       <Link className='Navbar-Slidein-Link' to='/login' onClick={handleNavbarClick}>Login</Link>
