@@ -37,16 +37,12 @@ function PlaylistsContainer(): JSX.Element {
   console.log('refArray', refArray);
 
   function selectWhichPlaylistToNavigateTo(refIndex:number) {
-    console.log('in ref select', refIndex);
-    // window.scrollTo(600, 600);
-        // containerRef.current.scrollIntoView({behavior: "smooth"});
-
-        refArray[refIndex].current.scrollIntoView();
-    // PlaylistsContainerRef.current.scroll({left: refArray[refIndex].current.offsetLeft - 300});
-    // containerRef.current.scrollIntoView({behavior: "smooth"});
-
-    // setPlaylistRefToScrollTo(refArray[refIndex]);
-    // PlaylistsContainerRef.current.scroll({left: titleRef.current.offsetLeft - 300, behavior: 'smooth'});
+    setTimeout(() => {
+      refArray[refIndex].current.scrollIntoView();
+    }, 100);
+    setTimeout(() => {
+      containerRef.current.scrollIntoView({behavior: "smooth"});
+    }, 200);
   }
 
   let tracks = playlists[selectedTitle].tracks.items;
