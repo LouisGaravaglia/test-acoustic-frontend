@@ -37,12 +37,10 @@ function PlaylistsContainer(): JSX.Element {
   console.log('refArray', refArray);
 
   function selectWhichPlaylistToNavigateTo(refIndex:number) {
-    setTimeout(() => {
-      refArray[refIndex].current.scrollIntoView();
-    }, 100);
+    refArray[refIndex].current.scrollIntoView({block: 'nearest', inline: 'start' });
     setTimeout(() => {
       containerRef.current.scrollIntoView({behavior: "smooth"});
-    }, 200);
+    }, 100);
   }
 
   let tracks = playlists[selectedTitle].tracks.items;
