@@ -168,7 +168,7 @@
   
     -webkit-overflow-scrolling: touch;
     // border: 2px solid green;
-    z-index: 10;
+    // z-index: 10;
     scrollbar-width: none;
     -ms-overflow-style: none;
     /* the two items below, scroll-snaps, are for getting the slides to snap to the edges */
@@ -236,7 +236,7 @@
 
 
 .Playlists-Artwork-Box {
-  position: relative;
+  // position: relative;
   flex: 0 0 50vw;
   display: flex;
   justify-content: flex-end;
@@ -309,7 +309,7 @@
     // filter: grayscale(100%);
     // overflow: hidden;
     // border-radius: 50%;
-    z-index: 4;
+    // z-index: 1;
   }
 }
 
