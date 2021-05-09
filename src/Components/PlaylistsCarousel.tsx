@@ -1,11 +1,5 @@
-import React, {useContext, useState, useRef, useEffect} from 'react';
-import { IoArrowDown } from 'react-icons/io5';
-import {MessagesContext} from './ChatBot/MessagesProvider';
-// import useMousePosition from '../Hooks/useMousePosition';
-import PlaylistsThumbnail from './PlaylistsThumbnail';
+import React, {useState, useEffect} from 'react';
 import PlaylistsTrack from './PlaylistsTrack';
-import PlaylistsTitleScrollContainer from './PlaylistsTitleScrollContainer';
-import { FiPause, FiPlay, FiSkipBack, FiSkipForward } from 'react-icons/fi';
 import useElementOnScreen from '../Hooks/useElementOnScreen';
 import PLACEHOLDER_IMG_0 from '../images/placeholder_1.jpg';
 import PLACEHOLDER_IMG_1 from '../images/placeholder_2.jpg';
@@ -60,23 +54,11 @@ interface Props {
 
 function PlaylistsCarousel({playlist, index, updateSelectedPlaylistIndex, selectedPlaylistIndex, playlistRef}: Props): JSX.Element {
   const [selectedTrack, setSelectedTrack] = useState<number>(0);
-  const [selectedTitle, setSelectedTitle] = useState<number>(0);
-  const [titleInQueue, setTitleInQueue] = useState<number>(0);
   const playlistImgPlaceholders = [PLACEHOLDER_IMG_0, PLACEHOLDER_IMG_1, PLACEHOLDER_IMG_2, PLACEHOLDER_IMG_3, PLACEHOLDER_IMG_4, PLACEHOLDER_IMG_5];
-  // const playlistRef = useRef<any | null>(null);
   const entry = useElementOnScreen(playlistRef, {
-    // root: document.querySelector('.scrolling-wrapper'),
-    // rootMargin: "0px -300px",
     threshold: 0.8
   });
   const isVisible = !!entry?.isIntersecting;
-
-  
-  
-  // const selectedPlaylist = {
-  //   selectedTitle: 0,
-  //   titleInQueue: 0
-  // }
   let tracks = playlist.tracks.items;
 
   useEffect(() => {
@@ -84,42 +66,19 @@ function PlaylistsCarousel({playlist, index, updateSelectedPlaylistIndex, select
   }, [isVisible]);
 
   function updateSelectedTrack(trackIndex: number) {
-    console.log("trackIndex ", trackIndex);
-    
     setSelectedTrack(trackIndex);
   }
 
-  // function updatePlaylistQueue(titleIndex: number) {
-  //   setTitleInQueue(titleIndex);
-  // } 
-  
-  // function updatePlaylistSelectedTitle(titleIndex: number) {
-  //   if (selectedTitle === titleIndex) setSelectedTitle(titleInQueue);
-  // }
-
-
   return (
-
-
-
-
-      <div className='Playlists-Selected-Carousel-Content' ref={playlistRef}>
-
-
-
-        <div className='Playlists-Artwork-Box'>
-          {/* <img className='Playlists-Artwork' src={playlist.images[0].url} alt=''/> */}
-          <img className='Playlists-Artwork' src={playlistImgPlaceholders[index]} alt=''/>
-        </div>
-
-        <div className='Playlists-Tracks-Container'>
-            {tracks.map((track: any, index: number) => 
-              <PlaylistsTrack track={track} key={index} index={index} playlistLength={tracks.length} selectedTrack={selectedTrack} setSelectedTrack={setSelectedTrack} selectedPlaylistIndex={selectedPlaylistIndex}/>
-            )}
-        </div>
-
-
-
+    <div className='Playlists-Selected-Carousel-Content' ref={playlistRef}>
+      <div className='Playlists-Artwork-Box'>
+        <img className='Playlists-Artwork' src={playlistImgPlaceholders[index]} alt=''/>
+      </div>
+      <div className='Playlists-Tracks-Container'>
+          {tracks.map((track: any, index: number) => 
+            <PlaylistsTrack track={track} key={index} index={index} playlistLength={tracks.length} selectedTrack={selectedTrack} setSelectedTrack={setSelectedTrack} selectedPlaylistIndex={selectedPlaylistIndex}/>
+          )}
+      </div>
     </div>
   );
 };
