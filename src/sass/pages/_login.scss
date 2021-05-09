@@ -1,18 +1,84 @@
+.Login-Container {
+  height: 100vh;
+  background: url(../../images/my_Gradient.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Login-Content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80vw;
+}
+
+.Login-Message-Box {
+  width: calc(50vw - 100px);
+  height: 50vh;
+  padding: 0 50px;
+  // border: 2px solid blue;
+  border-right: 1px solid $mainBlack;
+  display: flex;
+  align-items: center;
+}
+
+.Login-Message {
+  font-family: $serifFont;
+  font-size: 3rem;
+  font-weight: 400;
+}
+
+
+.Login-Button-Box {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 60px;
+  background-color: transparent;
+  border: 1px solid $mainBlack;
+  margin-top: 40px;
+}
+
+.Login-Button {
+    font-family: $mainFont;
+    font-weight: 200;
+    font-size: 1.5rem;
+    color: $mainBlack;
+    margin: 0;
+    user-select: none;
+}
+
+.Login-Arrow {
+  font-size: 1.5rem;
+  font-weight: 100;
+  position: absolute;
+  top: 28%;
+  right: 20px;
+  transition: 0.2s ease-out;
+}
+
+.Login-Button-Box:hover {
+  .Login-Arrow {
+    right: 10px;
+  }
+}
+
 .Login-Form {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
+  // border: 2px solid red;
+  width: 50vw;
 }
 
-.filler {
-  height: 20vh;
-  flex: 0 0 100vw;
-}
 
-.Login-Container {
-  flex: 0 0 100vw;
-}
 
 .Login-Box {
   display: flex;
@@ -35,91 +101,33 @@
 
 #LoginVal {
   font-family: $mainFont;
-  font-weight: 400;
-  font-size: 1.3rem;
+  font-weight: 200;
+  font-size: 1rem;
   padding-left: 20px;
   outline:none;
   padding-right: 60px;
+  background-color: rgba(0, 0, 0, 0);
+  color: $mainBlack;
+  border-bottom: 1px solid $mainBlack;
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: rgb(196, 196, 196);
+  color: rgba(0, 0, 0, 0.479);
+  opacity: 1; /* Firefox */
 }
 
-
-.Login-Header {
-  font-family: $mainFont;
-  font-weight: 300;
-  font-size: 3rem;
-  color: $whiteFont;
-  margin: -50px;
-  cursor: default;
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: rgba(0, 0, 0, 0.479);
 }
 
-.Home-Upper-Box {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  flex-wrap: wrap;
-  width: 100vw;
-  height: 50vh;
-}
-
-
-.Home-Lower-Box {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  width: 100vw;
-  height: 50vh;
-}
-
-.login-transition-element {
-  @include landingButtonGradient;
-  margin-top: 20px;
-}
-
-.login-transition-element:hover {
-  opacity: 0.0;
-}
-
-.login-main-button {
-  @include landingButtonSolid;
-  margin-top: 20px;
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: rgba(0, 0, 0, 0.479);
 }
 
 ////////////////////////////////////////////////////  MEDIA QUERIES  ////////////////////////////////////////////////////
 
 @media only screen and (max-width: 745px) {
-  .Login-Header {
-    font-weight: 200;
-    font-size: 2rem;
-  }
 
-  .login-transition-element {
-    @include landingButtonGradient;
-    margin-top: 15px;
-    font-weight: 600;
-    font-size: 1.5rem;
-    padding: 4px 20px;
-  }
-
-  .login-main-button {
-    @include landingButtonSolid;
-    margin-top: 15px;
-    font-weight: 600;
-    font-size: 1.5rem;
-    padding: 4px 20px;
-  }
-
-  .Login-Box > input {
-    width: 40vw;
-  }
-
-  #LoginVal {
-    font-weight: 400;
-    font-size: 0.8rem;
-  }
 }
 
 

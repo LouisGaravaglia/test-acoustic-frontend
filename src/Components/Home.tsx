@@ -1,23 +1,23 @@
 import React, {useEffect, useContext} from 'react';
 import {useHistory} from 'react-router-dom';
 import {MessagesContext} from './ChatBot/MessagesProvider';
-import { IoIosArrowRoundForward } from 'react-icons/io';
+import {IoIosArrowRoundForward} from 'react-icons/io';
 
-   //eslint-disable-next-line react-hooks/exhaustive-deps
+
    
 const Home: React.FC = () => {
   const {resetPhases} = useContext(MessagesContext);
   const history = useHistory();
 
-  // useEffect(() => {
-  //   const resetRegisterPhases = () => {
-  //     resetPhases();
-  //     // Backend.getCSRF();
-  //   }
-  //   resetRegisterPhases();
-  //   //THE BELOW COMMENT IS TO DISREGARD TYPESCRIPT ERROR FOR NOT INCLUDING resetPhases AS DEPENDECNY, BECAUSE IF WE DID IT WOULD THROW AND INFINITE CALLBACK LOOP
- 
-  // }, []);
+  useEffect(() => {
+    const resetRegisterPhases = () => {
+      resetPhases();
+      // Backend.getCSRF();
+    }
+    resetRegisterPhases();
+    //THE BELOW COMMENT IS TO DISREGARD TYPESCRIPT ERROR FOR NOT INCLUDING resetPhases AS DEPENDECNY, BECAUSE IF WE DID IT WOULD THROW AND INFINITE CALLBACK LOOP
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   function redirectToChatty() {
     history.push('/register')
@@ -25,12 +25,10 @@ const Home: React.FC = () => {
 
   return (
     <div className='Home-Container'>
-  
-        <div className='Home-Header-Box'>
-          <h1>ACOUSTIGRAM.IO</h1>
-          <h5>A Digital Companion to keep you up to date with the latest music releases.</h5>
-        </div>
-
+      <div className='Home-Header-Box'>
+        <h1>ACOUSTIGRAM.IO</h1>
+        <h5>A Digital Companion to keep you up to date with the latest music releases.</h5>
+      </div>
       <div className="Home-Lower-Container">
         <div className="Home-Button-Container">
           <div onClick={redirectToChatty} className="Home-Button-Box">
@@ -45,7 +43,6 @@ const Home: React.FC = () => {
           </div>
         </div>
       </div>
-
     </div>
   );
 };

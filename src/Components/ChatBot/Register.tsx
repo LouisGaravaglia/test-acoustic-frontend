@@ -1,6 +1,5 @@
 import React, {useState, useContext} from 'react';
-import { FaArrowRight } from 'react-icons/fa';
-import { IoIosArrowRoundForward } from 'react-icons/io';
+import {IoIosArrowRoundForward} from 'react-icons/io';
 import {MessagesContext} from './MessagesProvider';
 import ButtonsPast from './Buttons/ButtonsPast';
 
@@ -36,7 +35,6 @@ function Register({input}: Props) {
   };
 
   const handleSubmit = async () => {
-    // e.preventDefault();
     if (formData[inputName] === '') return;
     user[inputName as keyof IUser] = formData[inputName]
     updateUser(inputName, formData[inputName]);
@@ -51,7 +49,7 @@ function Register({input}: Props) {
     <div className='Register-Container'>
       <form className='Register-Form' onSubmit={handleSubmit}>
         <div className='Register-Box'>
-          <input 
+          <input
             type={inputType}
             id='RegisterVal'
             placeholder={input}
@@ -60,21 +58,11 @@ function Register({input}: Props) {
             onChange={handleChange}
             className='Register-Form-Input'
           />
-  
           <button type='submit'>
             <IoIosArrowRoundForward color='#181718' />
           </button>
         </div>
-
       </form>
-
-      {/* <div className="Register-Button-Container">
-        <button className="Register-Button-Box" onClick={handleSubmit}>
-          <div className="Register-Button-Overlay"></div>
-          <h1 className="Register-Button">Submit</h1>
-        </button>
-      </div> */}
-
     </div>
   );
 };

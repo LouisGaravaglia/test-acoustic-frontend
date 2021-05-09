@@ -4,7 +4,6 @@
   position: relative;
   width: 100vw;
   height: 100vh;
-  // background-color: $mainOffWhite;
   // border: 2px solid yellow;
   background: url(../../images/my_Gradient.png) no-repeat center center fixed; 
   -webkit-background-size: cover;
@@ -31,7 +30,7 @@
 }
 
 .Chatty-Right-Filler {
-  @extend .Chatty-Left-Filler;
+  flex: 0 1 30vw;
   // border: solid 2px pink
 }
 
@@ -109,18 +108,9 @@
 
 .Chatty-Button-Main {
   width: 100%;
-  // z-index: 5;
   position: relative;
   z-index: 9;
 }
-
-// .Chatty-Button-Container {
-//   display: flex;
-//   flex-direction: row;
-//   flex-wrap: wrap;
-//   justify-content: flex-end;
-//   border: 2px solid yellow;
-// }
 
 .Chatty-Button-Main {
   display: flex;
@@ -130,79 +120,21 @@
   // border: 2px solid yellow;
 }
 
-// .Home-Button-Box {
-//   position: relative;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   border: 1px solid $mainBlack;
-//   padding: 10px 60px;
-//   cursor: pointer;
-
-//   .Home-Button {
-//     font-family: $mainFont;
-//     font-weight: 200;
-//     font-size: 1.5rem;
-//     color: $mainBlack;
-//     margin: 0;
-//     user-select: none;
-//   }
-// }
-
-
 .Chatty-Button-Box {
   position: relative;
   display: inline-flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  // border-radius: 95% 2% 95% 3% / 3% 94% 2% 97%;
   border: 1px solid $mainBlack;
   padding: 0 20px;
   cursor: pointer;
   margin: 10px 0;
-  // background: $mainOffWhite;
-  // background-clip: padding-box;
   border-radius: 3px;
-  // height: auto;
-  // width: auto;
-
-  // &:before {
-  //   content: '';
-  //   position: absolute;
-  //   top: 0; right: 0; bottom: 0; left: 0;
-  //   z-index: -1;
-  //   margin: -3px; 
-  //   border-radius: 5px;
-  //   background: linear-gradient(to right, $mainGreen, $mainPink);
-  // }
 }
 
-// .Chatty-Button-Overlay {
-//   position: absolute;
-//   top: 4px;
-//   right: -6px;
-//   background: rgba(0, 247, 227, 0.322);
-//   border-radius: 100% 0% 100% 2% / 1% 99% 1% 97%;
-//   width:101%;
-//   height: 102%;
-//   z-index: -1;
-//   transition: 0.3s ease-out;
-//   pointer-events: none;
-// }
-
 .Chatty-Button {
-  // font-family: $mainFont;
-  // font-weight: 800;
-  // font-size: 1rem;
   line-height:0;
-  // color: $mainBlack;
-  // background: rgba(0,0,0,0.0);
-  // padding: 0 12px;
-  // text-align: center;
-  // border: 3px solid $mainDark;
-  // border-radius: 10px;
-  // cursor: pointer;
   font-family: $mainFont;
   font-weight: 200;
   font-size: 1rem;
@@ -211,51 +143,10 @@
   user-select: none;
 }
 
-.Chatty-Button-Box:hover {
-
-  // .Chatty-Button-Overlay {
-  //   top: 0;
-  //   right: 0;
-  // }
-
-  // background: rgba(0, 247, 227, 0.082);
-
-
-}
-
-// .Chatty-Button-Overlay-Clicked {
-//   @extend .Chatty-Button-Overlay;
-//   top: 0;
-//   right: -1px;
-// }
-
 .Chatty-Button-Box-Clicked {
   @extend .Chatty-Button-Box;
-  // background: linear-gradient(to right, $mainGreen, $mainPink);
-  // background: rgba(0, 247, 227, 0.082);
-  // background-color: $mainOffWhite;
   cursor: default;
 }
-
-
-
-// .Chatty-Button:hover {
-//   color: $black;
-//   background: linear-gradient(to right, $mainLight 0%, $mainDark 100%);
-//   border: 3px solid $mainDark;
-// }
-
-// .Chatty-Button-Clicked {
-//   @extend .Chatty-Button;
-//   color: $black;
-//   background: linear-gradient(to right, $mainLight 0%, $mainDark 100%);
-//   border: 3px solid $mainDark;
-//   cursor: auto;
-// }
-
-// .Chatty-Button-Not-Clicked {
-//   display: none;
-// }
 
 @media only screen and (max-width: 600px) {
   // .Chatty-Button-Container {
@@ -307,48 +198,5 @@
 //   .Chatty-Display {
 //     margin: 80px 0 100px;
 //     flex: 1 0 100vw;
-//   }
-// }
-/* /////////////////////////////////////  CHATTY TYPING ANIMATION  //////////////////////////////////////*/
-
-// .ChattyTyping-Container{
-//   display: flex;
-//   justify-content: flex-start;
-//   width: 30vw;
-// }
-
-// .ChattyTyping-Box {
-//   background-color: #E6E7ED;
-//   padding: 2px 6px;
-//   border-radius: 20px;
-//   margin-top: 15px;
-// }
-
-// .dot {
-//   height: 6px;
-//   width: 6px;
-//   border-radius: 100%;
-//   display: inline-block;
-//   background-color: #B4B5B9;
-//   margin: 0 2px 3px;
-//   animation: 1.2s typing-dot ease-in-out infinite;
-// }
-
-// .dot:nth-of-type(2) {
-//   animation-delay: 0.15s;
-// }
-
-// .dot:nth-of-type(3) {
-//   animation-delay: 0.25s;
-// }
-
-// @keyframes typing-dot {
-//   15% {
-//     transform: translateY(-35%);
-//     opacity: 0.5;
-//   }
-//   30% {
-//     transform: translateY(0%);
-//     opacity: 1;
 //   }
 // }
