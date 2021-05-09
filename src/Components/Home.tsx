@@ -23,6 +23,10 @@ const Home: React.FC = () => {
     history.push('/register')
   }
 
+  function redirectToLogin() {
+    history.push('/login')
+  }
+
   return (
     <div className='Home-Container'>
       <div className='Home-Header-Box'>
@@ -37,7 +41,7 @@ const Home: React.FC = () => {
           </div>
         </div>
         <div className="Home-Login-Container">
-        <div onClick={redirectToChatty} className="Home-Login-Box">
+        <div onClick={redirectToLogin} className="Home-Login-Box">
             <h1 className="Home-Login">Login</h1>
             <IoIosArrowRoundForward color='#181718' className='Home-Login-Arrow'/>
           </div>
