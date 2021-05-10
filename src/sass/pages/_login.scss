@@ -19,6 +19,7 @@
   height: calc(100vh - 80px);
   // border: 2px solid blue;
   margin-top: 80px;
+  max-width: 1200px;
 }
 
 .Login-Message-Box {
@@ -91,10 +92,11 @@
 }
 
 .Login-Box > input {
-  width: 20vw;
+  width: 10vw;
   height: 50px;
   border: none;
   margin-bottom: 40px;
+  max-width: 200px;
 }
 
 .Label-Box {
