@@ -1,5 +1,8 @@
 .Navbar-Container {
   position: relative;
+  display: flex;
+  justify-content: center;
+  // border: 2px solid red;
 }
 
 .Navbar-Logo-Box {
@@ -7,8 +10,8 @@
   width: calc(100% - 100px);
   height: 80px;
   border-bottom: 1px solid $mainBlack;
-  margin-left: 50px;
   z-index: 4;
+  max-width: 1200px;
 }
 
 .Navbar-Logo {
@@ -36,7 +39,6 @@
   margin: 0;
   padding: 0;
   right: 0;
-  margin-right: 50px;
   // border: 2px solid green;
 }
 
@@ -48,16 +50,29 @@
 .Navbar-Slideout {
   position: fixed;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   height: 100vh;
   width: 100vw;
   background-color: $mainBlack;
   transition: 0.2s ease-in;
   z-index: 5;
   overflow-y: hidden;
-  margin-left: calc(-100vw - 50px);
+  margin-left: -200vw;
+}
+
+.Navbar-Slide-Box {
+  position: relative;
+  width: calc(100% - 100px);
+  max-width: 1200px;
+  // border: 2px solid yellow;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  max-height: 100vh;
+  margin: auto;
 }
 
 .Navbar-Slidein {
@@ -85,13 +100,16 @@
   -webkit-text-fill-color: transparent;
   cursor: pointer;
   user-select: none;
+  // border: 2px solid red;
+  width: calc(100% - 80px);
 }
 
 .Navbar-Slidein-Close{
   position: absolute;
   top: 25px;
-  right: 44px;
+  right: -5px;
   font-size: 30px;
   cursor: pointer;
   user-select: none;
+  margin-right: auto;
 }

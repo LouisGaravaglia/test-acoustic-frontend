@@ -37,17 +37,6 @@
     text-align: center;
     margin: 0;
   }
-
-  .Playlists-Selected-Title::before {
-    content: "";
-    position: absolute;
-    top: 40px;
-    background-image: url(../../images/Squiggly_black_v1.svg);
-    opacity: 0.2;
-    background-repeat: no-repeat;
-    width: calc(50% - 40px);
-    height: 100px;
-  }
 }
 
 .scrolling-wrapper {
@@ -57,7 +46,7 @@
   overflow-x: hidden;
   -webkit-overflow-scrolling: none;
   // border: 2px solid green;
-  z-index: 10;
+  // z-index: 10;
   scrollbar-width: none;
   -ms-overflow-style: none;
   /* the two items below, scroll-snaps, are for getting the slides to snap to the edges */

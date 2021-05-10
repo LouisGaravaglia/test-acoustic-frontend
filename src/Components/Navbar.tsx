@@ -16,13 +16,13 @@ const Navbar: React.FC = () => {
   }
 
   const navbarSlideinJSX = (
-    <>
+    <div className='Navbar-Slide-Box'>
       <IoClose color='#ffd3be' className='Navbar-Slidein-Close' onClick={handleNavbarClick}/>
       <Link className='Navbar-Slidein-Link' to='/' onClick={handleNavbarClick}>Home</Link>
       <Link className='Navbar-Slidein-Link' to='/register' onClick={handleNavbarClick}>Register</Link>
       <Link className='Navbar-Slidein-Link' to='/login' onClick={handleNavbarClick}>Login</Link>
       <Link className='Navbar-Slidein-Link' to='/playlists' onClick={handleNavbarClick}>Playlists</Link>
-    </>
+    </div>
   )
 
 ////////////////////////////////////////////////////  RETURN  ////////////////////////////////////////////////////
@@ -41,10 +41,11 @@ const Navbar: React.FC = () => {
       }
       <div className='Navbar-Logo-Box'>
         <div className='Navbar-Logo' onClick={handleLogoClick}></div>
-      </div>
-      <div className='Navbar-Link-Box'>
+        <div className='Navbar-Link-Box'>
         <FaBars color='#181718' className='Navbar-Hamburger' onClick={handleNavbarClick}/>
       </div>
+      </div>
+
     </div>
   );
 };
