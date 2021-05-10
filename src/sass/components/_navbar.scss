@@ -121,3 +121,22 @@
     margin: 20px 0 20px 20px;
   }
 }
+
+@media only screen and (max-height: 665px) {
+  .Navbar-Slidein-Link {
+    font-size: 2rem;
+    margin: 20px 0 20px 20px;
+  }
+}
+
+@media only screen and (max-height: 335px) {
+  .Navbar-Slidein-Link {
+    font-size: 1rem;
+    margin: 10px 0 10px 10px;
+  }
+
+  .Navbar-Slidein-Close{
+    font-size: 20px;
+  }
+}
+
