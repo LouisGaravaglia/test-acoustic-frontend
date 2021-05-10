@@ -7,7 +7,8 @@
   background-size: cover;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+
 }
 
 .Login-Content {
@@ -15,6 +16,9 @@
   justify-content: center;
   align-items: center;
   width: 80vw;
+  height: calc(100vh - 80px);
+  // border: 2px solid blue;
+  margin-top: 80px;
 }
 
 .Login-Message-Box {
@@ -126,8 +130,76 @@
 
 ////////////////////////////////////////////////////  MEDIA QUERIES  ////////////////////////////////////////////////////
 
-@media only screen and (max-width: 745px) {
+@media only screen and (max-width: 1000px) {
+  .Login-Message-Box {
+    width: calc(50vw - 100px);
+    height: 50vh;
+    padding: 0 50px;
+    // border: 2px solid blue;
+    border-right: 1px solid $mainBlack;
+    display: flex;
+    align-items: center;
+  }
+  
+  .Login-Message {
+    font-family: $serifFont;
+    font-size: 2rem;
+    font-weight: 400;
+  }
+}
 
+@media only screen and (max-width: 775px) {
+
+  .Login-Message {
+    font-size: 1rem;
+  }
+
+  .Login-Button-Box {
+    padding: 5px 30px;
+    margin-top: 20px;
+  }
+  
+  .Login-Button {
+      font-size: 1rem;
+  }
+  
+  .Login-Arrow {
+    font-size: 1rem;
+    right: 10px;
+  }
+  
+  .Login-Button-Box:hover {
+    .Login-Arrow {
+      right: 8px;
+    }
+  }
 }
 
 
+@media only screen and (max-width: 695px) {
+
+  .Login-Message-Box {
+    display: none;
+  }
+
+  .Login-Box > input {
+    margin-bottom: 15px;
+  }
+}
+
+
+@media only screen and (max-width: 445px) {
+
+  .Login-Box > input {
+    width: 50vw;
+  }
+}
+
+
+@media only screen and (max-height: 400px) {
+
+  .Login-Box > input {
+    height: 30px;
+    margin-bottom: 10px;
+  }
+}
