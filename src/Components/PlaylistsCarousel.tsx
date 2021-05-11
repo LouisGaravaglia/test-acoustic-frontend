@@ -70,14 +70,16 @@ function PlaylistsCarousel({playlist, index, updateSelectedPlaylistIndex, select
   }
 
   return (
-    <div className='Playlists-Selected-Carousel-Content' ref={playlistRef}>
-      <div className='Playlists-Artwork-Box'>
-        <img className='Playlists-Artwork' src={playlistImgPlaceholders[index]} alt=''/>
-      </div>
-      <div className='Playlists-Tracks-Container'>
-          {tracks.map((track: any, index: number) => 
-            <PlaylistsTrack track={track} key={index} index={index} playlistLength={tracks.length} selectedTrack={selectedTrack} setSelectedTrack={setSelectedTrack} selectedPlaylistIndex={selectedPlaylistIndex}/>
-          )}
+    <div className='Playlists-Carousel-Container' ref={playlistRef}>
+      <div className="Playlists-Carousel-Box">
+        <div className='Playlists-Artwork-Box'>
+          <img className='Playlists-Artwork' src={playlistImgPlaceholders[index]} alt=''/>
+        </div>
+        <div className='Playlists-Tracks-Container'>
+            {tracks.map((track: any, index: number) => 
+              <PlaylistsTrack track={track} key={index} index={index} playlistLength={tracks.length} selectedTrack={selectedTrack} setSelectedTrack={setSelectedTrack} selectedPlaylistIndex={selectedPlaylistIndex}/>
+            )}
+        </div>
       </div>
     </div>
   );

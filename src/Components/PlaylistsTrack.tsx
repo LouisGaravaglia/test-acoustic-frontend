@@ -31,17 +31,13 @@ function PlaylistsTrack({track, index, selectedTrack, setSelectedTrack, selected
 
   if (selectedTrack === index){
     styles = { 
-      top: `${(index * 60)}px`,
       padding: '40px',
-      left: '-40px',
       width: 'calc(100% - 120px)',
       cursor: 'default',
       border: '1px solid #181718',
     };
-  } else if (index > selectedTrack) {
-    styles = { top: `${(index * 60) + 80}px`};
   } else {
-    styles = { top: `${(index * 60)}px`};
+    styles = {};
   }
 
   let playTrackControls: JSX.Element;

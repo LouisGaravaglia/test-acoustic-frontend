@@ -14,7 +14,7 @@
 }
 
 .Playlists-Container {
-  border: 2px solid red;
+  // border: 2px solid red;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -117,8 +117,11 @@
     }
 }
 
-.Playlists-Selected-Carousel-Content {
-  flex: 0 0 100vw;
+///////////////////////////////////  PLAYLISTS CAROUSEL  //////////////////////////////////
+
+
+.Playlists-Carousel-Container {
+  flex: 0 0 100%;
   // border: 2px solid blue;
   scroll-snap-align: start;
   margin: 0;
@@ -128,24 +131,27 @@
   flex-wrap: wrap;
   justify-content: center;
   padding-bottom: 200px;
+  // max-width: 1200px;
 }
 
-.Playlists-Selected-Content {
-  flex: 0 0 100vw;
+.Playlists-Carousel-Box {
+  width: calc(100% - 100px);
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  padding-bottom: 200px;
+  max-width: 1200px;
+  // border: 2px solid green;
+  flex-wrap: nowrap;
 }
 
-
-
+///////////////////////////////////  TRACK ARTWORK  //////////////////////////////////
 
 .Playlists-Artwork-Box {
-  flex: 0 0 50vw;
+  flex: 0 0 50%;
   display: flex;
   justify-content: flex-end;
+  // max-width: 300px;
 
   .Playlists-Artwork {
     margin-right: 40px;
@@ -155,22 +161,24 @@
   }
 }
 
-
-
+///////////////////////////////////  INDIVIDUAL TRACKS FOR PLAYLIST  //////////////////////////////////
 
 .Playlists-Tracks-Container {
   position: relative;
-  flex: 1 0 50vw;
+  flex: 0 0 50%;
   // border: 2px solid yellow;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
 
   .Playlists-Track-Container {
-    position: absolute;
-    top: 80px;
+    width: calc(100% - 80px);
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     margin: 0 40px 20px 40px;
-    width: calc(100% - 80px);
     // border: 2px solid pink;
 
     .Playlists-Track-Box {
