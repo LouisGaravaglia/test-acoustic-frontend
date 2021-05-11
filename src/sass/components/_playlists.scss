@@ -1,15 +1,26 @@
-.Playlists-Container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  // border: 2px solid red;
+.Playlists-Background {
   height: 100%;
+  width: 100%;
   background: url(../../images/my_Gradient.png) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.Playlists-Container {
+  border: 2px solid red;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
 }
 
 ///////////////////////////////////  TITLE / HEADER  //////////////////////////////////

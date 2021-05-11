@@ -35,19 +35,21 @@ function PlaylistsContainer(): JSX.Element {
   }
 
   return (
-    <div className='Playlists-Container' ref={containerRef}>
-      <PlaylistsCarouselContainer refArray={refArray} PlaylistsContainerRef={PlaylistsContainerRef} reversePlaylists={reversePlaylists}/>
-      <div className="Playlists-Bottom-Container">
-        <div className="Playlists-Sort-Container">
-          <p className="Playlists-Sort-Header">Sort all of your playlists by date.</p>
-          <div className="Playlists-Sort-Box" onClick={() => setReversePlaylists(state => !state)}>
-            <p>Sort
-            {reversePlaylists ? <IoIosArrowRoundDown color='#181718' className='Playlists-Sort-Arrow-Down'/> : <IoIosArrowRoundUp color='#181718' className='Playlists-Sort-Arrow-Up'/>}
-            </p>
+    <div className='Playlists-Background' ref={containerRef}>
+      <div className='Playlists-Container'>
+        <PlaylistsCarouselContainer refArray={refArray} PlaylistsContainerRef={PlaylistsContainerRef} reversePlaylists={reversePlaylists}/>
+        <div className="Playlists-Bottom-Container">
+          <div className="Playlists-Sort-Container">
+            <p className="Playlists-Sort-Header">Sort all of your playlists by date.</p>
+            <div className="Playlists-Sort-Box" onClick={() => setReversePlaylists(state => !state)}>
+              <p>Sort
+              {reversePlaylists ? <IoIosArrowRoundDown color='#181718' className='Playlists-Sort-Arrow-Down'/> : <IoIosArrowRoundUp color='#181718' className='Playlists-Sort-Arrow-Up'/>}
+              </p>
+            </div>
           </div>
-        </div>
-        <div className="Playlists-Playlists-All-Container">
-          {playlistsJSX}
+          <div className="Playlists-Playlists-All-Container">
+            {playlistsJSX}
+          </div>
         </div>
       </div>
     </div>
