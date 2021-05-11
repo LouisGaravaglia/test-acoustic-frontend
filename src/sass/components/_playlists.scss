@@ -15,12 +15,14 @@
 
 .Playlists-Container {
   // border: 2px solid red;
+  width: 100vw;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   max-width: 1200px;
+  overflow: hidden;
 }
 
 ///////////////////////////////////  TITLE / HEADER  //////////////////////////////////

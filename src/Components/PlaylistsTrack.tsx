@@ -32,7 +32,7 @@ function PlaylistsTrack({track, index, selectedTrack, setSelectedTrack, selected
   if (selectedTrack === index){
     styles = { 
       padding: '40px',
-      width: 'calc(100% - 120px)',
+      width: 'calc(100% - 122px)',
       cursor: 'default',
       border: '1px solid #181718',
     };
