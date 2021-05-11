@@ -33,8 +33,8 @@ function PlaylistsTitleScroll({playlist, index, selectedPlaylistIndex, handleScr
     }, [titleRef, selectedPlaylistIndex])
 
   return (
-    <div className={isVisible ? 'Playlists-Featured-Title' : 'card'} ref={titleRef} >
-      <h2>{playlist.name}</h2>
+    <div className={isVisible ? 'Playlists-Selected-Title' : 'Playlists-Unselected-Title'} ref={titleRef} >
+      <h2 className={isVisible ? 'Playlists-Selected-Title-Text' : 'Playlists-Unselected-Title-Text'}>{playlist.name}</h2>
     </div>
   );
 };

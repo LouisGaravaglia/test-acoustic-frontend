@@ -1,15 +1,25 @@
-import React, {useState, useRef, createRef} from 'react';
+import React, {useState, useRef, createRef, useEffect} from 'react';
 import PlaylistsTitleScroll from './PlaylistsTitleScroll';
+import useViewport from '../Hooks/useViewport';
 let playlists =  require('../fakeData/playlist.json');
 
 interface Props {
   selectedPlaylistIndex: number
-  reversePlaylists: boolean
+  selectedPlaylistTitle: string
 }
-function PlaylistsTitleScrollContainer({selectedPlaylistIndex, reversePlaylists}: Props): JSX.Element {
-  const [parentFinishedMounting, setParentFinishedMounting] = useState<boolean>(false);
+function PlaylistsTitleScrollContainer({selectedPlaylistIndex, selectedPlaylistTitle}: Props): JSX.Element {
   const wrapperRef = useRef<any | null>(null);
   const titleRefArray = playlists.map((playlist:any) => createRef());
+  const [largeScreenMode, setLargeScreenMode] = useState<boolean>(true);
+  const {viewportWidth}  = useViewport();
+
+  useEffect(() => {
+    if (viewportWidth < 883) {
+      setLargeScreenMode(false);      
+    } else {
+      setLargeScreenMode(true);
+    }
+  }, [viewportWidth]);
 
   function handleScrollToSelectedTitle(titleRef: any | null) {
     console.log('handleScroll', titleRef);
@@ -20,12 +30,30 @@ function PlaylistsTitleScrollContainer({selectedPlaylistIndex, reversePlaylists}
     }
   }
 
-  return (
-    <div className="scrolling-wrapper" ref={wrapperRef}>
-      <div className='card' ><h2 ></h2></div>
-        {playlists.map((playlist: any, index: any) => <PlaylistsTitleScroll key={index} index={index} titleRef={titleRefArray[index]} playlist={playlist} selectedPlaylistIndex={selectedPlaylistIndex} handleScrollToSelectedTitle={handleScrollToSelectedTitle}/>)}
-      <div className='card' ><h2 ></h2></div>
+  let titleDisplayJSX;
+
+  //ONLY CREATE A SLIDING TITLE UX/UI FOR LARGE SCREENS
+  if (largeScreenMode) {
+    titleDisplayJSX = (
+      <div className="scrolling-wrapper" ref={wrapperRef}>
+        <div className='Playlists-Unselected-Title' ><h2 ></h2></div>
+          {playlists.map((playlist: any, index: any) => <PlaylistsTitleScroll key={index} index={index} titleRef={titleRefArray[index]} playlist={playlist} selectedPlaylistIndex={selectedPlaylistIndex} handleScrollToSelectedTitle={handleScrollToSelectedTitle}/>)}
+        <div className='Playlists-Unselected-Title' ><h2 ></h2></div>
     </div>
+    )
+  } else {
+    titleDisplayJSX = (
+      <div>
+        <p className="Playlists-Small-Screen-Title">{selectedPlaylistTitle}</p>
+      </div>
+    )
+  }
+
+
+  return (
+    <>
+      {titleDisplayJSX}
+    </>
   );
 };
 

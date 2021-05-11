@@ -36,20 +36,21 @@
   margin: 100px 0 20px;
   // border: 2px solid orange;
 
-  .Playlists-Selected-Header-Filler {
-    flex: 0 0 50vw;
-    width: 50vw;
-    // border: 2px solid black;
-  }
+  // .Playlists-Selected-Header-Filler {
+  //   flex: 0 0 50vw;
+  //   width: 50vw;
+  //   // border: 2px solid black;
+  // }
 
-  .Playlists-Selected-Title {
-    font-family: $mainFont;
-    font-weight: 900;
-    font-size: 3rem;
-    color: rgba(37, 37, 37, 0.205);
-    text-align: center;
-    margin: 0;
-  }
+  // .Playlists-Selected-Title {
+  //   font-family: $mainFont;
+  //   font-weight: 900;
+  //   font-size: 3rem;
+  //   color: rgba(37, 37, 37, 0.205);
+  //   text-align: center;
+  //   margin: 0;
+  //   border: 2px solid green;
+  // }
 }
 
 .scrolling-wrapper {
@@ -70,35 +71,41 @@
     display: none;
   }
 
-  .card {
+  .Playlists-Unselected-Title {
     flex: 0 0 300px;
     // border: 2px solid blue;
     display: flex;
     justify-content: center;
     align-items: center;
     scroll-snap-align: start;
-    font-family: $mainFont;
-    font-weight: 100;
-    font-size: 1.2rem;
-    color: rgba(0, 0, 0, 0.089);
     margin: 0;
     scroll-snap-stop: always;
   }
+
+  .Playlists-Unselected-Title-Text {
+    font-family: $mainFont;
+    font-weight: 800;
+    font-size: 2rem;
+    color: rgba(0, 0, 0, 0.089);
+  }
 }
 
-.Playlists-Featured-Title {
+.Playlists-Selected-Title {
   flex: 0 0 300px;
-  // border: 2px solid blue;
+  // border: 2px solid red;
   display: flex;
   justify-content: center;
   align-items: center;
   scroll-snap-align: start;
-  font-family: $mainFont;
-  font-size: 2.2rem;
-  font-weight: 100;
-  color: #181718;
   margin: 0;
   scroll-snap-stop: always;
+}
+
+.Playlists-Selected-Title-Text {
+  font-family: $mainFont;
+  font-size: 3rem;
+  font-weight: 800;
+  color: #181718;
 }
 
 .Playlists-Carousel-Content {
@@ -117,6 +124,13 @@
     &::-webkit-scrollbar {
       display: none;
     }
+}
+
+.Playlists-Small-Screen-Title {
+  font-family: $mainFont;
+  font-size: 3rem;
+  font-weight: 800;
+  color: #181718;
 }
 
 ///////////////////////////////////  PLAYLISTS CAROUSEL  //////////////////////////////////
@@ -345,3 +359,23 @@
   padding: 0;
   user-select: none;
 }
+
+// @media only screen and (max-width: 883px) {
+
+
+//   .Playlists-Unselected-Title-Text {
+//     font-family: $mainFont;
+//     font-weight: 800;
+//     font-size: 4rem;
+//     color: rgba(0, 0, 0, 0.089);
+//   }
+
+
+
+//   .Playlists-Selected-Title-Text {
+//     font-family: $mainFont;
+//     font-size: 2rem;
+//     font-weight: 800;
+//     color: #181718;
+//   }
+// }

@@ -37,7 +37,7 @@ function PlaylistsContainer(): JSX.Element {
   return (
     <div className='Playlists-Background' ref={containerRef}>
       <div className='Playlists-Container'>
-        <PlaylistsCarouselContainer refArray={refArray} PlaylistsContainerRef={PlaylistsContainerRef} reversePlaylists={reversePlaylists}/>
+        <PlaylistsCarouselContainer refArray={refArray} PlaylistsContainerRef={PlaylistsContainerRef}/>
         <div className="Playlists-Bottom-Container">
           <div className="Playlists-Sort-Container">
             <p className="Playlists-Sort-Header">Sort all of your playlists by date.</p>
