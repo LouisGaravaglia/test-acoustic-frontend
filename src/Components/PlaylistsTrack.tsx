@@ -8,9 +8,10 @@ interface Props {
   setSelectedTrack: (index: number) => void
   selectedPlaylistIndex: number
   playlistLength: number
+  largeScreenMode: boolean
 }
 
-function PlaylistsTrack({track, index, selectedTrack, setSelectedTrack, selectedPlaylistIndex, playlistLength}: Props): JSX.Element {
+function PlaylistsTrack({largeScreenMode, track, index, selectedTrack, setSelectedTrack, selectedPlaylistIndex, playlistLength}: Props): JSX.Element {
   const [playingTrack, setPlayingTrack] = useState(true);
 
   useEffect(() => {
@@ -29,10 +30,17 @@ function PlaylistsTrack({track, index, selectedTrack, setSelectedTrack, selected
 
   let styles: React.CSSProperties;
 
-  if (selectedTrack === index){
+  if (selectedTrack === index && largeScreenMode) {
     styles = { 
       padding: '40px',
       width: 'calc(100% - 122px)',
+      cursor: 'default',
+      border: '1px solid #181718',
+    };
+  } else if (selectedTrack === index && !largeScreenMode) {
+    styles = { 
+      padding: '40px',
+      width: 'calc(100% - 80px)',
       cursor: 'default',
       border: '1px solid #181718',
     };

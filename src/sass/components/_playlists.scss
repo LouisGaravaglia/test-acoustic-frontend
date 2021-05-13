@@ -111,7 +111,7 @@
 .Playlists-Carousel-Content {
     flex: 0 0 100vw;
     display: flex;
-    flex-wrap: nowrap;
+    // flex-wrap: nowrap;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     // border: 2px solid green;
@@ -154,7 +154,6 @@
   width: calc(100% - 100px);
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   justify-content: center;
   max-width: 1200px;
   // border: 2px solid green;
@@ -167,6 +166,7 @@
   flex: 0 0 50%;
   display: flex;
   justify-content: flex-end;
+  // margin-left: 50px;
   // max-width: 300px;
 
   .Playlists-Artwork {
@@ -187,6 +187,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  // margin-right: 50px;
 
 
   .Playlists-Track-Container {
@@ -360,22 +361,70 @@
   user-select: none;
 }
 
-// @media only screen and (max-width: 883px) {
+@media only screen and (max-width: 883px) {
+
+  .Playlists-Carousel-Box {
+    flex-wrap: wrap;
+  }
+
+  .Playlists-Tracks-Container {
+    flex: 0 0 100%;
+
+    .Playlists-Track-Container {
+      margin: 0 0 20px 0;
+    }
+  }
+
+  .Playlists-Carousel-Container {
+    padding-bottom: 50px;
+  }
+  
+
+  .Playlists-Playlists-All-Container {
+    width: 100%;
+    border-left: 1px solid $mainBlack;
+    border-right: 1px solid $mainBlack;
+    border-top: 1px solid $mainBlack;
+    margin-top: 30px;
+  }
+
+  .Playlists-Bottom-Container {
+    flex-wrap: wrap;
+  }
+
+  .Playlists-Sort-Container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .Playlists-Sort-Header {
+    margin: 20px 0;
+    width: 100%;
+    text-align: center;
+  }
 
 
-//   .Playlists-Unselected-Title-Text {
-//     font-family: $mainFont;
-//     font-weight: 800;
-//     font-size: 4rem;
-//     color: rgba(0, 0, 0, 0.089);
-//   }
+  .Playlists-Sort-Box {
+    border: 1px solid $mainBlack;
+    width: 200px;
+    height: 50px;
+    margin: auto;
+
+  }
 
 
+}
+
+// @media only screen and (max-width: 500px) {
 
 //   .Playlists-Selected-Title-Text {
 //     font-family: $mainFont;
-//     font-size: 2rem;
+//     font-size: 1rem;
 //     font-weight: 800;
 //     color: #181718;
 //   }
+  
 // }

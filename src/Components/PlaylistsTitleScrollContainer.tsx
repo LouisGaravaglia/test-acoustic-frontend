@@ -1,25 +1,15 @@
 import React, {useState, useRef, createRef, useEffect} from 'react';
 import PlaylistsTitleScroll from './PlaylistsTitleScroll';
-import useViewport from '../Hooks/useViewport';
 let playlists =  require('../fakeData/playlist.json');
 
 interface Props {
   selectedPlaylistIndex: number
   selectedPlaylistTitle: string
+  largeScreenMode: boolean
 }
-function PlaylistsTitleScrollContainer({selectedPlaylistIndex, selectedPlaylistTitle}: Props): JSX.Element {
+function PlaylistsTitleScrollContainer({largeScreenMode, selectedPlaylistIndex, selectedPlaylistTitle}: Props): JSX.Element {
   const wrapperRef = useRef<any | null>(null);
   const titleRefArray = playlists.map((playlist:any) => createRef());
-  const [largeScreenMode, setLargeScreenMode] = useState<boolean>(true);
-  const {viewportWidth}  = useViewport();
-
-  useEffect(() => {
-    if (viewportWidth < 883) {
-      setLargeScreenMode(false);      
-    } else {
-      setLargeScreenMode(true);
-    }
-  }, [viewportWidth]);
 
   function handleScrollToSelectedTitle(titleRef: any | null) {
     console.log('handleScroll', titleRef);

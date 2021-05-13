@@ -50,9 +50,10 @@ interface Props {
   updateSelectedPlaylistIndex: (selectedPlaylist: number) => void
   selectedPlaylistIndex: number
   playlistRef: any | null
+  largeScreenMode: boolean
 }
 
-function PlaylistsCarousel({playlist, index, updateSelectedPlaylistIndex, selectedPlaylistIndex, playlistRef}: Props): JSX.Element {
+function PlaylistsCarousel({largeScreenMode, playlist, index, updateSelectedPlaylistIndex, selectedPlaylistIndex, playlistRef}: Props): JSX.Element {
   const [selectedTrack, setSelectedTrack] = useState<number>(0);
   const playlistImgPlaceholders = [PLACEHOLDER_IMG_0, PLACEHOLDER_IMG_1, PLACEHOLDER_IMG_2, PLACEHOLDER_IMG_3, PLACEHOLDER_IMG_4, PLACEHOLDER_IMG_5];
   const entry = useElementOnScreen(playlistRef, {
@@ -69,15 +70,27 @@ function PlaylistsCarousel({playlist, index, updateSelectedPlaylistIndex, select
     setSelectedTrack(trackIndex);
   }
 
+  let artworkJSX;
+
+  if (largeScreenMode) {
+    artworkJSX = (
+      <div className='Playlists-Artwork-Box'>
+        <img className='Playlists-Artwork' src={playlistImgPlaceholders[index]} alt=''/>
+      </div>
+    )
+  } else {
+    artworkJSX = (
+      <></>
+    )
+  }
+
   return (
     <div className='Playlists-Carousel-Container' ref={playlistRef}>
       <div className="Playlists-Carousel-Box">
-        <div className='Playlists-Artwork-Box'>
-          <img className='Playlists-Artwork' src={playlistImgPlaceholders[index]} alt=''/>
-        </div>
+        {artworkJSX}
         <div className='Playlists-Tracks-Container'>
             {tracks.map((track: any, index: number) => 
-              <PlaylistsTrack track={track} key={index} index={index} playlistLength={tracks.length} selectedTrack={selectedTrack} setSelectedTrack={setSelectedTrack} selectedPlaylistIndex={selectedPlaylistIndex}/>
+              <PlaylistsTrack largeScreenMode={largeScreenMode} track={track} key={index} index={index} playlistLength={tracks.length} selectedTrack={selectedTrack} setSelectedTrack={setSelectedTrack} selectedPlaylistIndex={selectedPlaylistIndex}/>
             )}
         </div>
       </div>
