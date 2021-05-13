@@ -57,13 +57,13 @@ function PlaylistsCarousel({largeScreenMode, playlist, index, updateSelectedPlay
   const [selectedTrack, setSelectedTrack] = useState<number>(0);
   const playlistImgPlaceholders = [PLACEHOLDER_IMG_0, PLACEHOLDER_IMG_1, PLACEHOLDER_IMG_2, PLACEHOLDER_IMG_3, PLACEHOLDER_IMG_4, PLACEHOLDER_IMG_5];
   const entry = useElementOnScreen(playlistRef, {
-    threshold: 0.8
+    threshold: 0.4
   });
   const isVisible = !!entry?.isIntersecting;
   let tracks = playlist.tracks.items;
 
   useEffect(() => {
-    updateSelectedPlaylistIndex(index)
+    if (isVisible) updateSelectedPlaylistIndex(index);
   }, [isVisible]);
 
   function updateSelectedTrack(trackIndex: number) {

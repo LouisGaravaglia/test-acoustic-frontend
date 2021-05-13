@@ -1,4 +1,4 @@
-import React, {useState, useRef, createRef, useEffect} from 'react';
+import React, {useRef, createRef} from 'react';
 import PlaylistsTitleScroll from './PlaylistsTitleScroll';
 let playlists =  require('../fakeData/playlist.json');
 
@@ -12,11 +12,9 @@ function PlaylistsTitleScrollContainer({largeScreenMode, selectedPlaylistIndex, 
   const titleRefArray = playlists.map((playlist:any) => createRef());
 
   function handleScrollToSelectedTitle(titleRef: any | null) {
-    console.log('handleScroll', titleRef);
     if (titleRef.current !== null) {
-      console.log('offsetLeft', titleRef.current.offsetLeft);
       //TODO: MAKE MEDIA QUERY THAT LOWER'S THE AMOUNT SUBTRACTING FROM TITLEREF OFFSET VALUE
-      wrapperRef.current.scroll({left: titleRef.current.offsetLeft - 300, behavior: 'smooth'});
+      wrapperRef.current.scroll({left: titleRef.current.offsetLeft - 400, behavior: 'smooth'});
     }
   }
 
