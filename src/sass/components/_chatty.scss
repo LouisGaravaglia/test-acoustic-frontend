@@ -3,6 +3,13 @@
 .Chatty-Container {
   position: relative;
   width: 100vw;
+  height: 100vh;
+  // border: 2px solid yellow;
+  background: url(../../images/my_Gradient.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .Chatty {
@@ -23,7 +30,7 @@
 }
 
 .Chatty-Right-Filler {
-  @extend .Chatty-Left-Filler;
+  flex: 0 1 30vw;
   // border: solid 2px pink
 }
 
@@ -54,12 +61,13 @@
 
 .Chatty-Message {
   font-family: $mainFont;
-  font-weight: 500;
+  font-weight: 200;
   font-size: 1rem;
-  color: $whiteFont;
+  color: $mainBlack;
   text-align: left;
   margin: 10px 180px 10px 0;
   cursor: default;
+  user-select: none;
 }
 
 .Chatty-Message-Black {
@@ -100,117 +108,95 @@
 
 .Chatty-Button-Main {
   width: 100%;
-  // z-index: 5;
+  position: relative;
+  z-index: 9;
 }
 
-.Chatty-Button-Container {
+.Chatty-Button-Main {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-end;
+  // border: 2px solid yellow;
 }
 
 .Chatty-Button-Box {
-  @extend .Chatty-Button-Container;
-  flex: 0 0 100%;
-  margin: 10px 0;
-  height: auto;
-}
-
-.Chatty-Button{
-  font-family: $mainFont;
-  font-weight: 800;
-  font-size: 1rem;
-  line-height:0;
-  color: $whiteFont;
-  background: rgba(0,0,0,0.0);
-  padding: 0 12px;
-  text-align: center;
-  border: 3px solid $mainDark;
-  border-radius: 10px;
+  position: relative;
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  border: 1px solid $mainBlack;
+  padding: 0 20px;
   cursor: pointer;
+  margin: 10px 0;
+  border-radius: 3px;
 }
 
-.Chatty-Button:hover {
-  color: $black;
-  background: linear-gradient(to right, $mainLight 0%, $mainDark 100%);
-  border: 3px solid $mainDark;
+.Chatty-Button {
+  line-height:0;
+  font-family: $mainFont;
+  font-weight: 200;
+  font-size: 1rem;
+  color: $mainBlack;
+  margin: 0;
+  user-select: none;
 }
 
-.Chatty-Button-Clicked {
-  @extend .Chatty-Button;
-  color: $black;
-  background: linear-gradient(to right, $mainLight 0%, $mainDark 100%);
-  border: 3px solid $mainDark;
-  cursor: auto;
-}
-
-.Chatty-Button-Not-Clicked {
-  display: none;
+.Chatty-Button-Box-Clicked {
+  @extend .Chatty-Button-Box;
+  cursor: default;
 }
 
 @media only screen and (max-width: 600px) {
-  .Chatty-Button-Container {
-    margin-right: 50px;
+  // .Chatty-Button-Container {
+  //   margin-right: 50px;
+  // }
+
+  .Chatty-Button-Box {
+    margin: 10px 50px 10px 0px;
   }
+
 }
 
 @media only screen and (max-width: 400px) {
-  .Chatty-Button-Container {
-    margin-right: 10px;
-  }
+  // .Chatty-Button-Container {
+  //   margin-right: 10px;
+  // }
+
+  // .Chatty-Button-Box {
+  //   max-width: 250px;
+  //   margin: 10px 10px 10px 0px;
+  // };
+
+  // .Chatty-Button {
+  //   line-height: normal;
+  // }
 
   .Chatty-Button-Box {
-    max-width: 250px;
     margin: 10px 10px 10px 0px;
-  };
-
-  .Chatty-Button {
-    line-height: normal;
   }
 
 }
 
-/* /////////////////////////////////////  CHATTY TYPING ANIMATION  //////////////////////////////////////*/
-
-// .ChattyTyping-Container{
-//   display: flex;
-//   justify-content: flex-start;
-//   width: 30vw;
-// }
-
-// .ChattyTyping-Box {
-//   background-color: #E6E7ED;
-//   padding: 2px 6px;
-//   border-radius: 20px;
-//   margin-top: 15px;
-// }
-
-// .dot {
-//   height: 6px;
-//   width: 6px;
-//   border-radius: 100%;
-//   display: inline-block;
-//   background-color: #B4B5B9;
-//   margin: 0 2px 3px;
-//   animation: 1.2s typing-dot ease-in-out infinite;
-// }
-
-// .dot:nth-of-type(2) {
-//   animation-delay: 0.15s;
-// }
-
-// .dot:nth-of-type(3) {
-//   animation-delay: 0.25s;
-// }
-
-// @keyframes typing-dot {
-//   15% {
-//     transform: translateY(-35%);
-//     opacity: 0.5;
+// @media only screen and (max-width: 600px) {
+//   .Chatty-Message {
+//     margin: 10px 120px 10px 50px;
 //   }
-//   30% {
-//     transform: translateY(0%);
-//     opacity: 1;
+
+//   .Chatty-Display {
+//     margin: 80px 0 100px;
+//     flex: 1 0 100vw;
+//   }
+// }
+
+// @media only screen and (max-width: 400px) {
+//   .Chatty-Message {
+//     margin: 10px 60px 10px 10px;
+//   }
+
+//   .Chatty-Display {
+//     margin: 80px 0 100px;
+//     flex: 1 0 100vw;
 //   }
 // }

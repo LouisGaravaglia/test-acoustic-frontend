@@ -8,8 +8,8 @@ interface Props {
 function ButtonsPast({buttonText}: Props) {
 
   return (
-    <div className='Chatty-Button-Container'>
-      <div className='Chatty-Button-Box'><button className='Chatty-Button Chatty-Button-Clicked'><p>{buttonText}</p></button></div>
+    <div className='Chatty-Button-Main'>
+      <div className='Chatty-Button-Box-Clicked'><p className='Chatty-Button'><p>{buttonText}</p></p></div>
     </div>
   );
 };

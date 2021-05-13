@@ -14,7 +14,7 @@ function DisplayedSets() {
 
   const priorToSecondButtton = [
     <MessagesPast key={initialMessages.id} messages={initialMessages.messages} />,
-    <ButtonsPast key={'b1'} buttonText={`What if I don't have Spotify?`}/>,
+    <ButtonsPast key={'b1'} buttonText={`Do I have to?`}/>,
     <MessagesPast key={whatIfNoSpotify.id} messages={whatIfNoSpotify.messages} />,
     <ButtonsPast key={'b2'} buttonText={'Log into Spotify'}/>,
   ];
@@ -28,7 +28,7 @@ function DisplayedSets() {
 
   const priorToSecondButtonSecondAttempt = [
     <MessagesPast key={initialMessages.id} messages={initialMessages.messages} />,
-    <ButtonsPast key={'b1'} buttonText={`What if I don't have Spotify?`}/>,
+    <ButtonsPast key={'b1'} buttonText={`Do I have to?`}/>,
     <MessagesPast key={whatIfNoSpotify.id} messages={whatIfNoSpotify.messages} />,
     <ButtonsPast key={'b2'} buttonText={'Log into Spotify'}/>,
     <MessagesPast key={spotifyAccountError.id} messages={spotifyAccountError.messages} />,

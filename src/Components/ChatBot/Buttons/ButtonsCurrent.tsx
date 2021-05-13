@@ -8,7 +8,7 @@ interface Props {
 function ButtonsCurrent({buttons, scrollToBottomRef}: Props): JSX.Element {
 
   return (
-    <div className='Chatty-Button-Container' ref={scrollToBottomRef}>
+    <div ref={scrollToBottomRef}>
       {buttons && buttons.map((item, index) => <div key={index} className='Chatty-Button-Main'>{item}</div>)}
     </div>
   );

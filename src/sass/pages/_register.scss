@@ -1,78 +1,87 @@
 .Register-Container {
   position: fixed;
+  display: flex;
   bottom: 0;
-  left: 50%;
-  transform: translate(-50%, 0);
+  left: 0;
   z-index: 3;
+  width: 100%;
+  // border: 2px solid blue;
+  margin-bottom: 40px;
 }
 
 .Register-Form {
   display: flex;
+  flex: 0 0 100%;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding-top: 100px;
 }
 
 .Register-Box {
   display: flex;
   justify-content: center;
-  flex: 1 0 85vw;
   // border: 2px solid peachpuff;
-  // background-color: $black;
-  padding: 30px 0 30px 0;
-  // box-shadow: 0 0 5px 10px $black;
-  z-index: 4;
+  padding: 30px 0;
+  position: relative;
+  z-index: 80;
 }
 
-.Register-Box > label{
-  color: $whiteFont;
-  margin-bottom: 10px;
-  font-family: $mainFont;
-  font-weight: 400;
-  font-size: 1.3rem;
-}
-
-.Register-Box > input {
+.Register-Form-Input {
   width: 20vw;
+  min-width: 20vw;
+  max-width: 20vw;
   height: 35px;
   border: none;
-  margin-bottom: 40px;
-}
-
-.Register-Form > button {
-  font-family: $mainFont;
-  font-weight: 900;
-  font-size: 2rem;
-  color: $black;
-  background: linear-gradient(to right, $mainLight 0%, $mainDark 100%);
-  padding: 5px 30px;
-  margin: 0 20px;
-  text-align: center;
-  cursor: pointer;
-  border: none;
+  position: relative;
+  // border: 1px solid black;
 }
 
 #RegisterVal {
   font-family: $mainFont;
-  font-weight: 500;
+  font-weight: 200;
   font-size: 1rem;
-  padding-left: 25px;
+  color: $mainBlack;
+  padding-left: 10px;
   outline:none;
   padding-right: 60px;
+  background-color: rgba(0, 0, 0, 0);
+  border-bottom: 1px solid $mainBlack;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgba(0, 0, 0, 0.479);
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: rgba(0, 0, 0, 0.479);
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: rgba(0, 0, 0, 0.479);
 }
 
 .Register-Box button{
-  background-color: $mainDark;
+  background-color: rgba(0, 0, 0, 0);
   border: none;
-  font-size: 1rem;
-  padding: 6px 6px 2px 6px;
+  font-size: 2rem;
+  // border: 1px solid $mainBlack;
   margin: 0;
   position: absolute;
   text-align: center;
-  right:0;
-  top:50%;
-  transform: translate(-10%, 55%);
-  border-radius: 50px;
+  right: 8px;
+  top: 30px;
+  transition: 0.2s ease-out;
   cursor: pointer;
+}
+
+.Register-Box button:hover {
+  right: 0;
+}
+
+@media only screen and (max-width: 600px) {
+  .Register-Form-Input {
+    width: 80%;
+    min-width: 80%;
+  }
 }

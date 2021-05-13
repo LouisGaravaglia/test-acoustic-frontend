@@ -1,136 +1,142 @@
-.Navbar-Container-Left {
+.Navbar-Container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  // border: 2px solid red;
+}
+
+.Navbar-Logo-Box {
   position: absolute;
+  width: calc(100% - 100px);
   height: 80px;
+  border-bottom: 1px solid $mainBlack;
+  z-index: 4;
+  max-width: 1200px;
+}
+
+.Navbar-Logo {
+  position: absolute;
+  background: url(../../images/Logo_4.svg) no-repeat;
+  cursor: pointer;
+  height: 80px;
+  width: 80px;
+  left: -15px;
 }
 
 .Navbar-Container-Right {
   position: absolute;
-  height: 80px;
+  height: 70px;
   right: 0;
 }
 
-a {
-  text-decoration: none;
-}
-
-.Navbar-Logo-Box {
-  position: sticky;
-  display: flex;
-  flex-direction: row;
-  z-index: 4;
-  top: 30px;
-  margin: 0;
-  padding: 0;
-  margin-left: 50px;
-}
-
-.Navbar-Logo {
-  font-family: $mainFont;
-  font-weight: 400;
-  font-size: 1.5rem;
-  color: $whiteFont;
-  margin: 0;
-  padding: 0;
-}
-
-.Navbar-Logo-Circle {
-  display: block;
-  height: 60px;
-  width: 60px;
-  line-height: 60px;
-  text-align: center;
-  border: 1px solid #fff;
-  -moz-border-radius: 30px;
-  border-radius: 30px; 
-}
-
-.Navbar-Logo-Circle:hover {
-  border: 1px solid $mainLight; 
-  color: $mainLight;
-}
-
 .Navbar-Link-Box {
-  @extend .Navbar-Logo-Box;
-  margin-right: 50px;
+  position: absolute;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  z-index: 4;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  right: 0;
+  // border: 2px solid green;
 }
 
-.Navbar-Link {
-  font-family: $mainFont;
-  font-weight: 400;
-  font-size: 1.5rem;
-  color: $whiteFont;
-  margin-left: 20px;
-  padding: 0;
-  //EXTENDING THE NAVBAR LOGO STYLES TO MATCH ALIGNMENT WITH THE LOGO
-  height: 60px;
-  width: 60px;
-  line-height: 60px;
-  text-align: center;
-  -moz-border-radius: 30px;
-  border-radius: 30px; 
-  border: 1px solid rgba(0,0,0,0.0);
-  width:fit-content;
-  position: relative;
-  text-decoration: none;
-  transition: all .35s ease;
-
-  &::before {
-      content: "";
-      position: absolute;
-      text-align: center;
-      width: 100%;
-      height: 5px;
-      bottom: 5px;
-      left: 0;
-      background: linear-gradient(to right, $mainLight 0%, $mainDark 100%);
-      visibility: hidden;
-      -webkit-transform: scaleX(0);
-      transform: scaleX(0);
-      -webkit-transition: all 0.2s ease-in-out 0s; 
-      transition: all 0.2s ease-in-out 0s; 
-  }   
-
-  &:hover {
-    color: $mainLight;
-
-      &::before {
-          visibility: visible;
-          -webkit-transform: scaleX(1);
-          transform: scaleX(1);
-      }   
-  }   
+.Navbar-Hamburger {
+  cursor: pointer;
+  font-size: 1.3rem;
 }
 
-.Navbar-Link-Active {
-  font-family: $mainFont;
-  font-weight: 400;
-  font-size: 1.5rem;
-  color: $mainLight;
-  margin-left: 20px;
-  padding: 0;
-  //EXTENDING THE NAVBAR LOGO STYLES TO MATCH ALIGNMENT WITH THE LOGO
-  height: 60px;
-  width: 60px;
-  line-height: 60px;
-  text-align: center;
-  -moz-border-radius: 30px;
-  border-radius: 30px; 
-  border: 1px solid rgba(0,0,0,0.0);
-  width:fit-content;
-  position: relative;
-  text-decoration: none;
-  transition: all .35s ease;
-  // border: 2px solid violet;
+.Navbar-Slideout {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: $mainBlack;
+  transition: 0.2s ease-in;
+  z-index: 5;
+  overflow-y: hidden;
+  margin-left: -200vw;
+}
 
-  &::before {
-      content: "";
-      position: absolute;
-      text-align: center;
-      width: 100%;
-      height: 5px;
-      bottom: 5px;
-      left: 0;
-      background: linear-gradient(to right, $mainLight 0%, $mainDark 100%);
-      visibility: visible;
+.Navbar-Slide-Box {
+  position: relative;
+  width: calc(100% - 100px);
+  max-width: 1200px;
+  // border: 2px solid yellow;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  max-height: 100vh;
+  margin: auto;
+}
+
+.Navbar-Slidein {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  width: 100vw;
+  background-color: $mainBlack;
+  transition: 0.2s ease-in;
+  z-index: 5;
+  overflow-y: hidden;
+}
+
+.Navbar-Slidein-Link {
+  font-family: $serifFont;
+  font-weight: 400;
+  font-size: 4rem;
+  margin: 20px 0 20px 80px;
+  padding: 0;
+  background: linear-gradient(to right, rgb(255, 192, 190), #ffd3be);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
+  user-select: none;
+  // border: 2px solid red;
+  width: calc(100% - 80px);
+}
+
+.Navbar-Slidein-Close{
+  position: absolute;
+  top: 25px;
+  right: -5px;
+  font-size: 30px;
+  cursor: pointer;
+  user-select: none;
+  margin-right: auto;
+}
+
+
+@media only screen and (max-width: 665px) {
+  .Navbar-Slidein-Link {
+    font-size: 2rem;
+    margin: 20px 0 20px 20px;
   }
 }
+
+@media only screen and (max-height: 665px) {
+  .Navbar-Slidein-Link {
+    font-size: 2rem;
+    margin: 20px 0 20px 20px;
+  }
+}
+
+@media only screen and (max-height: 335px) {
+  .Navbar-Slidein-Link {
+    font-size: 1rem;
+    margin: 10px 0 10px 10px;
+  }
+
+  .Navbar-Slidein-Close{
+    font-size: 20px;
+  }
+}
+

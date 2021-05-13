@@ -22,11 +22,6 @@ function useButtons() {
 ////////////////////////////////////////////////////  ON CLICK FUNCTIONS FOR BUTTONS ////////////////////////////////////////////////////
 
   function authenticateSpotify(param: string) {
-    // if (param === 'button_clicked=first_button' || param === 'button_clicked=second_button') {
-    //   addContentToBeDisplayed([<ButtonsPast buttonText={'Log into my Spotify'}/>])
-    // } else {
-    //   addContentToBeDisplayed([<ButtonsPast buttonText={'Try again'}/>])
-    // }
     displayLoadingSpinner();
     window.location.href = SPOTIFY_AUTH_URL + param;
     return null;
@@ -34,7 +29,7 @@ function useButtons() {
 
   function dontHaveSpotify() {
     incrementMessagingPhase(1)
-    addContentToBeDisplayed([<ButtonsPast buttonText={`What if I don't have Spotify?`}/>])
+    addContentToBeDisplayed([<ButtonsPast buttonText={`Do I have to?`}/>])
   }
 
   function proceedWithoutSpotify(buttonClicked: string) {
@@ -52,24 +47,24 @@ function useButtons() {
   const initialButtons: IButtonObj = {
     id: 'b1',
     buttons: [
-      <div className={'Chatty-Button-Box'}><button className={'Chatty-Button'} onClick={() => authenticateSpotify('button_clicked=first_button')}><p>Log into my Spotify</p></button></div>,
-      <div className={'Chatty-Button-Box'}><button className={'Chatty-Button'} onClick={dontHaveSpotify}><p>What if I don't have Spotify?</p></button></div>
+      <div className='Chatty-Button-Box' onClick={() => authenticateSpotify('button_clicked=first_button')}><p className='Chatty-Button' ><p>Log into my Spotify</p></p></div>,
+      <div className='Chatty-Button-Box' onClick={dontHaveSpotify}><p className='Chatty-Button'><p>Do I have to?</p></p></div>
     ]
   };
 
   const proceedWithoutSpotifyButtons: IButtonObj = {
     id: 'b2',
     buttons: [
-      <div className={'Chatty-Button-Box'}><button className={'Chatty-Button'} onClick={() => authenticateSpotify('button_clicked=second_button')}><p>Log into my Spotify</p></button></div>,
-      <div className={'Chatty-Button-Box'}><button className={'Chatty-Button'} onClick={() => proceedWithoutSpotify('first')}><p>Proceed without Spotify</p></button></div>
+      <div className='Chatty-Button-Box' onClick={() => authenticateSpotify('button_clicked=second_button')}><p className='Chatty-Button'><p>Log into my Spotify</p></p></div>,
+      <div className='Chatty-Button-Box' onClick={() => proceedWithoutSpotify('first')}><p className='Chatty-Button'><p>Proceed without Spotify</p></p></div>
     ]
   };
 
   const tryAgainButtons: IButtonObj = {
     id: 'b3',
     buttons: [
-      <div className={'Chatty-Button-Box'}><button className={'Chatty-Button'} onClick={() => authenticateSpotify(`button_clicked=${stateKey}_second_attempt`)}><p>Try again</p></button></div>,
-      <div className={'Chatty-Button-Box'}><button className={'Chatty-Button'} onClick={() => proceedWithoutSpotify('second')}><p>Proceed without Spotify</p></button></div>
+      <div className='Chatty-Button-Box' onClick={() => authenticateSpotify(`button_clicked=${stateKey}_second_attempt`)}><p className='Chatty-Button'><p>Try again</p></p></div>,
+      <div className='Chatty-Button-Box' onClick={() => proceedWithoutSpotify('second')}><p className='Chatty-Button'><p>Proceed without Spotify</p></p></div>
     ]
   };
 

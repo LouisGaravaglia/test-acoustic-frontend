@@ -8,12 +8,15 @@
 //COMPONENTS
 @import 'components/navbar';
 @import 'components/chatty';
-@import 'components/profile';
+@import 'components/playlists';
 
 html, body {
-  background: linear-gradient(to right top, $bgColor1, $bgColor2, $bgColor3, $bgColor4, $bgColor5);
+  // background: linear-gradient(to right top, $bgColor1, $bgColor2, $bgColor3, $bgColor4, $bgColor5);
   width: 100%;
-  height: 100%;
+  height: 100vh;
   margin: 0px;
   padding: 0px;
+  overscroll-behavior: none;
+
+
 }

@@ -28,9 +28,9 @@ function useChattyScript() {
     registerUserPartSix,
   } = useMessages();
 
-  //FINISHED FUNCTION THAT WILL WILL RUN ONCE CHATTY HAS SENT THE FINAL MESSAGE TO REDIRECT TO USER PROFILE
-  const redirectToProfile = (val: boolean) => {
-    if (val === true) history.push('/profile');
+  //FINISHED FUNCTION THAT WILL WILL RUN ONCE CHATTY HAS SENT THE FINAL MESSAGE TO REDIRECT TO USER PLAYLISTS
+  const redirectToPlaylists = (val: boolean) => {
+    if (val === true) history.push('/playlists');
     try {
       Backend.registerUser(user);
     } catch(e) {
@@ -60,7 +60,7 @@ function useChattyScript() {
     <Register key={'username'} input='username'/>,
     <MessagesContainer key={registerUserPartFive.id} messages={registerUserPartFive.messages}/>,
     <Register key={'password'} input='password'/>,
-    <MessagesContainer key={registerUserPartSix.id} messages={registerUserPartSix.messages} finishedFunction={redirectToProfile}/>,
+    <MessagesContainer key={registerUserPartSix.id} messages={registerUserPartSix.messages} finishedFunction={redirectToPlaylists}/>,
   ];
 
   return {

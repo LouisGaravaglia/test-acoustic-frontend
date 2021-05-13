@@ -31,14 +31,14 @@ function useMessages() {
   const initialMessages: IMessageObj = {
     id: 'm1',
     messages: [
-      `Hi, I'm Acoustic.io, your digital companion. I'm here to share new music with you.`, 
+      `Hi, I'm Acoustigram.io, your digital companion. I'm here to share new music with you.`, 
       `If you're already a registered user you can login by clicking the link above.`,
       `If you're new I'll walk you through setting up your Spotify Account.`,
       `This will allow me to scan it for trends in your listening history to better assist me in suggesting the most relevant music for you.`
     ]
   };
 
-  //CREATING SHORTER MESSAGES FOR QUICKER TESTING
+  // CREATING SHORTER MESSAGES FOR QUICKER TESTING
   // const initialMessages: IMessageObj = {
   //   id: 'm1',
   //   messages: ['hi']
@@ -55,6 +55,12 @@ function useMessages() {
     ]
   };
 
+    //CREATING SHORTER MESSAGES FOR QUICKER TESTING
+    // const whatIfNoSpotify: IMessageObj = {
+    //   id: 'm1',
+    //   messages: ['hi']
+    // };
+
   const spotifyAccountError: IMessageObj = {
     id: 'm3',
     messages: [
@@ -68,7 +74,7 @@ function useMessages() {
   const proceedWithoutSpotify: IMessageObj = {
     id: 'm4',
     messages: [
-      `Sounds good, we won't connect a Spotify account`,
+      `Sounds good, we won't connect a Spotify account.`,
       'We can always add it later in your profile settings.'
     ]
   };
@@ -87,14 +93,6 @@ function useMessages() {
     messages: [`Perfect, your Spotify account is all set up!`]
   };
 
-  //CREATING SHORTER MESSAGES FOR QUICKER TESTING
-  // const registerUserPartOne: IMessageObj = {
-  //   id: 'm7',
-  //   messages: [
-  //     `Let's start with your first name.`
-  //   ]
-  // };
-
   const registerUserPartOne: IMessageObj = {
     id: 'm7',
     messages: [
@@ -103,6 +101,12 @@ function useMessages() {
       `Let's start with your first name. You can use the input field below to enter it.`
     ]
   };
+
+  //CREATING SHORTER MESSAGES FOR QUICKER TESTING
+  // const registerUserPartOne: IMessageObj = {
+  //   id: 'm1',
+  //   messages: ['hi']
+  // };
 
   const registerUserPartTwo: IMessageObj = {
     id: 'm8',
@@ -137,7 +141,9 @@ function useMessages() {
     id: 'm12',
     messages: [
       `Perfect, you're all set up!`,
-      `I'm taking you to your profile now.`
+      `I'm taking you to your playlists now.`,
+      `Just keep in mind, this site is still in development so currently these playlists are just placeholders.`,
+      `You can not listen to the tracks quite yet. More to come soon!`
     ]
   };
 

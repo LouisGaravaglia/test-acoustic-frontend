@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import Backend from '../Backend';
+// import Backend from '../Backend';
+import {IoIosArrowRoundForward} from 'react-icons/io';
 
 
 const Login: React.FC = () => {
@@ -21,8 +22,8 @@ const Login: React.FC = () => {
     e.preventDefault();
     const data = formData;
     try {
-      const response = await Backend.loginUser(data);
-      console.log('the response', response);
+      // const response = await Backend.loginUser(data);
+      // console.log('the response', response);
     } catch (e) {
       console.log('hit error', e);
     };
@@ -32,42 +33,41 @@ const Login: React.FC = () => {
 ////////////////////////////////////////////////////  RETURN  ////////////////////////////////////////////////////
 
   return (
-    <>
-<div className='Home-Upper-Box'>
-  <div className='filler'></div>
-  <h1 className='Login-Header'>Welcome back</h1>
-  <div className='Login-Container'></div>
-    <form className='Login-Form' onSubmit={handleSubmit}>
-      <div className='Login-Box'>
-        <input 
-          type='text'
-          id='LoginVal'
-          name='username'
-          value={formData.username}
-          onChange={handleChange}
-          className='Login-Form-Input'
-          placeholder='username'
-        />
+    <div className='Login-Container'>
+      <div className="Login-Content">
+        <div className='Login-Message-Box'>
+          <p className='Login-Message'>Welcome back! Please login here to access your playlists.</p>
+        </div>
+        <form className='Login-Form' onSubmit={handleSubmit}>
+          <div className='Login-Box'>
+            <input 
+              type='text'
+              id='LoginVal'
+              name='username'
+              value={formData.username}
+              onChange={handleChange}
+              className='Login-Form-Input'
+              placeholder='username'
+            />
+          </div>
+          <div className='Login-Box'>
+            <input 
+              type='password'
+              id='LoginVal'
+              name='password'
+              value={formData.password}
+              onChange={handleChange}
+              className='Login-Form-Input'
+              placeholder='password'
+            />
+          </div>
+            <button className="Login-Button-Box">
+              <h1 className="Login-Button">Login</h1>
+              <IoIosArrowRoundForward color='#181718' className='Login-Arrow'/>
+            </button>
+        </form>
       </div>
-      <div className='Login-Box'>
-        <input 
-          type='password'
-          id='LoginVal'
-          name='password'
-          value={formData.password}
-          onChange={handleChange}
-          className='Login-Form-Input'
-          placeholder='password'
-        />
-      </div>
-    </form>
-      </div>
-
-      <div className='Home-Lower-Box'>
-        <button className='login-main-button'>LOGIN</button>
-        <button className='login-transition-element'>LOGIN</button>
-      </div>
-    </>
+    </div>
   );
 };
 

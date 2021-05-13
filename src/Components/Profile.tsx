@@ -13,7 +13,6 @@ import {MessagesContext} from './ChatBot/MessagesProvider';
 
 function Profile(): JSX.Element {
   const {user} = useContext(MessagesContext);
-
   let welcomeMessage;
 
   if (user.first_name === '') {

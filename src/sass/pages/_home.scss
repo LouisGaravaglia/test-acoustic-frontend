@@ -3,71 +3,166 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-}
-
-.Home-Upper-Box {
-  @extend .Home-Container;
-  width: 100vw;
-  height: 50vh;
+  height: 100vh;
+  width: 100%;
+  // background-color: $mainOffWhite;
+  background: url(../../images/my_Gradient.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .Home-Header-Box {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
   width: 100vw;
-  height: 40vh;
+  height: calc(50vh - 80px);
   padding: 0;
-  margin: 0;
+  margin-top: 80px;
+  // border: 2px solid blue;
 }
 
 .Home-Header-Box h1 {
   font-family: $mainFont;
   font-weight: 600;
-  font-size: 9rem;
-  color: $whiteFont;
+  font-size: 7rem;
+  color: $mainBlack;
   padding: 0;
-  margin: -50px;
+  margin: 0;
   cursor: default;
+  user-select: none;
+  // border: 2px solid green;
 }
 
-.Home-Subheader-Box {
+
+.Home-Header-Box h5 {
+  text-align: center;
+  font-family: $serifFont;
+  font-weight: 400;
+  font-size: 2rem;
+  color: $mainBlack;
+  padding: 0;
+  max-width: 700px;
+  margin: 0;
+  cursor: default;
+  user-select: none;
+  // border: 2px solid red;
+}
+
+.Home-Lower-Container {
+  width: calc(100% - 100px);
+  height: calc(50vh - 50px);
+  // border: 2px solid blue;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  width: 100vw;
+  border-top: 1px solid $mainBlack;
+  margin: 0 50px;
+  max-width: 1200px;
+  margin-bottom: 50px;
 }
 
-.Home-Subheader-Box h5 {
-  font-family: $mainFont;
-  font-weight: 300;
+
+
+
+.Home-Button-Container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // border: 2px solid red;
+  border-right: 1px solid $mainBlack;
+  width: calc(50%);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100% - 1px);
+  margin-bottom: 40px;
+}
+
+.Home-Button-Box {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid $mainBlack;
+  padding: 10px 60px;
+  cursor: pointer;
+
+  .Home-Button {
+    font-family: $mainFont;
+    font-weight: 200;
+    font-size: 1.5rem;
+    color: $mainBlack;
+    margin: 0;
+    user-select: none;
+  }
+}
+
+.Home-Button-Box:hover {
+  .Home-Register-Arrow {
+    right: 10px;
+  }
+}
+
+.Home-Register-Arrow {
   font-size: 1.5rem;
-  color: $whiteFont;
-  padding: 0;
-  margin: 0 40px;
-  cursor: default;
+  font-weight: 100;
+  position: absolute;
+  top: 28%;
+  right: 20px;
+  transition: 0.2s ease-out;
+  // transform: translate(-50%, 75%);
 }
 
-.Home-Lower-Box {
+.Home-Login-Arrow {
+  font-size: 1.5rem;
+  font-weight: 100;
+  position: absolute;
+  top: 28%;
+  right: 20px;
+  transition: 0.2s ease-out;
+  // transform: translate(-50%, 75%);
+}
+
+
+.Home-Login-Container {
+  height: calc(100% - 1px);
+  width: calc(50%);
+  position: relative;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  width: 100vw;
-  height: 50vh;
+  align-items: center;
+  margin-bottom: 40px;
+  // border: 2px solid red;
 }
 
-.home-transition-element {
-  @include landingButtonGradient;
-  margin-top: 80px;
+.Home-Login-Box {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid $mainBlack;
+  padding: 10px 60px;
+  cursor: pointer;
+
+  .Home-Login {
+    font-family: $mainFont;
+    font-weight: 200;
+    font-size: 1.5rem;
+    color: $mainBlack;
+    margin: 0;
+    user-select: none;
+  }
 }
 
-.home-transition-element:hover {
-  opacity: 0.0;
-}
-
-.home-main-button {
-  @include landingButtonSolid;
-  margin-top: 80px;
+.Home-Login-Box:hover {
+  .Home-Login-Arrow {
+    right: 10px;
+  }
 }
 
 ////////////////////////////////////////////////////  MEDIA QUERIES  ////////////////////////////////////////////////////
@@ -75,13 +170,14 @@
 @media only screen and (max-width: 1050px) {
   .Home-Header-Box h1 {
     font-weight: 500;
-    font-size: 6rem;
+    font-size: 5rem;
   }
 
-  .Home-Subheader-Box h5 {
+  .Home-Header-Box h5 {
     font-weight: 300;
-    font-size: 1rem;
+    font-size: 1.5rem;
     text-align: center;
+    margin: 0 20px;
   }
 }
 
@@ -91,25 +187,64 @@
     font-size: 4rem;
   }
 
-  .Home-Subheader-Box h5 {
+  .Home-Header-Box h5 {
     font-weight: 300;
     font-size: 1rem;
     text-align: center;
   }
 
-  .home-transition-element {
-    margin-top: 40px;
-    font-weight: 600;
-    font-size: 1.5rem;
-    padding: 4px 20px;
+  .Home-Button-Box {
+    padding: 5px 30px;
+  
+    .Home-Button {
+      font-weight: 200;
+      font-size: 1rem;
+    }
   }
 
-  .home-main-button {
-    margin-top: 40px;
-    font-weight: 600;
-    font-size: 1.5rem;
-    padding: 4px 20px;
+  .Home-Button-Box:hover {
+    .Home-Register-Arrow {
+      right: 8px;
+    }
   }
+  
+  .Home-Register-Arrow {
+    font-size: 1rem;
+    right: 10px;
+  }
+
+  .Home-Login-Box {
+    padding: 5px 30px;
+  
+    .Home-Login {
+      font-weight: 200;
+      font-size: 1rem;
+    }
+  }
+  
+  .Home-Login-Box:hover {
+    .Home-Login-Arrow {
+      right: 8px;
+    }
+  }
+
+  .Home-Login-Arrow {
+    font-size: 1rem;
+    right: 10px;
+  }
+}
+
+@media only screen and (max-width: 665px) {
+  .Home-Header-Box h1 {
+    font-weight: 500;
+    font-size: 3rem;
+  }
+
+  .Home-Header-Box h5 {
+    font-weight: 300;
+    font-size: 0.8rem;
+  }
+
 
 }
 
@@ -120,25 +255,112 @@
     font-size: 2rem;
   }
 
-  .Home-Subheader-Box h5 {
+  .Home-Header-Box h5 {
     font-weight: 300;
     font-size: 0.7rem;
-    text-align: center;
-    margin-top: 50px;
   }
 
-  .home-transition-element {
-    margin-top: 70px;
-    font-weight: 400;
-    font-size: 1rem;
-    padding: 4px 20px;
+  .Home-Button-Box {
+    padding: 5px 15px;
+  
+    .Home-Button {
+      font-size: 0.5rem;
+    }
   }
 
-  .home-main-button {
-    margin-top: 70px;
+  .Home-Register-Arrow {
+    display: none;
+  }
+
+  .Home-Login-Box {
+    padding: 5px 15px;
+  
+    .Home-Login {
+      font-size: 0.5rem;
+    }
+  }
+
+  .Home-Login-Arrow {
+    display: none;
+  }
+
+}
+
+@media only screen and (max-height: 665px) {
+  .Home-Lower-Container {
+    height: 30%;
+  }
+
+}
+
+@media only screen and (max-height: 465px) {
+
+  .Home-Header-Box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 40vh;
+    padding: 0;
+    margin-top: 80px;
+    // border: 2px solid blue;
+  }
+
+  .Home-Lower-Container {
+    height: 20%;
+  }
+
+  .Home-Header-Box h5 {
     font-weight: 400;
     font-size: 1rem;
-    padding: 4px 20px;
   }
+
+  
+  .Home-Header-Box h1 {
+    font-weight: 600;
+    font-size: 3rem;
+  }
+  
+  .Home-Button-Box {
+    padding: 5px 30px;
+  
+    .Home-Button {
+      font-weight: 200;
+      font-size: 1rem;
+    }
+  }
+
+  .Home-Button-Box:hover {
+    .Home-Register-Arrow {
+      right: 8px;
+    }
+  }
+  
+  .Home-Register-Arrow {
+    font-size: 1rem;
+    right: 10px;
+  }
+
+  .Home-Login-Box {
+    padding: 5px 30px;
+  
+    .Home-Login {
+      font-weight: 200;
+      font-size: 1rem;
+    }
+  }
+  
+  .Home-Login-Box:hover {
+    .Home-Login-Arrow {
+      right: 8px;
+    }
+  }
+
+  .Home-Login-Arrow {
+    font-size: 1rem;
+    right: 10px;
+  }
+  
 
 }
