@@ -1,3 +1,19 @@
+.Home {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  // background-color: $mainOffWhite;
+  background: url(../../images/my_Gradient.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  transition: 2s ease-in;
+  opacity: 0;
+  z-index: -99;
+}
+
+
 .Home-Container {
   display: flex;
   justify-content: center;
@@ -6,13 +22,11 @@
   height: 100vh;
   width: 100%;
   // background-color: $mainOffWhite;
-  background: url(../../images/my_Gradient.png) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  transition: 0.5s ease-out;
-  opacity: 0;
+  // background: url(../../images/my_Gradient.png) no-repeat center center fixed; 
+  // -webkit-background-size: cover;
+  // -moz-background-size: cover;
+  // -o-background-size: cover;
+  // background-size: cover;
 }
 
 .Home-Header-Box {
