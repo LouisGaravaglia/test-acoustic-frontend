@@ -14,7 +14,7 @@ function ChattyDisplay(): JSX.Element {
 
   return (
     <>
-    {loadingSpinner && <UseAnimations className='Chatty-Loading-Spinner' animation={loading} size={200} style={{ padding: 100 }} strokeColor='#37f8ff' />}
+    {loadingSpinner && <UseAnimations className='Chatty-Loading-Spinner' animation={loading} size={200} style={{ padding: 100 }} strokeColor='#181718' />}
     <div className='Chatty-Container' >
       <div className='Chatty' style={{maxHeight: viewportHeight - 200}}>
         <div className='Chatty-Left-Filler'></div>
