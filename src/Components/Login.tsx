@@ -20,7 +20,7 @@ const Login: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const data = formData;
+    // const data = formData;
     try {
       // const response = await Backend.loginUser(data);
       // console.log('the response', response);

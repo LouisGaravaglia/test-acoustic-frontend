@@ -102,7 +102,7 @@ function MessagesContainer({messages, finishedFunction, addToDisplayedContent = 
         incrementMessagingPhase(incrementMessageValue);
       }
     };
-  }, [count, messages, finishedFunction, incrementMessagingPhase]);
+  }, [count, messages, finishedFunction, incrementMessagingPhase, addContentToBeDisplayed, incrementMessageValue, addToDisplayedContent]);
 
   //UPDATING ONLASTMESSAGE TO BE TRUE TO PREVENT TYPING CURSOR TO APPEAR AFTER THE LAST MESSAGE
   useEffect(() => {

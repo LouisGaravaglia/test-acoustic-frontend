@@ -64,11 +64,7 @@ function PlaylistsCarousel({largeScreenMode, playlist, index, updateSelectedPlay
 
   useEffect(() => {
     if (isVisible) updateSelectedPlaylistIndex(index);
-  }, [isVisible]);
-
-  function updateSelectedTrack(trackIndex: number) {
-    setSelectedTrack(trackIndex);
-  }
+  }, [isVisible, updateSelectedPlaylistIndex, index]);
 
   let artworkJSX;
 

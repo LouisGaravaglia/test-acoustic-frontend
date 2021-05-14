@@ -25,8 +25,6 @@ function PlaylistsCarouselContainer({refArray, PlaylistsContainerRef}: Props): J
   }, [viewportWidth]);
 
   function updateSelectedPlaylistIndex(titleIndex: number) {
-    console.log('hit selectedIndex', titleIndex);
-    
     setSelectedPlaylistIndex(titleIndex);
     setSelectedPlaylistTitle(playlists[titleIndex].name)
   }

@@ -38,7 +38,7 @@ function Chatty(): JSX.Element {
     } else {
       setFirstLoad(true);
     }
-  }, [stateKey])
+  }, [stateKey, authorizationError, handleSpotifyAuthenticationError, retrieveSpotifyAccessTokens, isConfirmedCrossSiteAttack, setAuthLogic, setFirstLoad])
 
 ////////////////////////////////////////////////////  RENDER LOADING SPINNER OR CHATTY DISPLAY  ////////////////////////////////////////////////////
 
