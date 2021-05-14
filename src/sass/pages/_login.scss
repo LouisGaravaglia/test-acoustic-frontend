@@ -8,7 +8,6 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-
 }
 
 .Login-Content {
@@ -37,7 +36,6 @@
   font-size: 3rem;
   font-weight: 400;
 }
-
 
 .Login-Button-Box {
   position: relative;
@@ -83,8 +81,6 @@
   width: 50vw;
 }
 
-
-
 .Login-Box {
   display: flex;
   justify-content: center;
@@ -97,15 +93,6 @@
   border: none;
   margin-bottom: 40px;
   max-width: 200px;
-}
-
-.Label-Box {
-  display: flex;
-  justify-content: flex-start;
-  flex: 0 0 20vw;
-}
-
-#LoginVal {
   font-family: $mainFont;
   font-weight: 200;
   font-size: 1rem;
@@ -115,6 +102,12 @@
   background-color: rgba(0, 0, 0, 0);
   color: $mainBlack;
   border-bottom: 1px solid $mainBlack;
+}
+
+.Label-Box {
+  display: flex;
+  justify-content: flex-start;
+  flex: 0 0 20vw;
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
