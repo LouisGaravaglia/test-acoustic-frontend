@@ -44,7 +44,7 @@ function Chatty(): JSX.Element {
 
   return (
     <>
-      {(authLogic && !displayedContent.length) && <UseAnimations className='Chatty-Loading-Spinner' animation={loading} size={200} style={{ padding: 100 }} strokeColor='#37f8ff' />}
+      {(authLogic && !displayedContent.length) && <UseAnimations className='Chatty-Loading-Spinner' animation={loading} size={200} style={{ padding: 100 }} strokeColor='#181718' />}
       {(firstLoad || displayedContent.length) && <ChattyDisplay/>}
     </>
   );

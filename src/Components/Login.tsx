@@ -40,9 +40,9 @@ const Login: React.FC = () => {
         </div>
         <form className='Login-Form' onSubmit={handleSubmit}>
           <div className='Login-Box'>
-            <input 
+            <input
               type='text'
-              id='LoginVal'
+              id='username'
               name='username'
               value={formData.username}
               onChange={handleChange}
@@ -53,7 +53,7 @@ const Login: React.FC = () => {
           <div className='Login-Box'>
             <input 
               type='password'
-              id='LoginVal'
+              id='password'
               name='password'
               value={formData.password}
               onChange={handleChange}

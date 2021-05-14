@@ -1,4 +1,4 @@
-import React, {useEffect, useContext} from 'react';
+import React, {useEffect, useContext, useState} from 'react';
 import {useHistory} from 'react-router-dom';
 import {MessagesContext} from './ChatBot/MessagesProvider';
 import {IoIosArrowRoundForward} from 'react-icons/io';
@@ -7,10 +7,12 @@ import {IoIosArrowRoundForward} from 'react-icons/io';
    
 const Home: React.FC = () => {
   const {resetPhases} = useContext(MessagesContext);
+  const [homeMounted, setHomeMounted] = useState<boolean>(false);
   const history = useHistory();
 
   useEffect(() => {
     const resetRegisterPhases = () => {
+      setHomeMounted(true);
       resetPhases();
       // Backend.getCSRF();
     }
@@ -28,7 +30,7 @@ const Home: React.FC = () => {
   }
 
   return (
-    <div className='Home-Container'>
+    <div className='Home-Container' style={{opacity: homeMounted ? 1 : 0}}>
       <div className='Home-Header-Box'>
         <h1>ACOUSTIGRAM.IO</h1>
         <h5>A Digital Companion to keep you up to date with the latest music releases.</h5>
