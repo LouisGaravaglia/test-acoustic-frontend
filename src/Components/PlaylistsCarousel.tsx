@@ -68,7 +68,7 @@ function PlaylistsCarousel({largeScreenMode, playlist, index, viewportWidth, upd
 
   useEffect(() => {
     if(selectedTitleIndex === index && userClickedTitle) handleScrollToSelectedPlaylist(playlistRef);
-  }, [playlistRef, selectedTitleIndex, handleScrollToSelectedPlaylist, userClickedTitle])
+  }, [playlistRef, selectedTitleIndex, handleScrollToSelectedPlaylist, userClickedTitle, index])
 
   useEffect(() => {
     if (isVisible) updateSelectedPlaylistIndex(index);
