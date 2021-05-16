@@ -19,21 +19,6 @@ function PlaylistsTitleScrollContainer({largeScreenMode, selectedPlaylistIndex, 
     }
   }
 
-  function handleTitleClick(titleRef: any | null) {
-    console.log('clicked title');
-    if (titleRef.current !== null) {
-      //TODO: MAKE MEDIA QUERY THAT LOWER'S THE AMOUNT SUBTRACTING FROM TITLEREF OFFSET VALUE
-      // wrapperRef.current.scroll({left: titleRef.current.offsetLeft - 400, behavior: 'smooth'});
-    }
-  }
-
-
-  //TODO
-  // function updateSelectedTitleIndex(index: number) {
-  //   setSelectedTitleIndex(index);
-  //   // setSelectedPlaylistTitle(playlists[titleIndex].name)
-  // }
-
   let titleDisplayJSX;
 
   //ONLY CREATE A SLIDING TITLE UX/UI FOR LARGE SCREENS
@@ -41,7 +26,7 @@ function PlaylistsTitleScrollContainer({largeScreenMode, selectedPlaylistIndex, 
     titleDisplayJSX = (
       <div className="Playlists-Title-Scroll-Container" ref={wrapperRef}>
         <div className='Playlists-Unselected-Title' ><h2 ></h2></div>
-          {playlists.map((playlist: any, index: any) => <PlaylistsTitleScroll key={index} index={index} titleRef={titleRefArray[index]} playlist={playlist} selectedPlaylistIndex={selectedPlaylistIndex} handleScrollToSelectedTitle={handleScrollToSelectedTitle} handleTitleClick={handleTitleClick} updateSelectedTitleIndex={updateSelectedTitleIndex}/>)}
+          {playlists.map((playlist: any, index: any) => <PlaylistsTitleScroll key={index} index={index} titleRef={titleRefArray[index]} playlist={playlist} selectedPlaylistIndex={selectedPlaylistIndex} handleScrollToSelectedTitle={handleScrollToSelectedTitle} updateSelectedTitleIndex={updateSelectedTitleIndex}/>)}
         <div className='Playlists-Unselected-Title' ><h2 ></h2></div>
     </div>
     )

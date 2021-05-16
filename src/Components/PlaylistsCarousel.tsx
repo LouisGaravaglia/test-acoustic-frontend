@@ -53,21 +53,22 @@ interface Props {
   largeScreenMode: boolean
   handleScrollToSelectedPlaylist: (playlistRef: any | null) => void
   selectedTitleIndex: number
+  userClickedTitle: boolean
+  viewportWidth: number
 }
 
-function PlaylistsCarousel({largeScreenMode, playlist, index, updateSelectedPlaylistIndex, selectedPlaylistIndex, playlistRef, handleScrollToSelectedPlaylist, selectedTitleIndex}: Props): JSX.Element {
+function PlaylistsCarousel({largeScreenMode, playlist, index, viewportWidth, updateSelectedPlaylistIndex, selectedPlaylistIndex, playlistRef, handleScrollToSelectedPlaylist, selectedTitleIndex, userClickedTitle}: Props): JSX.Element {
   const [selectedTrack, setSelectedTrack] = useState<number>(0);
   const playlistImgPlaceholders = [PLACEHOLDER_IMG_0, PLACEHOLDER_IMG_1, PLACEHOLDER_IMG_2, PLACEHOLDER_IMG_3, PLACEHOLDER_IMG_4, PLACEHOLDER_IMG_5];
   const entry = useElementOnScreen(playlistRef, {
-    threshold: 0.4
+    threshold: viewportWidth < 1990 ? 0.6 : 0.4
   });
   const isVisible = !!entry?.isIntersecting;
   let tracks = playlist.tracks.items;
 
-      //TODO
-      useEffect(() => {
-        if(selectedTitleIndex === index) handleScrollToSelectedPlaylist(playlistRef);
-      }, [playlistRef, selectedTitleIndex, handleScrollToSelectedPlaylist])
+  useEffect(() => {
+    if(selectedTitleIndex === index && userClickedTitle) handleScrollToSelectedPlaylist(playlistRef);
+  }, [playlistRef, selectedTitleIndex, handleScrollToSelectedPlaylist, userClickedTitle])
 
   useEffect(() => {
     if (isVisible) updateSelectedPlaylistIndex(index);

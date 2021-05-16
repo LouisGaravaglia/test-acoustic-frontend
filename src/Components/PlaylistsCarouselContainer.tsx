@@ -14,6 +14,7 @@ function PlaylistsCarouselContainer({refArray, PlaylistsContainerRef}: Props): J
   const [selectedPlaylistIndex, setSelectedPlaylistIndex] = useState<number>(0);
   const [selectedPlaylistTitle, setSelectedPlaylistTitle] = useState<string>("");
   const [selectedTitleIndex, setSelectedTitleIndex] = useState<number>(0);
+  const [userClickedTitle, setUserClickedTitle] = useState<boolean>(false);
   const [largeScreenMode, setLargeScreenMode] = useState<boolean>(true);
   const {viewportWidth}  = useViewport();
 
@@ -30,6 +31,7 @@ function PlaylistsCarouselContainer({refArray, PlaylistsContainerRef}: Props): J
     if (playlistRef.current !== null) {
       //TODO: MAKE MEDIA QUERY THAT LOWER'S THE AMOUNT SUBTRACTING FROM playlistREF OFFSET VALUE
       PlaylistsContainerRef.current.scroll({left: playlistRef.current.offsetLeft - 400, behavior: 'smooth'});
+      setUserClickedTitle(false)
     }
   }
 
@@ -39,6 +41,7 @@ function PlaylistsCarouselContainer({refArray, PlaylistsContainerRef}: Props): J
   }
 
   function updateSelectedTitleIndex(index: number) {
+    setUserClickedTitle(true)
     setSelectedTitleIndex(index);
     // setSelectedTitle(playlists[index].name)
   }
@@ -50,7 +53,7 @@ function PlaylistsCarouselContainer({refArray, PlaylistsContainerRef}: Props): J
       </div>
       <div className='Playlists-Carousel-Content' ref={PlaylistsContainerRef}>
         {playlists.map((playlist: any, index: any) => 
-          <PlaylistsCarousel key={index} largeScreenMode={largeScreenMode} playlistRef={refArray[index]} playlist={playlist} index={index} updateSelectedPlaylistIndex={updateSelectedPlaylistIndex} selectedPlaylistIndex={selectedPlaylistIndex} handleScrollToSelectedPlaylist={handleScrollToSelectedPlaylist} selectedTitleIndex={selectedTitleIndex}/>
+          <PlaylistsCarousel key={index} largeScreenMode={largeScreenMode} viewportWidth={viewportWidth} playlistRef={refArray[index]} playlist={playlist} index={index} updateSelectedPlaylistIndex={updateSelectedPlaylistIndex} selectedPlaylistIndex={selectedPlaylistIndex} handleScrollToSelectedPlaylist={handleScrollToSelectedPlaylist} selectedTitleIndex={selectedTitleIndex} userClickedTitle={userClickedTitle}/>
         )}
       </div>
     </>

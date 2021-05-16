@@ -10,11 +10,10 @@ interface Props {
   selectedPlaylistIndex: number
   handleScrollToSelectedTitle: (titleRef: any | null) => void
   titleRef: any | null
-  handleTitleClick: (titleRef: any | null) => void
   updateSelectedTitleIndex: (index: number) => void
 }
 
-function PlaylistsTitleScroll({playlist, index, selectedPlaylistIndex, handleScrollToSelectedTitle, handleTitleClick, updateSelectedTitleIndex}: Props): JSX.Element {
+function PlaylistsTitleScroll({playlist, index, selectedPlaylistIndex, handleScrollToSelectedTitle, updateSelectedTitleIndex}: Props): JSX.Element {
   const titleRef = useRef<any | null>(null);
   let leftSideOfTitleDiv: number = 0;
   let rightSideOfTitleDiv: number = 0;
@@ -33,11 +32,6 @@ function PlaylistsTitleScroll({playlist, index, selectedPlaylistIndex, handleScr
   useEffect(() => {
     if(selectedPlaylistIndex === index) handleScrollToSelectedTitle(titleRef);
   }, [titleRef, selectedPlaylistIndex])
-
-      //TODO
-      // useEffect(() => {
-      //   if (isVisible) updateSelectedTitleIndex(index);
-      // }, [isVisible, updateSelectedTitleIndex, index]);
 
   return (
     <div className={isVisible ? 'Playlists-Selected-Title' : 'Playlists-Unselected-Title'} ref={titleRef} onClick={() => updateSelectedTitleIndex(index)}>
