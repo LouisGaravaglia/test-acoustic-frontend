@@ -10,9 +10,10 @@ interface Props {
   selectedPlaylistIndex: number
   handleScrollToSelectedTitle: (titleRef: any | null) => void
   titleRef: any | null
+  handleTitleClick: (titleRef: any | null) => void
 }
 
-function PlaylistsTitleScroll({playlist, index, selectedPlaylistIndex, handleScrollToSelectedTitle}: Props): JSX.Element {
+function PlaylistsTitleScroll({playlist, index, selectedPlaylistIndex, handleScrollToSelectedTitle, handleTitleClick}: Props): JSX.Element {
   const titleRef = useRef<any | null>(null);
   let leftSideOfTitleDiv: number = 0;
   let rightSideOfTitleDiv: number = 0;
@@ -28,12 +29,14 @@ function PlaylistsTitleScroll({playlist, index, selectedPlaylistIndex, handleScr
   });
   const isVisible = !!entry?.isIntersecting;
 
-    useEffect(() => {
-      if(selectedPlaylistIndex === index) handleScrollToSelectedTitle(titleRef);
-    }, [titleRef, selectedPlaylistIndex])
+  useEffect(() => {
+    if(selectedPlaylistIndex === index) handleScrollToSelectedTitle(titleRef);
+  }, [titleRef, selectedPlaylistIndex])
+
+
 
   return (
-    <div className={isVisible ? 'Playlists-Selected-Title' : 'Playlists-Unselected-Title'} ref={titleRef} >
+    <div className={isVisible ? 'Playlists-Selected-Title' : 'Playlists-Unselected-Title'} ref={titleRef} onClick={() => handleTitleClick(titleRef)}>
       <h2 className={isVisible ? 'Playlists-Selected-Title-Text' : 'Playlists-Unselected-Title-Text'}>{playlist.name}</h2>
     </div>
   );
