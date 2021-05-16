@@ -22,7 +22,7 @@ function MessagesContainer({messages, finishedFunction, addToDisplayedContent = 
   const [count, setCount] = useState<number>(0);
   let messageCharLength = useRef(0)
   let charLength = useRef(0);
-  let delayValue = useRef(100);
+  // let delayValue = useRef(100);
   const [isRunning, setIsRunning] = useState<boolean>(true);
   const [finishedMessages, setFinishedMessages] = useState<boolean>(false);
   const [onLastMessage, setOnLastMessage] = useState<boolean>(false);
@@ -50,15 +50,15 @@ function MessagesContainer({messages, finishedFunction, addToDisplayedContent = 
     charLength.current = charLength.current + 1;
     //CHANGING THE DELAY VALUE AFTER EACH LETTER APPENDED TO SCREEN IN ORDER TO TRY
     //AND CREATE A MORE HUMAN VARIABLE TYPING SPEED
-    delayValue.current = Math.floor(Math.random() * 60) + 1;
+    //THERE IS A BUG IN SAFARI USING THIS METHOD, SO NOT CREATING A DYNAMIC TYPING SPEED AT THE MOMENT
+    // delayValue.current = Math.floor(Math.random() * 60) + 1;
   };
 
   // CALLING THE USEINTERVAL HOOK TO BE ABLE TO DYNAMICALLY ALTER THE DELAY FOR OUR INTERVAL
-  useInterval(appendMessages, isRunning ? delayValue.current : null, useIntervalId);
+  useInterval(appendMessages, isRunning ? 30 : null, useIntervalId);
 
   //SET TIMEOUT TO UPDATE ISRUNNING VARAIBLE TO TRUE AFTER A BRIEF PAUSE TO SPACE OUT CHATTY'S MESSAGES
   useEffect(() => {
-
     if (isRunning) return;
     //IF ALL MESSAGES HAVE BEEN APPENDED TO OUR DOM DON'T NEED TO UPDATE COUNT OR CHANGE ISRUNNING
     if (count >= messages.length && count !== 0) return;
@@ -77,7 +77,6 @@ function MessagesContainer({messages, finishedFunction, addToDisplayedContent = 
   //USEEFFECT THAT WILL RESET CREATEMESSAGE TO AN EMPTY STRING ONCE THE MESSAGE IS FINISHED
   //AND THEN APPEND THAT MESSAGE TO DISPLAYEDMESSAGES TO APPEND TO THE DOM 
   useEffect(() => {
-
     if (charLength.current >= messageCharLength.current && messageCharLength.current !== 0) {
       const msgWithRemovedCursor = createMessage.slice(0, -2);
       setDisplayedMessages(state => [...state, msgWithRemovedCursor]);
@@ -90,7 +89,6 @@ function MessagesContainer({messages, finishedFunction, addToDisplayedContent = 
   //USEEFFECT THAT WILL CLEAR THE USEINTERVAL TIMER WHEN ALL MESSAGES PASSED IN TO OUR 
   //MESSAGE WRAPPER COMPONENT HAVE FINISHED APPENDING TO THE DOM
   useEffect(() => {
-
     if (count >= messages.length && count !== 0) {
       clearInterval(useIntervalId.current);
       setCount(0);
@@ -106,11 +104,9 @@ function MessagesContainer({messages, finishedFunction, addToDisplayedContent = 
 
   //UPDATING ONLASTMESSAGE TO BE TRUE TO PREVENT TYPING CURSOR TO APPEAR AFTER THE LAST MESSAGE
   useEffect(() => {
-
     const preventTypingCursor = () => {
       setOnLastMessage(true);
     };
-
     if (count === messages.length - 1) preventTypingCursor();
   }, [count, setOnLastMessage, messages]);
 

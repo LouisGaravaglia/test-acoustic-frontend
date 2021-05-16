@@ -4,7 +4,6 @@ import PlaylistsCarousel from './PlaylistsCarousel';
 import useViewport from '../Hooks/useViewport';
 let playlists =  require('../fakeData/playlist.json');
 
-
 interface Props {
   refArray: any | null[]
   PlaylistsContainerRef: any | null
@@ -26,24 +25,23 @@ function PlaylistsCarouselContainer({refArray, PlaylistsContainerRef}: Props): J
     }
   }, [viewportWidth]);
 
-  //TODO
   function handleScrollToSelectedPlaylist(playlistRef: any | null) {
     if (playlistRef.current !== null) {
-      //TODO: MAKE MEDIA QUERY THAT LOWER'S THE AMOUNT SUBTRACTING FROM playlistREF OFFSET VALUE
       PlaylistsContainerRef.current.scroll({left: playlistRef.current.offsetLeft - 400, behavior: 'smooth'});
       setUserClickedTitle(false)
     }
   }
 
+  //USE THIS TO SCROLL TITLE TO CORRECT ONE BASED OFF OF USER NAVIGATING BY SLIDING PLAYLISTS
   function updateSelectedPlaylistIndex(titleIndex: number) {
     setSelectedPlaylistIndex(titleIndex);
     setSelectedPlaylistTitle(playlists[titleIndex].name)
   }
 
+  //USE THIS TO SCROLL PLAYLISTS TO CORRECT ONE BASED OFF OF USER NAVIGATING BY CLICKING ON A TITLE
   function updateSelectedTitleIndex(index: number) {
     setUserClickedTitle(true)
     setSelectedTitleIndex(index);
-    // setSelectedTitle(playlists[index].name)
   }
 
   return (

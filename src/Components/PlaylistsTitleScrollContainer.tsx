@@ -14,7 +14,6 @@ function PlaylistsTitleScrollContainer({largeScreenMode, selectedPlaylistIndex, 
 
   function handleScrollToSelectedTitle(titleRef: any | null) {
     if (titleRef.current !== null) {
-      //TODO: MAKE MEDIA QUERY THAT LOWER'S THE AMOUNT SUBTRACTING FROM TITLEREF OFFSET VALUE
       wrapperRef.current.scroll({left: titleRef.current.offsetLeft - 400, behavior: 'smooth'});
     }
   }

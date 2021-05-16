@@ -74,8 +74,6 @@ function PlaylistsCarousel({largeScreenMode, playlist, index, viewportWidth, upd
     if (isVisible) updateSelectedPlaylistIndex(index);
   }, [isVisible, updateSelectedPlaylistIndex, index]);
 
-
-
   let artworkJSX;
 
   if (largeScreenMode) {
