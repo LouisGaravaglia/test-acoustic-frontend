@@ -93,16 +93,16 @@
   }
 }
 
-@media only screen and (max-width: 400px) {
-  .Chatty-Message {
-    margin: 10px 60px 10px 10px;
-  }
+// @media only screen and (max-width: 400px) {
+//   .Chatty-Message {
+//     margin: 10px 60px 10px 10px;
+//   }
 
-  .Chatty-Display {
-    margin: 80px 0 100px;
-    flex: 1 0 100vw;
-  }
-}
+//   .Chatty-Display {
+//     margin: 80px 0 100px;
+//     flex: 1 0 100vw;
+//   }
+// }
 
 /* /////////////////////////////////////  CHATTY BUTTON  ////////////////////////////////////// */
 
@@ -159,25 +159,12 @@
 
 }
 
-@media only screen and (max-width: 400px) {
-  // .Chatty-Button-Container {
-  //   margin-right: 10px;
-  // }
+// @media only screen and (max-width: 400px) {
+//   .Chatty-Button-Box {
+//     margin: 10px 10px 10px 0px;
+//   }
 
-  // .Chatty-Button-Box {
-  //   max-width: 250px;
-  //   margin: 10px 10px 10px 0px;
-  // };
-
-  // .Chatty-Button {
-  //   line-height: normal;
-  // }
-
-  .Chatty-Button-Box {
-    margin: 10px 10px 10px 0px;
-  }
-
-}
+// }
 
 // @media only screen and (max-width: 600px) {
 //   .Chatty-Message {
