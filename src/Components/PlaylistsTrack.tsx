@@ -14,15 +14,19 @@ interface Props {
 function PlaylistsTrack({largeScreenMode, track, index, selectedTrack, setSelectedTrack, selectedPlaylistIndex, playlistLength}: Props): JSX.Element {
   const [playingTrack, setPlayingTrack] = useState(true);
 
+  //WHEN USER SELECTS A NEW PLAYLIST THE SELECTED TRACK WILL REVERT BACK TO THE FIRST
   useEffect(() => {
     function resetTrackVariables() {
       setPlayingTrack(true);
       setSelectedTrack(0);
     }
-
     resetTrackVariables();
   }, [track, setPlayingTrack, selectedPlaylistIndex])
 
+  //IF A TRACK IS PAUSED, IT AUTOMATICALLY REVERTS BACK TO PLAYING MODE IF USER SELECTS A NEW TRACK
+  useEffect(() => {
+    if (playingTrack === false) setPlayingTrack(true);
+  }, [selectedTrack, setPlayingTrack])
 
   function togglePlayingTrack() {
     setPlayingTrack(state => !state)
