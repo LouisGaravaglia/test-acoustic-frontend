@@ -68,7 +68,7 @@ function PlaylistsTrack({largeScreenMode, track, index, selectedTrack, setSelect
 
   return (
     <>
-      <div key={track.track.id} className='Playlists-Track-Container' style={styles} >
+      <div key={track.track.id} className='Playlists-Track-Container' style={styles}>
         <div className="Playlists-Track-Box" onClick={() => setSelectedTrack(index)}>
           <p className='Playlists-Track-Name'>{track.track.name}</p>
           <p className='Playlists-Artist-Name'>{track.track.artists[0].name}</p>
