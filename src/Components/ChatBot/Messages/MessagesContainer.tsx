@@ -55,7 +55,7 @@ function MessagesContainer({messages, finishedFunction, addToDisplayedContent = 
   };
 
   // CALLING THE USEINTERVAL HOOK TO BE ABLE TO DYNAMICALLY ALTER THE DELAY FOR OUR INTERVAL
-  useInterval(appendMessages, isRunning ? 50 : null, useIntervalId);
+  useInterval(appendMessages, isRunning ? 40 : null, useIntervalId);
 
   //SET TIMEOUT TO UPDATE ISRUNNING VARAIBLE TO TRUE AFTER A BRIEF PAUSE TO SPACE OUT CHATTY'S MESSAGES
   useEffect(() => {
