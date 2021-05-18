@@ -89,6 +89,12 @@
     font-size: 2rem;
     color: rgba(0, 0, 0, 0.089);
   }
+
+  .Playlists-Unselected-Filler {
+    @extend .Playlists-Unselected-Title;
+    cursor: default;
+  }
+
 }
 
 .Playlists-Selected-Title {

@@ -24,9 +24,9 @@ function PlaylistsTitleScrollContainer({largeScreenMode, selectedPlaylistIndex, 
   if (largeScreenMode) {
     titleDisplayJSX = (
       <div className="Playlists-Title-Scroll-Container" ref={wrapperRef}>
-        <div className='Playlists-Unselected-Title' ><h2 ></h2></div>
+        <div className='Playlists-Unselected-Filler'><h2 ></h2></div>
           {playlists.map((playlist: any, index: any) => <PlaylistsTitleScroll key={index} index={index} titleRef={titleRefArray[index]} playlist={playlist} selectedPlaylistIndex={selectedPlaylistIndex} handleScrollToSelectedTitle={handleScrollToSelectedTitle} updateSelectedTitleIndex={updateSelectedTitleIndex}/>)}
-        <div className='Playlists-Unselected-Title' ><h2 ></h2></div>
+        <div className='Playlists-Unselected-Filler'><h2 ></h2></div>
     </div>
     )
   } else {
