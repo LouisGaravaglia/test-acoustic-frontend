@@ -61,8 +61,12 @@ function PlaylistsCarousel({largeScreenMode, playlist, index, viewportWidth, upd
   const [selectedTrack, setSelectedTrack] = useState<number>(0);
   const playlistImgPlaceholders = [PLACEHOLDER_IMG_0, PLACEHOLDER_IMG_1, PLACEHOLDER_IMG_2, PLACEHOLDER_IMG_3, PLACEHOLDER_IMG_4, PLACEHOLDER_IMG_5];
   const entry = useElementOnScreen(playlistRef, {
-    threshold: viewportWidth < 1990 ? 0.6 : 0.4
+    threshold: 0.4
   });
+  // CURRENTLY NOT HAVING ANY BUGS WITH SMALLER SCREEN WIDTHS SO GETTING RID OF CONDITIONAL THRESHOLD
+  // const entry = useElementOnScreen(playlistRef, {
+  //   threshold: viewportWidth < 1990 ? 0.6 : 0.4
+  // });
   const isVisible = !!entry?.isIntersecting;
   let tracks = playlist.tracks.items;
 
